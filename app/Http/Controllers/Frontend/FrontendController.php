@@ -143,6 +143,24 @@ class FrontendController extends Controller
         return view('website.service', $data);
     }
 
+    public function serviceDetails()
+    {
+        $wp = WebsiteParameter::first();
+        return view('website.serviceDetails', compact('wp'));  
+    }
+
+    public function destination()
+    {
+        $wp = WebsiteParameter::first();
+        return view('website.destination', compact('wp'));  
+    }
+    
+    public function destinationDetails()
+    {
+        $wp = WebsiteParameter::first();
+        return view('website.destinationDetails', compact('wp'));  
+    }
+
     public function login()
     {
         return view('website.login');

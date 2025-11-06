@@ -13,30 +13,74 @@
 @endsection
 
 @section('content')
-<!--Breadcrumb Banner Area Start-->
-<div class="breadcrumb-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="breadcrumb-text">
-                    <h1 class="text-center">Scholarship</h1>
-                    <div class="breadcrumb-bar">
-                        <ul class="breadcrumb text-center">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>Scholarship</li>
-                        </ul>
+<!--Page Title-->
+<section class="page-title" style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg') }}');">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title-box">
+                <h1>Scholarship</h1>
+                <div class="dotted-box">
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
+                </div>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
+                <li>Scholarship</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+
+<!-- apply-style-two -->
+<section class="apply-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 1</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <i class="flaticon-document"></i>
+                        </div>
+                        <h3><a href="index-2.html">Fill In The <br />Required Form</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 2</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url(assets/images/icons/arrow-1.png);"></div>
+                            <i class="flaticon-copy"></i>
+                        </div>
+                        <h3><a href="index-2.html">Submit All Your <br />Attested Documents</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 3</h6>
+                        <div class="icon-box"><i class="flaticon-plane"></i></div>
+                        <h3><a href="index-2.html">Get Ready To <br />Receive your Visa</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--End of Breadcrumb Banner Area-->
-<!-- Coming Soon Section -->
-<section class="coming-soon-area py-5 my-5">
-    <div class="container text-center">
-        <h2 style="font-size: 48px; font-weight: 700; color: #333;">Coming Soon</h2>
-        <p style="font-size: 18px; color: #777;">Our sholarship section is currently under development. Stay tuned for updates!</p>
-    </div>
 </section>
+<!-- apply-style-two -->
+
 @endsection

@@ -13,168 +13,58 @@
 @endsection
 
 @section('content')
-<!--Breadcrumb Banner Area Start-->
-<div class="breadcrumb-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="breadcrumb-text">
-                    <h1 class="text-center">Event</h1>
-                    <div class="breadcrumb-bar">
-                        <ul class="breadcrumb text-center">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>Event</li>
-                        </ul>
-                    </div>
+<!--Page Title-->
+<section class="page-title" style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg')}}');">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title-box">
+                <h1>Elements</h1>
+                <div class="dotted-box">
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
                 </div>
             </div>
+            <ul class="bread-crumb clearfix">
+                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
+                <li>Feature 02</li>
+            </ul>
         </div>
-    </div>
-</div>
-
-<!--Event Area Start-->
-{{--<div class="event-area section-padding event-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/1.jpg') }}" alt="">
-                            <span><span>15</span>Jun</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Comilla Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/2.jpg') }}" alt="">
-                            <span><span>25</span>Dec</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Jessore Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/3.jpg') }}" alt="">
-                            <span><span>01</span>Mar</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Dhaka Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/4.jpg')}}" alt="">
-                            <span><span>27</span>May</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Comilla Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/5.jpg') }}" alt="">
-                            <span><span>12</span>Nov</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Jessore Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="{{ route('eventDetails') }}">
-                            <img src="{{ asset('frontend/img/event/3.jpg') }}" alt="">
-                            <span><span>15</span>Jun</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="{{ route('eventDetails') }}">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Dhaka Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="{{ route('eventDetails') }}">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pagination-content">
-                    <ul class="pagination">
-                        <li><a href="{{ route('eventDetails') }}"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                        <li class="current"><a href="{{ route('eventDetails') }}"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>--}}
-<!-- Coming Soon Section -->
-<section class="coming-soon-area py-5 my-5">
-    <div class="container text-center">
-        <h2 style="font-size: 48px; font-weight: 700; color: {{ route('eventDetails') }}333;">Coming Soon</h2>
-        <p style="font-size: 18px; color: {{ route('eventDetails') }}777;">Our blog section is currently under development. Stay tuned for
-            updates!</p>
     </div>
 </section>
+<!--End Page Title-->
+
+
+<!-- feature-section -->
+<section class="feature-section sec-pad-2">
+    <div class="auto-container">
+        <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">Apply Visa Online</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">Important Information</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">Immigration Resources</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature-section end -->
 @endsection

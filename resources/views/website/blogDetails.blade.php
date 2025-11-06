@@ -14,217 +14,319 @@
 @endsection
 
 @section('content')
-<!--Breadcrumb Banner Area Start-->
-<div class="breadcrumb-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="breadcrumb-text">
-                    <h1 class="text-center">Blog DETAILS</h1>
-                    <div class="breadcrumb-bar">
-                        <ul class="breadcrumb text-center">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>Blog DETAILS</li>
-                        </ul>
-                    </div>
+<!--Page Title-->
+<section class="page-title" style="background-image: url('{{ asset('frontend/assets/images/background/page-title-6.jpg') }}');">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title-box">
+                <h1>Latest News</h1>
+                <div class="dotted-box">
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
                 </div>
             </div>
+            <ul class="bread-crumb clearfix">
+                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
+                <li>Our Blog</li>
+                <li>Blog Details</li>
+            </ul>
         </div>
     </div>
-</div>
-<!--End of Breadcrumb Banner Area-->
-<!--News Details Area Start-->
-<div class="news-details-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 col-md-12 col-12">
-                <div class="news-details-content">
-                    <div class="single-latest-item">
-                        <img src="{{ asset('frontend/img/details/2.jpg') }}" alt="">
-                        <div class="single-latest-text">
-                            <h3>Learn English in ease simply random text</h3>
-                            <div class="single-item-comment-view">
-                                <span><i class="zmdi zmdi-calendar-check"></i>25 jun 2050</span>
-                                <span><i class="zmdi zmdi-eye"></i>59</span>
-                                <span><i class="zmdi zmdi-comments"></i>19</span>
+</section>
+<!--End Page Title-->
+
+
+<!-- sidebar-page-container -->
+<div class="sidebar-page-container blog-details">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-details-content">
+                    <div class="news-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{ asset('frontend/assets/images/news/news-14.jpg') }}" alt=""></figure>
+                            <div class="lower-content">
+                                <div class="post-date">
+                                    <h5>APR 18, 2020</h5>
+                                </div>
+                                <h2>Country To Offer Point-Based Immigrations</h2>
+                                <ul class="post-info clearfix">
+                                    <li>By Admin</li>
+                                    <li>Study Visa,Work</li>
+                                    <li>5 Comments</li>
+                                </ul>
+                                <div class="text">
+                                    <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era
+                                        volutpat lobortis sem consequat imperdiet. In nulla sed viverraut loremut dapib
+                                        estetur Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat.</p>
+                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+                                        error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                                        ipsa quae ab illo inventore veritatis.</p>
+                                    <blockquote>
+                                        <i class="flaticon-quote"></i>
+                                        <p>Sponsoring and managing work visas parts now becoming results the experience
+                                            aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non
+                                            proident sunt in culpa quis.</p>
+                                        <h5>James Thomas</h5>
+                                    </blockquote>
+                                    <p>Imperdiet. In nulla sed viverraut loremut dapib estetur Lorem ipsum dolor sit
+                                        amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
                             </div>
-                            <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour,
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humour, or randomised words which don't
-                                look even slightly believable. If you are going to use a passage of Lorem Ipsum, you
-                                need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                            <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour,
-                                There are many variations of passages of Lorem Ipsum available,</p>
-                            <div class="quote-section">
-                                <p>but the majority have suffered alteration in some form, by injected humour, or
-                                    randomised words which don't look even slightly believable. If you are going to use
-                                    a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-                                    hidden in the middle of text.</p>
-                            </div>
-                            <p>Lorem Ipsuable, amrn in some by injected humour, There are many variations of passages of
-                                Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                injected humour, or randomised words which don't look even slightly believable. If you
-                                are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                                embarrassing hidden in the middle of text. </p>
-                            <div class="tags-and-links">
-                                <div class="related-tag">
-                                    <span>Tag:</span>
-                                    <ul class="tags">
-                                        <li><a href="#">design,</a></li>
-                                        <li><a href="#">Photoshop,</a></li>
-                                        <li><a href="#">Web Design,</a></li>
-                                        <li><a href="#">print</a></li>
+                        </div>
+                    </div>
+                    <div class="two-column">
+                        <div class="row align-items-center clearfix">
+                            <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                <div class="text">
+                                    <h3>Rules: How To Apply For Visa</h3>
+                                    <p>Nunc quam arcu, pretium quis quam sed, laore us consequat imperdiet. In nulla sed
+                                        viverraut loremut ipsum dolor sit amet, consectetur.</p>
+                                    <ul class="list clearfix">
+                                        <li>Nunc quam arcu, pretium quis quam</li>
+                                        <li>Laoreet efficitur leo liquam era</li>
+                                        <li>Consequat imperdiet nula sed viverraut</li>
+                                        <li>Ipsum dolor sit amet conse adipisicing</li>
+                                        <li>Sed do eiusmod tempor incididunt</li>
                                     </ul>
                                 </div>
-                                <div class="social-links">
-                                    <span>Share:</span>
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/news/news-15.jpg') }}" alt=""></figure>
+                            </div>
+                        </div>
+                        <div class="lower-box">
+                            <h3>Our Capabilities For Visa & Immigration</h3>
+                            <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat
+                                lobortis sem consequat imperdiet. In nulla sed viverraut loremut dapib estetur Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                                anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                veritatis.</p>
+                        </div>
+                    </div>
+                    <div class="post-share-option clearfix">
+                        <ul class="tags pull-left clearfix">
+                            <li>TAGS:</li>
+                            <li><a href="blog-details.html">Family Visa</a>,</li>
+                            <li><a href="blog-details.html">Immigration</a>,</li>
+                            <li><a href="blog-details.html">Sponsor</a></li>
+                        </ul>
+                        <ul class="social-links pull-right clearfix">
+                            <li>SHARE</li>
+                            <li><a href="blog-details.html"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="blog-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="blog-details.html"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="blog-details.html"><i class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="comments-area">
+                        <div class="group-title">
+                            <h2>2 Post Replies</h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment">
+                                <figure class="thumb-box">
+                                    <img src="{{ asset('frontend/assets/images/news/comment-1.jpg') }}" alt="">
+                                </figure>
+                                <div class="comment-inner">
+                                    <div class="comment-info">
+                                        <h5>James Thomas</h5>
+                                        <span class="comment-time">May 23, 2020 at 12:00 AM</span>
+                                    </div>
+                                    <p>Imperdiet in nulla sed viverraut loremut dapib estetur Lorem ipsum dolor sit amet
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eniy minim sed
+                                        exe ullamco laboris nisi ut aliquip cepteur sint occaecaty.</p>
+                                    <a href="blog-single.html">reply<i class="flaticon-send"></i></a>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <figure class="thumb-box">
+                                    <img src="{{ asset('frontend/assets/images/news/comment-2.jpg') }}" alt="">
+                                </figure>
+                                <div class="comment-inner">
+                                    <div class="comment-info">
+                                        <h5>Jhon Camaron</h5>
+                                        <span class="comment-time">May 22, 2020 at 12:00 AM</span>
+                                    </div>
+                                    <p>Imperdiet in nulla sed viverraut loremut dapib estetur Lorem ipsum dolor sit amet
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eniy minim sed
+                                        exe ullamco laboris nisi ut aliquip cepteur sint occaecaty.</p>
+                                    <a href="blog-single.html">reply<i class="flaticon-send"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="comments">
-                        <h4 class="title">Comments</h4>
-                        <div class="single-comment">
-                            <div class="author-image">
-                                <img src="{{ asset('frontend/img/comment/1.jpg') }}" alt="">
-                            </div>
-                            <div class="comment-text">
-                                <div class="author-info">
-                                    <h4><a href="#">MD Tokdir Ali</a></h4>
-                                    <span class="reply"><a href="#">Reply</a></span>
-                                    <span class="comment-time">Posted on Jun 12, 2015 /</span>
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered aation in some form, by injected humour,</p>
+                    <div class="comments-form-area">
+                        <div class="group-title">
+                            <h2>Leave a Reply</h2>
+                            <p>Note: We’ll not publish your email anyway, you’re safe!</p>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
                             </div>
                         </div>
-                        <div class="single-comment comment-reply">
-                            <div class="author-image">
-                                <img src="{{ asset('frontend/img/comment/2.jpg') }}" alt="">
+                        <form action="#" method="post"
+                            class="comment-form">
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Comment"></textarea>
                             </div>
-                            <div class="comment-text">
-                                <div class="author-info">
-                                    <h4><a href="#">MD Kopal Ali</a></h4>
-                                    <span class="reply"><a href="#">Reply</a></span>
-                                    <span class="comment-time">Posted on Jun 12, 2015 /</span>
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered aation in some form, by injected humour,</p>
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required="">
                             </div>
-                        </div>
-                        <div class="single-comment">
-                            <div class="author-image">
-                                <img src="{{ asset('frontend/img/comment/3.jpg') }}" alt="">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email address" required="">
                             </div>
-                            <div class="comment-text">
-                                <div class="author-info">
-                                    <h4><a href="#">MR Soytan Ali</a></h4>
-                                    <span class="reply"><a href="#">Reply</a></span>
-                                    <span class="comment-time">Posted on Jun 12, 2015 /</span>
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered aation in some form, by injected humour,</p>
+                            <div class="form-group">
+                                <input type="text" name="website" placeholder="Website">
                             </div>
-                        </div>
+                            <div class="form-group message-btn">
+                                <button type="submit" class="theme-btn-two"><i class="flaticon-send"></i>Post
+                                    Comment</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-12 col-12">
-                <div class="sidebar-widget">
-                    <div class="single-sidebar-widget">
-                        <h4 class="title">Recent Posts</h4>
-                        <div class="recent-content">
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/event/7.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">Learn English in</a></h4>
-                                    <div class="single-item-comment-view">
-                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                        <span><i class="zmdi zmdi-comments"></i>19</span>
-                                    </div>
-                                    <p>There are many varf passages of Lorem Ipsuable,amar</p>
-                                </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="sidebar blog-sidebar">
+                    <div class="sidebar-widget sidebar-search">
+                        <form action="#" method="post"
+                            class="search-form">
+                            <div class="form-group">
+                                <input type="search" name="search-field" placeholder="Search Blog" required="">
+                                <button type="submit"><i class="flaticon-search-1"></i></button>
                             </div>
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/event/8.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">Team Works</a></h4>
-                                    <div class="single-item-comment-view">
-                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                        <span><i class="zmdi zmdi-comments"></i>19</span>
-                                    </div>
-                                    <p>There are many varf passages of Lorem Ipsuable,amar</p>
-                                </div>
+                        </form>
+                    </div>
+                    <div class="sidebar-widget sidebar-categories-2">
+                        <div class="widget-title">
+                            <h3>Categories</h3>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
                             </div>
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/event/9.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">Learn With Fun</a></h4>
-                                    <div class="single-item-comment-view">
-                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                        <span><i class="zmdi zmdi-comments"></i>19</span>
-                                    </div>
-                                    <p>There are many varf passages of Lorem Ipsuable,amar</p>
-                                </div>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="categories-list clearfix">
+                                <li><a href="coaching-details.html">Working Visa</a></li>
+                                <li><a href="coaching-details.html">Tourists Visa</a></li>
+                                <li><a href="coaching-details.html">Immigration Visa</a></li>
+                                <li><a href="coaching-details.html">Stydy Visa</a></li>
+                                <li><a href="coaching-details.html">Transit Visa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget sidebar-post">
+                        <div class="widget-title">
+                            <h3>Recent Posts</h3>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
                             </div>
-                            <div class="recent-content-item">
-                                <a href="#"><img src="img/event/10.jpg" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">Writing Skill</a></h4>
-                                    <div class="single-item-comment-view">
-                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                        <span><i class="zmdi zmdi-comments"></i>19</span>
-                                    </div>
-                                    <p>There are many varf passages of Lorem Ipsuable,amar</p>
-                                </div>
+                        </div>
+                        <div class="post-inner">
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img
+                                            src="{{ asset('frontend/assets/images/news/post-1.jpg') }}" alt=""></a></figure>
+                                <h5><a href="blog-details.html">Covid-19 And Its Impact On USA Immigration</a></h5>
+                                <span class="post-date">April 13, 2020</span>
+                            </div>
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img
+                                            src="{{ asset('frontend/assets/images/news/post-2.jpg') }}" alt=""></a></figure>
+                                <h5><a href="blog-details.html">Country To Offer Point-Based Immigrations</a></h5>
+                                <span class="post-date">April 12, 2020</span>
+                            </div>
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img
+                                            src="{{ asset('frontend/assets/images/news/post-3.jpg') }}" alt=""></a></figure>
+                                <h5><a href="blog-details.html">Your Visa Approval With Easy Steps</a></h5>
+                                <span class="post-date">April 11, 2020</span>
                             </div>
                         </div>
                     </div>
-                    <div class="single-sidebar-widget comment">
-                        <h4 class="title">Recent Comment</h4>
-                        <div class="recent-content">
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/comment/3.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">MR Soytan Ali</a></h4>
-                                    <p>There are many varia passages of Lorem Ipsuable,amar sonar</p>
-                                </div>
-                            </div>
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/comment/1.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">MD Tokdir Ali</a></h4>
-                                    <p>There are many varia passages of Lorem Ipsuable,amar sonar</p>
-                                </div>
-                            </div>
-                            <div class="recent-content-item">
-                                <a href="#"><img src="{{ asset('frontend/img/comment/3.jpg') }}" alt=""></a>
-                                <div class="recent-text">
-                                    <h4><a href="#">MR Soytan Ali</a></h4>
-                                    <p>There are many varia passages of Lorem Ipsuable,amar sonar</p>
-                                </div>
-                            </div>
+                    <div class="sidebar-widget sidebar-support">
+                        <div class="widget-content">
+                            <figure class="image-box"><img src="{{ asset('frontend/assets/images/news/support-1.jpg') }}" alt=""></figure>
+                            <ul class="content-box clearfix">
+                                <li>
+                                    <i class="flaticon-call"></i>
+                                    <p>Any Questions? Call us</p>
+                                    <h3><a href="tel:12463330079">+1 (246) 333 0079</a></h3>
+                                </li>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    <p>Any Questions? Email us</p>
+                                    <h3><a href="mailto:info@example.com">info@example.com</a></h3>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="single-sidebar-widget">
-                        <h4 class="title">Search by Tags</h4>
-                        <ul class="tags">
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Tutorial</a></li>
-                            <li><a href="#">Courses</a></li>
-                            <li><a href="#">Premium</a></li>
-                            <li><a href="#">Designtuto</a></li>
-                        </ul>
+                    <div class="sidebar-widget sidebar-assessment">
+                        <div class="widget-title">
+                            <h3>Free Online Assessment</h3>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <form action="#" method="post"
+                                class="assessment-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email address" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phone" placeholder="Phone" required="">
+                                </div>
+                                <div class="form-group">
+                                    <div class="select-box">
+                                        <select class="wide">
+                                            <option data-display="Select">Select Visa Type</option>
+                                            <option value="1">Working Visas</option>
+                                            <option value="2">Study Visas</option>
+                                            <option value="3">Business Visas</option>
+                                            <option value="4">Tourist Visas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="theme-btn-two"><i class="flaticon-send"></i>Send
+                                        Message</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--End of News Details Area-->
+<!-- sidebar-page-container end -->
 @endsection

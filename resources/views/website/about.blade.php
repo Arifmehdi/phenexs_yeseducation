@@ -14,256 +14,393 @@
 @endsection
 
 @section('content')
-<!--Breadcrumb Banner Area Start-->
-<div class="breadcrumb-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="breadcrumb-text">
-                    <h1 class="text-center">ABOUT US</h1>
-                    <div class="breadcrumb-bar">
-                        <ul class="breadcrumb text-center">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>ABOUT US</li>
-                        </ul>
-                    </div>
+<!--Page Title-->
+<section class="page-title"
+    style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg') }}');">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title-box">
+                <h1>About Us</h1>
+                <div class="dotted-box">
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
+                    <span class="dotted"></span>
                 </div>
             </div>
+            <ul class="bread-crumb clearfix">
+                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
+                <li>About</li>
+            </ul>
         </div>
     </div>
-</div>
-<!--End of Breadcrumb Banner Area-->
-<!--About Page Area Start-->
-<div class="about-page-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>Who we are</h3>
-                        <p>There are many variations of passages</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="about-text-container">
-                    <p><span>Well come to Educat</span> come with us, we also teach children about the basic values of
-                        human beings as honesty, kindness, generosity, courage, freedom, equality and respect. Learn to
-                        celebrate diversity in a spirit of understanding and tolerance and develop a positive regard and
-                        awareness of other people. They are taught the values and responsibilities needed to become
-                        active members of the community, tolerance and develop something which the modern world is
-                        desperate for norem ipsum dolor sit amet desperate.<br>
-                        Adipiscing signiferumque vix et. No alii docendi usu, pri graeco possim percipit ne.</p>
-                    <div class="about-us">
-                        <span>Nam gravida magna vitae ante dignissim</span>
-                        <span>Duis rhoncus lectus at velit hendrerit quis</span>
-                        <span>Sed fringilla tempor arcu feugiat risus</span>
-                        <span>Vivamus semper odio in nibh ultricies</span>
-                    </div>
-                    <p>Snos trud exerci tation ullorper suscipit lobo maeisrn roester maeoirqs iserrtis nisl ut aliq
-                        poerwse thesr oper balinp asein hoinws mawsoib equat. Contrary to popular belief, Lorem Ipsum is
-                        not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making
-                        it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-                        Virginia, looked up one of the more tolerance and develop obscure Latin words, consectetur, from
-                        a Lorem Ipsum passage, and going through makin of the word in classical literature.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="skill-image">
-                    <img src="{{ asset('frontend/img/banner/6.jpg') }}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End of About Page Area-->
-<!--Skill And Experience Area Start-->
-<div class="skill-and-experience-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>Skills and Experience</h3>
-                        <p>There are many variations of passages</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="experience-skill-wrapper">
-                    <div class="skill-bar-item">
-                        <span>Programming</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="80%" style="width: 80%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>Designing</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>Creative Writing</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="90%" style="width: 90%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>English Lessons</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="70%" style="width: 70%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">70%</span>
+</section>
+<!--End Page Title-->
+
+
+<!-- about-section -->
+<section class="about-section">
+    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-1.png') }}');"></div>
+    <div class="auto-container">
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_1">
+                    <div class="image-box">
+                        <figure class="image"><img src="{{ asset('frontend/assets/images/resource/about-5.jpg') }}" alt=""></figure>
+                        <div class="box">
+                            <div class="inner">
+                                <div class="icon-box">
+                                    <div class="icon icon-1"></div>
+                                    <div class="icon icon-2"></div>
+                                </div>
+                                <span>America’s Leading Visa & Immigration lawyers with</span>
+                                <h1>24</h1>
+                                <p>Years Of Experience</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="experience-skill-wrapper">
-                    <div class="skill-bar-item">
-                        <span>Programming</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">75%</span>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_1">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>who are visarzo</p>
+                            <h2>Not Just Traditional Visa & Immigration Firm</h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>Creative Writing</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="90%" style="width: 90%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">90%</span>
-                            </div>
+                        <div class="bold-text">
+                            <p>Sponsoring and managing work visas parts now becoming results in the experience.</p>
                         </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>Designing</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="80%" style="width: 80%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">80%</span>
-                            </div>
+                        <div class="text">
+                            <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat.
+                                lobortis sem consequat consequat imperdiet. In nulla sed viverraut loremut dapib es
+                                tetur diam nunc bibendum imperdiets.</p>
                         </div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <span>English Lessons</span>
-                        <div class="progress">
-                            <div class="progress-bar wow fadeInLeft" data-progress="100%" style="width: 100%;"
-                                data-wow-duration="1.5s" data-wow-delay="1.2s">
-                                <span class="text-top">100%</span>
-                            </div>
+                        <div class="btn-box">
+                            <a href="index.html" class="theme-btn-two">Learn More<i class="flaticon-send"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--End of Skill And Experience Area-->
-<!--Teachers Area Start-->
-<div class="teachers-area padding-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>OUR TEACHERS</h3>
-                        <p>There are many variations of passages of Lorem Ipsum</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="single-teacher-item">
-                    <div class="single-teacher-image">
-                        <a href="#"><img src="{{ asset('frontend/img/teacher/l-1.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-teacher-text">
-                        <h3><a href="#">Louis Smith</a></h3>
-                        <h4>Teacher</h4>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr</p>
-                        <div class="social-links">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+</section>
+<!-- about-section end -->
+
+
+<!-- feature-section -->
+<section class="feature-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Apply Visa Online</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="single-teacher-item">
-                    <div class="single-teacher-image">
-                        <a href="#"><img src="{{ asset('frontend/img/teacher/l-2.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-teacher-text">
-                        <h3><a href="#">Louis Smith</a></h3>
-                        <h4>Teacher</h4>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr</p>
-                        <div class="social-links">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Important Information</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="single-teacher-item">
-                    <div class="single-teacher-image">
-                        <a href="#"><img src="{{ asset('frontend/img/teacher/l-3.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-teacher-text">
-                        <h3><a href="#">Louis Smith</a></h3>
-                        <h4>Teacher</h4>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr</p>
-                        <div class="social-links">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="single-teacher-item">
-                    <div class="single-teacher-image">
-                        <a href="#"><img src="{{ asset('frontend/img/teacher/l-4.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-teacher-text">
-                        <h3><a href="#">Louis Smith</a></h3>
-                        <h4>Teacher</h4>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr</p>
-                        <div class="social-links">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Immigration Resources</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- feature-section end -->
+
+
+<!-- cta-section -->
+<section class="cta-section bg-color-1 centred">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h2>Unparalleled Consultancy from Experienced Lawyers</h2>
+            <div class="text">
+                <p>Dolor emque laudantium totam rem aperiam eaque ipsa quae ventore</p>
+                <div class="dotted-box">
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cta-section end -->
+
+
+<!-- apply-style-two -->
+<section class="apply-style-two about-page">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Following Steps Apply Online Visa</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 1</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <i class="flaticon-document"></i>
+                        </div>
+                        <h3><a href="index-2.html">Fill In The <br />Required Form</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 2</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <i class="flaticon-copy"></i>
+                        </div>
+                        <h3><a href="index-2.html">Submit All Your <br />Attested Documents</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 3</h6>
+                        <div class="icon-box"><i class="flaticon-plane"></i></div>
+                        <h3><a href="index-2.html">Get Ready To <br />Receive your Visa</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- apply-style-two -->
+
+
+<!-- choose-section -->
+<section class="choose-section bg-color-3">
+    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-3.png') }}');"></div>
+    <figure class="image-layer wow slideInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms"><img
+            src="{{ asset('frontend/assets/images/resource/choose-1.jpg') }}" alt=""></figure>
+    <div class="auto-container">
+        <div id="content_block_2">
+            <div class="content-box">
+                <div class="sec-title">
+                    <p>why choose visarzo</p>
+                    <h2>Countless Benefits & Easy Processing</h2>
+                    <div class="dotted-box">
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat. lobortis sem
+                        consequat consequat imperdiet. In nulla sed viverraut loremut dapib es tetur diam nunc bibendum
+                        imperdiets.</p>
+                </div>
+                <div class="inner-box">
+                    <div class="single-item">
+                        <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                        <h3>Legal Immigration Success</h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat. lobortis sem consequat consequat imperdiet. In
+                            nulla sed viverraut loremut.</p>
+                    </div>
+                    <div class="single-item">
+                        <div class="icon-box"><i class="flaticon-report"></i></div>
+                        <h3>Required Documents Support</h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat. lobortis sem consequat consequat imperdiet. In
+                            nulla sed viverraut loremut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- choose-section end -->
+
+
+<!-- team-section -->
+<section class="team-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Our Best Experts Ready To Help</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-1.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">Charles Henry</a></h4>
+                            <span class="designation">CEO - Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-2.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">edward matthew</a></h4>
+                            <span class="designation">Immigration Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-3.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">ben christopher</a></h4>
+                            <span class="designation">Senior Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-4.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">lindys thomas</a></h4>
+                            <span class="designation">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-section end -->
+
+
+<!-- apply-section -->
+<section class="apply-section">
+    <div class="auto-container">
+        <div class="inner-box clearfix">
+            <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/apply-2.jpg') }}" alt=""></figure>
+            <div class="content-box">
+                <div class="icon-box">
+                    <div class="icon icon-1"></div>
+                    <div class="icon icon-2"></div>
+                </div>
+                <h4>Get Free Online Visa Assessment Today!</h4>
+                <h2>Top Rated By Customers & Immigration Firms With 100% Success Rate.</h2>
+                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Apply Visa Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- apply-section end -->
 @endsection
