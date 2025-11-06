@@ -1,184 +1,165 @@
-<header class="header-two">
-<div class="header-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-md-6 d-none d-lg-block d-md-block">
-                <span>Have any question? 0123456789</span>
-            </div>
-            <div class="col-lg-5 col-md-6 col-12">
-                <div class="header-top-right">
-                    <span>Phone: 0123456789</span>
-                    <span>Email: info@example.com</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="header-logo-menu sticker">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-12">
-                <div class="logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('frontend/img/logo/logo.webp') }}"
-                            alt="YES Education"></a>
-                </div>
-            </div>
-            <div class="col-lg-9 col-12">
-                <div class="mainmenu-area pull-right">
-                    <div class="mainmenu d-none d-lg-block">
-                        <nav>
-                            <ul id="nav">
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('about') }}">About</a></li>
-                                <li><a href="{{ route('courses') }}">Courses</a>
-                                    <!-- Mega Menu -->
-                                    <div class="mega-menu mm-5-column">
-                                        <div class="col-4 pull-left pl-20">
-                                            <a href="{{ route('courseDetails') }}">MSC Advanced Computing</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Digital Marketing</a>
-                                            <a href="{{ route('courseDetails') }}">MSC In Nursing</a>
-                                            <a href="{{ route('courseDetails') }}">Broadcast Journalism</a>
-                                            <a href="{{ route('courseDetails') }}">Master Of Public Health</a>
-                                        </div>
-                                        <div class="col-4 pull-left">
-                                            <a href="{{ route('courseDetails') }}">Master Of Business Administration</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Information Technology</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Information Management</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Logistics Supply Chain Management</a>
-                                        </div>
-                                        <div class="col-4 pull-left">
-                                            <a href="{{ route('courseDetails') }}">MSC Advance Computing</a>
-                                            <a href="{{ route('courseDetails') }}">MSC International Event Management</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Computer Science</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Project Management</a>
-                                            <a href="{{ route('courseDetails') }}">MSC Criminal Justice</a>
-                                        </div>
-                                        {{--<div class="col-4 pull-left">
-                                            <a href='shortcode-progressbar.html'>Progressbar</a>
-                                            <a href='text-animation-1.html'>Text Animation 1</a>
-                                            <a href='text-animation-2.html'>Text Animation 2</a>
-                                            <a href='text-animation-3.html'>Text Animation 3</a>
-                                        </div>--}}
-                                    </div>
-                                </li>
-                                <li><a href="{{ route('service') }}">Services</a>
-                                    <ul class="sub-menu">
-                                        <li><a href='#'>Student Counselling</a></li>
-                                        <li><a href='#'>Student Application Support</a></li>
-                                        <li><a href='#'>Scholarship Assistance</a></li>
-                                        <li><a href='#'>Pre Departure Guidance</a></li>
-                                        <li><a href='#'>Career Guidance</a></li>
-                                        <li><a href='#'>Course Selection</a></li>
-                                        <li><a href='#'>College/University Selection</a></li>
-                                        <li><a href='#'>Visa Application Advice</a></li>
-                                        <li><a href='#'>Traveling Assistance</a></li>
-                                        <li><a href='#'>Free Guideline About Life-in-abroad</a></li>
-                                        <li><a href='#'>Visa File Processing</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href='#'>Destination</a>
-                                    <ul class="sub-menu">
-                                        <li><a href='#'>Study In AUSTRALIA</a></li>
-                                        <li><a href='#'>Study In Canada</a></li>
-                                        <li><a href='#'>Study In Ireland</a></li>
-                                        <li><a href='#'>Study In NEW ZEALAND</a></li>
-                                        <li><a href='#'>Study In UK</a></li>
-                                        <li><a href='#'>Study In USA</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="{{route('scholarship')}}">Scholarship</a></li>
-                                <li><a href="{{route('event')}}">Event</a></li>
-                                <li><a href="{{route('blog')}}">Blog</a></li>
-                                <li><a href="{{route('contact') }}">Contact US</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <ul class="header-search">
-                        <li class="search-menu">
-                            <i id="toggle-search" class="zmdi zmdi-search-for"></i>
-                        </li>
+<!-- main header -->
+<header class="main-header style-two">
+    <div class="header-top">
+        <div class="auto-container">
+            <div class="top-inner clearfix">
+                <div class="top-left pull-left">
+                    <ul class="info clearfix">
+                        <li><i class="flaticon-call"></i>Call us: <a href="tel:1246333079">+1 (246) 333 079</a></li>
+                        <li><i class="flaticon-open-email-message"></i><a href="mailto:inquiry@example.com">inquiry@example.com</a></li>
                     </ul>
-                    <!--Search Form-->
-                    <div class="search">
-                        <div class="search-form">
-                            <form id="search-form" action="#">
-                                <input type="search" placeholder="Search here..." name="search" />
-                                <button type="submit">
-                                    <span><i class="fa fa-search"></i></span>
-                                </button>
-                            </form>
+                </div>
+                <div class="top-right pull-right">
+                    <div class="search-box-outer">
+                        <div class="search-btn">
+                            <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
                         </div>
                     </div>
-                    <!--End of Search Form-->
+                    <ul class="social-links clearfix">
+                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Mobile Menu Area start -->
-<div class="mobile-menu-area">
-    <div class="container clearfix">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="mobile-menu">
-                    <nav id="dropdown">
-                        <ul>
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('about') }}">About Us</a></li>
-                            <li><a href="{{ route('courses') }}">Courses</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ route('courseDetails') }}">MSC Advanced Computing</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Digital Marketing</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC In Nursing</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">Broadcast Journalism</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">Master Of Public Health </a></li>
-                                    <li><a href="{{ route('courseDetails') }}">Master Of Business Administration </a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Information Technology</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Information Management</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Logistics Supply Chain Management</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Advance Computing</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC International Event Management</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Computer Science</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Project Management</a></li>
-                                    <li><a href="{{ route('courseDetails') }}">MSC Criminal Justice</a></li>
-                                </ul>
-                            </li>
+    <div class="header-upper">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="index.html"><img src="{{ asset('frontend/assets/images/logo-2.png') }}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </div>
+                    <nav class="main-menu navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li class="current dropdown"><a href="index.html">Home</a></li> 
+                                <li class="dropdown"><a href="index.html">About</a></li>
+                                <li class="dropdown"><a href="index.html">Courses</a>
+                                    <div class="megamenu">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-4 column">
+                                                <ul>
+                                                    <li><a href="about-element-1.html">MSC Advanced Computing</a></li>
+                                                    <li><a href="about-element-2.html">MSC Digital Marketing</a></li>
+                                                    <li><a href="feature-element-1.html">MSC In Nursing</a></li>
+                                                    <li><a href="feature-element-2.html">Broadcast Journalism</a></li>
+                                                    <li><a href="feature-element-3.html">Master Of Public Health</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-4 column">
+                                                <ul>
+                                                    <li><a href="news-element-1.html">Master Of Business Administration</a></li>
+                                                    <li><a href="news-element-2.html">MSC Information Technology</a></li>
+                                                    <li><a href="apply-element.html">MSC Information Management</a></li>
+                                                    <li><a href="team-element-1.html">MSC Logistics Supply Chain Management</a></li>
+                                                </ul>
+                                            </div> 
+                                            <div class="col-lg-4 column">
+                                                <ul>
+                                                    <li><a href="service-element-1.html">MSC Advance Computing</a></li>
+                                                    <li><a href="service-element-2.html">MSC International Event Management</a></li>
+                                                    <li><a href="training-element.html">MSC Computer Science</a></li>
+                                                    <li><a href="inquiry-element.html">MSC Project Management</a></li>
+                                                    <li><a href="contact-element.html">MSC Criminal Justice</a></li>
+                                                </ul>
+                                            </div>                                        
+                                        </div>                                           
+                                    </div>
+                                </li>  
+                                <li class="dropdown"><a href="index.html">Services</a>
+                                    <ul>
+                                        <li><a href="coaching.html">Student Counselling</a></li>
+                                        <li><a href="coaching-details.html">Student Application Support</a></li>
+                                        <li><a href="coaching-details-2.html">Scholarship Assistance</a></li>
+                                        <li><a href="coaching-details-3.html">Pre Departure Guidance</a></li>
+                                        <li><a href="coaching-details-4.html">Career Guidance</a></li>
+                                        <li><a href="coaching-details-5.html">Course Selection</a></li>
+                                        <li><a href="coaching-details-6.html">College/University Selection</a></li>
+                                        <li><a href="coaching-details-6.html">Visa Application Advice</a></li>
+                                        <li><a href="coaching-details-6.html">Traveling Assistance</a></li>
+                                        <li><a href="coaching-details-6.html">Free Guideline About Life-in-abroad</a></li>
+                                        <li><a href="coaching-details-6.html">Visa File Processing</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="index.html">Destination</a>
+                                    <ul>
+                                        <li><a href="coaching.html">Study In AUSTRALIA</a></li>
+                                        <li><a href="coaching-details.html"> Study In Canada</a></li>
+                                        <li><a href="coaching-details-2.html">Study In Ireland</a></li>
+                                        <li><a href="coaching-details-3.html">Study In NEW ZEALAND</a></li>
+                                        <li><a href="coaching-details-4.html">Study In UK</a></li>
+                                        <li><a href="coaching-details-5.html">Study In USA</a></li>
+                                    </ul>
+                                </li>
 
-                            <li><a href='#'>Services</a>
-                                <ul class="sub-menu">
-                                        <li><a href='#'>Student Counselling</a></li>
-                                        <li><a href='#'>Student Application Support</a></li>
-                                        <li><a href='#'>Scholarship Assistance</a></li>
-                                        <li><a href='#'>Pre Departure Guidance</a></li>
-                                        <li><a href='#'>Career Guidance</a></li>
-                                        <li><a href='#'>Course Selection</a></li>
-                                        <li><a href='#'>College/University Selection</a></li>
-                                        <li><a href='#'>Visa Application Advice</a></li>
-                                        <li><a href='#'>Traveling Assistance</a></li>
-                                        <li><a href='#'>Free Guideline About Life-in-abroad</a></li>
-                                        <li><a href='#'>Visa File Processing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href='#'>Destination</a>
-                                <ul class="sub-menu">
-                                        <li><a href='#'>Study In AUSTRALIA</a></li>
-                                        <li><a href='#'>Study In Canada</a></li>
-                                        <li><a href='#'>Study In Ireland</a></li>
-                                        <li><a href='#'>Study In NEW ZEALAND</a></li>
-                                        <li><a href='#'>Study In UK</a></li>
-                                        <li><a href='#'>Study In USA</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ route('scholarship') }}">Scholarship</a></li>
-                            <li><a href="{{ route('event') }}">Event</a></li>
-                            <li><a href="{{ route('blog') }}">Blog</a></li>
-                            <li><a href="{{route('contact') }}">Contact Us</a></li>
-                        </ul>
+                                <li class="dropdown"><a href="index.html">Scholarship</a> </li> 
+                                <li class="dropdown"><a href="index.html">Event</a> </li> 
+                                <li class="dropdown"><a href="index.html">Blog</a> </li> 
+                                <li><a href="contact.html">Contact</a></li>               
+                            </ul>
+                        </div>
+                    </nav>
+                    {{--<div class="menu-right-content clearfix pull-left">
+                        <div class="btn-box">
+                            <a href="index-2.html" class="theme-btn-two">Appointment<i class="flaticon-send"></i></a>
+                        </div>
+                    </div>--}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="index.html"><img src="{{ asset('frontend/assets/images/small-logo.png') }}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Mobile Menu Area end -->
 </header>
+<!-- main-header end -->
+<!-- Mobile Menu  -->
+<div class="mobile-menu">
+    <div class="menu-backdrop"></div>
+    <div class="close-btn"><i class="fas fa-times"></i></div>
+    <nav class="menu-box">
+        <div class="nav-logo"><a href="index.html"><img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" title=""></a></div>
+        <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+        <div class="contact-info">
+            <h4>Contact Info</h4>
+            <ul>
+                <li>Chicago 12, Melborne City, USA</li>
+                <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                <li><a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+        </div>
+        <div class="social-links">
+            <ul class="clearfix">
+                <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
+                <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- End Mobile Menu -->

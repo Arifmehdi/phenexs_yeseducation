@@ -1,84 +1,91 @@
-<!--Footer Widget Area Start-->
-<div class="footer-widget-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="single-footer-widget">
-                    <div class="footer-logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('frontend/img/logo/footer.webp') }}" alt="footer yes consultation logo"></a>
+<!-- main-footer -->
+<footer class="main-footer bg-color-2">
+    <div class="auto-container">
+        <div class="footer-top">
+            <div class="widget-section">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget logo-widget">
+                            <figure class="footer-logo"><a href="index.html"><img src="{{ asset('frontend/assets/images/footer-logo.png') }}" alt=""></a></figure>
+                            <div class="text">
+                                <p>Integer lobortis sem consequat imperdiet In nulla viverra ut lorem ut, dapibus conse etur diam. Nun bibendum diet condiment sed ipsum duis lacinia.</p>
+                            </div>
+                            <ul class="social-links clearfix">
+                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <p>There are many variations of passg of Lorem Ipsum available, but thmajority have suffered altem, </p>
-                    <div class="social-icons">
-                        <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                        <a href="#"><i class="zmdi zmdi-rss"></i></a>
-                        <a href="#"><i class="zmdi zmdi-google-plus"></i></a>
-                        <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
-                        <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget links-widget">
+                            <div class="widget-title">
+                                <h3>Immigration</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="list clearfix">
+                                    <li><a href="index.html">Pre Assessment</a></li>
+                                    <li><a href="index.html">Visa Consultation</a></li>
+                                    <li><a href="index.html">Business Plans</a></li>
+                                    <li><a href="index.html">Post Landing Assistant</a></li>
+                                    <li><a href="index.html">Meet Our Agents</a></li>
+                                    <li><a href="index.html">Visa Documentation</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-footer-widget">
-                    <h3>GET IN TOUCH</h3>
-                    <a href="tel:0123-456-789"><i class="fa fa-phone"></i>0123-456-789</a>
-                    <span><i class="fa fa-envelope"></i>info@example.com</span>
-                    <span><i class="fa fa-globe"></i>www.example.com</span>
-                    <span><i class="fa fa-map-marker"></i>Your address goes here.</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-footer-widget">
-                    <h3>Useful Links</h3>
-                    <ul class="footer-list">
-                        <li><a href="#">Teachers &amp; Staff</a></li>
-                        <li><a href="#">Our Courses</a></li>
-                        <li><a href="#">Courses Categories</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-footer-widget">
-                    <h3>Instagram</h3>
-                    <div class="instagram-image">
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/1.jpg') }}" alt=""></a>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget links-widget">
+                            <div class="widget-title">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="list clearfix">
+                                    <li><a href="index.html">About Visarzo</a></li>
+                                    <li><a href="index.html">Why Immigrate</a></li>
+                                    <li><a href="index.html">Service Features</a></li>
+                                    <li><a href="index.html">Study Visas</a></li>
+                                    <li><a href="index.html">Apply As Citizenship</a></li>
+                                    <li><a href="index.html">Immigration Resources</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/2.jpg') }}" alt=""></a>
-                        </div>
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/3.jpg') }}" alt=""></a>
-                        </div>
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/4.jpg') }}" alt=""></a>
-                        </div>
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/5.jpg') }}" alt=""></a>
-                        </div>
-                        <div class="footer-img">
-                            <a href="#"><img src="{{ asset('frontend/img/footer/6.jpg') }}" alt=""></a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget newsletter-widget">
+                            <div class="widget-title">
+                                <h3>Newsletter Signup</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Enter your email address to get latest updates and offers from us. Also some Discount coupons.</p>
+                                <form action="#" method="post" class="newsletter-form">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email address" required="">
+                                        <button type="submit"><i class="flaticon-send"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!--End of Footer Widget Area-->
-<footer class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-7 col-12">
-                <span>©  2025 YES Education ❤️ by  <a href="#" target="_blank">Phenexsoft.com</a></span>
-            </div>
-            <div class="col-lg-6 col-md-5 col-12">
-                <div class="column-right">
-                    <span>Privacy Policy , Terms &amp; Conditions</span>
-                </div>
-            </div>
+        <div class="footer-bottom clearfix">
+            <div class="copyright pull-left"><p>(&copy;) 2020 <a href="index.html">VISARZO</a> Immigration & Visa Firm. All rights reserved.</p></div>
+            <ul class="footer-nav pull-right clearfix"> 
+                <li><a href="index.html">Privacy Policy</a></li>
+                <li><a href="index.html">Sitemap</a></li>
+                <li><a href="index.html">Terms & Conditions</a></li>
+            </ul>
         </div>
     </div>
 </footer>
+<!-- main-footer end -->
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <i class="fas fa-long-arrow-alt-up"></i>
+</button>

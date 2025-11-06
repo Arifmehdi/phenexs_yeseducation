@@ -15,580 +15,880 @@
 @endsection
 
 @section('content')
-<!--Slider Area Start-->
-<div class="slider-area slider-two">
-    <div class="preview-2">
-        <div id="nivoslider" class="slides">
-            <img src="{{ asset('frontend/img/slider/3.jpg') }}" alt="" title="#slider-1-caption1" />
-            <img src="{{ asset('frontend/img/slider/4.jpg') }}" alt="" title="#slider-1-caption2" />
-        </div>
-        <div id="slider-1-caption1" class="nivo-html-caption nivo-caption">
-            <div class="banner-content slider-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="text-content-wrapper">
-                                <div class="text-content">
-                                    <h1 class="title1">Education Needs<br>
-                                        Complete Solution</h1>
-                                    <p class="sub-title d-none d-lg-block"> There are many variations of passages of
-                                        Lorem Ipsum available, but the majority have<br>
-                                        suffered alteration in some form, by injected humour, or randomised words
-                                        which<br>
-                                        don't look even slightly believable.</p>
-                                    <div class="banner-readmore">
-                                        <a class="button-default bg-blue" href="#">View Courses</a>
-                                    </div>
+<!-- banner-section -->
+<section class="banner-section style-two">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+        <div class="slide-item">
+            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-4.jpg') }}');"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
+                        <div class="content-box centred">
+                            <span class="top-text">Effective Immigration Solution</span>
+                            <div class="title-text">
+                                <h1>Modern Immigration Firm With Right Attitude</h1>
+                                <div class="dotted-box">
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
                                 </div>
                             </div>
+                            <div class="btn-box">
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
-        <div id="slider-1-caption2" class="nivo-html-caption nivo-caption">
-            <div class="banner-content slider-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="text-content-wrapper">
-                                <div class="text-content slide-2">
-                                    <h1 class="title1">Education Needs<br>
-                                        Complete Solution</h1>
-                                    <p class="sub-title d-none d-lg-block"> There are many variations of passages of
-                                        Lorem Ipsum available, but the majority have<br>
-                                        suffered alteration in some form, by injected humour, or randomised words
-                                        which<br>
-                                        don't look even slightly believable.</p>
-                                    <div class="banner-readmore">
-                                        <a class="button-default bg-blue" href="#">View Courses</a>
-                                    </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-5.jpg') }}');"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-7 col-lg-12 col-md-12 content-column">
+                        <div class="content-box">
+                            <div class="title-text">
+                                <h1>Our Simple Approach To Immigration Process</h1>
+                                <div class="dotted-box">
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
                                 </div>
                             </div>
+                            <p>Mod tempor incididunt ut laboret dolore magna aliqua tenim adnim veniam quis nostrud exercitation ullamco.</p>
+                            <div class="btn-box">
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-6.jpg') }}');"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
+                        <div class="content-box centred">
+                            <span class="top-text">Effective Immigration Solution</span>
+                            <div class="title-text">
+                                <h1>Empowering Peoples Immigration Confidently</h1>
+                                <div class="dotted-box">
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
+                                    <span class="dotted"></span>
+                                </div>
+                            </div>
+                            <div class="btn-box">
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
-</div>
-<!--End of Slider Area-->
-<!--Course Area Start-->
-<div class="course-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>POPULAR COURSES</h3>
-                        <p>There are many variations of passages of Lorem Ipsum</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-item">
-                    <div class="single-item-image overlay-effect">
-                        <a href="#"><img src="{{ asset('frontend/img/course/1.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-item-text">
-                        <h4><a href="#">Photoshop CC 2017</a></h4>
-                        <div class="single-item-text-info">
-                            <span>By: <span>M S Nawaz</span></span>
-                            <span>Date: <span>20.5.15</span></span>
-                        </div>
-                        <p>There are many variations of sages of Lorem Ipsum available, but the mrity have suffered
-                            alteration in some orm, by injected humour,There are many but the mri have suffered
-                            alteration in some </p>
-                        <div class="single-item-content">
-                            <div class="single-item-comment-view">
-                                <span><i class="zmdi zmdi-eye"></i>59</span>
-                                <span><i class="zmdi zmdi-comments"></i>19</span>
-                            </div>
-                            <div class="single-item-rating">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-bottom">
-                        <a href="#" class="button-default">Learn Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-item">
-                    <div class="single-item-image overlay-effect">
-                        <a href="#"><img src="{{ asset('frontend/img/course/2.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-item-text">
-                        <h4><a href="#">Illustrator CC 2017</a></h4>
-                        <div class="single-item-text-info">
-                            <span>By: <span>Subas Das</span></span>
-                            <span>Date: <span>20.5.15</span></span>
-                        </div>
-                        <p>There are many variations of sages of Lorem Ipsum available, but the mrity have suffered
-                            alteration in some orm, by injected humour,There are many but the mri have suffered
-                            alteration in some </p>
-                        <div class="single-item-content">
-                            <div class="single-item-comment-view">
-                                <span><i class="zmdi zmdi-eye"></i>59</span>
-                                <span><i class="zmdi zmdi-comments"></i>19</span>
-                            </div>
-                            <div class="single-item-rating">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-bottom">
-                        <a href="#" class="button-default">Learn Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-item">
-                    <div class="single-item-image overlay-effect">
-                        <a href="#"><img src="{{ asset('frontend/img/course/3.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-item-text">
-                        <h4><a href="#">Indesign CC 2017</a></h4>
-                        <div class="single-item-text-info">
-                            <span>By: <span>Momin Boss</span></span>
-                            <span>Date: <span>20.5.15</span></span>
-                        </div>
-                        <p>There are many variations of sages of Lorem Ipsum available, but the mrity have suffered
-                            alteration in some orm, by injected humour,There are many but the mri have suffered
-                            alteration in some </p>
-                        <div class="single-item-content">
-                            <div class="single-item-comment-view">
-                                <span><i class="zmdi zmdi-eye"></i>59</span>
-                                <span><i class="zmdi zmdi-comments"></i>19</span>
-                            </div>
-                            <div class="single-item-rating">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-bottom">
-                        <a href="#" class="button-default">Learn Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 col-sm-12 text-center">
-                <a href="#" class="button-default button-large">Browse All Courses <i
-                        class="zmdi zmdi-chevron-right"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End of Course Area-->
-<!--Fun Factor Area Start-->
-<div class="fun-factor-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper white">
-                    <div class="section-title">
-                        <h3>IMPORTANT FACTS</h3>
-                        <p>There are many variations of passages of Lorem Ipsum</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-fun-factor">
-                    <h4>Teachers</h4>
-                    <h2><span class="counter">79</span>+</h2>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-fun-factor">
-                    <h4>Members</h4>
-                    <h2><span class="counter">120</span>+</h2>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-fun-factor">
-                    <h4>Courses</h4>
-                    <h2><span class="counter">36</span>+</h2>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-fun-factor">
-                    <h4>Countries</h4>
-                    <h2><span class="counter">20</span>+</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End of Fun Factor Area-->
-<!--Latest News Area Start-->
-<div class="latest-area section-padding bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>Latest News</h3>
-                        <p>There are many variations of passages</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="single-latest-item">
-                    <div class="single-latest-image">
-                        <a href="#"><img src="{{ asset('frontend/img/latest/1.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-latest-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-calendar-check"></i>25 jun 2050</span>
-                            <span><i class="zmdi zmdi-eye"></i>59</span>
-                            <span><i class="zmdi zmdi-comments"></i>19</span>
-                        </div>
-                        <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour, </p>
-                        <a href="#" class="button-default">LEARN Now</a>
-                    </div>
-                </div>
-                <div class="single-latest-item">
-                    <div class="single-latest-image">
-                        <a href="#"><img src="{{ asset('frontend/img/latest/2.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-latest-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-calendar-check"></i>25 jun 2050</span>
-                            <span><i class="zmdi zmdi-eye"></i>59</span>
-                            <span><i class="zmdi zmdi-comments"></i>19</span>
-                        </div>
-                        <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour, </p>
-                        <a href="#" class="button-default">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="single-latest-item">
-                    <div class="single-latest-image">
-                        <a href="#"><img src="{{ asset('frontend/img/latest/3.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-latest-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-calendar-check"></i>25 jun 2050</span>
-                            <span><i class="zmdi zmdi-eye"></i>59</span>
-                            <span><i class="zmdi zmdi-comments"></i>19</span>
-                        </div>
-                        <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour, </p>
-                        <a href="#" class="button-default">LEARN Now</a>
-                    </div>
-                </div>
-                <div class="single-latest-item">
-                    <div class="single-latest-image">
-                        <a href="#"><img src="{{ asset('frontend/img/latest/4.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="single-latest-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-calendar-check"></i>25 jun 2050</span>
-                            <span><i class="zmdi zmdi-eye"></i>59</span>
-                            <span><i class="zmdi zmdi-comments"></i>19</span>
-                        </div>
-                        <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected humour, </p>
-                        <a href="#" class="button-default">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End of Latest News Area-->
-<!--Testimonial Area Start-->
-<div class="testimonial-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 offset-lg-0 col-md-12 col-12">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                        <div class="testimonial-image-slider text-center">
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/1.jpg') }}" alt="testimonial 1" />
-                            </div>
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/2.jpg') }}" alt="testimonial 2" />
-                            </div>
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/3.jpg') }}" alt="testimonial 3" />
-                            </div>
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/1.jpg') }}" alt="testimonial 1" />
-                            </div>
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/2.jpg') }}" alt="testimonial 2" />
-                            </div>
-                            <div class="sin-testiImage">
-                                <img src="{{ asset('frontend/img/testimonial/3.jpg') }}" alt="testimonial 3" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-text-slider text-center">
-                    <div class="sin-testiText">
-                        <h2>M S Nawaz </h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour, or randomised words which don't look
-                            even slightly believable.</p>
-                    </div>
-                    <div class="sin-testiText">
-                        <h2>Chowchilla Madera</h2>
-                        <p>Nam nec tellus a odio tincidunt This lorem is Photoshop's version of Lorem Ipsum. Proin
-                            gravida nibh vel velit auctor aliquet. Aenean nisi sollicitudin, lorem quis bibendum auctor,
-                            nisi elit consequat ipsum gravida.</p>
-                    </div>
-                    <div class="sin-testiText">
-                        <h2>Kattie Luis</h2>
-                        <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin gravida
-                            nibh vel velit auctor aliquet. Aenean tincidunt sollicitudin, lorem quis bibendum auctor,
-                            nisi elit consequat ipsum Photoshop.</p>
-                    </div>
-                    <div class="sin-testiText">
-                        <h2>M S Nawaz </h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour, or randomised words which don't look
-                            even slightly believable.</p>
-                    </div>
-                    <div class="sin-testiText">
-                        <h2>Chowchilla Madera</h2>
-                        <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin gravida
-                            nibh vel velit auctor aliquet. Aenean sollicitudin, aliquet lorem quis tellus velit bibendum
-                            auctor, nisi elit consequat ipsum</p>
-                    </div>
-                    <div class="sin-testiText">
-                        <h2>Kattie Luis</h2>
-                        <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin gravida
-                            nibh vel velit auctor aliquet. Aenean sollicitudin, lorem gravida tincidunt quis bibendum
-                            auctor, nisi elit consequat ipsum</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End of Testimonial Area-->
-<!--Event Area Start-->
-<div class="event-area section-padding bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper">
-                    <div class="section-title">
-                        <h3>OUR EVENTS</h3>
-                        <p>There are many variations of passages</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="#">
-                            <img src="{{ asset('frontend/img/event/1.jpg') }}" alt="">
-                            <span><span>15</span>Jun</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Comilla Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="#">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="#">
-                            <img src="{{ asset('frontend/img/event/2.jpg') }}" alt="">
-                            <span><span>15</span>Jun</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Jesore Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="#">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-event-item">
-                    <div class="single-event-image">
-                        <a href="#">
-                            <img src="{{ asset('frontend/img/event/3.jpg') }}" alt="">
-                            <span><span>15</span>Jun</span>
-                        </a>
-                    </div>
-                    <div class="single-event-text">
-                        <h3><a href="#">Learn English in ease</a></h3>
-                        <div class="single-item-comment-view">
-                            <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
-                            <span><i class="zmdi zmdi-pin"></i>Dhaka Bangladesh</span>
-                        </div>
-                        <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected humour, amr sarata
-                            din megla....</p>
-                        <a class="button-default" href="#">LEARN Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
+<!-- banner-section end -->
 
 
+<!-- feature-style-two -->
+<section class="feature-style-two">
+    <div class="auto-container">
+        <div class="inner-container">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-two">
+                        <div class="inner-box">
+                            <div class="title-inner">
+                                <div class="icon-box"><i class="flaticon-management"></i></div>
+                                <h3>Solving Complex Challenges</h3>
+                            </div>
+                            <div class="text">
+                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
+                            </div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-two">
+                        <div class="inner-box">
+                            <div class="title-inner">
+                                <div class="icon-box"><i class="flaticon-work"></i></div>
+                                <h3>Ready-To-Work Immigration Force</h3>
+                            </div>
+                            <div class="text">
+                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
+                            </div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <div class="feature-block-two">
+                        <div class="inner-box">
+                            <div class="title-inner">
+                                <div class="icon-box"><i class="flaticon-payment-method"></i></div>
+                                <h3>Reliable Taskings Apply Visa</h3>
+                            </div>
+                            <div class="text">
+                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
+                            </div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature-style-two end -->
+
+
+<!-- about-style-two -->
+<section class="about-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_3">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>who are visarzo</p>
+                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2000</h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur magnid.</p>
+                        </div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-two">Learn More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_2">
+                    <div class="image-box">
+                        <figure class="image-1"><img src="{{ asset('frontend/assets/images/resource/about-2.jpg') }}" alt=""></figure>
+                        <figure class="image-2"><img src="{{ asset('frontend/assets/images/resource/about-3.jpg') }}" alt=""></figure>
+                        <figure class="image-3"><img src="{{ asset('frontend/assets/images/resource/about-4.jpg') }}" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-style-two end -->
+
+
+<!-- service-style-two -->
+<section class="service-style-two bg-color-3">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services</h2>
+            <span>Sponsoring and managing work visas parts now becoming results the experience <br />aute irure dolor in reprehenderit cepteur sint ocaecat cupidatate</span>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="more-text centred">
+        <div class="auto-container">
+            <div class="inner">
+                <h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- service-style-two end -->
+
+
+<!-- apply-style-two -->
+<section class="apply-style-two">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Following Steps Apply Online Visa</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 1</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <i class="flaticon-document"></i>
+                        </div>
+                        <h3><a href="index-2.html">Fill In The <br />Required Form</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 2</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <i class="flaticon-copy"></i>
+                        </div>
+                        <h3><a href="index-2.html">Submit All Your <br />Attested Documents</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 3</h6>
+                        <div class="icon-box"><i class="flaticon-plane"></i></div>
+                        <h3><a href="index-2.html">Get Ready To <br />Receive your Visa</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- apply-style-two -->
+
+
+<!-- immigration-style-two -->
+<section class="immigration-style-two">
+    <div class="outer-container">
+        <div class="three-item-carousel-2 owl-carousel owl-theme owl-nav-none owl-dots-none">
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-7.jpg') }}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
+                        <h2>World Immigration Trends</h2>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>  
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-8.jpg') }}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
+                        <h2>USA Immigration Service</h2>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div> 
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-9.jpg') }}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
+                        <h2>Global Immigration Service</h2>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>
+<!-- immigration-style-two end -->
+
+
+<!-- offer-section -->
+<section class="offer-section">
+    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-5.png') }}');"></div>
+    <div class="auto-container">
+        <div class="sec-title light centred">
+            <p>countries we offer support</p>
+            <h2>Apply For Quick Visa</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+            <div class="single-item">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-1.jpg') }}" alt=""></figure>
+                    <div class="text"><h4><a href="index-2.html">United States</a></h4></div>
+                </div>
+            </div>
+            <div class="single-item">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-2.jpg') }}" alt=""></figure>
+                    <div class="text"><h4><a href="index-2.html">Europe</a></h4></div>
+                </div>
+            </div>
+            <div class="single-item">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-3.jpg') }}" alt=""></figure>
+                    <div class="text"><h4><a href="index-2.html">Australia</a></h4></div>
+                </div>
+            </div>
+            <div class="single-item">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-4.jpg') }}" alt=""></figure>
+                    <div class="text"><h4><a href="index-2.html">NewZealand</a></h4></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- offer-section end -->
+
+
+<!-- team-section -->
+<section class="team-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Our Best Experts Ready To Help</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-1.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">Charles Henry</a></h4>
+                            <span class="designation">CEO - Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-2.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">edward matthew</a></h4>
+                            <span class="designation">Immigration Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-3.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">ben christopher</a></h4>
+                            <span class="designation">Senior Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-4.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">lindys thomas</a></h4>
+                            <span class="designation">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-section end -->
+
+
+<!-- funfact-style-two -->
+<section class="funfact-style-two">
+    <div class="auto-container">
+        <div class="inner-container wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-group-of-users-silhouette"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="560">0</span>
+                            </div>
+                            <h4>We Have Worked With Clients</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-visa"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
+                            </div>
+                            <h4>Successfull Visa Process Rate</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-geography"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="24">0</span><span>hrs</span>
+                            </div>
+                            <h4>Application Approval Time We Follow</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- funfact-style-two end -->
+
+
+<!-- testimonial-style-two -->
+<section class="testimonial-style-two bg-color-3">
+    
+    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-6.png') }}');"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>clients testimonials</p>
+            <h2>What Customers <br />Saying About Visarzo</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial-style-two end -->
+
+
+<!-- news-section -->
+<section class="news-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>World Immigration News & Updates</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-1.jpg') }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>18</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">Covid-19 And Its Impact On USA Immigration</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="index.html">By Admin</a></li>
+                                <li><a href="index.html">Study Visa</a>,<a href="index.html">Work</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-2.jpg') }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>17</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">UK To Offers Point-Based Immigration Process</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="index.html">By Admin</a></li>
+                                <li><a href="index.html">Europe Permit</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-3.jpg') }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>16</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">Kickstart Your Visa ApprovalWith 4 Easy Steps</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="index.html">By Admin</a></li>
+                                <li><a href="index.html">Immigration</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- news-section end -->
+
+
+<!-- clients-section -->
+<section class="clients-section">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+        </div>
+    </div>
+</section>
+<!-- clients-section end -->
 @endsection
 @push('js')
-<script>
-$(document).ready(function() {
-    // Initialize Nivo Slider with autoplay
-    $('#nivoslider').nivoSlider({
-        effect: 'random', // You can change this to specific effects like 'fade', 'slideInRight', etc.
-        slices: 15,
-        boxCols: 8,
-        boxRows: 4,
-        animSpeed: 500,
-        pauseTime: 5000, // 5 seconds between slides
-        startSlide: 0,
-        directionNav: true,
-        controlNav: true,
-        controlNavThumbs: false,
-        pauseOnHover: true, // This enables pause on hover
-        manualAdvance: false, // Allow automatic advancement
-        prevText: 'Prev',
-        nextText: 'Next',
-        randomStart: false,
-        beforeChange: function(){},
-        afterChange: function(){},
-        slideshowEnd: function(){},
-        lastSlide: function(){},
-        afterLoad: function(){}
-    });
 
-    // Alternative method if the above doesn't work perfectly
-    // This ensures autoplay starts and pause on hover works
-    setTimeout(function() {
-        const nivoSlider = $('#nivoslider');
-        
-        // Force start slideshow
-        nivoSlider.data('nivoslider').start();
-        
-        // Enhanced hover pause functionality
-        nivoSlider.hover(function() {
-            // Pause on hover
-            nivoSlider.data('nivoslider').stop();
-        }, function() {
-            // Resume when mouse leaves
-            nivoSlider.data('nivoslider').start();
-        });
-    }, 1000);
-});
-
-// Fallback method using pure JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.preview-2');
-    let slideInterval;
-    
-    function startAutoSlide() {
-        // This will work with Nivo Slider's internal methods
-        const nivoSlider = $('#nivoslider').data('nivoslider');
-        if (nivoSlider) {
-            nivoSlider.start();
-        }
-    }
-    
-    function stopAutoSlide() {
-        const nivoSlider = $('#nivoslider').data('nivoslider');
-        if (nivoSlider) {
-            nivoSlider.stop();
-        }
-    }
-    
-    // Add hover events to the slider container
-    if (sliderContainer) {
-        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-        sliderContainer.addEventListener('mouseleave', startAutoSlide);
-    }
-    
-    // Start autoplay initially
-    setTimeout(startAutoSlide, 2000);
-});
-</script>
-
-<!-- Your existing Owl Carousel code -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Select all Owl Carousel instances on the page
-    const carousels = document.querySelectorAll('.owl-carousel');
-
-    carousels.forEach(function(carousel) {
-        // Wait until Owl Carousel initializes
-        const waitForInit = setInterval(function() {
-            if (carousel.classList.contains('owl-loaded')) {
-                clearInterval(waitForInit);
-
-                // Add hover pause/resume
-                carousel.addEventListener('mouseenter', function() {
-                    $(carousel).trigger('stop.owl.autoplay');
-                });
-
-                carousel.addEventListener('mouseleave', function() {
-                    // Resume with your desired autoplay timeout
-                    $(carousel).trigger('play.owl.autoplay', [3000]); // hero slider 2s
-                });
-            }
-        }, 100);
-    });
-});
-</script>
-
-<!-- Lazy Background Loader Script -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const lazyBg = document.querySelectorAll(".lazy-bg");
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bgSection = entry.target;
-                const bgUrl = bgSection.getAttribute("data-bg");
-                bgSection.style.backgroundImage = `url('${bgUrl}')`;
-                observer.unobserve(bgSection);
-            }
-        });
-    });
-    lazyBg.forEach(section => observer.observe(section));
-});
-</script>
 @endpush
