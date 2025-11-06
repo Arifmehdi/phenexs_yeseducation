@@ -14,10 +14,15 @@
             <p>to continue to your account</p>
         </div>
 
-        <form class="login-form" id="loginForm" novalidate>
+        <!-- <form class="login-form" id="loginForm"  novalidate> -->
+        <form class="login-form" action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <div class="input-wrapper">
                     <input type="email" id="email" name="email" required autocomplete="email">
+                    @error('email')
+                        <span class="text-danger small">{{ $message }}</span>
+                    @enderror
                     <label for="email">Email</label>
                     <div class="input-line"></div>
                     <div class="ripple-container"></div>
@@ -28,6 +33,9 @@
             <div class="form-group">
                 <div class="input-wrapper password-wrapper">
                     <input type="password" id="password" name="password" required autocomplete="current-password">
+                    @error('password')
+                        <span class="text-danger small">{{ $message }}</span>
+                    @enderror
                     <label for="password">Password</label>
                     <div class="input-line"></div>
                     <button type="button" class="password-toggle" id="passwordToggle"

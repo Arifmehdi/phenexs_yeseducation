@@ -1,4 +1,4 @@
-@extends('frontend.layouts.ecommercemaster')
+@extends('frontend.layouts.master')
 
 @section('content')
 <section class="my-0 section">
@@ -72,7 +72,12 @@
               @endif
 
             <li class="list-group-item">
-              <a href="{{ route('logout') }}" class="text-danger">Logout</a>
+
+              <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button type="submit"
+                      class="text-danger" style="background:none;border:none;padding:0;cursor:pointer;">Logout</button>
+              </form>
             </li>
           </ul>
         </div>
