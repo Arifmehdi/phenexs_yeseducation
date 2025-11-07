@@ -15,7 +15,8 @@
 
 @section('content')
 <!--Page Title-->
-<section class="page-title" style="background-image: url('{{asset('frontend/assets/images/background/page-title.jpg')}}');">
+<section class="page-title"
+    style="background-image: url('{{asset('frontend/assets/images/background/page-title.jpg')}}');">
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
@@ -36,80 +37,94 @@
 <!--End Page Title-->
 
 
-<!-- training-section -->
-<section class="training-section sec-pad-2">
+<!-- immigration-section -->
+<section class="immigration-section bg-color-3">
     <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <div class="training-block-one">
-                <div class="inner-box">
-                    <div class="content-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/training-1.jpg') }}" alt=""></figure>
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services <br />Following Countries</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
                         <div class="text">
-                            <h4>Citizenship Test</h4>
-                        </div>
-                    </div>
-                    <div class="overlay-box">
-                        <div class="text">
-                            <h4>Citizenship Test</h4>
-                            <p>Integer lobortis se conseqat nulla viverra lorem dapibus prodent diam ipsum ...</p>
-                            <a href="index.html"><span>Read More</span><i class="flaticon-send"></i></a>
+                            <h3><a href="index.html">United States</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="training-block-one">
-                <div class="inner-box">
-                    <div class="content-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/training-2.jpg') }}" alt=""></figure>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
                         <div class="text">
-                            <h4>TOEFL</h4>
-                        </div>
-                    </div>
-                    <div class="overlay-box">
-                        <div class="text">
-                            <h4>TOEFL</h4>
-                            <p>Integer lobortis se conseqat nulla viverra lorem dapibus prodent diam ipsum ...</p>
-                            <a href="index.html"><span>Read More</span><i class="flaticon-send"></i></a>
+                            <h3><a href="index.html">Canada</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="training-block-one">
-                <div class="inner-box">
-                    <div class="content-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/training-3.jpg') }}" alt=""></figure>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
                         <div class="text">
-                            <h4>Take IELTS</h4>
-                        </div>
-                    </div>
-                    <div class="overlay-box">
-                        <div class="text">
-                            <h4>Take IELTS</h4>
-                            <p>Integer lobortis se conseqat nulla viverra lorem dapibus prodent diam ipsum ...</p>
-                            <a href="index.html"><span>Read More</span><i class="flaticon-send"></i></a>
+                            <h3><a href="index.html">Australia</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="training-block-one">
-                <div class="inner-box">
-                    <div class="content-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/training-4.jpg') }}" alt=""></figure>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
                         <div class="text">
-                            <h4>PTE Coaching</h4>
+                            <h3><a href="index.html">NewZealand</a></h3>
                         </div>
                     </div>
-                    <div class="overlay-box">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
                         <div class="text">
-                            <h4>PTE Coaching</h4>
-                            <p>Integer lobortis se conseqat nulla viverra lorem dapibus prodent diam ipsum ...</p>
-                            <a href="index.html"><span>Read More</span><i class="flaticon-send"></i></a>
+                            <h3><a href="index.html">Europe</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">United Kingdom</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
     </div>
 </section>
-<!-- training-section end -->
+<!-- immigration-section end -->
 @endsection

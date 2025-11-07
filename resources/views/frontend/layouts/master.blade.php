@@ -45,7 +45,7 @@
 
 
         <!-- switcher menu -->
-        <div class="switcher">
+        {{--<div class="switcher">
             <div class="switch_btn">
                 <button><i class="fas fa-palette"></i></button>
             </div>
@@ -71,7 +71,7 @@
                     </ul>
                 </div> 
             </div>
-        </div>
+        </div>--}}
         <!-- end switcher menu -->
 
 

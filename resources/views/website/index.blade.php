@@ -19,7 +19,8 @@
 <section class="banner-section style-two">
     <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
         <div class="slide-item">
-            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-4.jpg') }}');"></div>
+            <div class="image-layer"
+                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-4.jpg') }}');"></div>
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
@@ -34,15 +35,17 @@
                                 </div>
                             </div>
                             <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
+                                    Solutions</a>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="slide-item">
-            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-5.jpg') }}');"></div>
+            <div class="image-layer"
+                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-5.jpg') }}');"></div>
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-xl-7 col-lg-12 col-md-12 content-column">
@@ -55,17 +58,20 @@
                                     <span class="dotted"></span>
                                 </div>
                             </div>
-                            <p>Mod tempor incididunt ut laboret dolore magna aliqua tenim adnim veniam quis nostrud exercitation ullamco.</p>
+                            <p>Mod tempor incididunt ut laboret dolore magna aliqua tenim adnim veniam quis nostrud
+                                exercitation ullamco.</p>
                             <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
+                                    Solutions</a>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="slide-item">
-            <div class="image-layer" style="background-image: url('{{ asset('frontend/assets/images/banner/banner-6.jpg') }}');"></div>
+            <div class="image-layer"
+                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-6.jpg') }}');"></div>
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
@@ -80,11 +86,12 @@
                                 </div>
                             </div>
                             <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover Solutions</a>
+                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
+                                    Solutions</a>
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -107,7 +114,8 @@
                             <div class="text">
                                 <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
                             </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i
+                                        class="flaticon-send"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -121,7 +129,8 @@
                             <div class="text">
                                 <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
                             </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i
+                                        class="flaticon-send"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +144,8 @@
                             <div class="text">
                                 <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
                             </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="index-2.html"><span>Read More</span><i
+                                        class="flaticon-send"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -163,18 +173,25 @@
                             </div>
                         </div>
                         <div class="text">
-                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur magnid.</p>
+                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur magnid.</p>
                         </div>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-two">Learn More<i class="flaticon-send"></i></a></div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-two">Learn More<i
+                                    class="flaticon-send"></i></a></div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div id="image_block_2">
                     <div class="image-box">
-                        <figure class="image-1"><img src="{{ asset('frontend/assets/images/resource/about-2.jpg') }}" alt=""></figure>
-                        <figure class="image-2"><img src="{{ asset('frontend/assets/images/resource/about-3.jpg') }}" alt=""></figure>
-                        <figure class="image-3"><img src="{{ asset('frontend/assets/images/resource/about-4.jpg') }}" alt=""></figure>
+                        <figure class="image-1"><img src="{{ asset('frontend/assets/images/resource/about-2.jpg') }}"
+                                alt=""></figure>
+                        <figure class="image-2"><img src="{{ asset('frontend/assets/images/resource/about-3.jpg') }}"
+                                alt=""></figure>
+                        <figure class="image-3"><img src="{{ asset('frontend/assets/images/resource/about-4.jpg') }}"
+                                alt=""></figure>
                     </div>
                 </div>
             </div>
@@ -190,7 +207,8 @@
         <div class="sec-title centred">
             <p>countries we offer support</p>
             <h2>Immigration & Visa Services</h2>
-            <span>Sponsoring and managing work visas parts now becoming results the experience <br />aute irure dolor in reprehenderit cepteur sint ocaecat cupidatate</span>
+            <span>Sponsoring and managing work visas parts now becoming results the experience <br />aute irure dolor in
+                reprehenderit cepteur sint ocaecat cupidatate</span>
             <div class="dotted-box">
                 <span class="dotted"></span>
                 <span class="dotted"></span>
@@ -200,136 +218,164 @@
         <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-manager"></i></div>
                             <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-flight"></i></div>
                             <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-air-freight"></i></div>
                             <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-manager"></i></div>
                             <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-flight"></i></div>
                             <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-air-freight"></i></div>
                             <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="assets/images/service/service-1.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-manager"></i></div>
                             <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-flight"></i></div>
                             <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="service-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
                     <div class="lower-content">
                         <div class="box">
                             <div class="icon-box"><i class="flaticon-air-freight"></i></div>
                             <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                                perspiciatis unde omnis iste.</p>
                         </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="more-text centred">
+    <!-- <div class="more-text centred">
         <div class="auto-container">
             <div class="inner">
-                <h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3>
+                <h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get
+                            In Touch</span><i class="flaticon-send"></i></a></h3>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 <!-- service-style-two end -->
 
 
 <!-- apply-style-two -->
-<section class="apply-style-two">
+<!-- <section class="apply-style-two">
     <div class="auto-container">
         <div class="top-inner">
             <div class="row clearfix">
@@ -346,18 +392,22 @@
                 </div>
                 <div class="col-lg-7 col-md-12 col-sm-12 text-column">
                     <div class="text">
-                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <h6>Step 1</h6>
                         <div class="icon-box">
-                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <div class="arrow"
+                                style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');">
+                            </div>
                             <i class="flaticon-document"></i>
                         </div>
                         <h3><a href="index-2.html">Fill In The <br />Required Form</a></h3>
@@ -366,11 +416,14 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <h6>Step 2</h6>
                         <div class="icon-box">
-                            <div class="arrow" style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');"></div>
+                            <div class="arrow"
+                                style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');">
+                            </div>
                             <i class="flaticon-copy"></i>
                         </div>
                         <h3><a href="index-2.html">Submit All Your <br />Attested Documents</a></h3>
@@ -379,7 +432,8 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <h6>Step 3</h6>
                         <div class="icon-box"><i class="flaticon-plane"></i></div>
@@ -390,53 +444,60 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- apply-style-two -->
 
 
 <!-- immigration-style-two -->
-<section class="immigration-style-two">
+<!-- <section class="immigration-style-two">
     <div class="outer-container">
         <div class="three-item-carousel-2 owl-carousel owl-theme owl-nav-none owl-dots-none">
             <div class="immigration-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-7.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img
+                            src="{{ asset('frontend/assets/images/resource/immigration-7.jpg') }}" alt=""></figure>
                     <div class="content-box">
                         <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
                         <h2>World Immigration Trends</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
+                                    class="flaticon-send"></i></a></div>
                     </div>
                 </div>
-            </div>  
+            </div>
             <div class="immigration-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-8.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img
+                            src="{{ asset('frontend/assets/images/resource/immigration-8.jpg') }}" alt=""></figure>
                     <div class="content-box">
                         <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
                         <h2>USA Immigration Service</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
+                                    class="flaticon-send"></i></a></div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="immigration-block-two">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-9.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img
+                            src="{{ asset('frontend/assets/images/resource/immigration-9.jpg') }}" alt=""></figure>
                     <div class="content-box">
                         <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
                         <h2>Global Immigration Service</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
+                                    class="flaticon-send"></i></a></div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- immigration-style-two end -->
 
 
 <!-- offer-section -->
-<section class="offer-section">
-    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-5.png') }}');"></div>
+<!-- <section class="offer-section">
+    <div class="pattern-layer"
+        style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-5.png') }}');"></div>
     <div class="auto-container">
         <div class="sec-title light centred">
             <p>countries we offer support</p>
@@ -450,31 +511,43 @@
         <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
             <div class="single-item">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-1.jpg') }}" alt=""></figure>
-                    <div class="text"><h4><a href="index-2.html">United States</a></h4></div>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-1.jpg') }}"
+                            alt=""></figure>
+                    <div class="text">
+                        <h4><a href="index-2.html">United States</a></h4>
+                    </div>
                 </div>
             </div>
             <div class="single-item">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-2.jpg') }}" alt=""></figure>
-                    <div class="text"><h4><a href="index-2.html">Europe</a></h4></div>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-2.jpg') }}"
+                            alt=""></figure>
+                    <div class="text">
+                        <h4><a href="index-2.html">Europe</a></h4>
+                    </div>
                 </div>
             </div>
             <div class="single-item">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-3.jpg') }}" alt=""></figure>
-                    <div class="text"><h4><a href="index-2.html">Australia</a></h4></div>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-3.jpg') }}"
+                            alt=""></figure>
+                    <div class="text">
+                        <h4><a href="index-2.html">Australia</a></h4>
+                    </div>
                 </div>
             </div>
             <div class="single-item">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-4.jpg') }}" alt=""></figure>
-                    <div class="text"><h4><a href="index-2.html">NewZealand</a></h4></div>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-4.jpg') }}"
+                            alt=""></figure>
+                    <div class="text">
+                        <h4><a href="index-2.html">NewZealand</a></h4>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- offer-section end -->
 
 
@@ -496,14 +569,16 @@
                 </div>
                 <div class="col-lg-7 col-md-12 col-sm-12 text-column">
                     <div class="text">
-                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row clearfix">
             <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box">
                             <img src="{{ asset('frontend/assets/images/team/team-1.jpg') }}" alt="">
@@ -523,7 +598,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box">
                             <img src="{{ asset('frontend/assets/images/team/team-2.jpg') }}" alt="">
@@ -543,7 +619,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box">
                             <img src="{{ asset('frontend/assets/images/team/team-3.jpg') }}" alt="">
@@ -563,7 +640,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box">
                             <img src="{{ asset('frontend/assets/images/team/team-4.jpg') }}" alt="">
@@ -587,56 +665,271 @@
 </section>
 <!-- team-section end -->
 
+        <!-- immigration-section -->
+        <section class="immigration-section bg-color-3">
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <p>countries we offer support</p>
+                    <h2>Immigration & Visa Services <br />Following Countries</h2>
+                    <div class="dotted-box">
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">United States</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">Canada</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">Australia</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">NewZealand</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">Europe</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
+                                <div class="text">
+                                    <h3><a href="index.html">United Kingdom</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
+            </div>
+        </section>
+        <!-- immigration-section end -->
+
 
 <!-- funfact-style-two -->
-<section class="funfact-style-two">
+<section class="funfact-style-two" style="background:#2E2483; padding: 80px 0;">
+    <div class="container">
+        <!-- Headline -->
+        <h2 style="color:#ffffff; text-align:center; font-size:36px; font-weight:700; margin-bottom:50px;">
+            WHY YES EDUCATION ?
+        </h2>
+        <div class="row justify-content-center text-center text-white">
+
+            <!-- Counter 1 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="70000">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Hours of counselling experience
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 2 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="2">0</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Branch offices with more on the way
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 3 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="600">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Student placed Abroad
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 4 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Visa succès rate (one of the best in the country)
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 1 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="10" data-stop="10">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Years of experience
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 2 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span>US$6.5 Million</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Scholarships worth US $4.5 million
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 3 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span>1-1</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Scholarships worth US $4.5 million
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 4 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="21">0</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Universities have exclusive
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- funfact-style-two end -->
+
+<!-- feature-section -->
+<section class="feature-section sec-pad-2">
     <div class="auto-container">
-        <div class="inner-container wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
-                    <div class="counter-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-group-of-users-silhouette"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="560">0</span>
-                            </div>
-                            <h4>We Have Worked With Clients</h4>
-                        </div>
+                <!-- Headline -->
+        <h2 style="text-align:center; font-size:36px; font-weight:700; margin-bottom:50px;">
+            SEE OUR TOP COURSES
+        </h2>
+        <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">MSC Criminal Justice</a></h3>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
-                    <div class="counter-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-visa"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
-                            </div>
-                            <h4>Successfull Visa Process Rate</h4>
-                        </div>
+            </div>
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">MSC Digital Marketing</a></h3>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
-                    <div class="counter-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-geography"></i></div>
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="1500" data-stop="24">0</span><span>hrs</span>
-                            </div>
-                            <h4>Application Approval Time We Follow</h4>
-                        </div>
+            </div>
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">MSC Project Management</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                    <div class="text">
+                        <h3><a href="index.html">MSC Computer Science</a></h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- funfact-style-two end -->
+<!-- feature-section end -->
+
 
 
 <!-- testimonial-style-two -->
 <section class="testimonial-style-two bg-color-3">
-    
-    <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-6.png') }}');"></div>
+    <div class="pattern-layer"
+        style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-6.png') }}');"></div>
     <div class="auto-container">
         <div class="sec-title centred">
             <p>clients testimonials</p>
@@ -651,7 +944,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -667,7 +961,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -675,7 +970,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -691,7 +987,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -699,7 +996,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -715,7 +1013,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -723,7 +1022,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -739,7 +1039,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -747,7 +1048,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -763,7 +1065,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -771,7 +1074,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -787,7 +1091,8 @@
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
+                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
                         </div>
                     </div>
                 </div>
@@ -816,56 +1121,72 @@
                 </div>
                 <div class="col-lg-7 col-md-12 col-sm-12 text-column">
                     <div class="text">
-                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-1.jpg') }}" alt=""></a></figure>
+                        <figure class="image-box"><a href="blog-details.html"><img
+                                    src="{{ asset('frontend/assets/images/news/news-1.jpg') }}" alt=""></a></figure>
                         <div class="lower-content">
-                            <div class="post-date"><h2>18</h2><span>apr</span></div>
+                            <div class="post-date">
+                                <h2>18</h2><span>apr</span>
+                            </div>
                             <h3><a href="blog-details.html">Covid-19 And Its Impact On USA Immigration</a></h3>
                             <ul class="post-info clearfix">
                                 <li><a href="index.html">By Admin</a></li>
                                 <li><a href="index.html">Study Visa</a>,<a href="index.html">Work</a></li>
                             </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-2.jpg') }}" alt=""></a></figure>
+                        <figure class="image-box"><a href="blog-details.html"><img
+                                    src="{{ asset('frontend/assets/images/news/news-2.jpg') }}" alt=""></a></figure>
                         <div class="lower-content">
-                            <div class="post-date"><h2>17</h2><span>apr</span></div>
+                            <div class="post-date">
+                                <h2>17</h2><span>apr</span>
+                            </div>
                             <h3><a href="blog-details.html">UK To Offers Point-Based Immigration Process</a></h3>
                             <ul class="post-info clearfix">
                                 <li><a href="index.html">By Admin</a></li>
                                 <li><a href="index.html">Europe Permit</a></li>
                             </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('frontend/assets/images/news/news-3.jpg') }}" alt=""></a></figure>
+                        <figure class="image-box"><a href="blog-details.html"><img
+                                    src="{{ asset('frontend/assets/images/news/news-3.jpg') }}" alt=""></a></figure>
                         <div class="lower-content">
-                            <div class="post-date"><h2>16</h2><span>apr</span></div>
+                            <div class="post-date">
+                                <h2>16</h2><span>apr</span>
+                            </div>
                             <h3><a href="blog-details.html">Kickstart Your Visa ApprovalWith 4 Easy Steps</a></h3>
                             <ul class="post-info clearfix">
                                 <li><a href="index.html">By Admin</a></li>
                                 <li><a href="index.html">Immigration</a></li>
                             </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -880,13 +1201,51 @@
 <section class="clients-section">
     <div class="auto-container">
         <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
         </div>
     </div>
 </section>
+<!-- clients-section end -->
+ <!-- clients-section -->
+<!-- <section class="clients-section">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+
+        </div>
+    </div>
+</section> -->
+<!-- clients-section end -->
+
+<!-- clients-section -->
+<!-- <section class="clients-section">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+            src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+            src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+        </div>
+    </div>
+</section> -->
 <!-- clients-section end -->
 @endsection
 @push('js')
