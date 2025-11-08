@@ -6,16 +6,16 @@
             <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Company</th>
-            <th scope="col">Testimomial Message (English)</th>
-            <th scope="col">Testimomial Message (Bangla)</th>
+            <th scope="col">Testimomial Message</th>
             <th scope="col">Rating</th>
+            <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
         <?php $i = (($testimonials->currentPage() - 1) * $testimonials->perPage() + 1); ?>
-        @forelse ($testimonials as $testimonial)
+        @forelse ($testimonials as $key => $testimonial)
             <tr>
-                <td scope="row">{{ $i++ }}</td>
+                <td scope="row">{{ ++$key }}</td>
                 <td scope="row">
                     <div class="dropdown show">
                         <a class="btn btn-primary btn-xs dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,17 +32,35 @@
                     </div>
                 </td>
                 <td>
-                    @if ($testimonial->image)
-                        <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->name }}" width="50">
-                    @else
-                        N/A
-                    @endif
+                @if ($testimonial->image)
+                    <img src="{{ asset('storage/testimonial/' . $testimonial->image) }}" 
+                        alt="{{ $testimonial->name }}" 
+                        width="50">
+                @else
+                    N/A
+                @endif
+
                 </td>
                 <td>{{ Str::limit($testimonial->name, 50) }}</td>
                 <td>{{ Str::limit($testimonial->company, 30) }}</td>
                 <td>{!! Str::limit(strip_tags($testimonial->text_en), 30) !!}</td>
-                <td>{!! Str::limit(strip_tags($testimonial->text_bn), 30) !!}</td>
-                <td>{{ $testimonial->rating }}</td>
+                <td>
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if ($i <= $testimonial->rating)
+                            &#9733; <!-- filled star -->
+                        @else
+                            &#9734; <!-- empty star -->
+                        @endif
+                    @endfor
+                </td>
+
+                <td>        
+                    @if ($testimonial->active)
+                        <span class="badge badge-success">Actived</span>
+                    @else
+                        <span class="badge badge-danger">Inactived</span>
+                    @endif
+                </td>
             </tr>
         @empty
             <tr>

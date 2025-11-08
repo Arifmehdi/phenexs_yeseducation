@@ -73,6 +73,7 @@ class FrontendController extends Controller
             ->get();
 
         $data['newses'] = BlogPost::whereActive(true)->limit(3)->get();
+        $data['testimonials'] = Testimonial::whereActive(true)->select('name', 'company', 'address', 'text_en','rating', 'image')->get();
         $data['sliders'] = FrontSlider::whereActive(true)
             ->select('featured_image','title','link','btn_txt')
             ->get();

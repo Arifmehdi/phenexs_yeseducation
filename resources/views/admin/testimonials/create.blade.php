@@ -32,17 +32,17 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="text">Testimonial Text (English)</label>
-                            <textarea name="text_en" id="text_en" class="form-control @error('text') is-invalid @enderror" rows="5" required>{{ old('text') }}</textarea>
-                            @error('text')
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}">
+                            @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="text">Testimonial Text (Bangla)</label>
-                            <textarea name="text_bn" id="text_bn" class="form-control @error('text') is-invalid @enderror" rows="5" required>{{ old('text') }}</textarea>
+                            <label for="text">Testimonial Text</label>
+                            <textarea name="text_en" id="text_en" class="form-control @error('text') is-invalid @enderror" rows="5" required>{{ old('text') }}</textarea>
                             @error('text')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -67,6 +67,9 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="active"><input type="checkbox" name="active" id="active" checked> Active</label>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('testimonials.index') }}" class="btn btn-secondary">Cancel</a>
                     </form>
@@ -81,10 +84,6 @@
 
     ClassicEditor.create(document.querySelector('#text_en'))
         .then(editor => editors['text_en'] = editor)
-        .catch(error => console.error(error));
-
-    ClassicEditor.create(document.querySelector('#text_bn'))
-        .then(editor => editors['text_bn'] = editor)
         .catch(error => console.error(error));
 
     document.querySelector('form').addEventListener('submit', function(e) {

@@ -146,7 +146,7 @@
                 <div id="content_block_3">
                     <div class="content-box">
                         <div class="sec-title">
-                            <p>who are visarzo</p>
+                            <p>who are YES Education</p>
                             <h2>The Leading Visa & Immigration Expert Lawyers Since 2000</h2>
                             <div class="dotted-box">
                                 <span class="dotted"></span>
@@ -456,7 +456,7 @@ $features = [
     <!-- <div class="more-text centred">
         <div class="auto-container">
             <div class="inner">
-                <h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get
+                <h3>YES Education is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get
                             In Touch</span><i class="flaticon-send"></i></a></h3>
             </div>
         </div>
@@ -665,7 +665,7 @@ $features = [
                 </div>
             </div>
         </div>
-        <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
+        <!-- <div class="more-text"><h3>YES Education is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
     </div>
 </section>
 <!-- immigration-section end -->
@@ -863,7 +863,7 @@ $features = [
     <div class="auto-container">
         <div class="sec-title centred">
             <p>clients testimonials</p>
-            <h2>What Customers <br />Saying About Visarzo</h2>
+            <h2>What Customers <br />Saying About YES Education</h2>
             <div class="dotted-box">
                 <span class="dotted"></span>
                 <span class="dotted"></span>
@@ -871,17 +871,18 @@ $features = [
             </div>
         </div>
         <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+            @foreach($testimonials as $testimonial)
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
                         <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
-                        <h5>James Thomas</h5>
-                        <span class="designation">California, USA</span>
+                                src="{{ asset('storage/testimonial/'. $testimonial->image ) }}" alt=""></figure>
+                        <h5>{{ $testimonial->name }}</h5>
+                        <span class="designation">{{ $testimonial->address }}</span>
                     </div>
                     <div class="content-inner">
                         <div class="rating-box">
-                            <h6>Green Card Approved</h6>
+                            <h6>{{ $testimonial->company }}</h6>
                             <ul class="rating">
                                 <li><i class="fas fa-star"></i></li>
                                 <li><i class="fas fa-star"></i></li>
@@ -891,142 +892,12 @@ $features = [
                             </ul>
                         </div>
                         <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                            <p>{!! $testimonial->text_en !!}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-block-one">
-                <div class="inner-box">
-                    <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
-                        <h5>Tanya Benson</h5>
-                        <span class="designation">California, USA</span>
-                    </div>
-                    <div class="content-inner">
-                        <div class="rating-box">
-                            <h6>Canada Immigration</h6>
-                            <ul class="rating">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-block-one">
-                <div class="inner-box">
-                    <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
-                        <h5>James Thomas</h5>
-                        <span class="designation">California, USA</span>
-                    </div>
-                    <div class="content-inner">
-                        <div class="rating-box">
-                            <h6>Green Card Approved</h6>
-                            <ul class="rating">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-block-one">
-                <div class="inner-box">
-                    <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
-                        <h5>Tanya Benson</h5>
-                        <span class="designation">California, USA</span>
-                    </div>
-                    <div class="content-inner">
-                        <div class="rating-box">
-                            <h6>Canada Immigration</h6>
-                            <ul class="rating">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-block-one">
-                <div class="inner-box">
-                    <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
-                        <h5>James Thomas</h5>
-                        <span class="designation">California, USA</span>
-                    </div>
-                    <div class="content-inner">
-                        <div class="rating-box">
-                            <h6>Green Card Approved</h6>
-                            <ul class="rating">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-block-one">
-                <div class="inner-box">
-                    <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
-                        <h5>Tanya Benson</h5>
-                        <span class="designation">California, USA</span>
-                    </div>
-                    <div class="content-inner">
-                        <div class="rating-box">
-                            <h6>Canada Immigration</h6>
-                            <ul class="rating">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <div class="text">
-                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn
-                                aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

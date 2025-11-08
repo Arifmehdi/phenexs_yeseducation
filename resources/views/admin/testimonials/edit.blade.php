@@ -32,18 +32,18 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="text_en">Testimonial Text (English)</label>
-                            <textarea name="text_en" id="text_en" class="form-control @error('text_en') is-invalid @enderror" rows="5" >{{ old('text_en', $testimonial->text_en) }}</textarea>
-                            @error('text_en')
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address', $testimonial->address) }}">
+                            @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="text_bn">Testimonial Text (Bangla)</label>
-                            <textarea name="text_bn" id="text_bn" class="form-control @error('text_bn') is-invalid @enderror" rows="5" >{{ old('text_bn', $testimonial->text_bn) }}</textarea>
-                            @error('text_bn')
+                            <label for="text_en">Testimonial Text </label>
+                            <textarea name="text_en" id="text_en" class="form-control @error('text_en') is-invalid @enderror" rows="5" >{{ old('text_en', $testimonial->text_en) }}</textarea>
+                            @error('text_en')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -71,6 +71,9 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="active"><input type="checkbox" {{$testimonial->active? 'checked' : ''}} name="active" id="active"> Active</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                         <a href="{{ route('testimonials.index') }}" class="btn btn-secondary">Cancel</a>

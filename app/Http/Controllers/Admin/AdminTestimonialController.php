@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class AdminTestimonialController extends Controller
 {
@@ -36,24 +38,37 @@ class AdminTestimonialController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'company' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
             'text_en' => 'required|string',
-            'text_bn' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $imagePath = null;
+        // if ($request->hasFile('image')) {
+        //     $imagePath = $request->file('image')->store('testimonials', 'public');
+        // }
+
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('testimonials', 'public');
+            $file = $request->image;
+            $ext = "." . $file->getClientOriginalExtension();
+            $imageName = rand(111,555).time() . $ext;
+            Storage::disk('public')->put('testimonial/' . $imageName, File::get($file));
+            $imagePath = $imageName;
         }
+
+
+         $isActive = $request->active ? 1 : 0;
 
         Testimonial::create([
             'name' => $request->name,
             'company' => $request->company,
+            'address' => $request->address,
             'text_en' => $request->text_en,
             'text_bn' => $request->text_bn,
             'rating' => $request->rating,
             'image' => $imagePath,
+            'active' => $isActive,
         ]);
 
         return redirect()->route('testimonials.index')->with('success', 'Testimonial created successfully.');
@@ -86,27 +101,43 @@ class AdminTestimonialController extends Controller
             'name' => 'required|string|max:255',
             'company' => 'nullable|string|max:255',
             'text_en' => 'required|string',
-            'text_bn' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imagePath = $testimonial->image;
+        $imagePath = null;
+        // if ($request->hasFile('image')) {
+        //     // Delete old image if exists
+        //     if ($testimonial->image) {
+        //         \Storage::disk('public')->delete($testimonial->image);
+        //     }
+        //     $imagePath = $request->file('image')->store('testimonials', 'public');
+        // }
+
         if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($testimonial->image) {
-                \Storage::disk('public')->delete($testimonial->image);
+            $old_file = 'testimonial/' . $testimonial->image;
+
+            if (Storage::disk('public')->exists($old_file)) {
+                Storage::disk('public')->delete($old_file);
             }
-            $imagePath = $request->file('image')->store('testimonials', 'public');
+            $file = $request->image;
+            $ext = "." . $file->getClientOriginalExtension();
+            $imageName = 'testimonial_'.time() . $ext;
+            Storage::disk('public')->put('testimonial/' . $imageName, File::get($file));
+            $imagePath = $imageName;
         }
+        
+        $isActive = $request->active ? 1 : 0;
 
         $testimonial->update([
             'name' => $request->name,
             'company' => $request->company,
+            'address' => $request->address,
             'text_en' => $request->text_en,
             'text_bn' => $request->text_bn,
             'rating' => $request->rating,
             'image' => $imagePath,
+            'active' => $isActive,
         ]);
 
         return redirect()->route('testimonials.index')->with('success', 'Testimonial updated successfully.');
