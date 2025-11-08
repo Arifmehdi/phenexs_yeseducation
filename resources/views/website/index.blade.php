@@ -201,6 +201,139 @@
 <!-- about-style-two end -->
 
 
+<!-- clients-section -->
+<section class="clients-section" style="padding: 60px 0; background-color: #f9f9f9;">
+    <div class="auto-container">
+        <div class="sec-title centred" style="margin-bottom: 50px;">
+            <h2 style="font-size: 36px; font-weight: 700;">UK Featured Universities</h2>
+            <p style="color: #555;">Worldwide education institutions we hold partnerships with</p>
+        </div>
+
+        <div class="five-item-carousel  owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-1.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-2.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-5.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-6.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-7.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-8.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-9.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-10.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-12.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-13.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-14.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-15.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-16.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-18.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-19.png') }}" alt=""></a></figure>
+        </div>
+    </div>
+</section>
+
+
+<!-- clients-section end -->
+<!-- clients-section -->
+<!-- <section class="clients-section">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+
+        </div>
+    </div>
+</section> -->
+<!-- clients-section end -->
+
+<!-- clients-section -->
+<!-- <section class="clients-section">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+            src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+            src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="index.html"><img
+                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
+        </div>
+    </div>
+</section> -->
+<!-- clients-section end -->
+
+
+<!-- kdgjkds ksadjfkas djfkjfk sadkfjsadkf kasdjfks dfjksajdkf sadkfjks adfksadf kasdfk sdkfjkdslfjks kldsajfk sadkfjsdakfksadj fksdajfksd fkdsjfksdjfk asdkfjadksfj kasdfjkajkf   -->
+<!-- feature-section -->
+<!-- feature-section start -->
+@php
+    $features = [
+        ['icon' => '01.PNG', 'title' => 'Student Counselling'],
+        ['icon' => '02.PNG', 'title' => 'Student Application Support'],
+        ['icon' => '03.PNG', 'title' => 'Scholarship Assistance'],
+        ['icon' => '04.PNG', 'title' => 'Pre Departure Guidance'],
+        ['icon' => '05.PNG', 'title' => 'Career Guidance'],
+        ['icon' => '06.PNG', 'title' => 'Course Selection'],
+        ['icon' => '07.PNG', 'title' => 'College / University Selection'],
+        ['icon' => '08.PNG', 'title' => 'Whole Admission Processing'],
+        ['icon' => '09.PNG', 'title' => 'Visa Application Advice'],
+        ['icon' => '10.PNG', 'title' => 'Free Guideline About Life in Abroad'],
+        ['icon' => '11.PNG', 'title' => 'Traveling Assistance'],
+        ['icon' => '12.PNG', 'title' => 'Visa File Processing'],
+    ];
+@endphp
+
+<section class="feature-section" style="padding: 80px 0;">
+    <div class="auto-container">
+        <div class="sec-title centred" style="margin-bottom: 50px;">
+            <h2 style="font-size: 36px; font-weight: 700;">Why A Student sourcing YES Education?</h2>
+            <p style="color: #555;">Students get help for</p>
+        </div>
+
+        <div class="row clearfix justify-content-center">
+            @foreach ($features as $feature)
+                <div class="col-lg-4 col-md-4 col-6 mb-4">
+                    <div class="feature-card d-flex align-items-center p-3"
+                        style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
+                        
+                        <!-- Icon -->
+                        <div class="icon flex-shrink-0 text-center" 
+                             style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            <img src="{{ asset('frontend/assets/images/icons/' . $feature['icon']) }}" 
+                                 alt="{{ $feature['title'] }} Icon" 
+                                 style="width: 55px; height: 55px; object-fit: contain;">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="feature-text text-start" style="margin-left: 10px;">
+                            <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
+                                {{ $feature['title'] }}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- cta ads section start -->
+<section class="cta-section centred" style="width: 100%; overflow: hidden; margin-top: 80px;">
+    <img src="{{ asset('frontend/assets/images/ads/January_Intake_in_the_UK_-_Desktop_Image.original.webp') }}"
+        alt="January Intake Banner" style="width: 100%; height: auto; display: block;">
+</section>
+<!-- cta ads section end -->
+
+
 <!-- service-style-two -->
 <section class="service-style-two bg-color-3">
     <div class="auto-container">
@@ -665,84 +798,96 @@
 </section>
 <!-- team-section end -->
 
-        <!-- immigration-section -->
-        <section class="immigration-section bg-color-3">
-            <div class="auto-container">
-                <div class="sec-title centred">
-                    <p>countries we offer support</p>
-                    <h2>Immigration & Visa Services <br />Following Countries</h2>
-                    <div class="dotted-box">
-                        <span class="dotted"></span>
-                        <span class="dotted"></span>
-                        <span class="dotted"></span>
-                    </div>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">United States</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">Canada</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">Australia</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">NewZealand</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">Europe</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                        <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
-                                <div class="text">
-                                    <h3><a href="index.html">United Kingdom</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
+<!-- immigration-section -->
+<section class="immigration-section bg-color-3">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services <br />Following Countries</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
             </div>
-        </section>
-        <!-- immigration-section end -->
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">United States</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Canada</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Australia</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">NewZealand</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">Europe</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="index.html">United Kingdom</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
+    </div>
+</section>
+<!-- immigration-section end -->
 
 
 <!-- funfact-style-two -->
@@ -882,14 +1027,15 @@
 <!-- feature-section -->
 <section class="feature-section sec-pad-2">
     <div class="auto-container">
-                <!-- Headline -->
+        <!-- Headline -->
         <h2 style="text-align:center; font-size:36px; font-weight:700; margin-bottom:50px;">
             SEE OUR TOP COURSES
         </h2>
         <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
             <div class="feature-block-one mb-30">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}"
+                            alt=""></figure>
                     <div class="text">
                         <h3><a href="index.html">MSC Criminal Justice</a></h3>
                     </div>
@@ -897,7 +1043,8 @@
             </div>
             <div class="feature-block-one mb-30">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}"
+                            alt=""></figure>
                     <div class="text">
                         <h3><a href="index.html">MSC Digital Marketing</a></h3>
                     </div>
@@ -905,7 +1052,8 @@
             </div>
             <div class="feature-block-one mb-30">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}"
+                            alt=""></figure>
                     <div class="text">
                         <h3><a href="index.html">MSC Project Management</a></h3>
                     </div>
@@ -913,7 +1061,8 @@
             </div>
             <div class="feature-block-one mb-30">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}"
+                            alt=""></figure>
                     <div class="text">
                         <h3><a href="index.html">MSC Computer Science</a></h3>
                     </div>
@@ -1196,57 +1345,52 @@
 </section>
 <!-- news-section end -->
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- clients-section -->
-<section class="clients-section">
-    <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
-        </div>
-    </div>
-</section>
-<!-- clients-section end -->
- <!-- clients-section -->
-<!-- <section class="clients-section">
-    <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
+<!-- Owl Carousel CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
 
-        </div>
-    </div>
-</section> -->
-<!-- clients-section end -->
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-<!-- clients-section -->
-<!-- <section class="clients-section">
-    <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-            src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-            src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-        </div>
-    </div>
-</section> -->
-<!-- clients-section end -->
+<!-- Initialize Carousel -->
+<script>
+$(document).ready(function(){
+  $('.five-item-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:2000,
+    responsive:{
+      0:{ items:2 },
+      600:{ items:3 },
+      1000:{ items:5 }
+    }
+  });
+});
+</script>
+
+<!-- Styles -->
+<style>
+.logo-image {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fff;
+}
+.logo-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: none !important; /* Always show color */
+  transition: transform 0.3s ease;
+}
+.logo-image:hover img {
+  transform: scale(1.05);
+}
+</style>
 @endsection
 @push('js')
 
