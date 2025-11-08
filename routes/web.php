@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\ContactController;
 
@@ -38,6 +39,19 @@ Route::get('/clear', function () {
 })->name('clear_cache');
 
 
+Route::get('/run-storage-link', function () {
+    try {
+        // Remove the existing storage link
+        File::deleteDirectory(public_path('storage'));
+
+        // Run the artisan command
+        Artisan::call('storage:link');
+
+        return "<pre>Storage link created successfully.\n" . Artisan::output() . "</pre>";
+    } catch (\Exception $e) {
+        return "<pre>Error: " . $e->getMessage() . "</pre>";
+    }
+});
 // // SSLCOMMERZ Start
 // Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 // Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);

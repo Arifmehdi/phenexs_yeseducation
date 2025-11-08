@@ -74,7 +74,7 @@ class FrontendController extends Controller
 
         $data['newses'] = BlogPost::whereActive(true)->limit(3)->get();
         $data['sliders'] = FrontSlider::whereActive(true)
-            ->select('featured_image','title')
+            ->select('featured_image','title','link','btn_txt')
             ->get();
 
         return view('website.index', $data);  

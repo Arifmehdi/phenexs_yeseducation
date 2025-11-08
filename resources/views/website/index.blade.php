@@ -14,86 +14,68 @@
 <meta name="robots" content="index, follow">
 @endsection
 
+@push('css')
+
+<!-- Styles -->
+<style>
+.logo-image {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.logo-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: none !important;
+    /* Always show color */
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover img {
+    transform: scale(1.05);
+}
+</style>
+@endpush 
+
 @section('content')
 <!-- banner-section -->
 <section class="banner-section style-two">
     <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+
+        @foreach($sliders as $slider)
         <div class="slide-item">
             <div class="image-layer"
-                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-4.jpg') }}');"></div>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
-                        <div class="content-box centred">
-                            <span class="top-text">Effective Immigration Solution</span>
-                            <div class="title-text">
-                                <h1>Modern Immigration Firm With Right Attitude</h1>
-                                <div class="dotted-box">
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
-                                </div>
-                            </div>
-                            <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
-                                    Solutions</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slide-item">
-            <div class="image-layer"
-                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-5.jpg') }}');"></div>
+                style="background-image: url('{{ asset('storage/frontSlider/' . $slider->featured_image) }}');"></div>
+
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-xl-7 col-lg-12 col-md-12 content-column">
                         <div class="content-box">
                             <div class="title-text">
-                                <h1>Our Simple Approach To Immigration Process</h1>
+                                <h1>{{ $slider->title }}</h1>
                                 <div class="dotted-box">
                                     <span class="dotted"></span>
                                     <span class="dotted"></span>
                                     <span class="dotted"></span>
                                 </div>
                             </div>
-                            <p>Mod tempor incididunt ut laboret dolore magna aliqua tenim adnim veniam quis nostrud
-                                exercitation ullamco.</p>
+                            <p>{{ $slider->description }}</p>
+                            @if($slider->btn_txt)
                             <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
-                                    Solutions</a>
+                                <a href="index.html" class="theme-btn-one"><i
+                                        class="flaticon-send"></i>{{ $slider->btn_txt }}</a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="slide-item">
-            <div class="image-layer"
-                style="background-image: url('{{ asset('frontend/assets/images/banner/banner-6.jpg') }}');"></div>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
-                        <div class="content-box centred">
-                            <span class="top-text">Effective Immigration Solution</span>
-                            <div class="title-text">
-                                <h1>Empowering Peoples Immigration Confidently</h1>
-                                <div class="dotted-box">
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
-                                </div>
-                            </div>
-                            <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i class="flaticon-send"></i>Discover
-                                    Solutions</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
+
     </div>
 </section>
 <!-- banner-section end -->
@@ -210,82 +192,59 @@
         </div>
 
         <div class="five-item-carousel  owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-1.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-2.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-4.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-5.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-6.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-7.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-8.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-9.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-10.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-12.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-13.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-14.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-15.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-16.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-18.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-19.png') }}" alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-1.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-2.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-4.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-5.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-6.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-7.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-8.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-9.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-10.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-12.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-13.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-14.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-15.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-16.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-18.png') }}"
+                        alt=""></a></figure>
+            <figure class="logo-image"><a href="#"><img src="{{ asset('frontend/assets/images/clients/Frame-19.png') }}"
+                        alt=""></a></figure>
         </div>
     </div>
 </section>
 
-
-<!-- clients-section end -->
-<!-- clients-section -->
-<!-- <section class="clients-section">
-    <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
-
-        </div>
-    </div>
-</section> -->
-<!-- clients-section end -->
-
-<!-- clients-section -->
-<!-- <section class="clients-section">
-    <div class="auto-container">
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-4.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-            src="{{ asset('frontend/assets/images/clients/clients-logo-2.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-            src="{{ asset('frontend/assets/images/clients/clients-logo-3.png') }}" alt=""></a></figure>
-            <figure class="logo-image"><a href="index.html"><img
-                        src="{{ asset('frontend/assets/images/clients/clients-logo-1.png') }}" alt=""></a></figure>
-        </div>
-    </div>
-</section> -->
-<!-- clients-section end -->
-
-
 <!-- kdgjkds ksadjfkas djfkjfk sadkfjsadkf kasdjfks dfjksajdkf sadkfjks adfksadf kasdfk sdkfjkdslfjks kldsajfk sadkfjsdakfksadj fksdajfksd fkdsjfksdjfk asdkfjadksfj kasdfjkajkf   -->
-<!-- feature-section -->
 <!-- feature-section start -->
 @php
-    $features = [
-        ['icon' => '01.PNG', 'title' => 'Student Counselling'],
-        ['icon' => '02.PNG', 'title' => 'Student Application Support'],
-        ['icon' => '03.PNG', 'title' => 'Scholarship Assistance'],
-        ['icon' => '04.PNG', 'title' => 'Pre Departure Guidance'],
-        ['icon' => '05.PNG', 'title' => 'Career Guidance'],
-        ['icon' => '06.PNG', 'title' => 'Course Selection'],
-        ['icon' => '07.PNG', 'title' => 'College / University Selection'],
-        ['icon' => '08.PNG', 'title' => 'Whole Admission Processing'],
-        ['icon' => '09.PNG', 'title' => 'Visa Application Advice'],
-        ['icon' => '10.PNG', 'title' => 'Free Guideline About Life in Abroad'],
-        ['icon' => '11.PNG', 'title' => 'Traveling Assistance'],
-        ['icon' => '12.PNG', 'title' => 'Visa File Processing'],
-    ];
+$features = [
+['icon' => '01.PNG', 'title' => 'Student Counselling'],
+['icon' => '02.PNG', 'title' => 'Student Application Support'],
+['icon' => '03.PNG', 'title' => 'Scholarship Assistance'],
+['icon' => '04.PNG', 'title' => 'Pre Departure Guidance'],
+['icon' => '05.PNG', 'title' => 'Career Guidance'],
+['icon' => '06.PNG', 'title' => 'Course Selection'],
+['icon' => '07.PNG', 'title' => 'College / University Selection'],
+['icon' => '08.PNG', 'title' => 'Whole Admission Processing'],
+['icon' => '09.PNG', 'title' => 'Visa Application Advice'],
+['icon' => '10.PNG', 'title' => 'Free Guideline About Life in Abroad'],
+['icon' => '11.PNG', 'title' => 'Traveling Assistance'],
+['icon' => '12.PNG', 'title' => 'Visa File Processing'],
+];
 @endphp
 
 <section class="feature-section" style="padding: 80px 0;">
@@ -297,26 +256,25 @@
 
         <div class="row clearfix justify-content-center">
             @foreach ($features as $feature)
-                <div class="col-lg-4 col-md-4 col-6 mb-4">
-                    <div class="feature-card d-flex align-items-center p-3"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
-                        
-                        <!-- Icon -->
-                        <div class="icon flex-shrink-0 text-center" 
-                             style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ asset('frontend/assets/images/icons/' . $feature['icon']) }}" 
-                                 alt="{{ $feature['title'] }} Icon" 
-                                 style="width: 55px; height: 55px; object-fit: contain;">
-                        </div>
+            <div class="col-lg-4 col-md-4 col-6 mb-4">
+                <div class="feature-card d-flex align-items-center p-3"
+                    style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
 
-                        <!-- Title -->
-                        <div class="feature-text text-start" style="margin-left: 10px;">
-                            <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
-                                {{ $feature['title'] }}
-                            </h3>
-                        </div>
+                    <!-- Icon -->
+                    <div class="icon flex-shrink-0 text-center"
+                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                        <img src="{{ asset('frontend/assets/images/icons/' . $feature['icon']) }}"
+                            alt="{{ $feature['title'] }} Icon" style="width: 55px; height: 55px; object-fit: contain;">
+                    </div>
+
+                    <!-- Title -->
+                    <div class="feature-text text-start" style="margin-left: 10px;">
+                        <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
+                            {{ $feature['title'] }}
+                        </h3>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -505,183 +463,6 @@
     </div> -->
 </section>
 <!-- service-style-two end -->
-
-
-<!-- apply-style-two -->
-<!-- <section class="apply-style-two">
-    <div class="auto-container">
-        <div class="top-inner">
-            <div class="row clearfix">
-                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
-                    <div class="sec-title">
-                        <p>How we help clients</p>
-                        <h2>Following Steps Apply Online Visa</h2>
-                        <div class="dotted-box">
-                            <span class="dotted"></span>
-                            <span class="dotted"></span>
-                            <span class="dotted"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
-                    <div class="text">
-                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
-                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <h6>Step 1</h6>
-                        <div class="icon-box">
-                            <div class="arrow"
-                                style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');">
-                            </div>
-                            <i class="flaticon-document"></i>
-                        </div>
-                        <h3><a href="index-2.html">Fill In The <br />Required Form</a></h3>
-                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <h6>Step 2</h6>
-                        <div class="icon-box">
-                            <div class="arrow"
-                                style="background-image: url('{{ asset('frontend/assets/images/icons/arrow-1.png') }}');">
-                            </div>
-                            <i class="flaticon-copy"></i>
-                        </div>
-                        <h3><a href="index-2.html">Submit All Your <br />Attested Documents</a></h3>
-                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <h6>Step 3</h6>
-                        <div class="icon-box"><i class="flaticon-plane"></i></div>
-                        <h3><a href="index-2.html">Get Ready To <br />Receive your Visa</a></h3>
-                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- apply-style-two -->
-
-
-<!-- immigration-style-two -->
-<!-- <section class="immigration-style-two">
-    <div class="outer-container">
-        <div class="three-item-carousel-2 owl-carousel owl-theme owl-nav-none owl-dots-none">
-            <div class="immigration-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><img
-                            src="{{ asset('frontend/assets/images/resource/immigration-7.jpg') }}" alt=""></figure>
-                    <div class="content-box">
-                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
-                        <h2>World Immigration Trends</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
-                                    class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="immigration-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><img
-                            src="{{ asset('frontend/assets/images/resource/immigration-8.jpg') }}" alt=""></figure>
-                    <div class="content-box">
-                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
-                        <h2>USA Immigration Service</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
-                                    class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="immigration-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><img
-                            src="{{ asset('frontend/assets/images/resource/immigration-9.jpg') }}" alt=""></figure>
-                    <div class="content-box">
-                        <h4><a href="index-2.html">Apply Free Assessment Today!</a></h4>
-                        <h2>Global Immigration Service</h2>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-one">Get Started<i
-                                    class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- immigration-style-two end -->
-
-
-<!-- offer-section -->
-<!-- <section class="offer-section">
-    <div class="pattern-layer"
-        style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-5.png') }}');"></div>
-    <div class="auto-container">
-        <div class="sec-title light centred">
-            <p>countries we offer support</p>
-            <h2>Apply For Quick Visa</h2>
-            <div class="dotted-box">
-                <span class="dotted"></span>
-                <span class="dotted"></span>
-                <span class="dotted"></span>
-            </div>
-        </div>
-        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
-            <div class="single-item">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-1.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h4><a href="index-2.html">United States</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-2.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h4><a href="index-2.html">Europe</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-3.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h4><a href="index-2.html">Australia</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/offer-4.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h4><a href="index-2.html">NewZealand</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- offer-section end -->
 
 
 <!-- team-section -->
@@ -1345,53 +1126,34 @@
 </section>
 <!-- news-section end -->
 
+@endsection
+@push('js')
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Owl Carousel CSS -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
 
 <!-- Owl Carousel JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <!-- Initialize Carousel -->
 <script>
-$(document).ready(function(){
-  $('.five-item-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:2000,
-    responsive:{
-      0:{ items:2 },
-      600:{ items:3 },
-      1000:{ items:5 }
-    }
-  });
+$(document).ready(function() {
+    $('.five-item-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
 });
 </script>
-
-<!-- Styles -->
-<style>
-.logo-image {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 6px;
-  background: #fff;
-}
-.logo-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: none !important; /* Always show color */
-  transition: transform 0.3s ease;
-}
-.logo-image:hover img {
-  transform: scale(1.05);
-}
-</style>
-@endsection
-@push('js')
-
 @endpush

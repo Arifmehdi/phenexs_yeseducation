@@ -43,6 +43,7 @@ class FrontSliderController extends Controller
         $fSlider->title = $request->title;
         $fSlider->description = $request->description;
         $fSlider->link = $request->link;
+        $fSlider->btn_txt = $request->btn_txt;
         $fSlider->active = $request->active ? 1 : 0;
 
         if ($request->hasFile('featured_image')) {
@@ -81,6 +82,7 @@ class FrontSliderController extends Controller
         $fSlider->title = $request->title;
         $fSlider->description = $request->description;
         $fSlider->link = $request->link;
+        $fSlider->btn_txt = $request->btn_txt;
         $fSlider->active = $request->active ? 1 : 0;
 
         if ($request->hasFile('featured_image')) {

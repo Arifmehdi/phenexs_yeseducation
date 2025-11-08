@@ -39,6 +39,14 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="btn_txt">Button Text</label>
+                            <input type="text" name="btn_txt" id="btn_txt" class="form-control" placeholder="Button text here...">
+                            @error('btn_txt')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
 
 
                         <div class="form-group">
@@ -75,7 +83,8 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Featured Image</th>
-                            <th>Linik</th>
+                            <th>Button Text</th>
+                            <th>Link</th>
                             <th>Active</th>
                         </tr>
                     </thead>
@@ -98,6 +107,7 @@
                             <td>{{ $slider->title}}</td>
                             <td>{{ $slider->description }}</td>
                             <td><img src="{{ route('imagecache', [ 'template'=>'sbixs','filename' => $slider->fi() ]) }}" alt=""></td>
+                            <td>{{$slider->btn_txt}}</td>
                             <td>{{$slider->link}}</td>
                             <td>
                             @if ($slider->active)
@@ -139,8 +149,15 @@
 
                                             <div class="form-group">
                                                 <label for="link">Link</label>
-                                                <input type="text" name="link" id="link" class="form-control" placeholder="Link here..." value="{{ $slider->link ?? ""}}">
+                                                <input type="text" name="link" id="link" class="form-control" placeholder="Link here..." value="{{ $slider->link ?? ''}}">
                                                 @error('link')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="btn_txt">Button Text</label>
+                                                <input type="text" name="btn_txt" id="btn_txt" class="form-control" placeholder="Button text here..." value="{{ $slider->btn_txt ?? ''}}">
+                                                @error('btn_txt')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
