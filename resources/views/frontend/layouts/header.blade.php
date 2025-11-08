@@ -49,9 +49,13 @@
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="{{ route('home') }}"><img
-                                src="{{ asset('frontend/assets/images/logo-2.png') }}" alt=""></a></figure>
+                    <figure class="logo">
+                        <a href="{{ route('home') }}">  
+                            <img alt="{{$ws->website_title ?? ''}}" width="210" height="auto" src="{{ route('imagecache', [ 'template'=>'original','filename' => $ws->logo() ]) }}">
+                        </a>    
+                    </figure>
                 </div>
+
                 <div class="menu-area pull-right">
                     <!--Mobile Navigation Toggler-->
                     <div class="mobile-nav-toggler">
@@ -168,8 +172,11 @@
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="{{ route('home') }}"><img
-                                src="{{ asset('frontend/assets/images/logo.png') }}" alt=""></a></figure>
+                    <figure class="logo">
+                        <a href="{{ route('home') }}"><img
+                                src="{{ route('imagecache', [ 'template'=>'original','filename' => $ws->logo_alt() ]) }}" alt="{{$ws->website_title ?? ''}}"></a>
+                        </a>   
+                    </figure>
                 </div>
                 <div class="menu-area pull-right">
                     <nav class="main-menu clearfix">

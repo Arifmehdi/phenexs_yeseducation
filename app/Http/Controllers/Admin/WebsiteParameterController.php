@@ -42,11 +42,6 @@ class WebsiteParameterController extends Controller
         $wp->og_title = $request->og_title;
         $wp->og_description = $request->og_description;
 
-
-        $wp->about_en  = $request->about_us_en;
-        $wp->about_bn = $request->about_us_bn;
-        $wp->about_img = $request->about_us_image;
-
         $wp->editedby_id = Auth::id();
 
 
@@ -83,79 +78,7 @@ class WebsiteParameterController extends Controller
         }
 
 
-
-         if ($request->hasFile('eccomerce_img')) {
-            if ($wp->eccomerce_img) {
-                Storage::delete('public/wp/'.$wp->eccomerce_img);
-            }
-            $file = $request->eccomerce_img;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "eccomerce_img" . time() . $ext;
-            $file->storeAs('wp', $imageName,'public');
-            $wp->eccomerce_img = $imageName;
-        }
-        if ($request->hasFile('hospital_img')) {
-            if ($wp->hospital_img) {
-                Storage::delete('public/wp/'.$wp->hospital_img);
-            }
-            $file = $request->hospital_img;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "hospital_img" . time() . $ext;
-            $file->storeAs('wp', $imageName,'public');
-            $wp->hospital_img = $imageName;
-        }
-        if ($request->hasFile('ambulance_img')) {
-            if ($wp->ambulance_img) {
-                Storage::delete('public/wp/'.$wp->ambulance_img);
-            }
-            $file = $request->ambulance_img;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "ambulance_img" . time() . $ext;
-            $file->storeAs('wp', $imageName,'public');
-            $wp->ambulance_img = $imageName;
-        }
-
-        if ($request->hasFile('doctor_img')) {
-            if ($wp->doctor_img) {
-                Storage::delete('public/wp/'.$wp->doctor_img);
-            }
-            $file = $request->doctor_img;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "doctor_img" . time() . $ext;
-            $file->storeAs('wp', $imageName,'public');
-            $wp->doctor_img = $imageName;
-        }
-
-
-        if ($request->hasFile('diagnostic_img')) {
-            if ($wp->diagnostic_img) {
-                Storage::delete('public/wp/'.$wp->diagnostic_img);
-            }
-            $file = $request->diagnostic_img;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "diagnostic_img" . time() . $ext;
-            $file->storeAs('wp', $imageName,'public');
-            $wp->diagnostic_img = $imageName;
-        }
-
-        if ($request->hasFile('about_us_image')) {
-            // Delete the old image if it exists
-            if ($wp->about_img && Storage::exists('public/wp/' . $wp->about_img)) {
-                Storage::delete('public/wp/' . $wp->about_img);
-            }
-
-            $file = $request->about_us_image;
-            $ext = "." . $file->getClientOriginalExtension();
-            $imageName = "about_img" . time() . $ext;
-
-            $file->storeAs('wp', $imageName, 'public');
-            $wp->about_img = $imageName; // Save new image
-        } else {
-            // Keep the old image if no new one is uploaded
-            $wp->about_img = $wp->getOriginal('about_img');
-        }
-
-                $wp->save();
-                return redirect()->back()->with('success','website parameter updated');
-            }
-        }
+        $wp->save();
+        return redirect()->back()->with('success','website parameter updated');
+    }
+}
