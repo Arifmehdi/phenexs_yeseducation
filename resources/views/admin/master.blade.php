@@ -406,6 +406,45 @@
 
                         </ul>
                     </li>
+                    <li class="nav-item {{ session('lsbm') == 'destination'? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'destination'? ' active ' : ''}}">
+                            <i class="nav-icon far fa-share-square"></i>
+                            <p>
+                                Destination 
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{route('destination.index')}}" class="nav-link {{ session('lsbsm') == 'allDestinationCat' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Destination Category</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('destination.create')}}" class="nav-link {{ session('lsbsm') == 'createDestinationCat' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create  Category</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('destinations.index')}}" class="nav-link {{ session('lsbsm') == 'allDestinations' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Destination</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('destinations.create')}}" class="nav-link {{ session('lsbsm') == 'storeDestinations' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create Destination</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
 
 
                     {{--<li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
@@ -611,7 +650,7 @@
 
                    <li class="nav-item {{ session('lsbm') == 'shipping' ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'shipping' ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-shopping-bag"></i>
+                            <i class="nav-icon fas fa-shipping-fast"></i>
                             <p>
                             Shipping Method
                             <i class="right fas fa-angle-left"></i>

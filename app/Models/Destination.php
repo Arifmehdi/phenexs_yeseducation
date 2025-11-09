@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogPost extends Model
+class Destination extends Model
 {
+    protected $table = 'destination_posts';
     use HasFactory;
 
     public function category(){
-        return $this->belongsTo(BlogCategory::class, 'category_id');
+        return $this->belongsTo(DestinationCategory::class, 'category_id');
     }
 
 
@@ -28,4 +28,5 @@ class BlogPost extends Model
     {
         return $this->feature_image ?: 'fi.jpg';
     }
+
 }

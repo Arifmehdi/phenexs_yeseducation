@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Http\Controllers\Controller;
-use App\Models\BlogCategory;
-use App\Models\BlogPost;
+use Illuminate\Http\Request;
+
+use App\Models\DestinationCategory;
+use App\Models\Destination;
 use App\Models\Media;
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class PostController extends Controller
+
+
+
+class DestinationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +28,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        menuSubmenu('posts', 'allPosts');
-        $data['newses'] = BlogPost::latest()->paginate(50);
-        return view('admin.news.index', $data);
+        menuSubmenu('destination', 'allDestinations');
+        $data['newses'] = Destination::latest()->paginate(50);
+        return view('admin.destinations.index', $data);
     }
 
     /**
@@ -38,20 +41,20 @@ class PostController extends Controller
     public function newsActive(Request $request)
     {
         if ($request->mode == 'true') {
-            DB::table('blog_posts')->where('id', $request->id)->update(['active' => 1, 'status' => 'published']);
+            DB::table('destination_posts')->where('id', $request->id)->update(['active' => 1, 'status' => 'published']);
         } else {
-            DB::table('blog_posts')->where('id', $request->id)->update(['active' => 0, 'status' => 'pending']);
+            DB::table('destination_posts')->where('id', $request->id)->update(['active' => 0, 'status' => 'pending']);
         }
         return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
     }
 
     public function create()
     {
-        menuSubmenu('posts', 'storePost');
-        $data['categories'] = BlogCategory::all();
+        menuSubmenu('destination', 'storeDestinations');
+        $data['categories'] = DestinationCategory::all();
         $data['writers'] = User::where('writer', 1)->get();
         $data['medias'] = Media::latest()->paginate(20);
-        return view('admin.news.create', $data);
+        return view('admin.destinations.create', $data);
     }
 
     /**
@@ -63,7 +66,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        menuSubmenu('posts', 'storePost');
+        menuSubmenu('destination', 'storeDestinations');
 
         $this->validate($request, [
             'title' => 'required|string',
@@ -79,13 +82,13 @@ class PostController extends Controller
             $image_ex =  $image->getClientOriginalExtension();
             $file_path = date('ymdhis') . '.' . $image_ex;
             Image::make($image)->resize(1200, 500);
-            $image->storeAs('post_images', $file_path, 'public');
+            $image->storeAs('destination_images', $file_path, 'public');
         } else {
             $file_path =  null;
         }
 
 
-        $blogPost = new BlogPost();
+        $blogPost = new Destination();
         $blogPost->title = $request->title;
         $blogPost->slug = $request->slug;
         $blogPost->category_id = $request->category_id;
@@ -101,7 +104,7 @@ class PostController extends Controller
 
 
         Session::flash('success', 'News Create Successfully');
-        return redirect()->route('news.index');
+        return redirect()->route('destinations.index');
     }
 
     /**
@@ -112,8 +115,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        menuSubmenu('posts', 'allPosts');
-        return view('admin.news.view', ['news' => BlogPost::find($id)]);
+        menuSubmenu('destination', 'allDestinations');
+        return view('admin.destinations.view', ['news' => Destination::find($id)]);
     }
 
     /**
@@ -125,15 +128,15 @@ class PostController extends Controller
     public function edit($id)
     {
 
-        menuSubmenu('posts', 'allPosts');
+        menuSubmenu('destination', 'allDestinations');
 
-        $data['news'] = BlogPost::find($id);
-        $data['categories'] = BlogCategory::Where('active', 1)->get();
+        $data['news'] = Destination::find($id);
+        $data['categories'] = DestinationCategory::Where('active', 1)->get();
         $data['writers']    = User::where('writer', 1)->get();
         $data['medias'] = Media::latest()->paginate(20);
         $data['ots'] = $data['news']->tags ? explode(", ", $data['news']->tags) : null;
         $data['authors'] = $data['news']->authors ? explode(", ", $data['news']->authors) : null;
-        return view('admin.news.edit', $data);
+        return view('admin.destinations.edit', $data);
     }
 
     /**
@@ -146,7 +149,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
 
-        menuSubmenu('posts', 'storePost');
+        menuSubmenu('destination', 'storeDestinations');
 
         $this->validate($request, [
             'title' => 'required|string',
@@ -159,17 +162,17 @@ class PostController extends Controller
 
         ]);
 
-        $blogPost = BlogPost::find($id);
+        $blogPost = Destination::find($id);
 
         try {
             if ($request->hasFile('feature_image')) {
                 if ($blogPost->feature_image) {
-                    Storage::delete('public/post_images/' . $blogPost->feature_image);
+                    Storage::delete('public/destination_images/' . $blogPost->feature_image);
                 }
                 $image = $request->file('feature_image');
                 $image_ex =  $image->getClientOriginalExtension();
                 $file_path = date('ymdhis') . '.' . $image_ex;
-                $image->storeAs('post_images', $file_path, 'public');
+                $image->storeAs('destination_images', $file_path, 'public');
             } else {
                 $file_path =  $blogPost->feature_image;
             }
@@ -205,13 +208,13 @@ class PostController extends Controller
     public function destroy($id)
     {
 
-        menuSubmenu('journal_posts', 'alljournalPosts');
-        $post = BlogPost::find($id);
+        menuSubmenu('destination', 'allDestinations');
+        $post = Destination::find($id);
         if ($post->feature_image) {
-            Storage::delete('public/post_images/' . $post->image);
+            Storage::delete('public/destination_images/' . $post->image);
         }
         $post->delete();
-        return redirect()->route('news.index')->with('success', 'Successfully Deleted');
+        return redirect()->route('destinations.index')->with('success', 'Successfully Deleted');
     }
 
 

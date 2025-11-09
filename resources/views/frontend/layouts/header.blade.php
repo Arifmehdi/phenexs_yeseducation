@@ -144,12 +144,9 @@
                                 <li class="dropdown {{ request()->routeIs('destination') ? 'active current' : ''  }}"><a
                                         href="{{ route('destination') }}">Destination</a>
                                     <ul>
-                                        <li><a href="{{ route('destinationDetails') }}">Study In AUSTRALIA</a></li>
-                                        <li><a href="{{ route('destinationDetails') }}"> Study In Canada</a></li>
-                                        <li><a href="{{ route('destinationDetails') }}">Study In Ireland</a></li>
-                                        <li><a href="{{ route('destinationDetails') }}">Study In NEW ZEALAND</a></li>
-                                        <li><a href="{{ route('destinationDetails') }}">Study In UK</a></li>
-                                        <li><a href="{{ route('destinationDetails') }}">Study In USA</a></li>
+                                        @foreach($destinate as $des)
+                                        <li><a href="{{ route('destinationDetails', $des->slug)}}">{{$des->category->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
 

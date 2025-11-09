@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\BisesoggoCategory;
 use App\Models\BlogPost;
+use App\Models\Destination;
 use App\Models\FrontSlider;
 use App\Models\Hospital;
 use App\Models\Menu;
@@ -42,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
             View::share('ws',WebsiteParameter::first());
             View::share('departments',  BisesoggoCategory::orderBy('name_bn')->whereActive(true)->get());
             View::share('sliders',  FrontSlider::latest()->whereActive(true)->get());
+            View::share('destinate',  Destination::latest()->whereActive(true)->select('title','slug','id','category_id')->get());
         });
 
         Paginator::useBootstrap();

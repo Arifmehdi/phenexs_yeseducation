@@ -19,7 +19,7 @@
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
-                <h1>Latest News</h1>
+                <h1>{{ $blog->title }}</h1>
                 <div class="dotted-box">
                     <span class="dotted"></span>
                     <span class="dotted"></span>
@@ -27,9 +27,9 @@
                 </div>
             </div>
             <ul class="bread-crumb clearfix">
-                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
-                <li>Our Blog</li>
-                <li>Blog Details</li>
+                <li><i class="flaticon-home-1"></i><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('blog') }}">Our Blogs</a></li>
+                <li>{{ $blog->title }}</li>
             </ul>
         </div>
     </div>

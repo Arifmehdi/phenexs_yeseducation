@@ -50,78 +50,22 @@
             </div>
         </div>
         <div class="row clearfix">
+
+            @forelse($destinations as $destination)
             <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
                 <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
                     data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
+                                src="{{ asset('storage/destination_images/' . $destination->fi()) }}" alt="{{ $destination->title}}"></figure>
                         <div class="text">
-                            <h3><a href="index.html">United States</a></h3>
+                            <h3><a href="{{ route('destinationDetails', $destination->slug)}}">{{ $destination->category->name}}</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Canada</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Australia</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">NewZealand</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Europe</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">United Kingdom</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach 
+
         </div>
         <!-- <div class="more-text"><h3>Visarzo is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
     </div>

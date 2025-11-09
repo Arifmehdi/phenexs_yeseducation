@@ -23,6 +23,7 @@ use Alert;
 use App\Models\BisesoggoCategory;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
+use App\Models\Destination;
 use App\Models\Doctor;
 use App\Models\FrontSlider;
 use App\Models\Hospital;
@@ -48,29 +49,31 @@ class FrontendController extends Controller
     public function index()
     {
         $data['categories'] = ProductCategory::where('active', 1)
-            ->whereHas('products') // only categories that have at least one product
-            ->where('parent_id', null)
-            ->select('id', 'name_en', 'name_bn', 'slug', 'image') // select needed fields
-            ->get();
-        // $path = public_path('frontend/assets/img/gallery');
-        // $files = \File::files($path);
-        // $data['images'] = []; // initialize the array
-
-        // foreach ($files as $file) {
-        //     $data['images'][] = $file->getFilename(); // append to $data['images'], not $images
-        // }
-
+                            ->whereHas('products') // only categories that have at least one product
+                            ->where('parent_id', null)
+                            ->select('id', 'name_en', 'name_bn', 'slug', 'image') // select needed fields
+                            ->get();
+        $data['destinations'] = Destination::whereActive(true)->whereStatus('published')->select('title','feature_image','id','slug', 'category_id')->latest()->get();
+        $data['blogs'] = BlogPost::with([
+                                'category:id,name',
+                                'addedBy:id,name'
+                            ])
+                            ->where('status', 'published')
+                            ->select('id', 'slug', 'category_id', 'addedby_id', 'title', 'excerpt', 'feature_image', 'created_at')
+                            ->latest() // orders by created_at descending
+                            ->limit(3)
+                            ->get();
         $data['videos'] = Gallery::where('file_type', 'video')
-            ->where('active', 1)
-            ->orderBy('priority', 'asc')
-            ->latest()
-            ->take(5)
-            ->get();
+                        ->where('active', 1)
+                        ->orderBy('priority', 'asc')
+                        ->latest()
+                        ->take(5)
+                        ->get();
 
         $data['departments'] = BisesoggoCategory::whereActive(true)
-            ->limit(4)
-            ->select('image','name_en','name_bn','excerpt_en', 'excerpt_bn')
-            ->get();
+                        ->limit(4)
+                        ->select('image','name_en','name_bn','excerpt_en', 'excerpt_bn')
+                        ->get();
 
         $data['newses'] = BlogPost::whereActive(true)->limit(3)->get();
         $data['testimonials'] = Testimonial::whereActive(true)->select('name', 'company', 'address', 'text_en','rating', 'image')->get();
@@ -129,7 +132,7 @@ class FrontendController extends Controller
         ])
         ->where('status', 'published')
         ->where('slug', $slug) // fetch by slug
-        ->firstOrFail(['id', 'category_id', 'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at']);
+        ->firstOrFail(['id', 'category_id', 'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at', 'slug']);
 
         return view('website.blogDetails', compact('blog'));  
     }
@@ -175,14 +178,20 @@ class FrontendController extends Controller
 
     public function destination()
     {
-        $wp = WebsiteParameter::first();
-        return view('website.destination', compact('wp'));  
+        $destinations = Destination::whereActive(true)->whereStatus('published')->latest()->paginate(12);
+        return view('website.destination', compact('destinations'));  
     }
     
-    public function destinationDetails()
+    public function destinationDetails($slug)
     {
-        $wp = WebsiteParameter::first();
-        return view('website.destinationDetails', compact('wp'));  
+        $destination = Destination::with([
+            'category:id,name', 
+            'addedBy:id,name'
+        ])
+        ->where('status', 'published')
+        ->where('slug', $slug) // fetch by slug
+        ->firstOrFail(['id', 'category_id', 'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at', 'slug']);
+        return view('website.destinationDetails', compact('destination'));  
     }
 
     public function login()

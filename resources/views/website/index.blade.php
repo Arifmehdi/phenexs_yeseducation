@@ -592,80 +592,21 @@ $features = [
             </div>
         </div>
         <div class="row clearfix">
+            @foreach($destinations as $destination)
             <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
                 <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
                     data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-1.jpg') }}" alt=""></figure>
+                                src="{{ asset('storage/destination_images/' . $destination->fi()) }}" alt="{{ $destination->title }}"></figure>
                         <div class="text">
-                            <h3><a href="index.html">United States</a></h3>
+                            <h3><a href="{{ route('destinationDetails', $destination->slug)}}">{{ $destination->category->name}}</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-2.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Canada</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-3.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Australia</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-4.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">NewZealand</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-5.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">Europe</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
-                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><img
-                                src="{{ asset('frontend/assets/images/resource/immigration-6.jpg') }}" alt=""></figure>
-                        <div class="text">
-                            <h3><a href="index.html">United Kingdom</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach 
         </div>
-        <!-- <div class="more-text"><h3>YES Education is clearly your best partner at Immigration& Visa success. <a href="index.html"><span>Get In Touch</span><i class="flaticon-send"></i></a></h3></div> -->
     </div>
 </section>
 <!-- immigration-section end -->
@@ -929,69 +870,30 @@ $features = [
             </div>
         </div>
         <div class="row clearfix">
+            @foreach($blogs as $blog)
             <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                 <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
                     data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img
-                                    src="{{ asset('frontend/assets/images/news/news-1.jpg') }}" alt=""></a></figure>
+                        <figure class="image-box"><a href="{{ route('blogDetails', $blog->slug) }}"><img
+                                    src="{{ asset('storage/post_images/' . $blog->feature_image) }}" alt="{{ $blog->title }}"></a></figure>
                         <div class="lower-content">
                             <div class="post-date">
-                                <h2>18</h2><span>apr</span>
+                                <h2>{{ strtoupper($blog->created_at->format('d')) }}</h2><span>{{ strtoupper($blog->created_at->format('M')) }}</span>
                             </div>
-                            <h3><a href="blog-details.html">Covid-19 And Its Impact On USA Immigration</a></h3>
+                            <h3><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->title }}</a></h3>
                             <ul class="post-info clearfix">
-                                <li><a href="index.html">By Admin</a></li>
-                                <li><a href="index.html">Study Visa</a>,<a href="index.html">Work</a></li>
+                                <li><a href="{{ route('blogDetails', $blog->slug) }}">By {{ $blog->addedBy->name ?? 'Admin' }}</a></li>
+                                <li><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->category->name ?? 'Uncategorized' }}</a>
+                                {{-- ,<a href="{{ route('blogDetails', $blog->slug) }}">Work</a></li> --}}
                             </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
+                            <div class="link"><a href="{{ route('blogDetails', $blog->slug) }}">Learn More<i class="flaticon-send"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img
-                                    src="{{ asset('frontend/assets/images/news/news-2.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="post-date">
-                                <h2>17</h2><span>apr</span>
-                            </div>
-                            <h3><a href="blog-details.html">UK To Offers Point-Based Immigration Process</a></h3>
-                            <ul class="post-info clearfix">
-                                <li><a href="index.html">By Admin</a></li>
-                                <li><a href="index.html">Europe Permit</a></li>
-                            </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img
-                                    src="{{ asset('frontend/assets/images/news/news-3.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="post-date">
-                                <h2>16</h2><span>apr</span>
-                            </div>
-                            <h3><a href="blog-details.html">Kickstart Your Visa ApprovalWith 4 Easy Steps</a></h3>
-                            <ul class="post-info clearfix">
-                                <li><a href="index.html">By Admin</a></li>
-                                <li><a href="index.html">Immigration</a></li>
-                            </ul>
-                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AmbulanceServiceController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DestinationCatController;
 use App\Http\Controllers\Admin\ChamberController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\CategoriesController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\ShippingMethodController;
@@ -116,7 +118,7 @@ Route::get('/scholarship',[FrontendController::class,'scholarship'])->name('scho
 Route::get('/service',[FrontendController::class,'service'])->name('service');
 Route::get('/service/details',[FrontendController::class,'serviceDetails'])->name('serviceDetails');
 Route::get('/destination',[FrontendController::class,'destination'])->name('destination');
-Route::get('/destination/details',[FrontendController::class,'destinationDetails'])->name('destinationDetails');
+Route::get('/destination/details/{slug}',[FrontendController::class,'destinationDetails'])->name('destinationDetails');
 Route::get('/courses',[FrontendController::class,'courses'])->name('courses');
 Route::get('/course/details',[FrontendController::class,'courseDetails'])->name('courseDetails');
 Route::get('/event',[FrontendController::class,'event'])->name('event');
@@ -481,11 +483,18 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
 
 
 
+    
+    //Destination
+    Route::resource('destination',DestinationCatController::class);
+    Route::post('destination/active',[DestinationCatController::class,'categoryActive'])->name('destination.active');
+    
+    Route::resource('destinations',DestinationController::class);
+    Route::post('destinations/active',[DestinationController::class,'newsActive'])->name('destinations.active');
+    
+    //BlogPost
     Route::resource('categories',CategoryController::class);
     Route::post('category/active',[CategoryController::class,'categoryActive'])->name('category.active');
 
- 
-    //BlogPost
     Route::resource('news',PostController::class);
     Route::post('news/active',[PostController::class,'newsActive'])->name('news.active');
     Route::get('medias-ajax',[MediaController::class,'getMediasAjax'])->name('medias.getMediasAjax');
