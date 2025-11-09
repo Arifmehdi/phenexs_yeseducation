@@ -35,7 +35,7 @@ class VisaServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function newsActive(Request $request)
+    public function serviceActive(Request $request)
     {
         if ($request->mode == 'true') {
             DB::table('services')->where('id', $request->id)->update(['active' => 1, 'status' => 'published']);
@@ -66,7 +66,7 @@ class VisaServiceController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
-            'slug' => 'required|string| unique:blog_posts,slug',
+            'slug' => 'required|string| unique:services,slug',
             'excerpt' => 'nullable|string',
             'description' => 'nullable|string',
             'feature_image' => 'nullable|image|mimes:jpeg,webp,jpg,png',
@@ -76,18 +76,18 @@ class VisaServiceController extends Controller
         if ($request->hasFile('feature_image')) {
             $image = $request->file('feature_image');
             $image_ex =  $image->getClientOriginalExtension();
-            $file_path = date('ymdhis') . '.' . $image_ex;
-            Image::make($image)->resize(1200, 500);
+            $file_path = 'feature_'.date('ymdhis') . '.' . $image_ex;
+            Image::make($image)->resize(360, 240);
             $image->storeAs('services_images', $file_path, 'public');
         } else {
             $file_path =  null;
         }
         if ($request->hasFile('icon_image')) {
-            $image = $request->file('icon_image');
-            $image_ex =  $image->getClientOriginalExtension();
-            $file_path_2 = date('ymdhis') . '.' . $image_ex;
-            Image::make($image)->resize(1200, 500);
-            $image->storeAs('services_images', $file_path, 'public');
+            $image_2 = $request->file('icon_image');
+            $image_ex_2 =  $image_2->getClientOriginalExtension();
+            $file_path_2 = 'icon_'.date('ymdhis') . '.' . $image_ex_2;
+            // Image::make($image_2)->resize(1200, 500);
+            $image_2->storeAs('services_images', $file_path_2, 'public');
         } else {
             $file_path_2 =  null;
         }
@@ -158,7 +158,7 @@ class VisaServiceController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
-            'slug' => 'required|string|unique:blog_posts,slug,' . $id,
+            'slug' => 'required|string|unique:services,slug,' . $id,
             'excerpt' => 'nullable|string',
             'description' => 'nullable|string',
             'status' => 'required',
@@ -176,7 +176,8 @@ class VisaServiceController extends Controller
                 }
                 $image = $request->file('feature_image');
                 $image_ex =  $image->getClientOriginalExtension();
-                $file_path = date('ymdhis') . '.' . $image_ex;
+                $file_path = 'feature_'.date('ymdhis') . '.' . $image_ex;
+                Image::make($image)->resize(360, 240);
                 $image->storeAs('services_images', $file_path, 'public');
             } else {
                 $file_path =  $blogPost->feature_image;
@@ -185,10 +186,11 @@ class VisaServiceController extends Controller
                 if ($blogPost->icon_image) {
                     Storage::delete('public/services_images/' . $blogPost->icon_image);
                 }
-                $image = $request->file('icon_image');
-                $image_ex =  $image->getClientOriginalExtension();
-                $file_path_2 = date('ymdhis') . '.' . $image_ex;
-                $image->storeAs('services_images', $file_path, 'public');
+                $image_2 = $request->file('icon_image');
+                $image_ex_2 =  $image_2->getClientOriginalExtension();
+                $file_path_2 = 'icon_'.date('ymdhis') . '.' . $image_ex_2;
+                // Image::make($image_2)->resize(1200, 500);
+                $image_2->storeAs('services_images', $file_path_2, 'public');
             } else {
                 $file_path_2 =  $blogPost->icon_image;
             }

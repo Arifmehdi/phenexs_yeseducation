@@ -1,10 +1,10 @@
 @extends('admin.master')
-@section('title',"Admin Dashboard | Create Destination")
+@section('title',"Admin Dashboard | Create Course")
 @section('body')
     <section class="pt-5">
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Create Destination</h3>
+                <h3 class="card-title">Create Course</h3>
             </div>
 
             <form action="{{route('course.store')}}" method="POST" enctype="multipart/form-data">

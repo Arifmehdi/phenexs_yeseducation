@@ -35,7 +35,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function newsActive(Request $request)
+    public function postActive(Request $request)
     {
         if ($request->mode == 'true') {
             DB::table('blog_posts')->where('id', $request->id)->update(['active' => 1, 'status' => 'published']);
@@ -78,7 +78,7 @@ class PostController extends Controller
             $image = $request->file('feature_image');
             $image_ex =  $image->getClientOriginalExtension();
             $file_path = date('ymdhis') . '.' . $image_ex;
-            Image::make($image)->resize(1200, 500);
+            Image::make($image)->resize(3360, 240);
             $image->storeAs('post_images', $file_path, 'public');
         } else {
             $file_path =  null;
@@ -169,6 +169,7 @@ class PostController extends Controller
                 $image = $request->file('feature_image');
                 $image_ex =  $image->getClientOriginalExtension();
                 $file_path = date('ymdhis') . '.' . $image_ex;
+                Image::make($image)->resize(360, 240);
                 $image->storeAs('post_images', $file_path, 'public');
             } else {
                 $file_path =  $blogPost->feature_image;
@@ -208,7 +209,7 @@ class PostController extends Controller
         menuSubmenu('journal_posts', 'alljournalPosts');
         $post = BlogPost::find($id);
         if ($post->feature_image) {
-            Storage::delete('public/post_images/' . $post->image);
+            Storage::delete('public/post_images/' . $post->feature_image);
         }
         $post->delete();
         return redirect()->route('news.index')->with('success', 'Successfully Deleted');

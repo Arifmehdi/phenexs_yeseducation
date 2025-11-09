@@ -488,22 +488,22 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     Route::post('destination/active',[DestinationCatController::class,'categoryActive'])->name('destination.active');
     
     Route::resource('destinations',DestinationController::class);
-    Route::post('destinations/active',[DestinationController::class,'newsActive'])->name('destinations.active');
+    Route::post('destinations/active',[DestinationController::class,'destinationActive'])->name('destinations.active');
 
     //Destination
     Route::resource('service',VisaServiceController::class);
-    Route::post('service/active',[VisaServiceController::class,'newsActive'])->name('visa.service.active');
+    Route::post('service/active',[VisaServiceController::class,'serviceActive'])->name('visa.service.active');
 
     //courses
     Route::resource('course',CourseController::class);
-    Route::post('course/active',[CourseController::class,'newsActive'])->name('course.active');
+    Route::post('course/active',[CourseController::class,'courseActive'])->name('course.active');
     
     //BlogPost
     Route::resource('categories',CategoryController::class);
     Route::post('category/active',[CategoryController::class,'categoryActive'])->name('category.active');
 
     Route::resource('news',PostController::class);
-    Route::post('news/active',[PostController::class,'newsActive'])->name('news.active');
+    Route::post('news/active',[PostController::class,'postActive'])->name('news.active');
     Route::get('medias-ajax',[MediaController::class,'getMediasAjax'])->name('medias.getMediasAjax');
 
     //BisesoggoCategory

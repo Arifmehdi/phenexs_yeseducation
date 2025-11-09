@@ -34,7 +34,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function newsActive(Request $request)
+    public function courseActive(Request $request)
     {
         if ($request->mode == 'true') {
             DB::table('courses')->where('id', $request->id)->update(['active' => 1, 'status' => 'published']);
@@ -65,7 +65,7 @@ class CourseController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
-            'slug' => 'required|string| unique:blog_posts,slug',
+            'slug' => 'required|string| unique:courses,slug',
             'excerpt' => 'nullable|string',
             'description' => 'nullable|string',
             'feature_image' => 'nullable|image|mimes:jpeg,webp,jpg,png',
@@ -75,7 +75,7 @@ class CourseController extends Controller
             $image = $request->file('feature_image');
             $image_ex =  $image->getClientOriginalExtension();
             $file_path = date('ymdhis') . '.' . $image_ex;
-            Image::make($image)->resize(1200, 500);
+            Image::make($image)->resize(360, 240);
             $image->storeAs('course_images', $file_path, 'public');
         } else {
             $file_path =  null;
@@ -145,7 +145,7 @@ class CourseController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
-            'slug' => 'required|string|unique:blog_posts,slug,' . $id,
+            'slug' => 'required|string|unique:courses,slug,' . $id,
             'excerpt' => 'nullable|string',
             'description' => 'nullable|string',
             'status' => 'required',
@@ -163,6 +163,7 @@ class CourseController extends Controller
                 $image = $request->file('feature_image');
                 $image_ex =  $image->getClientOriginalExtension();
                 $file_path = date('ymdhis') . '.' . $image_ex;
+                Image::make($image)->resize(360, 240);
                 $image->storeAs('course_images', $file_path, 'public');
             } else {
                 $file_path =  $blogPost->feature_image;
@@ -202,7 +203,7 @@ class CourseController extends Controller
         menuSubmenu('course', 'allCourses');
         $post = Course::find($id);
         if ($post->feature_image) {
-            Storage::delete('public/course_images/' . $post->image);
+            Storage::delete('public/course_images/' . $post->feature_image);
         }
         $post->delete();
         return redirect()->route('course.index')->with('success', 'Successfully Deleted');

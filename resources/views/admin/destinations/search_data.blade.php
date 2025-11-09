@@ -28,7 +28,7 @@
             <td>{{$news->title}}</td>
             <td>{{$news->slug}}</td>
             <td>
-                <img src="{{ asset('storage/destination_images/' . $news->fi()) }}" alt="{{$news->title}}">
+                <img src="{{ route('imagecache', ['template' => 'ppsm', 'filename' => $news->fi()]) }}" alt="{{$news->title}}" class="img-fluid" style="max-width: 100px;">
             </td>
             <td>
             <input type="checkbox" 

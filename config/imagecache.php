@@ -34,27 +34,29 @@ return [
     */
 
     'paths' => [
-
-        public_path('img'),
-        public_path('storage/users'),
-        public_path('storage/wp'),
-        public_path('storage/post_images'),
-        public_path('storage/media_images'),
-        public_path('storage/media'),
-        public_path('storage/post_files'),
-        public_path('storage/frontSlider'),
-        public_path('storage/galleries'),
-        public_path('storage/gallery_items'),
-        public_path('storage/department_images'),
-        public_path('storage/hospital_images'),
-        public_path('storage/doctor_images'),
-        public_path('storage/ambulance_images'),
-        public_path('storage/product_categories_images'),
-        public_path('storage/product_images'),
-         public_path('storage/idcards'),
-
-    ],
-
+    
+            public_path('img'),
+            public_path('storage/users'),
+            public_path('storage/wp'),
+            public_path('storage/post_images'),
+            public_path('storage/media_images'),
+            public_path('storage/media'),
+            public_path('storage/post_files'),
+            public_path('storage/frontSlider'),
+            public_path('storage/galleries'),
+            public_path('storage/gallery_items'),
+            public_path('storage/department_images'),
+            public_path('storage/hospital_images'),
+            public_path('storage/doctor_images'),
+            public_path('storage/ambulance_images'),
+            public_path('storage/product_categories_images'),
+            public_path('storage/product_images'),
+            public_path('storage/idcards'),
+            public_path('storage/course_images'),
+            public_path('storage/services_images'),
+            public_path('storage/destination_images'),
+    
+        ],
     /*
     |--------------------------------------------------------------------------
     | Manipulation templates

@@ -1,11 +1,11 @@
 @extends('admin.master')
-@section('title',"Admin Dashboard | Edit News")
+@section('title',"Admin Dashboard | Edit Course")
 @section('body')
 
 <section class="pt-3">
     <div class="card ">
         <div class="card-header">
-            <h3 class="card-title">Edit News</h3>
+            <h3 class="card-title">Edit Course</h3>
         </div>
 
         <form action="{{route('course.update',$news->id)}}" method="POST" enctype="multipart/form-data">
@@ -98,7 +98,7 @@
                                     <div class="col-sm-6">
                                         <input type="file" class="form-control-file" id="feature_image" name="feature_image">
                                     </div>
-                                   <img  src="{{ asset('storage/destination_images/' . $news->fi()) }}" alt="{{$news->title}}">
+                                   <img  src="{{ route('imagecache', ['template' => 'ppsm', 'filename' => $news->fi()]) }}" alt="{{$news->title}}" class="img-fluid">
                                     @error('feature_image')
                                     <span style="color: red">{{ $message }}</span>
                                     @enderror
