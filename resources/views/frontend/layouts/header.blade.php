@@ -4,10 +4,16 @@
         <div class="auto-container">
             <div class="top-inner clearfix">
                 <div class="top-left pull-left">
+                    @php 
+                        $mobile_number = explode(',', $ws->contact_mobile);
+                        $mobile_number_without_str = str_replace(['+', '-', ' '], '', trim($mobile_number[0]));
+                        $contact_email = explode(',', $ws->contact_email);
+                    @endphp
+
                     <ul class="info clearfix">
-                        <li><i class="flaticon-call"></i>Call us: <a href="tel:1246333079">+1 (246) 333 079</a></li>
+                        <li><i class="flaticon-call"></i>Call us: <a href="tel:{{$mobile_number_without_str}}">{{$mobile_number[0]}}</a></li>
                         <li><i class="flaticon-open-email-message"></i><a
-                                href="mailto:inquiry@example.com">inquiry@example.com</a></li>
+                                href="mailto:{{$contact_email[0]}}">{{$contact_email[0]}}</a></li>
                     </ul>
                 </div>
                 <div class="top-right pull-right">
@@ -17,11 +23,12 @@
                         </div>
                     </div>
                     <ul class="social-links clearfix">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+
+                        <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="{{ $ws->fb_url ? $ws->fb_url : '#'}}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ $ws->instagram_url ? $ws->instagram_url : '#'}}"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $ws->linkedin_url ? $ws->linkedin_url : '#'}}"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-twitter"></i></a></li>
                         <li class="user-menu">
                             @auth
                             <a href="javascript:void(0)"><i class="fas fa-user-alt">&nbsp; {{ auth()->user()->name }}</i></a>

@@ -11,11 +11,11 @@
                                 <p>Integer lobortis sem consequat imperdiet In nulla viverra ut lorem ut, dapibus conse etur diam. Nun bibendum diet condiment sed ipsum duis lacinia.</p>
                             </div>
                             <ul class="social-links clearfix">
-                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="{{ $ws->fb_url ? $ws->fb_url : '#'}}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $ws->instagram_url ? $ws->instagram_url : '#'}}"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{ $ws->linkedin_url ? $ws->linkedin_url : '#'}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-twitter"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -26,12 +26,12 @@
                             </div>
                             <div class="widget-content">
                                 <ul class="list clearfix">
-                                    <li><a href="index.html">Pre Assessment</a></li>
-                                    <li><a href="index.html">Visa Consultation</a></li>
-                                    <li><a href="index.html">Business Plans</a></li>
-                                    <li><a href="index.html">Post Landing Assistant</a></li>
-                                    <li><a href="index.html">Meet Our Agents</a></li>
-                                    <li><a href="index.html">Visa Documentation</a></li>
+                                    <li><a href="#">Pre Assessment</a></li>
+                                    <li><a href="#">Visa Consultation</a></li>
+                                    <li><a href="#">Business Plans</a></li>
+                                    <li><a href="#">Post Landing Assistant</a></li>
+                                    <li><a href="#">Meet Our Agents</a></li>
+                                    <li><a href="#">Visa Documentation</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -43,12 +43,12 @@
                             </div>
                             <div class="widget-content">
                                 <ul class="list clearfix">
-                                    <li><a href="index.html">About Visarzo</a></li>
-                                    <li><a href="index.html">Why Immigrate</a></li>
-                                    <li><a href="index.html">Service Features</a></li>
-                                    <li><a href="index.html">Study Visas</a></li>
-                                    <li><a href="index.html">Apply As Citizenship</a></li>
-                                    <li><a href="index.html">Immigration Resources</a></li>
+                                    <li><a href="#">About Visarzo</a></li>
+                                    <li><a href="#">Why Immigrate</a></li>
+                                    <li><a href="#">Service Features</a></li>
+                                    <li><a href="#">Study Visas</a></li>
+                                    <li><a href="#">Apply As Citizenship</a></li>
+                                    <li><a href="#">Immigration Resources</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -73,11 +73,11 @@
             </div>
         </div>
         <div class="footer-bottom clearfix">
-            <div class="copyright pull-left"><p>(&copy;) 2020 <a href="index.html">VISARZO</a> Immigration & Visa Firm. All rights reserved.</p></div>
+            <div class="copyright pull-left"><p>(&copy;) 2025 <a href="#">YES Education</a> Immigration & Visa Firm. All rights reserved.</p></div>
             <ul class="footer-nav pull-right clearfix"> 
-                <li><a href="index.html">Privacy Policy</a></li>
-                <li><a href="index.html">Sitemap</a></li>
-                <li><a href="index.html">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
             </ul>
         </div>
     </div>

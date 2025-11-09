@@ -124,6 +124,12 @@
                                         value="{{ old('contact_mobile') ?: $websiteParameter->contact_mobile ?? '' }}"
                                         id="contact_mobile" placeholder="+055654646515" autocomplete="off">
                                 </div>
+                                <div class="form-group ">
+                                    <label for="whatsapp_number" class="  control-label">Whatsapp Mobile</label>
+                                    <input type="text" name="whatsapp_number" class="form-control"
+                                        value="{{ old('whatsapp_number') ?: $websiteParameter->whatsapp_number ?? '' }}"
+                                        id="whatsapp_number" placeholder="+055654646515" autocomplete="off">
+                                </div>
 
                                 <div class="form-group ">
                                     <label for="contact_email" class="  control-label">Contact email</label>
@@ -138,6 +144,22 @@
                                         value="{{ old('twitter_url') ?: $websiteParameter->twitter_url ?? '' }}"
                                         id="twitter_url" placeholder="Twitter url" autocomplete="off">
                                 </div>
+
+                                                                <div class="form-group ">
+                                    <label for="linkedin_url" class="  control-label">Linkedin Url</label>
+                                    <input type="text" name="linkedin_url" class="form-control"
+                                        value="{{ old('linkedin_url') ?: $websiteParameter->linkedin_url ?? '' }}"
+                                        id="linkedin_url" placeholder="Twitter url" autocomplete="off">
+                                </div>
+
+
+                                <div class="form-group ">
+                                    <label for="instagram_url" class="  control-label">Instagram Url</label>
+                                    <input type="text" name="instagram_url" class="form-control"
+                                        value="{{ old('instagram_url') ?: $websiteParameter->instagram_url ?? '' }}"
+                                        id="instagram_url" placeholder="Instagram Url" autocomplete="off">
+                                </div>
+
 
                                 <div class="form-group ">
                                     <label for="youtube_url" class="  control-label">Youtube Url</label>

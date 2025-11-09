@@ -30,9 +30,12 @@ class WebsiteParameterController extends Controller
         $wp->footer_copyright = $request->footer_copyright;
         $wp->fb_url = $request->fb_url;
         $wp->contact_mobile = $request->contact_mobile;
+        $wp->whatsapp_number = $request->whatsapp_number;
         $wp->contact_email = $request->contact_email;
         $wp->contact_address = $request->contact_address;
         $wp->twitter_url = $request->twitter_url;
+        $wp->linkedin_url = $request->linkedin_url;
+        $wp->instagram_url = $request->instagram_url;
         $wp->youtube_url = $request->youtube_url;
 
         //For SEO START

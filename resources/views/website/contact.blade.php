@@ -84,7 +84,7 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="flaticon-pin"></i></div>
                                     <h3>Office Address</h3>
-                                    <p>House 30, Road 7, Block C, Niketan, Gulshan 1, Dhaka, Bangladesh</p>
+                                    <p>{{$ws->contact_address}}</p>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +93,19 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="flaticon-call"></i></div>
                                     <h3>Phone Us</h3>
-                                    <p>Hotline: <br><a href="tel:08801684931156">+880 1684-931156 
-                                        <br>  <a href="tel:8801717564814"></a> +880 1717-564814 
-                                        <br>  <a href="tel:8801756563599"></a> +880 1756-563599 
-                                        <br>  <a href="tel:8801898828980"></a> +880 1898-828980 
-                                        <br>  <a href="tel:8801898828982"></a>+880 1898-828982</a>
-                                        <br />
+                                    <p>
+                                        Hotline: <br>
+                                        @php 
+                                            $mobile_numbers = explode(',', $ws->contact_mobile);
+                                            $contact_emails = explode(',', $ws->contact_email);
+                                        @endphp
+
+                                        @foreach ($mobile_numbers as $number)
+                                            @php 
+                                                $clean_number = str_replace(['+', '-', ' '], '', trim($number));
+                                            @endphp
+                                            <a href="tel:{{ $clean_number }}">+{{ ltrim($clean_number, '0') }}</a><br>
+                                        @endforeach
                                     </p>
                                 </div>
                             </div>
@@ -108,8 +115,19 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="flaticon-envelope"></i></div>
                                     <h3>Send Message</h3>
-                                    <p><a href="mailto:info@yesehec.com">info@yesehec.com | </a><br /><a
-                                            href="mailto:admission@yesehec.com">admission@yesehec.com</a></p>
+                                    @php 
+                                        $contact_emails = explode(',', $ws->contact_email);
+                                    @endphp
+
+                                    <p>
+                                        @foreach ($contact_emails as $email)
+                                            @php $email = trim($email); @endphp
+                                            <a href="mailto:{{ $email }}">{{ $email }}</a>
+                                            @if (!$loop->last)
+                                                | <br />
+                                            @endif
+                                        @endforeach
+                                    </p>
                                 </div>
                             </div>
                         </div>

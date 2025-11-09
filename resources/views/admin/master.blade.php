@@ -466,6 +466,23 @@
                         <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
                             <i class="nav-icon fas fa-quote-right"></i>
                             <p>
+                                About Us
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('testimonials.index') }}" class="nav-link {{ session('lsbsm') == 'testimonialsAll' ? ' active ' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>About Section</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
+                            <i class="nav-icon fas fa-quote-right"></i>
+                            <p>
                                 Testimonials
                                 <i class="fas fa-angle-left right"></i>
                             </p>
