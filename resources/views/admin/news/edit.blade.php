@@ -19,12 +19,18 @@
                                
                                  <div class="form-group">
                                      <label for="title">Title</label>
-                                    <input type="text" name="title"  value="{{$news->title}}" class="form-control" placeholder="Enter Title">
+                                    <input type="text" name="title"  id="title" value="{{$news->title}}" class="form-control" placeholder="Enter Title">
                                      @error('title')
                                       <span style="color:red">{{ $message }}</span>
                                      @enderror
                                  </div>
-
+                                <div class="form-group">
+                                    <label for="slug">Slug</label>
+                                    <input type="text" name="slug" id="slug" value="{{ $news->title ? $news->title : old('slug') }}" class="form-control" placeholder="Slug" readonly>
+                                    @error('slug')
+                                        <span style="color:red">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 <div class="form-group">
                                     <label for="category_id">Category</label>
                                     <select name="category_id"  class="form-control select2">
@@ -240,7 +246,14 @@
             },
         });
 
-
+        // blog slug query 
+        $('#title').on('keyup', function(){
+            let text = $(this).val();
+            let slug = text.toLowerCase()
+                        .replace(/ /g,'-')
+                        .replace(/[^\w-]+/g,''); // remove special chars
+            $('#slug').val(slug);
+        });
     });
 
 </script>

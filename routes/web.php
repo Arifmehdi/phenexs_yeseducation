@@ -122,7 +122,7 @@ Route::get('/course/details',[FrontendController::class,'courseDetails'])->name(
 Route::get('/event',[FrontendController::class,'event'])->name('event');
 Route::get('/event/details',[FrontendController::class,'eventDetails'])->name('eventDetails');
 Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
-Route::get('/blog/details',[FrontendController::class,'blogDetails'])->name('blogDetails');
+Route::get('/blog/details/{slug}',[FrontendController::class,'blogDetails'])->name('blogDetails');
 // Route::get('/product',[HomeController::class,'product'])->name('product');
 
 Route::get('agent/dashboard',[FrontendController::class, 'memberDashboard'])->name('agent.dashboard');
@@ -501,10 +501,11 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     Route::get('hospital/alldoctors/{id}',[ServiceController::class,'hospitalAllDoctors'])->name('hospital.alldoctors');
 
     // Doctor
-    Route::resource('categories',CategoriesController::class);
+    // Route::resource('categories',CategoriesController::class);
     
     // Testimonials
     Route::resource('testimonials', AdminTestimonialController::class);
+    // Route::get('about-us', AdminTestimonialController::class);
     
     Route::post('/categories/active',[CategoriesController::class,'DoctorActive'])->name('doctor.active');
    

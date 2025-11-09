@@ -102,15 +102,38 @@ class FrontendController extends Controller
     
     public function blog()
     {
-        $wp = WebsiteParameter::first();
-        return view('website.blog', compact('wp'));  
+        $blogs = BlogPost::with([
+            'category:id,name', 
+            'addedBy:id,name'
+        ])
+        ->where('status', 'published')
+        ->select('id', 'slug','category_id', 'addedby_id', 'title', 'excerpt', 'feature_image', 'created_at')
+        ->paginate(20);
+
+        $categories = BlogCategory::select('id', 'name')->orderBy('name')->get();
+        $recentPosts = BlogPost::where('status', 'published')
+            ->select('id', 'slug','title', 'feature_image', 'created_at')
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return view('website.blog', compact('blogs', 'categories', 'recentPosts'));
+
     }
 
-    public function blogDetails()
+    public function blogDetails($slug)
     {
-        $wp = WebsiteParameter::first();
-        return view('website.blogDetails', compact('wp'));  
+        $blog = BlogPost::with([
+            'category:id,name', 
+            'addedBy:id,name'
+        ])
+        ->where('status', 'published')
+        ->where('slug', $slug) // fetch by slug
+        ->firstOrFail(['id', 'category_id', 'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at']);
+
+        return view('website.blogDetails', compact('blog'));  
     }
+
     
 
     public function event()

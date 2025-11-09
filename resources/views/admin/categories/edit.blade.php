@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="">Category Name</label>
-                        <input type="text" name="name" class="form-control" value="{{category->name}}" placeholder="Enter Category Name">
+                        <input type="text" name="name" class="form-control" value="{{ $category->name}}" placeholder="Enter Category Name">
                         @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

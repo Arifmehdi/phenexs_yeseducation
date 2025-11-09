@@ -3,7 +3,8 @@
     <tr>
         <th width="20">SL</th>
         <th width="100">Action</th>
-        <th>Title</th>
+        <th>Title</th> 
+        <th>Slug</th> 
         <th>Image</th>
         <th>Active</th>
         <th>Status</th>
@@ -25,11 +26,20 @@
                 </form>
             </td>
             <td>{{$news->title}}</td>
+            <td>{{$news->slug}}</td>
             <td>
                 <img  src="{{ route('imagecache', ['template' => 'ppsm', 'filename' => $news->fi()]) }}" alt="post">
             </td>
             <td>
-                <input type="checkbox" name="toogle" data-url="{{route('news.active')}}" value="{{$news->id}}" data-toggle="toggle" data-size="sm" {{$news->active==1 ? 'checked' : '' }} data-on="On"  data-off="Off" data-onstyle="success" data-offstyle="danger">
+            <input type="checkbox" 
+                id="news-toggle-{{ $news->id }}" 
+                class="toggle-active" 
+                data-id="{{ $news->id }}" 
+                data-toggle="toggle" data-size="sm" 
+                {{ $news->active ? 'checked' : '' }} 
+                data-on="On" data-off="Off" 
+                data-onstyle="success" data-offstyle="danger">
+
             </td>
             <td>{{$news->status}}</td>
 
@@ -38,6 +48,58 @@
     </tbody>
 </table>
 {{ $newses->render() }}
+
+@push('js')
+
+<script>
+
+$(document).ready(function() {
+    $('.toggle-active').change(function() {
+        var mode = $(this).prop('checked'); // true/false
+        var id = $(this).data('id');
+        var url = "{{ route('news.active') }}";
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                _token: "{{ csrf_token() }}",
+                id: id,
+                mode: mode
+            },
+            success: function(response) {
+                if(response.status) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.msg,
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.msg,
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                }
+            },
+            error: function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong!',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+        });
+    });
+});
+</script>
+
+@endpush
 
 
 

@@ -367,6 +367,46 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
+                            <i class="nav-icon far fa-share-square"></i>
+                            <p>
+                                Blogs
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{route('categories.index')}}" class="nav-link {{ session('lsbsm') == 'allCategories' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All  Category</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('categories.create')}}" class="nav-link {{ session('lsbsm') == 'createCategory' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create  Category</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('news.index')}}" class="nav-link {{ session('lsbsm') == 'allPosts' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Blogs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('news.create')}}" class="nav-link {{ session('lsbsm') == 'storePost' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create Blog</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
 
                     {{--<li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
@@ -698,7 +738,8 @@
 
 <!--===== SORTABLE JS =====-->
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-
+<!--===== sweetalert2 =====-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {{--summernote--}}
 <script>
     $(function () {

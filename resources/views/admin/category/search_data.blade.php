@@ -3,8 +3,7 @@
         <tr>
             <th>SL</th>
             <th>Action</th>
-            <th> Name (English)</th>
-            <th> Name (Bangla)</th>
+            <th> Name</th>
             {{--<th>Email</th>
             <th>Mobile</th>
             <th>Chambar Location</th>
@@ -41,7 +40,6 @@
 
                 </td>
                 <td><a href="{{route('categories.index',['id' => $doctor->id ?? ''])}}">{{ Str::ucfirst($doctor->name_en) }}</a></td>
-                <td><a href="{{route('categories.index',['id' => $doctor->id ?? ''])}}">{{ Str::ucfirst($doctor->name_bn) }}</a></td>
                 {{--<td>{{ $doctor->email }}</td>
                 <td>{{ $doctor->mobile }}</td>
                 <td>{{ $doctor->chambar_location }}</td>

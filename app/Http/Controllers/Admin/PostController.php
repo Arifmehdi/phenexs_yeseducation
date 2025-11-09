@@ -67,6 +67,7 @@ class PostController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
+            'slug' => 'required|string| unique:blog_posts,slug',
             'category_id' => 'required',
             'excerpt' => 'nullable|string',
             'description' => 'nullable|string',
@@ -86,6 +87,7 @@ class PostController extends Controller
 
         $blogPost = new BlogPost();
         $blogPost->title = $request->title;
+        $blogPost->slug = $request->slug;
         $blogPost->category_id = $request->category_id;
         $blogPost->excerpt = $request->excerpt;
         $blogPost->description = $request->description;
@@ -148,6 +150,7 @@ class PostController extends Controller
 
         $this->validate($request, [
             'title' => 'required|string',
+            'slug' => 'required|string| unique:blog_posts,slug',
             'excerpt' => 'nullable|string',
             'category_id' => 'required',
             'description' => 'nullable|string',
@@ -172,6 +175,7 @@ class PostController extends Controller
             }
 
             $blogPost->title = $request->title;
+            $blogPost->slug = $request->slug;
             $blogPost->category_id = $request->category_id;
             $blogPost->excerpt = $request->excerpt;
             $blogPost->description = $request->description;

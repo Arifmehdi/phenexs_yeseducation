@@ -9,15 +9,15 @@
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>Category ID</th>
-                    <td>{{$blog_category->id}}</td>
+                    <td>{{$category->id}}</td>
                 </tr>
                 <tr>
                     <th>Category Name</th>
-                    <td>{{$blog_category->name}}</td>
+                    <td>{{$category->name}}</td>
                 </tr>
                 <tr>
                     <th>Active</th>
-                    <td>{{$blog_category->active==1?'On':'Off'}}</td>
+                    <td>{{$category->active==1?'On':'Off'}}</td>
                 </tr>
 
             </table>

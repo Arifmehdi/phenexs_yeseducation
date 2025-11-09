@@ -27,6 +27,8 @@
 <link href="{{ asset('frontend/assets/css/switcher-style.css') }}" rel="stylesheet">
 <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
+ <!-- nice dropdown css  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
 @stack('css')
 </head>
 
@@ -130,7 +132,11 @@
 
     <!-- main-js -->
     <script src="{{ asset('frontend/assets/js/script.js') }}"></script>
-    @stack('js')
+
+
+    <!-- nice dropdown js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+        @stack('js')
 </body>
 <!-- End of .page_wrapper -->
 </html>
