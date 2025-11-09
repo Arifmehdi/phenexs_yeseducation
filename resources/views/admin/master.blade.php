@@ -296,7 +296,7 @@
                         </ul>
                     </li>--}}
 
-                    <li class="nav-item {{ session('lsbm') == 'departments'? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'departments'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'departments'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-passport"></i>
                             <p>
@@ -319,7 +319,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>--}}
 
                     {{--<li class="nav-item {{ session('lsbm') == 'chambers'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'chambers'? ' active ' : ''}}">
@@ -440,6 +440,54 @@
                                 <a href="{{route('destinations.create')}}" class="nav-link {{ session('lsbsm') == 'storeDestinations' ? ' active ' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Create Destination</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'service'? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'service'? ' active ' : ''}}">
+                            <i class="nav-icon far fa-share-square"></i>
+                            <p>
+                                Services 
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('service.index')}}" class="nav-link {{ session('lsbsm') == 'allServices' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Services</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('service.create')}}" class="nav-link {{ session('lsbsm') == 'storeServices' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create Services</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'course'? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'course'? ' active ' : ''}}">
+                            <i class="nav-icon far fa-share-square"></i>
+                            <p>
+                                Courses 
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('course.index')}}" class="nav-link {{ session('lsbsm') == 'allCourses' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Courses</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('course.create')}}" class="nav-link {{ session('lsbsm') == 'storeCourses' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create Courses</p>
                                 </a>
                             </li>
 
@@ -603,7 +651,7 @@
 
 
                     {{-- Products --}}
-                    <li class="nav-item {{ session('lsbm') == 'product'? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'product'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'product'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-shopping-cart"></i>
                             <p>
@@ -626,11 +674,11 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>--}}
 
                                             
                         {{-- Orders --}}
-                    <li class="nav-item {{ session('lsbm') == 'order' ? 'menu-open' : '' }}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'order' ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'order' ? 'active' : '' }}">
                             <i class="nav-icon fas fa-shopping-bag"></i>
                             <p>
@@ -646,9 +694,9 @@
                             </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}
 
-                   <li class="nav-item {{ session('lsbm') == 'shipping' ? 'menu-open' : '' }}">
+                   {{--<li class="nav-item {{ session('lsbm') == 'shipping' ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'shipping' ? 'active' : '' }}">
                             <i class="nav-icon fas fa-shipping-fast"></i>
                             <p>
@@ -664,7 +712,7 @@
                             </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}}
                    
                    
 

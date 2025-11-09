@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AmbulanceServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DestinationCatController;
+use App\Http\Controllers\Admin\VisaServiceController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\ChamberController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\CategoriesController;
@@ -481,15 +483,20 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     ]);
 
 
-
-
-    
     //Destination
     Route::resource('destination',DestinationCatController::class);
     Route::post('destination/active',[DestinationCatController::class,'categoryActive'])->name('destination.active');
     
     Route::resource('destinations',DestinationController::class);
     Route::post('destinations/active',[DestinationController::class,'newsActive'])->name('destinations.active');
+
+    //Destination
+    Route::resource('service',VisaServiceController::class);
+    Route::post('service/active',[VisaServiceController::class,'newsActive'])->name('visa.service.active');
+
+    //courses
+    Route::resource('course',CourseController::class);
+    Route::post('course/active',[CourseController::class,'newsActive'])->name('course.active');
     
     //BlogPost
     Route::resource('categories',CategoryController::class);
