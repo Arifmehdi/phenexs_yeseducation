@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Our Services - North Bengal')
+@section('title', 'YES Education - Our Services')
 
 @section('meta')
 <meta name="description"
@@ -17,7 +17,8 @@
 @section('content')
 
 <!--Page Title-->
-<section class="page-title" style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg') }}');">
+<section class="page-title"
+    style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg') }}');">
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
@@ -43,6 +44,8 @@
     <div class="auto-container">
         <div class="top-inner">
             <div class="row clearfix">
+
+
                 <div class="col-lg-5 col-md-12 col-sm-12 title-column">
                     <div class="sec-title">
                         <p>How we help clients</p>
@@ -54,6 +57,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-7 col-md-12 col-sm-12 text-column">
                     <div class="text">
                         <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
@@ -63,103 +67,45 @@
             </div>
         </div>
         <div class="row clearfix">
+            @forelse($services as $service)
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one">
                     <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-manager"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Working Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
+                        <div class="icon-box">
+                            @if(!empty($service->icon_image) && file_exists(public_path('storage/courses_images/' .
+                            $service->icon_image)))
+                            <img src="{{ asset('storage/services_images/' . $service->icon_image) }}"
+                                alt="{{ $service->title }}" style="width: 60px; height: 60px; object-fit: contain;">
+                            @else
+                            <i class="flaticon-manager"></i> {{-- fallback icon --}}
+                            @endif
+                        </div>
+                        <!-- <span>Visa Types</span> -->
+                        <h3>
+                            <a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
+                        </h3>
+                        <p>{{ Str::limit($service->excerpt, 50) }}</p>
+                        <div class="link">
+                            <a href="{{ route('serviceDetails', $service->slug) }}">
+                                <i class="flaticon-send"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-flight"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Study Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-airport"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Business Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-bus-stop"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Tourist Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-bank"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Investor Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-bus-2"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Transit Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-tie"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Diplomatic Visa</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                <div class="service-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-visa-1"></i></div>
-                        <span>visa types</span>
-                        <h3><a href="service-details.html">Journalist Visas</a></h3>
-                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc bibend.</p>
-                        <div class="link"><a href="service-details.html"><i class="flaticon-send"></i></a></div>
-                    </div>
-                </div>
-            </div>
+            @empty
+            <p>No Service Available Here</p>
+            @endforelse
+
         </div>
-    </div>
 </section>
 <!-- service-section end -->
 <!-- apply-section -->
 <section class="apply-section">
     <div class="auto-container">
         <div class="inner-box clearfix">
-            <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/apply-1.jpg') }}" alt=""></figure>
+            <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/apply-1.jpg') }}" alt="">
+            </figure>
             <div class="content-box">
                 <div class="icon-box">
                     <div class="icon icon-1"></div>
@@ -292,7 +238,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -317,7 +264,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -342,7 +290,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -367,7 +316,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -392,7 +342,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-1.png') }}" alt=""></figure>
                         <h5>James Thomas</h5>
                         <span class="designation">California, USA</span>
                     </div>
@@ -417,7 +368,8 @@
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
+                        <figure class="image-box"><img
+                                src="{{ asset('frontend/assets/images/resource/testimonial-2.png') }}" alt=""></figure>
                         <h5>Tanya Benson</h5>
                         <span class="designation">California, USA</span>
                     </div>

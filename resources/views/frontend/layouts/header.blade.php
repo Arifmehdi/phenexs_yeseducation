@@ -77,70 +77,42 @@
                                         href="{{ route('home') }}">Home</a></li>
                                 <li class="dropdown {{ request()->routeIs('about') ? 'active current' : ''  }} "><a
                                         href="{{ route('about') }}">About</a></li>
-                                <li class="dropdown {{ request()->routeIs('courses') ? 'active current' : ''  }} "><a
-                                        href="{{ route('courses') }}">Courses</a>
+                                <li class="dropdown {{ request()->routeIs('courses') ? 'active current' : '' }}">
+                                    <a href="{{ route('courses') }}">Courses</a>
                                     <div class="megamenu">
                                         <div class="row clearfix">
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Advanced
-                                                            Computing</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Digital Marketing</a>
-                                                    </li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC In Nursing</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">Broadcast Journalism</a>
-                                                    </li>
-                                                    <li><a href="{{ route('courseDetails') }}">Master Of Public
-                                                            Health</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><a href="{{ route('courseDetails') }}">Master Of Business
-                                                            Administration</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Information
-                                                            Technology</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Information
-                                                            Management</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Logistics Supply
-                                                            Chain Management</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Advance Computing</a>
-                                                    </li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC International Event
-                                                            Management</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Computer Science</a>
-                                                    </li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Project
-                                                            Management</a></li>
-                                                    <li><a href="{{ route('courseDetails') }}">MSC Criminal Justice</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            @foreach($coursa->chunk(ceil($coursa->count() / 3)) as $chunk)
+                                                <div class="col-lg-4 column">
+                                                    <ul>
+                                                        @foreach($chunk as $course)
+                                                            <li>
+                                                                <a href="{{ route('courseDetails',  $course->slug) }}">
+                                                                    {{ $course->title }}
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </li>
-                                <li class="dropdown {{ request()->routeIs('service') ? 'active current' : ''  }}"><a
-                                        href="{{ route('service') }}">Services</a>
+
+                                <li class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }}">
+                                    <a href="{{ route('service') }}">Services</a>
                                     <ul>
-                                        <li><a href="{{ route('serviceDetails') }}">Student Counselling</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Student Application Support</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Scholarship Assistance</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Pre Departure Guidance</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Career Guidance</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Course Selection</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">College/University Selection</a>
-                                        </li>
-                                        <li><a href="{{ route('serviceDetails') }}">Visa Application Advice</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Traveling Assistance</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Free Guideline About
-                                                Life-in-abroad</a></li>
-                                        <li><a href="{{ route('serviceDetails') }}">Visa File Processing</a></li>
+                                        @forelse($servica as $service)
+                                            <li>
+                                                <a href="{{ route('serviceDetails', $service->slug) }}">
+                                                    {{ $service->title }}
+                                                </a>
+                                            </li>
+                                        @empty
+                                            <li><a href="#">No Services Available</a></li>
+                                        @endforelse
                                     </ul>
                                 </li>
+
                                 <li class="dropdown {{ request()->routeIs('destination') ? 'active current' : ''  }}"><a
                                         href="{{ route('destination') }}">Destination</a>
                                     <ul>

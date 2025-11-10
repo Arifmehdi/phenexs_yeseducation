@@ -6,7 +6,8 @@ use App\Models\BisesoggoCategory;
 use App\Models\BlogPost;
 use App\Models\Destination;
 use App\Models\FrontSlider;
-use App\Models\Hospital;
+use App\Models\Course;
+use App\Models\Service;
 use App\Models\Menu;
 use App\Models\Page;
 use App\Models\WebsiteParameter;
@@ -43,7 +44,9 @@ class AppServiceProvider extends ServiceProvider
             View::share('ws',WebsiteParameter::first());
             View::share('departments',  BisesoggoCategory::orderBy('name_bn')->whereActive(true)->get());
             View::share('sliders',  FrontSlider::latest()->whereActive(true)->get());
-            View::share('destinate',  Destination::latest()->whereActive(true)->select('title','slug','id','category_id')->get());
+            View::share('destinate',  Destination::orderby('title')->whereActive(true)->select('title','slug','id','category_id')->get());
+            View::share('coursa',  Course::orderby('title')->whereActive(true)->select('title','slug','id','category_id')->get());
+            View::share('servica',  Service::orderby('title')->whereActive(true)->select('title','slug','id','category_id')->get());
         });
 
         Paginator::useBootstrap();

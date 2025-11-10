@@ -38,7 +38,7 @@
     transform: scale(1.05);
 }
 </style>
-@endpush 
+@endpush
 
 @section('content')
 <!-- banner-section -->
@@ -228,24 +228,7 @@
     </div>
 </section>
 
-<!-- kdgjkds ksadjfkas djfkjfk sadkfjsadkf kasdjfks dfjksajdkf sadkfjks adfksadf kasdfk sdkfjkdslfjks kldsajfk sadkfjsdakfksadj fksdajfksd fkdsjfksdjfk asdkfjadksfj kasdfjkajkf   -->
 <!-- feature-section start -->
-@php
-$features = [
-['icon' => '01.PNG', 'title' => 'Student Counselling'],
-['icon' => '02.PNG', 'title' => 'Student Application Support'],
-['icon' => '03.PNG', 'title' => 'Scholarship Assistance'],
-['icon' => '04.PNG', 'title' => 'Pre Departure Guidance'],
-['icon' => '05.PNG', 'title' => 'Career Guidance'],
-['icon' => '06.PNG', 'title' => 'Course Selection'],
-['icon' => '07.PNG', 'title' => 'College / University Selection'],
-['icon' => '08.PNG', 'title' => 'Whole Admission Processing'],
-['icon' => '09.PNG', 'title' => 'Visa Application Advice'],
-['icon' => '10.PNG', 'title' => 'Free Guideline About Life in Abroad'],
-['icon' => '11.PNG', 'title' => 'Traveling Assistance'],
-['icon' => '12.PNG', 'title' => 'Visa File Processing'],
-];
-@endphp
 
 <section class="feature-section" style="padding: 80px 0;">
     <div class="auto-container">
@@ -255,30 +238,34 @@ $features = [
         </div>
 
         <div class="row clearfix justify-content-center">
-            @foreach ($features as $feature)
+            @foreach ($services as $feature)
             <div class="col-lg-4 col-md-4 col-6 mb-4">
-                <div class="feature-card d-flex align-items-center p-3"
-                    style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
+                <a href="{{ route('serviceDetails', $feature->slug) }}" class="text-decoration-none">
+                    <div class="feature-card d-flex align-items-center p-3"
+                        style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
 
-                    <!-- Icon -->
-                    <div class="icon flex-shrink-0 text-center"
-                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                        <img src="{{ asset('frontend/assets/images/icons/' . $feature['icon']) }}"
-                            alt="{{ $feature['title'] }} Icon" style="width: 55px; height: 55px; object-fit: contain;">
-                    </div>
+                        <!-- Icon -->
+                        <div class="icon flex-shrink-0 text-center"
+                            style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            <img src="{{ asset('storage/services_images/' . $feature->icon_image) }}"
+                                alt="{{ $feature->title }} Icon"
+                                style="width: 55px; height: 55px; object-fit: contain;">
+                        </div>
 
-                    <!-- Title -->
-                    <div class="feature-text text-start" style="margin-left: 10px;">
-                        <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
-                            {{ $feature['title'] }}
-                        </h3>
+                        <!-- Title -->
+                        <div class="feature-text text-start" style="margin-left: 10px;">
+                            <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
+                                {{ $feature->title }}
+                            </h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
     </div>
 </section>
+
 
 
 
@@ -293,7 +280,7 @@ $features = [
 
 
 <!-- service-style-two -->
-<section class="service-style-two bg-color-3">
+{{--<section class="service-style-two bg-color-3">
     <div class="auto-container">
         <div class="sec-title centred">
             <p>countries we offer support</p>
@@ -311,149 +298,149 @@ $features = [
                 <div class="inner-box">
                     <figure class="image-box"><a href="service-details.html"><img
                                 src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-manager"></i></div>
-                            <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
+<div class="lower-content">
+    <div class="box">
+        <div class="icon-box"><i class="flaticon-manager"></i></div>
+        <h3><a href="service-details.html">Working Visas</a></h3>
+        <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+            perspiciatis unde omnis iste.</p>
+    </div>
+    <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+    </div>
+</div>
+</div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
             </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-flight"></i></div>
-                            <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
-                            <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-manager"></i></div>
-                            <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-flight"></i></div>
-                            <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
-                            <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="assets/images/service/service-1.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-manager"></i></div>
-                            <h3><a href="service-details.html">Working Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-flight"></i></div>
-                            <h3><a href="service-details.html">Studing Visas</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <figure class="image-box"><a href="service-details.html"><img
-                                src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
-                    <div class="lower-content">
-                        <div class="box">
-                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
-                            <h3><a href="service-details.html">Visiting Visa</a></h3>
-                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                perspiciatis unde omnis iste.</p>
-                        </div>
-                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
             </div>
         </div>
     </div>
-    <!-- <div class="more-text centred">
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-manager"></i></div>
+                <h3><a href="service-details.html">Working Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img src="assets/images/service/service-1.jpg') }}"
+                    alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-manager"></i></div>
+                <h3><a href="service-details.html">Working Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- <div class="more-text centred">
         <div class="auto-container">
             <div class="inner">
                 <h3>YES Education is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get
@@ -461,7 +448,7 @@ $features = [
             </div>
         </div>
     </div> -->
-</section>
+</section>--}}
 <!-- service-style-two end -->
 
 
@@ -598,14 +585,17 @@ $features = [
                     data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box"><img
-                                src="{{ asset('storage/destination_images/' . $destination->fi()) }}" alt="{{ $destination->title }}"></figure>
+                                src="{{ asset('storage/destination_images/' . $destination->fi()) }}"
+                                alt="{{ $destination->title }}"></figure>
                         <div class="text">
-                            <h3><a href="{{ route('destinationDetails', $destination->slug)}}">{{ $destination->category->name}}</a></h3>
+                            <h3><a
+                                    href="{{ route('destinationDetails', $destination->slug)}}">{{ $destination->category->name}}</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach 
+            @endforeach
         </div>
     </div>
 </section>
@@ -754,42 +744,18 @@ $features = [
             SEE OUR TOP COURSES
         </h2>
         <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+
+            @foreach($courses as $course)
             <div class="feature-block-one mb-30">
                 <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}"
-                            alt=""></figure>
+                    <figure class="image-box"><img src="{{ asset('storage/courses_images/' . $course->feature_image) }}"
+                            alt="{{$course->title}}"></figure>
                     <div class="text">
-                        <h3><a href="index.html">MSC Criminal Justice</a></h3>
+                        <h3><a href="{{ route('courseDetails', $course->slug) }}">{{$course->title}}</a></h3>
                     </div>
                 </div>
             </div>
-            <div class="feature-block-one mb-30">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h3><a href="index.html">MSC Digital Marketing</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="feature-block-one mb-30">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h3><a href="index.html">MSC Project Management</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="feature-block-one mb-30">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}"
-                            alt=""></figure>
-                    <div class="text">
-                        <h3><a href="index.html">MSC Computer Science</a></h3>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -816,8 +782,8 @@ $features = [
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="author-inner">
-                        <figure class="image-box"><img
-                                src="{{ asset('storage/testimonial/'. $testimonial->image ) }}" alt=""></figure>
+                        <figure class="image-box"><img src="{{ asset('storage/testimonial/'. $testimonial->image ) }}"
+                                alt=""></figure>
                         <h5>{{ $testimonial->name }}</h5>
                         <span class="designation">{{ $testimonial->address }}</span>
                     </div>
@@ -876,18 +842,23 @@ $features = [
                     data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box"><a href="{{ route('blogDetails', $blog->slug) }}"><img
-                                    src="{{ asset('storage/post_images/' . $blog->feature_image) }}" alt="{{ $blog->title }}"></a></figure>
+                                    src="{{ asset('storage/post_images/' . $blog->feature_image) }}"
+                                    alt="{{ $blog->title }}"></a></figure>
                         <div class="lower-content">
                             <div class="post-date">
-                                <h2>{{ strtoupper($blog->created_at->format('d')) }}</h2><span>{{ strtoupper($blog->created_at->format('M')) }}</span>
+                                <h2>{{ strtoupper($blog->created_at->format('d')) }}</h2>
+                                <span>{{ strtoupper($blog->created_at->format('M')) }}</span>
                             </div>
                             <h3><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->title }}</a></h3>
                             <ul class="post-info clearfix">
-                                <li><a href="{{ route('blogDetails', $blog->slug) }}">By {{ $blog->addedBy->name ?? 'Admin' }}</a></li>
-                                <li><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->category->name ?? 'Uncategorized' }}</a>
-                                {{-- ,<a href="{{ route('blogDetails', $blog->slug) }}">Work</a></li> --}}
+                                <li><a href="{{ route('blogDetails', $blog->slug) }}">By
+                                        {{ $blog->addedBy->name ?? 'Admin' }}</a></li>
+                                <li><a
+                                        href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->category->name ?? 'Uncategorized' }}</a>
+                                    {{-- ,<a href="{{ route('blogDetails', $blog->slug) }}">Work</a></li> --}}
                             </ul>
-                            <div class="link"><a href="{{ route('blogDetails', $blog->slug) }}">Learn More<i class="flaticon-send"></i></a>
+                            <div class="link"><a href="{{ route('blogDetails', $blog->slug) }}">Learn More<i
+                                        class="flaticon-send"></i></a>
                             </div>
                         </div>
                     </div>

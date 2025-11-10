@@ -19,7 +19,7 @@
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
-                <h1>Our Coaching</h1>
+                <h1>Our Courses</h1>
                 <div class="dotted-box">
                     <span class="dotted"></span>
                     <span class="dotted"></span>
@@ -28,7 +28,7 @@
             </div>
             <ul class="bread-crumb clearfix">
                 <li><i class="flaticon-home-1"></i><a href="{{ route('home') }}">Home</a></li>
-                <li>Coaching</li>
+                <li>Courses</li>
             </ul>
         </div>
     </div>
@@ -51,114 +51,28 @@
             </div>
         </div>
         <div class="row clearfix">
+
+            @forelse($courses as $course)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="00ms"
                     data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-4.jpg') }}" alt=""></a></figure>
+                        <figure class="image-box"><a href="{{ route('courseDetails', $course->slug) }}"><img
+                                    src="{{ asset('storage/courses_images/' . $course->feature_image) }}" alt="{{ $course->title}}"></a></figure>
                         <div class="lower-content">
                             <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">Citizenship Test</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
+                                <h3><a href="{{ route('courseDetails',$course->slug) }}">{{ $course->title}}</a></h3>
+                                <p>{{ Str::limit($course->excerpt, 100) }}</p>
                             </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
+                            <div class="link"><a href="{{ route('courseDetails', $course->slug) }}">Read More<i class="flaticon-send"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="300ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">TOEFL</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
-                            </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-5.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">PTE Coaching</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
-                            </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="00ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-6.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">Take IELTS</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
-                            </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="300ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-7.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">SAT Coaching</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
-                            </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="service-block-two wow fadeInUp animated animated" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="{{ route('courseDetails') }}"><img
-                                    src="{{ asset('frontend/assets/images/service/service-8.jpg') }}" alt=""></a></figure>
-                        <div class="lower-content">
-                            <div class="box">
-                                <h3><a href="{{ route('courseDetails') }}">Skills Exam</a></h3>
-                                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
-                                    perspiciatis unde omnis iste.</p>
-                            </div>
-                            <div class="link"><a href="{{ route('courseDetails') }}">Read More<i class="flaticon-send"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @empty 
+            <p>No Courses  Available Here </p>
+            @endforelse 
         </div>
     </div>
 </section>

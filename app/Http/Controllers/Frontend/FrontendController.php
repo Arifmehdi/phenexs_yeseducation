@@ -9,10 +9,13 @@ use App\Models\Cart;
 use App\Models\DeliveryLocation;
 use App\Models\Gallery;
 use App\Models\Order;
+use App\Models\Course;
 use App\Models\OrderItem;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\District;
+use App\Models\Services;
+use App\Models\Service;
 use App\Models\ProductCategory;
 use App\Models\ProductReview;
 use App\Models\shippingMethod;
@@ -48,10 +51,9 @@ class FrontendController extends Controller
 
     public function index()
     {
-        $data['categories'] = ProductCategory::where('active', 1)
-                            ->whereHas('products') // only categories that have at least one product
-                            ->where('parent_id', null)
-                            ->select('id', 'name_en', 'name_bn', 'slug', 'image') // select needed fields
+        $data['services'] = Service::where('status', 'published')
+                            ->select('id', 'slug', 'title','icon_image' )
+                            ->latest() // orders by created_at descending
                             ->get();
         $data['destinations'] = Destination::whereActive(true)->whereStatus('published')->select('title','feature_image','id','slug', 'category_id')->latest()->get();
         $data['blogs'] = BlogPost::with([
@@ -70,12 +72,9 @@ class FrontendController extends Controller
                         ->take(5)
                         ->get();
 
-        $data['departments'] = BisesoggoCategory::whereActive(true)
-                        ->limit(4)
-                        ->select('image','name_en','name_bn','excerpt_en', 'excerpt_bn')
+        $data['courses'] = Course::whereActive(true)
+                        ->select('feature_image','title','slug')
                         ->get();
-
-        $data['newses'] = BlogPost::whereActive(true)->limit(3)->get();
         $data['testimonials'] = Testimonial::whereActive(true)->select('name', 'company', 'address', 'text_en','rating', 'image')->get();
         $data['sliders'] = FrontSlider::whereActive(true)
             ->select('featured_image','title','link','btn_txt')
@@ -93,14 +92,19 @@ class FrontendController extends Controller
 
     public function courses()
     {
-        $wp = WebsiteParameter::first();
-        return view('website.courses', compact('wp'));  
+        $courses = Course::whereActive(true)->whereStatus('published')->latest()->paginate(12);
+        return view('website.courses', compact('courses'));  
     }
 
-    public function courseDetails()
+    public function courseDetails($slug)
     {
-        $wp = WebsiteParameter::first();
-        return view('website.courseDetails', compact('wp'));  
+        $course = Course::with([
+            'addedBy:id,name'
+        ])
+        ->where('status', 'published')
+        ->where('slug', $slug) // fetch by slug
+        ->firstOrFail(['id',  'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at', 'slug']);
+        return view('website.courseDetails', compact('course'));  
     }
     
     public function blog()
@@ -166,14 +170,19 @@ class FrontendController extends Controller
 
     public function service()
     {
-        $data['services'] = Hospital::latest()->whereActive(true)->get(); 
-        return view('website.service', $data);
+        $services = Service::whereActive(true)->whereStatus('published')->latest()->paginate(12);
+        return view('website.service', compact('services'));
     }
 
-    public function serviceDetails()
+    public function serviceDetails($slug)
     {
-        $wp = WebsiteParameter::first();
-        return view('website.serviceDetails', compact('wp'));  
+          $service = Service::with([
+            'addedBy:id,name'
+        ])
+        ->where('status', 'published')
+        ->where('slug', $slug) // fetch by slug
+        ->firstOrFail(['id', 'addedby_id', 'title', 'excerpt', 'description', 'feature_image', 'created_at', 'slug']);
+        return view('website.serviceDetails', compact('service'));  
     }
 
     public function destination()

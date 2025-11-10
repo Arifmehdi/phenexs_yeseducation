@@ -19,7 +19,7 @@
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
-                <h1>PTE Coaching</h1>
+                <h1>{{$course->title}}</h1>
                 <div class="dotted-box">
                     <span class="dotted"></span>
                     <span class="dotted"></span>
@@ -27,9 +27,9 @@
                 </div>
             </div>
             <ul class="bread-crumb clearfix">
-                <li><i class="flaticon-home-1"></i><a href="index.html">Home</a></li>
-                <li>Coaching</li>
-                <li>PTE Coaching</li>
+                <li><i class="flaticon-home-1"></i><a href="{{ route('home') }}">Home</a></li>
+                <li>Courses</li>
+                <li>{{$course->title}}</li>
             </ul>
         </div>
     </div>
@@ -42,111 +42,14 @@
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                <div class="sidebar">
-                    <div class="sidebar-widget sidebar-categories">
-                        <ul class="categories-list clearfix">
-                            <li><a href="coaching-details.html">Take IELTS<i class="flaticon-send"></i></a></li>
-                            <li><a href="coaching-details.html" class="active">PTE Coaching<i
-                                        class="flaticon-send"></i></a></li>
-                            <li><a href="coaching-details.html">Citizenship Test<i class="flaticon-send"></i></a></li>
-                            <li><a href="coaching-details.html">TOEFL<i class="flaticon-send"></i></a></li>
-                            <li><a href="coaching-details.html">SAT Coaching<i class="flaticon-send"></i></a></li>
-                            <li><a href="coaching-details.html">Skills Exam<i class="flaticon-send"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-widget sidebar-download">
-                        <div class="widget-title">
-                            <h3>Related Downloads</h3>
-                            <div class="dotted-box">
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                            </div>
-                        </div>
-                        <div class="widget-content">
-                            <ul class="download-list clearfix">
-                                <li>
-                                    <i class="flaticon-files"></i>
-                                    <h4><a href="coaching-details.html">PTE Coaching Brochure</a></h4>
-                                    <span>Last Update: 23 May 2020</span>
-                                </li>
-                                <li>
-                                    <i class="flaticon-files"></i>
-                                    <h4><a href="coaching-details.html">Exam Preparation Guide</a></h4>
-                                    <span>Last Update: 23 May 2020</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget sidebar-categories-2">
-                        <div class="widget-title">
-                            <h3>Visas Types We Offer</h3>
-                            <div class="dotted-box">
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                            </div>
-                        </div>
-                        <div class="widget-content">
-                            <ul class="categories-list clearfix">
-                                <li><a href="coaching-details.html">Working Visa</a></li>
-                                <li><a href="coaching-details.html">Tourists Visa</a></li>
-                                <li><a href="coaching-details.html">Immigration Visa</a></li>
-                                <li><a href="coaching-details.html">Stydy Visa</a></li>
-                                <li><a href="coaching-details.html">Transit Visa</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget sidebar-assessment">
-                        <div class="widget-title">
-                            <h3>Free Online Assessment</h3>
-                            <div class="dotted-box">
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                            </div>
-                        </div>
-                        <div class="widget-content">
-                            <form action="#" method="post"
-                                class="assessment-form">
-                                <div class="form-group">
-                                    <input type="text" name="name" placeholder="Full Name" required="">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email address" required="">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone" placeholder="Phone" required="">
-                                </div>
-                                <div class="form-group">
-                                    <div class="select-box">
-                                        <select class="wide">
-                                            <option data-display="Select">Select Visa Type</option>
-                                            <option value="1">Working Visas</option>
-                                            <option value="2">Study Visas</option>
-                                            <option value="3">Business Visas</option>
-                                            <option value="4">Tourist Visas</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="message" placeholder="Message"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="theme-btn-two"><i class="flaticon-send"></i>Send
-                                        Message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <x-sidebar/>
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                 <div class="coaching-details-content">
                     <div class="content-style-one">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/service/service-9.jpg') }}" alt=""></figure>
+                        <figure class="image-box"><img src="{{ asset('storage/courses_images/' . $course->feature_image) }}" alt="{{ $course->title }}"></figure>
                         <div class="group-title">
-                            <h2>PTE Coaching</h2>
+                            <!-- <h2>PTE Coaching</h2> -->
                             <div class="dotted-box">
                                 <span class="dotted"></span>
                                 <span class="dotted"></span>
@@ -154,80 +57,10 @@
                             </div>
                         </div>
                         <div class="text">
-                            <h3>Sponsoring and managing work visas parts now becoming results in the experience with
-                                future guranteed.</h3>
-                            <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat
-                                lobortis sem consequat consequat imperdiet. In nulla sed viverraut loremut dapib estetur
-                                diam nunc bibendum imperdiets. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com- modo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                            <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut
-                                perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                architecto beatae vitae dicta sunt explicabo. </p>
+                        {!! $course->description !!}
                         </div>
                     </div>
-                    <div class="two-column">
-                        <div class="row align-items-center clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                <figure class="image-box"><img src="{{ asset('frontend/assets/images/service/service-10.jpg') }}" alt="">
-                                </figure>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 content-column">
-                                <div class="content-box">
-                                    <h3>Test Registration and Fee</h3>
-                                    <span>To book your test:</span>
-                                    <ul class="list clearfix">
-                                        <li>1. Go to <a href="coaching-details.html">Official website</a></li>
-                                        <li>2. Click on the button “Book now”</li>
-                                        <li>3. Create your Pearsonal account.</li>
-                                        <li>4. Schedule your test on nearest test center and choose the suitable test
-                                            date.</li>
-                                        <li>5. Proceed to checkout.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-style-two">
-                        <h3>How To Do Test Preparation</h3>
-                        <div class="text">
-                            <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat
-                                lobortis sem consequat consequat imperdiet. In nulla sed viverraut loremut dapib estetur
-                                diam nunc bibendum imperdiets. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor.</p>
-                        </div>
-                        <div class="inner-box">
-                            <div class="row clearfix">
-                                <div class="col-lg-4 col-md-6 col-sm-12 column">
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="flaticon-elearning"></i></div>
-                                        <h4>Online Classes</h4>
-                                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc
-                                            bibend.</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 column">
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="flaticon-conversation"></i></div>
-                                        <h4>Tutor Led Sessions</h4>
-                                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc
-                                            bibend.</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 column">
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="flaticon-seminar"></i></div>
-                                        <h4>Resource Material</h4>
-                                        <p>Nunc quam arc pretium quis lobortis sem consequat conse tetur diam nunc
-                                            bibend.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="accordion-content">
                         <h3>Frequently asked Questions</h3>
                         <ul class="accordion-box">
