@@ -12,15 +12,15 @@
             <div class="card w3-purple shadow-sm h-100">
                 <div class="card-body d-flex justify-content-between align-items-end">
                     <div>
-                        <h4 class="text-white mb-1">{{ $productcount }}</h4>
-                        <h6 class="text-white mb-0">All Products</h6>
+                        <h4 class="text-white mb-1">{{ $course }}</h4>
+                        <h6 class="text-white mb-0">All Course</h6>
                     </div>
                     <div style="width: 45px; height: 50px;">
                         <canvas id="chart-products" height="50"></canvas>
                     </div>
                 </div>
                 <div class="card-footer text-center border-top border-light">
-                    <a href="{{ route('admin.productsAll') }}" class="text-white">View All</a>
+                    <a href="{{route('course.index')}}" class="text-white">View All</a>
                 </div>
             </div>
         </div>
@@ -30,15 +30,15 @@
             <div class="card w3-deep-purple shadow-sm h-100">
                 <div class="card-body d-flex justify-content-between align-items-end">
                     <div>
-                        <h4 class="text-white mb-1">{{ $orders }}</h4>
-                        <h6 class="text-white mb-0">All Orders</h6>
+                        <h4 class="text-white mb-1">{{ $blog }}</h4>
+                        <h6 class="text-white mb-0">All Blog</h6>
                     </div>
                     <div style="width: 45px; height: 50px;">
                         <canvas id="chart-orders" height="50"></canvas>
                     </div>
                 </div>
                 <div class="card-footer text-center border-top border-light">
-                    <a href="{{ route('admin.orderList') }}" class="text-white">View All</a>
+                    <a href="{{route('news.index')}}" class="text-white">View All</a>
                 </div>
             </div>
         </div>
@@ -66,29 +66,29 @@
             <div class="card w3-indigo shadow-sm h-100">
                 <div class="card-body d-flex justify-content-between align-items-end">
                     <div>
-                        <h4 class="text-white mb-1">{{ $cat }}</h4>
-                        <h6 class="text-white mb-0">All Categories</h6>
+                        <h4 class="text-white mb-1">{{ $service }}</h4>
+                        <h6 class="text-white mb-0">All Service</h6>
                     </div>
                     <div style="width: 45px; height: 50px;">
                         <canvas id="chart-doctors" height="50"></canvas>
                     </div>
                 </div>
                 <div class="card-footer text-center border-top border-light">
-                    <a href="{{ route('admin.productCategoriesAll') }}" class="text-white">View All</a>
+                    <a href="{{route('service.index')}}" class="text-white">View All</a>
                 </div>
             </div>
         </div>
     </div>
 
     {{-- Table: Top Products --}}
-    <div class="card w3-round shadow-lg mt-5">
+     {{--<div class="card w3-round shadow-lg mt-5">
         <div class="card-header py-2 d-flex align-items-center">
             <h3 class="card-title w3-small fw-bold text-muted mb-0">
                 <i class="fas fa-th text-primary me-1"></i> Top Products
             </h3>
         </div>
 
-        <div class="card-body bg-light px-0 pb-0 pt-2">
+        div class="card-body bg-light px-0 pb-0 pt-2">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover align-middle">
                     <thead class="w3-small text-muted bg-light">
@@ -160,6 +160,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div>--}}
 </section>
 @endsection

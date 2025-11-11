@@ -17,6 +17,8 @@ use App\Models\Product;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\ProductCategory;
+use App\Models\Service;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,11 +26,14 @@ class HomeController extends Controller
     public function index(){
         menuSubmenu('dashboardM','dashboardSM');
         $users = User::get()->count();
-        $cat = ProductCategory::where('parent_id', null)->get()->count();
-        $productcount = Product::get()->count();
+        // $cat = ProductCategory::where('parent_id', null)->get()->count();
+        // $productcount = Product::get()->count();
+        $service = Service::where('active', true)->get()->count();
+        $course = Course::where('active', true)->get()->count();
         $orders = Order::get()->count();
+        $blog = BlogPost::where('active', true)->get()->count();
         $products = Product::latest()->take(10)->get();
-        return view('admin.index',compact('users','cat','products', 'orders', 'productcount'));
+        return view('admin.index',compact('users','service','blog', 'orders', 'products','course'));
     }
 
 

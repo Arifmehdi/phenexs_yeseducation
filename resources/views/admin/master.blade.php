@@ -350,7 +350,7 @@
                     </li>--}}
 
 
-                    <li class="nav-item {{ session('lsbm') == 'mediaM'? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'mediaM'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'mediaM'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-pager"></i>
                             <p>
@@ -366,7 +366,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}}
                     <li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
@@ -589,7 +589,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
                             <i class="nav-icon fas fa-quote-right"></i>
                             <p>
@@ -605,7 +605,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}}
                     <li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
                             <i class="nav-icon fas fa-quote-right"></i>
