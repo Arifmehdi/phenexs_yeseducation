@@ -15,119 +15,724 @@
 @endsection
 
 @push('css')
-
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- Styles -->
 <style>
-.logo-image {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 6px;
-    background: #fff;
+         /* Video Section Styles */
+        .video-hero-section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #000;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .slider-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Swiper Container - Left Aligned */
+        .swiper-container {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+        }
+
+        .swiper-wrapper {
+            height: auto;
+        }
+
+        .swiper-slide {
+            text-align: left;
+            padding: 0;
+            height: auto;
+        }
+
+        .slide-content {
+            max-width: 800px;
+            width: 100%;
+            padding-right: 20px;
+        }
+
+        /* Title Styling */
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .highlight-text {
+            color: #D24147;
+        }
+
+        /* Strong Subtitle Styling */
+        .subtitle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .accent-line {
+            width: 4px;
+            height: 40px;
+            background-color: #D24147;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .subtitle-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Stats Row Styling */
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #D24147;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Button Styling */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .apply-now-btn {
+            background-color: #D24147;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .apply-now-btn:hover {
+            background-color: #b53035;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+        }
+
+        .secondary-btn:hover {
+            background-color: white;
+            color: #003054;
+        }
+
+        /* Swiper Pagination */
+        .swiper-pagination {
+            position: relative !important;
+            bottom: auto !important;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.7;
+            width: 12px;
+            height: 12px;
+            margin: 0 8px !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #D24147;
+            opacity: 1;
+        }
+
+        /* Ensure proper Swiper fade effect */
+        .swiper-fade .swiper-slide {
+            opacity: 0 !important;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .swiper-fade .swiper-slide-active {
+            opacity: 1 !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .slide-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-row {
+                flex-wrap: wrap;
+            }
+            
+            .stat-item {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-hero-section {
+                height: 500px;
+            }
+            
+            .slide-content h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .subtitle-text {
+                font-size: 1.1rem;
+            }
+            
+            .stats-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                flex: 1;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .swiper-pagination {
+                margin-top: 20px;
+            }
+            
+            .swiper-pagination-bullet {
+                width: 8px;
+                height: 8px;
+                margin: 0 6px !important;
+            }
+            
+            .slider-content {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-hero-section {
+                height: 450px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .accent-line {
+                height: 30px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+</style>
+<style>
+.modern-guide-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Initial border setup */
+    border-left: 3px solid #D24147;
+    border-right: 3px solid #D24147;
+    border-bottom: 3px solid #D24147;
+    border-top: 1px solid #e9ecef;
 }
 
-.logo-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: none !important;
-    /* Always show color */
+.modern-guide-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    /* Enhanced border on hover */
+    border-left: 3px solid #D24147;
+    border-right: 3px solid #D24147;
+    border-bottom: 3px solid #D24147;
+    border-top: 1px solid #e9ecef;
+    /* Add glow effect */
+    box-shadow: 0 25px 50px rgba(210, 65, 71, 0.2);
+}
+
+/* Alternative: Gradient border effect */
+.modern-guide-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #D24147, #003054, #D24147);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modern-guide-card:hover::before {
+    opacity: 1;
+}
+
+.guide-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.guide-badge span {
+    background: #D24147;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modern-guide-card:hover .guide-badge span {
+    transform: scale(1.05);
+    background: #b53035;
+}
+
+.modern-guide-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #003054;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.modern-guide-card:hover h3 {
+    color: #D24147;
+}
+
+.modern-guide-card p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+.modern-guide-card:hover p {
+    color: #555;
+}
+
+.guide-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.feature-tag {
+    background: rgba(210, 65, 71, 0.1);
+    color: #D24147;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.modern-guide-card:hover .feature-tag {
+    background: rgba(210, 65, 71, 0.15);
+    border: 1px solid rgba(210, 65, 71, 0.3);
+    transform: translateY(-2px);
+}
+
+.download-section {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.modern-guide-card:hover .download-section {
+    background: white;
+    border: 2px solid #e9ecef;
+    transform: scale(1.02);
+}
+
+.file-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
-.logo-image:hover img {
-    transform: scale(1.05);
+.modern-guide-card:hover .file-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #D24147;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+}
+
+.download-btn:hover {
+    background: #b53035;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+    border: 2px solid #D24147;
+}
+
+.download-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover i {
+    transform: translateX(3px);
+}
+
+.file-specs {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.modern-guide-card:hover .file-specs {
+    color: #D24147;
+}
+
+/* Add a subtle pulse animation on hover */
+@keyframes cardPulse {
+    0% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(-8px); }
+}
+
+.modern-guide-card:hover {
+    animation: cardPulse 2s ease-in-out infinite;
+}
+
+/* Alternative Design with More Pronounced Borders */
+.modern-guide-card.alternative {
+    border: none;
+    position: relative;
+}
+
+.modern-guide-card.alternative::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #D24147, #003054, #D24147);
+    border-radius: 0 0 16px 16px;
+    transition: height 0.3s ease;
+}
+
+.modern-guide-card.alternative:hover::after {
+    height: 6px;
+}
+
+.modern-guide-card.alternative::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #D24147, #003054) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modern-guide-card.alternative:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .modern-guide-card {
+        padding: 30px;
+    }
+    
+    .modern-guide-card h3 {
+        font-size: 26px;
+    }
+    
+    .guide-badge {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 767px) {
+    .modern-guide-card {
+        padding: 25px 20px;
+    }
+    
+    .modern-guide-card h3 {
+        font-size: 22px;
+    }
+    
+    .guide-features {
+        justify-content: center;
+    }
+    
+    .modern-guide-card:hover {
+        transform: translateY(-4px);
+    }
 }
 </style>
 @endpush
 
 @section('content')
-<!-- banner-section -->
-<section class="banner-section style-two">
-    <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+<!-- Swiper CSS -->
 
-        @foreach($sliders as $slider)
-        <div class="slide-item">
-            <div class="image-layer"
-                style="background-image: url('{{ asset('storage/frontSlider/' . $slider->featured_image) }}');"></div>
 
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-xl-7 col-lg-12 col-md-12 content-column">
-                        <div class="content-box">
-                            <div class="title-text">
-                                <h1>{{ $slider->title }}</h1>
-                                <div class="dotted-box">
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
-                                    <span class="dotted"></span>
+@section('content')
+<!-- Remove duplicate Swiper CSS link and duplicate @section('content') -->
+    <section class="video-hero-section">
+        <!-- Background Video -->
+        <video class="background-video" autoplay loop muted preload="auto" playsinline>
+            <source src="https://mie-global-te43fd.s3.amazonaws.com/static/documents/video-2_online-video-cutter.com.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="video-overlay"></div>
+        
+        <!-- Slider Content -->
+        <div class="slider-content">
+            <div class="swiper mySwiper swiper-fade">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                Applications are open <br>for January - <span class="highlight-text">2026</span> intake
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    100% Free Counselling & Application Processing
+                                </p>
+                            </div>
+                            <a href="/application" class="apply-now-btn">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                Comprehensive <span class="highlight-text">Admissions</span><br>Support
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    From Education to Career - We Support You All The Way
+                                </p>
+                            </div>
+                            <a href="/application" class="apply-now-btn">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                <span class="highlight-text">UK</span> University<br>Partnerships
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    Partnering With Universities Worldwide For Your Success
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="/application" class="apply-now-btn">Apply Now</a>
+                                <a href="/universities" class="apply-now-btn secondary-btn">View all Universities</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    100% Free Counselling & Application Processing
+                                </p>
+                            </div>
+                            <h2>
+                                One of the largest <span class="highlight-text">UK</span><br>University representatives
+                            </h2>
+                            
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <span class="stat-number">20,000+</span>
+                                    <span class="stat-label">Student's Career</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">35+</span>
+                                    <span class="stat-label">Recruitment Awards</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">140+</span>
+                                    <span class="stat-label">University Partners</span>
                                 </div>
                             </div>
-                            <p>{{ $slider->description }}</p>
-                            @if($slider->btn_txt)
-                            <div class="btn-box">
-                                <a href="index.html" class="theme-btn-one"><i
-                                        class="flaticon-send"></i>{{ $slider->btn_txt }}</a>
-                            </div>
-                            @endif
+                            
+                            <a href="/application" class="apply-now-btn">Apply Now</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Swiper Pagination - Now appears below the content -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-        @endforeach
-
-    </div>
-</section>
-<!-- banner-section end -->
+    </section>
 
 
-<!-- feature-style-two -->
+
+
+<!-- Modern Alternative Design -->
 <section class="feature-style-two">
     <div class="auto-container">
         <div class="inner-container">
             <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two">
-                        <div class="inner-box">
-                            <div class="title-inner">
-                                <div class="icon-box"><i class="flaticon-management"></i></div>
-                                <h3>Solving Complex Challenges</h3>
+                <div class="col-lg-12 col-md-12 col-sm-12 feature-block">
+                    <div class="modern-guide-card alternative">
+                        <div class="card-content">
+                            <!-- <div class="guide-badge">
+                                <span>🎓 Study Guide</span>
+                            </div> -->
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 col-md-7">
+                                    <h3>Your Ultimate Guide to Study in the UK</h3>
+                                    <p>Get comprehensive insights, tips, and everything you need to know about pursuing your education in the United Kingdom.</p>
+                                    <!-- <div class="guide-features">
+                                        <span class="feature-tag">✓ Updated for 2025</span>
+                                        <span class="feature-tag">✓ 20+ Detailed Pages</span>
+                                        <span class="feature-tag">✓ Free Download</span>
+                                    </div> -->
+                                </div>
+                                <div class="col-lg-4 col-md-5 text-center">
+                                    <div class="download-section">
+                                        <!-- <div class="file-icon">📄</div> -->
+                                        <a href="#" class="download-btn">
+                                            Download Free Guide
+                                            <i class="flaticon-send"></i>
+                                        </a>
+                                        <p class="file-specs">PDF Format • Instant Access</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text">
-                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
-                            </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i
-                                        class="flaticon-send"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two">
-                        <div class="inner-box">
-                            <div class="title-inner">
-                                <div class="icon-box"><i class="flaticon-work"></i></div>
-                                <h3>Ready-To-Work Immigration Force</h3>
-                            </div>
-                            <div class="text">
-                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
-                            </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i
-                                        class="flaticon-send"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                    <div class="feature-block-two">
-                        <div class="inner-box">
-                            <div class="title-inner">
-                                <div class="icon-box"><i class="flaticon-payment-method"></i></div>
-                                <h3>Reliable Taskings Apply Visa</h3>
-                            </div>
-                            <div class="text">
-                                <p>Nunc quam arcpretim quis lobortis sem consequat cons newtetur diam ...</p>
-                            </div>
-                            <div class="link"><a href="index-2.html"><span>Read More</span><i
-                                        class="flaticon-send"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +740,7 @@
         </div>
     </div>
 </section>
-<!-- feature-style-two end -->
+
 
 
 <!-- about-style-two -->
@@ -878,9 +1483,59 @@
 <!-- Owl Carousel JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+
 <!-- Initialize Carousel -->
 <script>
 $(document).ready(function() {
+    $('.five-item-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+});
+</script>
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    // Initialize Swiper with proper configuration
+    var swiper = new Swiper(".mySwiper", {
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        speed: 1000,
+        grabCursor: true,
+        preloadImages: true,
+        updateOnWindowResize: true
+    });
+    
+    // Initialize Owl Carousel
     $('.five-item-carousel').owlCarousel({
         loop: true,
         margin: 10,
