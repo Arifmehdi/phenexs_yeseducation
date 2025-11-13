@@ -18,203 +18,299 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- Styles -->
 <style>
-/* ===== Hero Video Section ===== */
-.video-hero-section {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    background: #000;
-}
+         /* Video Section Styles */
+        .video-hero-section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #000;
+        }
 
-.video-hero-section .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
 
-.video-hero-section .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
 
-/* Left Gradient */
-.video-hero-section .left-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 45%; /* Adjust width */
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0)); /* soft gradient */
-    z-index: 2;
-}
+        .slider-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
 
-/* Slider Content */
-.video-hero-section .slider-content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 60px;
-    color: #003054;
-}
+        /* Swiper Container - Left Aligned */
+        .swiper-container {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+        }
 
-/* Slide Content Box */
-.video-hero-section .slide-content {
-    max-width: 500px;
-}
+        .swiper-wrapper {
+            height: auto;
+        }
 
-/* Headline */
-.video-hero-section .slide-content h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
+        .swiper-slide {
+            text-align: left;
+            padding: 0;
+            height: auto;
+        }
 
-/* Highlighted Text */
-.video-hero-section .highlight-text {
-    color: #D24147;
-}
+        .slide-content {
+            max-width: 800px;
+            width: 100%;
+            padding-right: 20px;
+        }
 
-/* Subtitle */
-.video-hero-section .subtitle-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
+        /* Title Styling */
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
 
-.video-hero-section .accent-line {
-    width: 4px;
-    height: 35px;
-    background-color: #D24147;
-    margin-right: 12px;
-}
+        .highlight-text {
+            color: #D24147;
+        }
 
-.video-hero-section .subtitle-text {
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #003054;
-}
+        /* Strong Subtitle Styling */
+        .subtitle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
 
-/* Stats Section - confined to left content */
-.video-hero-section .stats-row {
-    display: flex;
-    gap: 2rem;
-    margin: 1.5rem 0;
-}
+        .accent-line {
+            width: 4px;
+            height: 40px;
+            background-color: #D24147;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
 
-.video-hero-section .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        .subtitle-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
 
-.video-hero-section .stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #D24147;
-}
+        /* Stats Row Styling */
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            gap: 1.5rem;
+        }
 
-.video-hero-section .stat-label {
-    font-size: 1rem;
-    font-weight: 600;
-}
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
 
-/* Buttons */
-.video-hero-section .btn-group {
-    display: flex;
-    gap: 12px;
-    margin-top: 1rem;
-}
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #D24147;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-.video-hero-section .apply-now-btn {
-    background-color: #D24147;
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        .stat-number:hover {
+            transform: scale(1.1);
+        }
 
-.video-hero-section .apply-now-btn:hover {
-    background-color: #b53035;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-.video-hero-section .secondary-btn {
-    background-color: transparent;
-    border: 2px solid #D24147;
-    color: #D24147;
-}
+        /* Button Styling */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
 
-.video-hero-section .secondary-btn:hover {
-    background-color: #D24147;
-    color: #fff;
-}
+        .apply-now-btn {
+            background-color: #D24147;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-/* Swiper Pagination - under left content */
-.video-hero-section .swiper-pagination {
-    position: absolute !important;
-    bottom: 20px !important;
-    left: 60px; /* align with left content */
-    z-index: 3;
-}
+        .apply-now-btn:hover {
+            background-color: #b53035;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
 
-.video-hero-section .swiper-pagination-bullet {
-    background: #003054;
-    opacity: 0.7;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px !important;
-}
+        .secondary-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+        }
 
-.video-hero-section .swiper-pagination-bullet-active {
-    background: #D24147;
-    opacity: 1;
-}
+        .secondary-btn:hover {
+            background-color: white;
+            color: #003054;
+        }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .video-hero-section { height: 500px; }
-    .video-hero-section .slide-content h2 { font-size: 2rem; }
-}
+        /* Swiper Pagination */
+        .swiper-pagination {
+            position: relative !important;
+            bottom: auto !important;
+            margin-top: 30px;
+            text-align: left;
+        }
 
-@media (max-width: 768px) {
-    .video-hero-section .slider-content {
-        justify-content: center;
-        padding-left: 20px;
-    }
-    .video-hero-section .slide-content h2,
-    .video-hero-section .subtitle-text { text-align: center; }
-    .video-hero-section .stats-row {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-    }
-    .video-hero-section .swiper-pagination {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.7;
+            width: 12px;
+            height: 12px;
+            margin: 0 8px !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #D24147;
+            opacity: 1;
+        }
+
+        /* Ensure proper Swiper fade effect */
+        .swiper-fade .swiper-slide {
+            opacity: 0 !important;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .swiper-fade .swiper-slide-active {
+            opacity: 1 !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .slide-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-row {
+                flex-wrap: wrap;
+            }
+            
+            .stat-item {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-hero-section {
+                height: 500px;
+            }
+            
+            .slide-content h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .subtitle-text {
+                font-size: 1.1rem;
+            }
+            
+            .stats-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                flex: 1;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .swiper-pagination {
+                margin-top: 20px;
+            }
+            
+            .swiper-pagination-bullet {
+                width: 8px;
+                height: 8px;
+                margin: 0 6px !important;
+            }
+            
+            .slider-content {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-hero-section {
+                height: 450px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .accent-line {
+                height: 30px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
 </style>
-
-
 <style>
 .modern-guide-card {
     background: white;
@@ -495,7 +591,7 @@
 <style>
     /* Ultra Compact Content-based Container */
     .box-container {
-        max-width: 900px; /* Adjusted for slimmer appearance */
+        max-width: 700px; /* Adjusted for slimmer appearance */
         margin: 60px auto;
     }
 
@@ -507,7 +603,6 @@
         overflow: hidden;
         border: 1px solid #e9ecef;
         width: 100%; /* Allow full width within its container */
-        max-width: 800px !important; 
     }
     .tab-section:hover {
         box-shadow: 0 12px 45px rgba(0, 0, 0, 0.15);
@@ -653,7 +748,7 @@
         background: #D24147;
         color: white;
         border: none;
-        padding: 30px 24px;
+        padding: 12px 24px;
         border-radius: 10px;
         font-weight: 600;
         font-size: 15px;
@@ -2168,95 +2263,110 @@
 
 
 @section('content')
-<!-- ===== Hero Section ===== -->
-<section class="video-hero-section">
-    <!-- Background Video -->
-    <video class="background-video" autoplay loop muted preload="auto" playsinline>
-        <source src="https://mie-global-te43fd.s3.amazonaws.com/static/documents/video-2_online-video-cutter.com.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Overlay -->
-    <div class="video-overlay"></div>
-
-    <!-- Left Gradient -->
-    <div class="left-gradient"></div>
-
-    <!-- Slider Content -->
-    <div class="slider-content">
-        <div class="swiper mySwiper swiper-fade">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2>Applications are open <br>for January - <span class="highlight-text">2026</span> intake</h2>
-                        <div class="subtitle-container">
-                            <div class="accent-line"></div>
-                            <p class="subtitle-text">100% Free Counselling & Application Processing</p>
-                        </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2>Comprehensive <span class="highlight-text">Admissions</span><br>Support</h2>
-                        <div class="subtitle-container">
-                            <div class="accent-line"></div>
-                            <p class="subtitle-text">From Education to Career - We Support You All The Way</p>
-                        </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2><span class="highlight-text">UK</span> University<br>Partnerships</h2>
-                        <div class="subtitle-container">
-                            <div class="accent-line"></div>
-                            <p class="subtitle-text">Partnering With Universities Worldwide For Your Success</p>
-                        </div>
-                        <div class="btn-group">
+<!-- Remove duplicate Swiper CSS link and duplicate @section('content') -->
+    <section class="video-hero-section">
+        <!-- Background Video -->
+        <video class="background-video" autoplay loop muted preload="auto" playsinline>
+            <source src="https://mie-global-te43fd.s3.amazonaws.com/static/documents/video-2_online-video-cutter.com.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="video-overlay"></div>
+        
+        <!-- Slider Content -->
+        <div class="slider-content">
+            <div class="swiper mySwiper swiper-fade">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                Applications are open <br>for January - <span class="highlight-text">2026</span> intake
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    100% Free Counselling & Application Processing
+                                </p>
+                            </div>
                             <a href="/application" class="apply-now-btn">Apply Now</a>
-                            <a href="/universities" class="apply-now-btn secondary-btn">View all Universities</a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <div class="subtitle-container">
-                            <div class="accent-line"></div>
-                            <p class="subtitle-text">100% Free Counselling & Application Processing</p>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                Comprehensive <span class="highlight-text">Admissions</span><br>Support
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    From Education to Career - We Support You All The Way
+                                </p>
+                            </div>
+                            <a href="/application" class="apply-now-btn">Apply Now</a>
                         </div>
-                        <h2>One of the largest <span class="highlight-text">UK</span><br>University representatives</h2>
-                        <div class="stats-row">
-                            <div class="stat-item">
-                                <span class="stat-number">20,000+</span>
-                                <span class="stat-label">Student's Career</span>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <h2>
+                                <span class="highlight-text">UK</span> University<br>Partnerships
+                            </h2>
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    Partnering With Universities Worldwide For Your Success
+                                </p>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">35+</span>
-                                <span class="stat-label">Recruitment Awards</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">140+</span>
-                                <span class="stat-label">University Partners</span>
+                            <div class="btn-group">
+                                <a href="/application" class="apply-now-btn">Apply Now</a>
+                                <a href="/universities" class="apply-now-btn secondary-btn">View all Universities</a>
                             </div>
                         </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <div class="subtitle-container">
+                                <div class="accent-line"></div>
+                                <p class="subtitle-text">
+                                    100% Free Counselling & Application Processing
+                                </p>
+                            </div>
+                            <h2>
+                                One of the largest <span class="highlight-text">UK</span><br>University representatives
+                            </h2>
+                            
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <span class="stat-number">20,000+</span>
+                                    <span class="stat-label">Student's Career</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">35+</span>
+                                    <span class="stat-label">Recruitment Awards</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">140+</span>
+                                    <span class="stat-label">University Partners</span>
+                                </div>
+                            </div>
+                            
+                            <a href="/application" class="apply-now-btn">Apply Now</a>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Swiper Pagination - Now appears below the content -->
+                <div class="swiper-pagination"></div>
             </div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -2712,7 +2822,7 @@
                 <!-- Video 1 -->
                 <div class="student-video-slide">
                     <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="5lrZG5lpgfI">
+                        <div class="student-video-thumbnail" data-video-id="W-IhYxYN9C4">
                             <img src="{{ asset('frontend/assets/images/videos/001.webp') }}" alt="Student Success Story 1" class="student-thumbnail-image">
                             <div class="student-play-button">
                                 <i class="fas fa-play"></i>
@@ -2736,7 +2846,7 @@
                 <!-- Video 3 -->
                 <div class="student-video-slide">
                     <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="K6dIsIUXayY">
+                        <div class="student-video-thumbnail" data-video-id="5lrZG5lpgfI">
                             <img src="{{ asset('frontend/assets/images/videos/003.webp') }}" alt="Student Success Story 3" class="student-thumbnail-image">
                             <div class="student-play-button">
                                 <i class="fas fa-play"></i>
@@ -2748,7 +2858,7 @@
                 <!-- Video 4 -->
                 <div class="student-video-slide">
                     <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="W-IhYxYN9C4">
+                        <div class="student-video-thumbnail" data-video-id="K6dIsIUXayY">
                             <img src="{{ asset('frontend/assets/images/videos/004.webp') }}" alt="Student Success Story 4" class="student-thumbnail-image">
                             <div class="student-play-button">
                                 <i class="fas fa-play"></i>
@@ -2760,8 +2870,8 @@
                 <!-- Video 5 -->
                 <div class="student-video-slide">
                     <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="Fe2__tlLr4c">
-                            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}" alt="Student Success Story 5" class="student-thumbnail-image">
+                        <div class="student-video-thumbnail" data-video-id="VIDEO_ID_5">
+                            <img src="{{ asset('frontend/assets/images/videos/005.webp') }}" alt="Student Success Story 5" class="student-thumbnail-image">
                             <div class="student-play-button">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -2772,8 +2882,8 @@
                 <!-- Video 6 -->
                 <div class="student-video-slide">
                     <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="W-IhYxYN9C4">
-                            <img src="{{ asset('frontend/assets/images/videos/004.webp') }}" alt="Student Success Story 6" class="student-thumbnail-image">
+                        <div class="student-video-thumbnail" data-video-id="VIDEO_ID_6">
+                            <img src="{{ asset('frontend/assets/images/videos/006.webp') }}" alt="Student Success Story 6" class="student-thumbnail-image">
                             <div class="student-play-button">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -2806,7 +2916,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/002.webp') }}" alt="Student 1" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/002.webp') }}" alt="Student 1" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2826,7 +2936,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/004.webp') }}" alt="Student 2" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/004.webp') }}" alt="Student 2" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2846,7 +2956,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/004.webp') }}" alt="Student 3" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/004.webp') }}" alt="Student 3" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2866,7 +2976,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/003.webp') }}" alt="Student 4" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/003.webp') }}" alt="Student 4" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2886,7 +2996,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/002.webp') }}" alt="Student 5" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/002.webp') }}" alt="Student 5" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2906,7 +3016,7 @@
                             </div>
                             <div class="student-image-container">
                                 <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/001.webp') }}" alt="Student 6" class="student-image">
+                                    <img src="{{ asset('frontend/assets/images/testimonials/001.webp') }}" alt="Student 6" class="student-image">
                                 </div>
                             </div>
                             <div class="student-info">
@@ -2940,7 +3050,7 @@
                 <div class="journey-step-card-single">
                     <div class="row align-items-center g-0">
                         <div class="col-lg-6 col-md-6 order-lg-1 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image.original.webp') }}" alt="Initial Consultation" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step1.jpg') }}" alt="Initial Consultation" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-2 order-2">
                             <div class="step-content-single">
@@ -2961,7 +3071,7 @@
                     <div class="row align-items-center g-0">
                         <!-- Swap order -->
                         <div class="col-lg-6 col-md-6 order-lg-2 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image_1.original.webp') }}" alt="Application Preparation" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step2.jpg') }}" alt="Application Preparation" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-1 order-2">
                             <div class="step-content-single">
@@ -2981,7 +3091,7 @@
                 <div class="journey-step-card-single">
                     <div class="row align-items-center g-0">
                         <div class="col-lg-6 col-md-6 order-lg-1 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image_2.original.webp') }}" alt="University Application" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step3.jpg') }}" alt="University Application" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-2 order-2">
                             <div class="step-content-single">
@@ -3001,7 +3111,7 @@
                 <div class="journey-step-card-single">
                     <div class="row align-items-center g-0">
                         <div class="col-lg-6 col-md-6 order-lg-2 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image_2.original.webp') }}" alt="Interview Preparation" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step4.jpg') }}" alt="Interview Preparation" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-1 order-2">
                             <div class="step-content-single">
@@ -3021,7 +3131,7 @@
                 <div class="journey-step-card-single">
                     <div class="row align-items-center g-0">
                         <div class="col-lg-6 col-md-6 order-lg-1 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image_3.original.webp') }}" alt="Visa Assistance" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step5.jpg') }}" alt="Visa Assistance" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-2 order-2">
                             <div class="step-content-single">
@@ -3041,7 +3151,7 @@
                 <div class="journey-step-card-single">
                     <div class="row align-items-center g-0">
                         <div class="col-lg-6 col-md-6 order-lg-2 order-1">
-                            <img src="{{ asset('frontend/assets/images/roadmap/image_4.original.webp') }}" alt="Pre-departure Support" class="step-img-single">
+                            <img src="{{ asset('frontend/assets/images/roadmap/step6.jpg') }}" alt="Pre-departure Support" class="step-img-single">
                         </div>
                         <div class="col-lg-6 col-md-6 order-lg-1 order-2">
                             <div class="step-content-single">
@@ -3425,7 +3535,7 @@
                      style="background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; transition: all 0.3s ease;">
                     <!-- Image -->
                     <div class="event-image" style="width: 40%; flex-shrink: 0;">
-                        <img src="{{ asset('storage/post_images/' . $event->feature_image) }}" 
+                        <img src="{{ asset('storage/events_images/' . $event->image) }}" 
                              alt="{{ $event->title }}" 
                              style="width: 100%; height: 180px; object-fit: cover;">
                     </div>
@@ -3459,7 +3569,7 @@
                      style="background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; transition: all 0.3s ease;">
                     <!-- Image -->
                     <div class="blog-image" style="width: 40%; flex-shrink: 0;">
-                        <img src="{{ asset('storage/post_images/' . $blog->feature_image) }}" 
+                        <img src="{{ asset('storage/blog_images/' . $blog->feature_image) }}" 
                              alt="{{ $blog->title }}" 
                              style="width: 100%; height: 180px; object-fit: cover;">
                     </div>
@@ -3486,6 +3596,645 @@
         </div>
     </div>
 </section>
+
+
+
+
+<!-- feature-section start -->
+<section class="feature-section" style="padding: 80px 0;">
+    <div class="auto-container">
+        <div class="sec-title centred" style="margin-bottom: 50px;">
+            <h2 style="font-size: 36px; font-weight: 700;">Why A Student sourcing YES Education?</h2>
+            <p style="color: #555;">Students get help for</p>
+        </div>
+
+        <div class="row clearfix justify-content-center">
+            @foreach ($services as $feature)
+            <div class="col-lg-4 col-md-4 col-6 mb-4">
+                <a href="{{ route('serviceDetails', $feature->slug) }}" class="text-decoration-none">
+                    <div class="feature-card d-flex align-items-center p-3"
+                        style="background: #fff; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease;">
+
+                        <!-- Icon -->
+                        <div class="icon flex-shrink-0 text-center"
+                            style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            <img src="{{ asset('storage/services_images/' . $feature->icon_image) }}"
+                                alt="{{ $feature->title }} Icon"
+                                style="width: 55px; height: 55px; object-fit: contain;">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="feature-text text-start" style="margin-left: 10px;">
+                            <h3 style="font-size: 17px; font-weight: 600; color: #222; margin: 0;">
+                                {{ $feature->title }}
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- service-style-two -->
+{{--<section class="service-style-two bg-color-3">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services</h2>
+            <span>Sponsoring and managing work visas parts now becoming results the experience <br />aute irure dolor in
+                reprehenderit cepteur sint ocaecat cupidatate</span>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img
+                                src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+<div class="lower-content">
+    <div class="box">
+        <div class="icon-box"><i class="flaticon-manager"></i></div>
+        <h3><a href="service-details.html">Working Visas</a></h3>
+        <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+            perspiciatis unde omnis iste.</p>
+    </div>
+    <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+    </div>
+</div>
+</div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-1.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-manager"></i></div>
+                <h3><a href="service-details.html">Working Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img src="assets/images/service/service-1.jpg') }}"
+                    alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-manager"></i></div>
+                <h3><a href="service-details.html">Working Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-2.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-flight"></i></div>
+                <h3><a href="service-details.html">Studing Visas</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="service-block-two">
+    <div class="inner-box">
+        <figure class="image-box"><a href="service-details.html"><img
+                    src="{{ asset('frontend/assets/images/service/service-3.jpg') }}" alt=""></a></figure>
+        <div class="lower-content">
+            <div class="box">
+                <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                <h3><a href="service-details.html">Visiting Visa</a></h3>
+                <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed
+                    perspiciatis unde omnis iste.</p>
+            </div>
+            <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- <div class="more-text centred">
+        <div class="auto-container">
+            <div class="inner">
+                <h3>YES Education is clearly your best partner at Immigration& Visa success. <a href="contact.html"><span>Get
+                            In Touch</span><i class="flaticon-send"></i></a></h3>
+            </div>
+        </div>
+    </div> -->
+</section>--}}
+<!-- service-style-two end -->
+
+
+<!-- team-section -->
+<section class="team-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Our Best Experts Ready To Help</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-1.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">Charles Henry</a></h4>
+                            <span class="designation">CEO - Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-2.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">edward matthew</a></h4>
+                            <span class="designation">Immigration Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-3.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">ben christopher</a></h4>
+                            <span class="designation">Senior Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/team/team-4.jpg') }}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="index-2.html">lindys thomas</a></h4>
+                            <span class="designation">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-section end -->
+
+<!-- immigration-section -->
+<section class="immigration-section bg-color-3">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services <br />Following Countries</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="row clearfix">
+            @foreach($destinations as $destination)
+            <div class="col-lg-4 col-md-6 col-sm-12 immigration-block">
+                <div class="immigration-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img
+                                src="{{ asset('storage/destination_images/' . $destination->fi()) }}"
+                                alt="{{ $destination->title }}"></figure>
+                        <div class="text">
+                            <h3><a
+                                    href="{{ route('destinationDetails', $destination->slug)}}">{{ $destination->category->name}}</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- immigration-section end -->
+
+
+<!-- funfact-style-two -->
+<section class="funfact-style-two" style="background:#2E2483; padding: 80px 0;">
+    <div class="container">
+        <!-- Headline -->
+        <h2 style="color:#ffffff; text-align:center; font-size:36px; font-weight:700; margin-bottom:50px;">
+            WHY YES EDUCATION ?
+        </h2>
+        <div class="row justify-content-center text-center text-white">
+
+            <!-- Counter 1 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="70000">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Hours of counselling experience
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 2 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="2">0</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Branch offices with more on the way
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 3 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="600">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Student placed Abroad
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 4 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Visa succès rate (one of the best in the country)
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 1 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="10" data-stop="10">0</span><span>+</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Years of experience
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 2 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span>US$6.5 Million</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Scholarships worth US $4.5 million
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 3 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span>1-1</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Scholarships worth US $4.5 million
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Counter 4 -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-5">
+                <div>
+                    <div class="icon-box mb-4" style="font-size:50px; color:#ffffff;">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="count-outer count-box mb-3" style="font-size:42px; font-weight:800; color:#ffffff;">
+                        <span class="count-text" data-speed="1500" data-stop="21">0</span>
+                    </div>
+                    <h5 style="font-size:16px; font-weight:400; margin-top:15px; color:#ffffff;">
+                        Universities have exclusive
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- funfact-style-two end -->
+
+<!-- feature-section -->
+<section class="feature-section sec-pad-2">
+    <div class="auto-container">
+        <!-- Headline -->
+        <h2 style="text-align:center; font-size:36px; font-weight:700; margin-bottom:50px;">
+            SEE OUR TOP COURSES
+        </h2>
+        <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+
+            @foreach($courses as $course)
+            <div class="feature-block-one mb-30">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ asset('storage/courses_images/' . $course->feature_image) }}"
+                            alt="{{$course->title}}"></figure>
+                    <div class="text">
+                        <h3><a href="{{ route('courseDetails', $course->slug) }}">{{$course->title}}</a></h3>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- feature-section end -->
+
+
+
+<!-- testimonial-style-two -->
+<section class="testimonial-style-two bg-color-3">
+    <div class="pattern-layer"
+        style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-6.png') }}');"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>clients testimonials</p>
+            <h2>What Customers <br />Saying About YES Education</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+            @foreach($testimonials as $testimonial)
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{ asset('storage/testimonial/'. $testimonial->image ) }}"
+                                alt=""></figure>
+                        <h5>{{ $testimonial->name }}</h5>
+                        <span class="designation">{{ $testimonial->address }}</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>{{ $testimonial->company }}</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>{!! $testimonial->text_en !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- testimonial-style-two end -->
+
+
+<!-- news-section -->
+<section class="news-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>World Immigration News & Updates</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor
+                            in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            @foreach($blogs as $blog)
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="{{ route('blogDetails', $blog->slug) }}"><img
+                                    src="{{ asset('storage/post_images/' . $blog->feature_image) }}"
+                                    alt="{{ $blog->title }}"></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date">
+                                <h2>{{ strtoupper($blog->created_at->format('d')) }}</h2>
+                                <span>{{ strtoupper($blog->created_at->format('M')) }}</span>
+                            </div>
+                            <h3><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->title }}</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="{{ route('blogDetails', $blog->slug) }}">By
+                                        {{ $blog->addedBy->name ?? 'Admin' }}</a></li>
+                                <li><a
+                                        href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->category->name ?? 'Uncategorized' }}</a>
+                                    {{-- ,<a href="{{ route('blogDetails', $blog->slug) }}">Work</a></li> --}}
+                            </ul>
+                            <div class="link"><a href="{{ route('blogDetails', $blog->slug) }}">Learn More<i
+                                        class="flaticon-send"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- news-section end -->
 
 @endsection
 @push('js')
@@ -3520,24 +4269,50 @@ $(document).ready(function() {
 </script>
 
 
-
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize only the hero section swiper
-    const heroSwiper = new Swiper('.video-hero-section .mySwiper', {
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
+$(document).ready(function() {
+    // Initialize Swiper with proper configuration
+    var swiper = new Swiper(".mySwiper", {
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
         loop: true,
-        autoplay: { delay: 4000, disableOnInteraction: false },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         pagination: {
-            el: '.video-hero-section .swiper-pagination',
+            el: ".swiper-pagination",
             clickable: true,
-            dynamicBullets: true
+            dynamicBullets: true,
         },
         speed: 1000,
-        grabCursor: true
+        grabCursor: true,
+        preloadImages: true,
+        updateOnWindowResize: true
+    });
+    
+    // Initialize Owl Carousel
+    $('.five-item-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
     });
 });
 </script>

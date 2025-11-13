@@ -35,12 +35,12 @@
                  Dashboard
               </a>
             </li>
-            <li class="list-group-item">
+           {{-- <li class="list-group-item">
               <a href="{{route('user.orders', ['type' => 'all'])}}" 
                  class="tab-link {{ $activeTab=='order'?'text-success fw-bold':'' }}">
                  Orders
               </a>
-            </li>
+            </li>--}}
             <li class="list-group-item">
               <a href="{{ route('user.editMyInformation')}}" 
                  class="tab-link {{ $activeTab=='edit'?'text-success fw-bold':'' }}">
@@ -92,7 +92,7 @@
             <div class="row g-3">
               {{-- Total Orders --}}
               <div class="col-md-4">
-                <a href="{{ route('user.orders', ['type' => 'all']) }}" class="text-decoration-none">
+                <a href=#" class="text-decoration-none">
                   <div class="card border-success shadow-sm">
                     <div class="card-body d-flex align-items-center gap-3">
                       <div class="bg-success text-white d-flex justify-content-center align-items-center rounded-circle" 
@@ -101,7 +101,7 @@
                       </div>
                       <div>
                         <h4 class="text-success mb-0">{{ $user->orders()->count() }}</h4>
-                        <small>Total Orders</small>
+                        <small>Total Blog</small>
                       </div>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
 
               {{-- Today Orders --}}
               <div class="col-md-4">
-                <a href="{{ route('user.orders', ['type' => 'today']) }}" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                   <div class="card border-primary shadow-sm">
                     <div class="card-body d-flex align-items-center gap-3">
                       <div class="bg-primary text-white d-flex justify-content-center align-items-center rounded-circle" 
@@ -119,7 +119,7 @@
                       </div>
                       <div>
                         <h4 class="text-primary mb-0">{{ $todayOrdersCount }}</h4>
-                        <small>Today Orders</small>
+                        <small>Today Blog</small>
                       </div>
                     </div>
                   </div>
@@ -128,7 +128,7 @@
 
               {{-- Cancelled Orders --}}
               <div class="col-md-4">
-                <a href="{{ route('user.orders', ['type' => 'cancelled']) }}" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                   <div class="card border-danger shadow-sm">
                     <div class="card-body d-flex align-items-center gap-3">
                       <div class="bg-danger text-white d-flex justify-content-center align-items-center rounded-circle" 
@@ -137,7 +137,7 @@
                       </div>
                       <div>
                         <h4 class="text-danger mb-0">{{ $cancelOrdersCount }}</h4>
-                        <small>Cancelled Orders</small>
+                        <small>Cancelled Blogs</small>
                       </div>
                     </div>
                   </div>
