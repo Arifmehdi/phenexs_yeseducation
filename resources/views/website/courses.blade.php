@@ -58,7 +58,7 @@
                     data-wow-duration="1500ms">
                     <div class="inner-box">
                         <figure class="image-box"><a href="{{ route('courseDetails', $course->slug) }}"><img
-                                    src="{{ asset('storage/courses_images/' . $course->feature_image) }}" alt="{{ $course->title}}"></a></figure>
+                                    src="{{ asset('storage/course_images/' . $course->fi()) }}" alt="{{ $course->title}}"></a></figure>
                         <div class="lower-content">
                             <div class="box">
                                 <h3><a href="{{ route('courseDetails',$course->slug) }}">{{ $course->title}}</a></h3>
