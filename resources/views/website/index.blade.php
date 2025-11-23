@@ -814,6 +814,7 @@
     }
 </style>
 <style>
+    
     /* Centered Container */
     .box-container {
         display: flex;
@@ -828,7 +829,7 @@
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+        overflow: visible; /* Changed from hidden to fix select dropdowns */
         transition: all 0.3s ease;
         border: 1px solid #e9ecef;
         width: 100%;
@@ -944,7 +945,7 @@
     .search-form {
         display: flex;
         gap: 15px;
-        align-items: flex-end;
+        align-items: center;   /* FIX: Align items in same row */
         width: 100%;
     }
 
@@ -964,14 +965,16 @@
 
     .form-control {
         width: 100%;
-        padding: 12px 16px;
+        padding: 0 16px; /* Corrected vertical padding to align with button */
+        height: 44px; /* Explicitly set height to match button */
         border: 1px solid #ddd;
         border-radius: 10px;
         font-size: 15px;
         transition: all 0.3s ease;
         background: #fff;
         box-sizing: border-box;
-        min-width: 0; /* Allow input to shrink */
+        /* min-width: 0;  */
+        /* Allow input to shrink */
     }
 
     .form-control:focus {
@@ -996,6 +999,11 @@
         height: 44px;
         white-space: nowrap;
         flex-shrink: 0;
+    }
+
+    /* Buttons inside 1-field forms (Location, University, Courses) */
+    .tab-pane:not(#events) .search-btn {
+        margin-top: 20px;
     }
 
     .search-btn:hover {
@@ -2318,14 +2326,32 @@
             <div class="tab-pane active" id="location">
                 <form class="search-form">
                     <div class="form-group">
-                        <label for="location-search">Search by Location</label>
-                        <input type="text" id="location-search" class="form-control" placeholder="Enter city or country...">
+                        <label for="location-select">Select UK City</label>
+                        <select id="location-select" class="form-control">
+                            <option value="">-- Select a City --</option>
+                            <option value="London">London</option>
+                            <option value="Birmingham">Birmingham</option>
+                            <option value="Manchester">Manchester</option>
+                            <option value="Glasgow">Glasgow</option>
+                            <option value="Liverpool">Liverpool</option>
+                            <option value="Leeds">Leeds</option>
+                            <option value="Sheffield">Sheffield</option>
+                            <option value="Bristol">Bristol</option>
+                            <option value="Newcastle">Newcastle</option>
+                            <option value="Nottingham">Nottingham</option>
+                            <option value="Leicester">Leicester</option>
+                            <option value="Edinburgh">Edinburgh</option>
+                            <option value="Cardiff">Cardiff</option>
+                            <option value="Belfast">Belfast</option>
+                        </select>
                     </div>
+                    
                     <button type="submit" class="search-btn">
                         <i class="fas fa-search"></i> Search
                     </button>
                 </form>
             </div>
+
 
             <!-- University Tab -->
             <div class="tab-pane" id="university">

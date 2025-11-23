@@ -1,92 +1,56 @@
-<!-- main header -->
+<!-- MAIN HEADER START -->
 <header class="main-header style-two">
-    <div class="header-top">
-        <div class="auto-container">
-            <div class="top-inner clearfix">
-                <div class="top-left pull-left">
-                    @php 
-                        $mobile_number = explode(',', $ws->contact_mobile);
-                        $mobile_number_without_str = str_replace(['+', '-', ' '], '', trim($mobile_number[0]));
-                        $contact_email = explode(',', $ws->contact_email);
-                    @endphp
-
-                    <ul class="info clearfix">
-                        <li><i class="flaticon-call"></i>Call us: <a href="tel:{{$mobile_number_without_str}}">{{$mobile_number[0]}}</a></li>
-                        <li><i class="flaticon-open-email-message"></i><a
-                                href="mailto:{{$contact_email[0]}}">{{$contact_email[0]}}</a></li>
-                    </ul>
-                </div>
-                <div class="top-right pull-right">
-                    <div class="search-box-outer">
-                        <div class="search-btn">
-                            <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
-                        </div>
-                    </div>
-                    <ul class="social-links clearfix">
-
-                        <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="{{ $ws->fb_url ? $ws->fb_url : '#'}}"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{ $ws->instagram_url ? $ws->instagram_url : '#'}}"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="{{ $ws->linkedin_url ? $ws->linkedin_url : '#'}}"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="{{ $ws->youtube_url ? $ws->youtube_url : '#'}}"><i class="fab fa-twitter"></i></a></li>
-                        <li class="user-menu">
-                            @auth
-                            <a href="javascript:void(0)"><i class="fas fa-user-alt">&nbsp; {{ auth()->user()->name }}</i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ route('admin.dashboard') }}">Admin Dashboard</a></li>
-                                <li><a href="{{ route('user.dashboard') }}">Member Dashboard</a></li>
-                                <li>
-                                    <form action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        <button type="submit"
-                                            style="background:none;border:none;padding:0;cursor:pointer;">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                            @else
-                            <a href="{{ route('login') }}"><i class="fas fa-user-alt"></i>&nbsp; Login</a>
-                            @endauth
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="header-upper">
         <div class="auto-container">
             <div class="outer-box clearfix">
+                <!-- Logo -->
                 <div class="logo-box pull-left">
                     <figure class="logo">
-                        <a href="{{ route('home') }}">  
-                            <img alt="{{$ws->website_title ?? ''}}" width="210" height="auto" src="{{ route('imagecache', [ 'template'=>'original','filename' => $ws->logo() ]) }}">
-                        </a>    
+                        <a href="{{ route('home') }}">
+                            <img src="{{ route('imagecache', ['template'=>'original','filename'=>$ws->logo()]) }}" 
+                                 alt="{{ $ws->website_title ?? '' }}" width="210" height="auto">
+                        </a>
                     </figure>
                 </div>
 
+                <!-- Ringing Phone Icon -->
+                <div class="header-icon phone-icon" style="color:red !imporatnt">
+                    <a href="tel:{{ $ws->phone_number ?? '' }}" class="text-danger"><i class="fi fi-br-phone-call"></i></a>
+                </div>
+
+                <!-- Mobile Nav Toggler -->
+                <div class="mobile-nav-toggler">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+
+                <!-- Globe Icon -->
+                <div class="header-icon globe-icon">
+                    <a href="#" class="text-dark"><i class="fas fa-globe"></i></a>
+                </div>
+
+                <!-- Main Menu -->
                 <div class="menu-area pull-right">
-                    <!--Mobile Navigation Toggler-->
-                    <div class="mobile-nav-toggler">
-                        <i class="icon-bar"></i>
-                        <i class="icon-bar"></i>
-                        <i class="icon-bar"></i>
-                    </div>
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="dropdown {{ request()->routeIs('home') ? 'active current'  : ''  }} "><a
-                                        href="{{ route('home') }}">Home</a></li>
-                                <li class="dropdown {{ request()->routeIs('about') ? 'active current' : ''  }} "><a
-                                        href="{{ route('about') }}">About</a></li>
+                                <li class="{{ request()->routeIs('home') ? 'active current' : '' }}">
+                                    <a href="{{ route('home') }}">Home</a>
+                                </li>
+                                <li class="{{ request()->routeIs('about') ? 'active current' : '' }}">
+                                    <a href="{{ route('about') }}">About</a>
+                                </li>
                                 <li class="dropdown {{ request()->routeIs('courses') ? 'active current' : '' }}">
                                     <a href="{{ route('courses') }}">Courses</a>
                                     <div class="megamenu">
                                         <div class="row clearfix">
-                                            @foreach($coursa->chunk(ceil($coursa->count() / 3)) as $chunk)
+                                            @foreach($coursa->chunk(ceil($coursa->count()/3)) as $chunk)
                                                 <div class="col-lg-4 column">
                                                     <ul>
                                                         @foreach($chunk as $course)
                                                             <li>
-                                                                <a href="{{ route('courseDetails',  $course->slug) }}">
+                                                                <a href="{{ route('courseDetails', $course->slug) }}">
                                                                     {{ $course->title }}
                                                                 </a>
                                                             </li>
@@ -97,183 +61,662 @@
                                         </div>
                                     </div>
                                 </li>
-
                                 <li class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }}">
                                     <a href="{{ route('service') }}">Services</a>
                                     <ul>
                                         @forelse($servica as $service)
-                                            <li>
-                                                <a href="{{ route('serviceDetails', $service->slug) }}">
-                                                    {{ $service->title }}
-                                                </a>
-                                            </li>
+                                            <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
                                         @empty
                                             <li><a href="#">No Services Available</a></li>
                                         @endforelse
                                     </ul>
                                 </li>
-
-                                <li class="dropdown {{ request()->routeIs('destination') ? 'active current' : ''  }}"><a
-                                        href="{{ route('destination') }}">Destination</a>
+                                <li class="dropdown {{ request()->routeIs('destination') ? 'active current' : '' }}">
+                                    <a href="{{ route('destination') }}">Destination</a>
                                     <ul>
                                         @foreach($destinate as $des)
-                                        <li><a href="{{ route('destinationDetails', $des->slug)}}">{{$des->category->name}}</a></li>
+                                            <li><a href="{{ route('destinationDetails', $des->slug) }}">{{ $des->category->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
-
-                                <li class="dropdown {{ request()->routeIs('scholarship') ? 'active current' : ''  }}"><a
-                                        href="{{ route('scholarship') }}">Scholarship</a> </li>
-                                <li class="dropdown {{ request()->routeIs('event') ? 'active current' : ''  }}"><a
-                                        href="{{ route('event') }}">Event</a> </li>
-                                <li class="dropdown {{ request()->routeIs('blog') ? 'active current' : ''  }}"><a
-                                        href="{{ route('blog') }}">Blog</a> </li>
-                                <li class="dropdown {{ request()->routeIs('contact') ? 'active current' : ''  }}"><a
-                                        href="{{ route('contact') }}">Contact</a></li>
+                                <li class="{{ request()->routeIs('scholarship') ? 'active current' : '' }}">
+                                    <a href="{{ route('scholarship') }}">Scholarship</a>
+                                </li>
+                                <li class="{{ request()->routeIs('event') ? 'active current' : '' }}">
+                                    <a href="{{ route('event') }}">Event</a>
+                                </li>
+                                <li class="{{ request()->routeIs('blog') ? 'active current' : '' }}">
+                                    <a href="{{ route('blog') }}">Blog</a>
+                                </li>
+                                <li class="{{ request()->routeIs('contact') ? 'active current' : '' }}">
+                                    <a href="{{ route('contact') }}">Contact</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
-                    {{--<div class="menu-right-content clearfix pull-left">
-                        <div class="btn-box">
-                            <a href="index-2.html" class="theme-btn-two">Appointment<i class="flaticon-send"></i></a>
-                        </div>
-                    </div>--}}
                 </div>
             </div>
         </div>
     </div>
 
-    <!--sticky Header-->
+    <!-- Sticky Header -->
     <div class="sticky-header">
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
                     <figure class="logo">
-                        <a href="{{ route('home') }}"><img
-                                src="{{ route('imagecache', [ 'template'=>'original','filename' => $ws->logo_alt() ]) }}" alt="{{$ws->website_title ?? ''}}"></a>
-                        </a>   
+                        <a href="{{ route('home') }}">
+                            <img src="{{ route('imagecache', ['template'=>'original','filename'=>$ws->logo()]) }}" 
+                                 alt="{{ $ws->website_title ?? '' }}">
+                        </a>
                     </figure>
                 </div>
                 <div class="menu-area pull-right">
                     <nav class="main-menu clearfix">
-                        <!--Keep This Empty / Menu will come through Javascript-->
+                        <!-- menu cloned via JS -->
                     </nav>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<!-- main-header end -->
-<!-- Mobile Menu  -->
-<div class="mobile-menu">
+<!-- MAIN HEADER END -->
+
+<!-- MOBILE FLOATING MENU START -->
+<div class="mobile-floating-menu">
     <div class="menu-backdrop"></div>
-    <div class="close-btn"><i class="fas fa-times"></i></div>
-    <nav class="menu-box">
-        <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{ asset('frontend/assets/images/logo.png') }}"
-                    alt="" title=""></a></div>
-        <div class="menu-outer">
-            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+    <div class="floating-menu-container">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <a href="{{ route('home') }}">
+                    <img src="{{ route('imagecache', ['template'=>'original','filename'=>$ws->logo()]) }}" alt="">
+                </a>
+            </div>
+            <div class="close-btn">X</div>
         </div>
-        <div class="contact-info">
-            <h4>Contact Info</h4>
-            <ul>
-                <li>Chicago 12, Melborne City, USA</li>
-                <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                <li><a href="mailto:info@example.com">info@example.com</a></li>
-            </ul>
+        <div class="menu-content">
+            <nav class="mobile-navigation">
+                <!-- Menu auto-cloned here via JS -->
+            </nav>
         </div>
-        <div class="social-links">
-            <ul class="clearfix">
-                <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-            </ul>
-        </div>
-    </nav>
+    </div>
 </div>
-<!-- End Mobile Menu -->
+<!-- MOBILE FLOATING MENU END -->
 
+<!-- CSS -->
 <style>
-/* Ensure <a> behaves as inline-block so ::after works properly */
-.main-header .menu-area .navigation>li.current>a {
-    display: inline-block;
-    /* ensures pseudo-element positions correctly */
-    position: relative;
-    /* required for ::after positioning */
-    padding-bottom: 5px;
-    /* optional, space for underline */
+    /* Menu links */
+    .main-header .menu-area .navigation li a,
+    .sticky-header .main-menu .navigation li a {
+        color: #333 !important;
+        transition: color 0.3s ease;
+    }
+
+    /* Original header underline */
+    .main-header .menu-area .navigation>li.current>a::before { /* Use ::before to avoid conflict */
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #ff6600;
+        border-radius: 2px;
+    }
+    .main-header .menu-area .navigation>li.current>a::after { content: none; } /* Disable old rule */
+
+    /* Sticky header remove red underline */
+    .sticky-header .navigation>li.current>a::after {
+        content: none !important;
+    }
+    .sticky-header .navigation li a,
+    .sticky-header .navigation li a:hover,
+    .sticky-header .navigation li.dropdown:hover > a {
+        color: #333 !important;
+        background: transparent !important;
+    }
+
+    /* Header padding */
+    .header-upper, .sticky-header {
+        padding: 15px 0;
+        background: #ffffff;
+    }
+
+    /* Sticky header */
+    .sticky-header {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 9999;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Show sticky */
+    body.sticky-active .sticky-header {
+        top: 0;
+    }
+
+    /* Logo size */
+    .main-header .logo img,
+    .sticky-header .logo img {
+        max-height: 80px;
+        transition: all 0.3s ease;
+    }
+
+    /* User menu */
+    .user-menu { position: relative; }
+    .user-menu>a { display: flex; align-items: center; gap: 5px; }
+    .user-menu .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        min-width: 200px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        list-style: none;
+        padding: 5px 0;
+        z-index: 999;
+    }
+    .user-menu:hover .dropdown-menu { display: block; }
+    .user-menu .dropdown-menu li { padding: 8px 15px; }
+    .user-menu .dropdown-menu li a,
+    .user-menu .dropdown-menu li button {
+        color: #333 !important;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+    }
+    .user-menu .dropdown-menu li a:hover,
+    .user-menu .dropdown-menu li button:hover { background-color: #f0f0f0; color: #000 !important; }
+
+    /* Header Icons */
+    .outer-box .header-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+        display: none; /* Hidden by default */
+    }
+
+    .outer-box .header-icon a {
+        color: #333;
+        font-size: 20px;
+        padding: 2px;
+        transition: color 0.3s ease;
+    }
+
+    .outer-box .header-icon a:hover {
+        color: #ff6600;
+    }
+
+    /* ==================== DESKTOP DROPDOWN ICONS (FORCED) ==================== */
+    .main-header .navigation > li.dropdown > a,
+    .sticky-header .navigation > li.dropdown > a {
+        position: relative;
+        padding-right: 20px;
+    }
+    .main-header .navigation > li.dropdown > a::after,
+    .sticky-header .navigation > li.dropdown > a::after {
+        font-family: 'Font Awesome 5 Free' !important;
+        font-weight: 900 !important;
+        content: '\f107' !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        transition: transform 0.3s ease !important;
+        font-size: 14px !important;
+        display: inline-block !important; /* Force it to display */
+    }
+    .main-header .navigation > li.dropdown:hover > a::after,
+    .sticky-header .navigation > li.dropdown:hover > a::after {
+        transform: translateY(-50%) rotate(180deg) !important;
+    }
+
+    /* ==================== MOBILE DROPDOWN ICONS (FORCED) ==================== */
+    .mobile-navigation .navigation li.dropdown > a {
+        position: relative;
+        padding-right: 45px;
+    }
+    .mobile-navigation .navigation li.dropdown > a::after {
+        content: '+' !important;
+        position: absolute !important;
+        right: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        transition: all 0.3s ease !important;
+        color: #333 !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
+        font-family: monospace !important;
+        display: inline-block !important; /* Force it to display */
+    }
+    .mobile-navigation .navigation li.dropdown.open > a::after {
+        content: '−' !important;
+        transform: translateY(-50%) !important;
+        color: #ff6600 !important;
+    }
+
+    /* Hamburger button */
+    .mobile-nav-toggler {
+        display: none;
+        width: 30px;
+        height: 22px;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 10000;
+        position: absolute;
+        right: 45px; /* Adjusted to make space for globe icon */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .mobile-nav-toggler span.icon-bar {
+        display: block;
+        height: 3px;
+        background: #333 !important;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* ==================== MOBILE FLOATING MENU ==================== */
+    .mobile-floating-menu {
+        position: absolute; /* Changed from fixed */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99998;
+        pointer-events: none;
+    }
+
+    .mobile-floating-menu.active {
+        pointer-events: auto;
+    }
+
+    /* Hide Backdrop - not needed for dropdown style */
+    .mobile-floating-menu .menu-backdrop {
+        display: none;
+    }
+
+    /* Floating Container - Full Width Dropdown Style */
+    .floating-menu-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        background: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    .mobile-floating-menu.active .floating-menu-container {
+        max-height: calc(100vh - 80px);
+        opacity: 1;
+    }
+
+    /* Menu Header - Hidden in dropdown style */
+    .menu-header {
+        display: none;
+    }
+
+    /* Menu Content */
+    .menu-content {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        padding: 15px 0;
+    }
+
+    /* Mobile Navigation */
+    .mobile-navigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-navigation .navigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-navigation .navigation > li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mobile-navigation .navigation > li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-navigation .navigation li a {
+        display: block;
+        padding: 12px 20px; /* Reduced padding */
+        color: #333;
+        text-decoration: none;
+        font-weight: normal; /* Simpler font */
+        font-size: 14px; /* Simpler font size */
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-navigation .navigation li a:hover {
+        background: #f8f9fa;
+        color: #ff6600;
+    }
+
+    .mobile-navigation .navigation li.current > a {
+        color: #ff6600;
+        background: #fff8f5;
+    }
+
+    /* Submenu */
+    .mobile-navigation .navigation li ul,
+    .mobile-navigation .navigation li .megamenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+    }
+
+    .mobile-navigation .navigation li.dropdown.open > ul,
+    .mobile-navigation .navigation li.dropdown.open > .megamenu {
+        display: block;
+    }
+
+    .mobile-navigation .navigation li ul li a,
+    .mobile-navigation .navigation li .megamenu li a {
+        padding: 12px 25px 12px 45px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #555;
+    }
+
+    .mobile-navigation .navigation li ul li a:hover,
+    .mobile-navigation .navigation li .megamenu li a:hover {
+        background: #fff;
+        color: #ff6600;
+        padding-left: 50px;
+    }
+
+    .mobile-navigation .megamenu .row {
+        margin: 0;
+    }
+
+    .mobile-navigation .megamenu .col-lg-4 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mobile-navigation .megamenu ul {
+        padding: 0;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        padding: 25px;
+        background: #f8f9fa;
+        margin: 15px 15px 0;
+        border-radius: 8px;
+    }
+
+    .contact-info h4 {
+        margin: 0 0 15px 0;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        border-bottom: 2px solid #ff6600;
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+
+    .contact-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-info ul li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #666;
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-info ul li:before {
+        content: '▸';
+        color: #ff6600;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .contact-info ul li a {
+        color: #ff6600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info ul li a:hover {
+        color: #ff4400;
+    }
+
+    /* Social Links */
+    .social-links {
+        padding: 20px 15px 25px;
+    }
+
+    .social-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .social-links ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: #333;
+        color: #fff;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+
+    .social-links ul li a:hover {
+        background: #ff6600;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+    }
+
+    /* Scrollbar styling */
+    .menu-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .menu-content::-webkit-scrollbar-track {
+        background: #f8f9fa;
+    }
+
+    .menu-content::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+
+    .menu-content::-webkit-scrollbar-thumb:hover {
+        background: #ff6600;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+        .main-header .menu-area { display: none !important; }
+        .mobile-nav-toggler { display: flex !important; }
+        
+        /* Show header icons on mobile */
+        .outer-box .header-icon {
+            display: block;
+        }
+        .outer-box .phone-icon {
+            right: 90px; /* Position before toggler */
+            font-size: 40px;
+        }
+        .outer-box .globe-icon {
+            right: 12px; /* Position after toggler */
+        }
+
+        /* Position mobile menu below header */
+        .mobile-floating-menu {
+            top: auto;
+        }
+        
+        .floating-menu-container {
+            /* position: fixed; -- Removed to allow scrolling with page */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .mobile-navigation .navigation li a {
+            padding: 4px 20px;
+        }
+        
+        .mobile-navigation .navigation li.dropdown > a {
+            padding-right: 45px;
+        }
+        
+        .contact-info {
+            margin: 15px 10px 0;
+            padding: 20px;
+        }
+    }
+    @media (max-width: 991px) {
+    .mobile-navigation .navigation .dropdown-btn span.fas.fa-angle-down {
+        display: none !important;
+    }
 }
 
-/* underline strictly at bottom */
-.main-header .menu-area .navigation>li.current>a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    /* start from bottom of <a> */
-    width: 100%;
-    height: 3px;
-    /* thickness of underline */
-    background: #ff6600;
-    /* your highlight color */
-    border-radius: 2px;
-    /* optional, rounded edges */
-    display: block;
-}
-
-
-/* user icon login  */
-
-.user-menu {
-    position: relative;
-}
-
-.user-menu>a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    /* space between icon and text */
-}
-
-.user-menu .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    /* just below the icon */
-    right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    min-width: 200px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    list-style: none;
-    padding: 5px 0;
-}
-
-.user-menu:hover .dropdown-menu {
-    display: block;
-}
-
-.user-menu .dropdown-menu li {
-    padding: 8px 15px;
-}
-
-.user-menu .dropdown-menu li a,
-.user-menu .dropdown-menu li button {
-    color: #333 !important; /* dark text */
-    background: #fff; /* ensure background is white */
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-}
-
-.user-menu .dropdown-menu li a:hover,
-.user-menu .dropdown-menu li button:hover {
-    background-color: #f0f0f0;
-    color: #000 !important;
-}
 </style>
+
+<!-- JS -->
+<script>
+        const mobileDropdownIcons = document.querySelectorAll('.mobile-navigation .navigation li.dropdown > a > span.fas.fa-angle-down');
+mobileDropdownIcons.forEach(icon => icon.remove());
+document.addEventListener("DOMContentLoaded", function(){
+
+
+
+    // --- Menu Cloning ---
+    const mainMenu = document.querySelector('.main-header .navigation');
+    const stickyMenuContainer = document.querySelector('.sticky-header .main-menu');
+    const mobileMenuContainer = document.querySelector('.mobile-floating-menu .mobile-navigation');
+
+    if (mainMenu) {
+        if (stickyMenuContainer) {
+            stickyMenuContainer.innerHTML = mainMenu.outerHTML;
+        }
+        if (mobileMenuContainer) {
+            mobileMenuContainer.innerHTML = mainMenu.outerHTML;
+
+            // --- Device-based Icon Hiding Logic ---
+
+            const hideMobileAngleIcon = () => {
+                const mobileDropdownLinks = mobileMenuContainer.querySelectorAll('li.dropdown > a');
+                mobileDropdownLinks.forEach(link => {
+                    const faIconElement = link.querySelector('i[class*="fa-angle"], span[class*="fa-angle"]');
+                    if (faIconElement) {
+                        if (window.innerWidth <= 991) { // If it's a mobile device
+                            faIconElement.style.display = 'none';
+                        } else { // If it's a desktop device (shouldn't happen in mobileMenuContainer, but for completeness)
+                            faIconElement.style.display = ''; // Reset display
+                        }
+                    }
+                });
+            };
+
+            // Run on initial load
+            hideMobileAngleIcon();
+
+            // Run on window resize
+            window.addEventListener('resize', hideMobileAngleIcon);
+
+            // Also run after menu cloning (in case it's added later)
+            // This part is already within the if (mobileMenuContainer) block, so it runs after cloning.
+        }
+    }
+
+    // --- Sticky Header ---
+    window.addEventListener('scroll', function(){
+        if (window.scrollY > 100) {
+            document.body.classList.add('sticky-active');
+        } else {
+            document.body.classList.remove('sticky-active');
+        }
+    });
+
+    // --- Mobile Floating Menu Activation ---
+    const mobileMenu = document.querySelector('.mobile-floating-menu');
+    const openBtn = document.querySelector('.mobile-nav-toggler');
+    const headerUpper = document.querySelector('.header-upper');
+
+    const toggleMenu = () => {
+        if (mobileMenu) {
+            mobileMenu.classList.toggle('active');
+        }
+    };
+
+    // Close menu when clicking outside
+    const closeMenuOnClickOutside = (e) => {
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            const menuContainer = document.querySelector('.floating-menu-container');
+            const isClickInside = menuContainer.contains(e.target) || openBtn.contains(e.target);
+            if (!isClickInside) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+    };
+
+    if (openBtn) openBtn.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+
+    // --- Mobile Menu Dropdowns ---
+    const mobileNav = document.querySelector('.mobile-floating-menu .mobile-navigation');
+    if (mobileNav) {
+        const dropdowns = mobileNav.querySelectorAll('li.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            if (link) {
+                link.addEventListener('click', function(e) {
+                    // Check if this dropdown has submenu
+                    const nextEl = this.nextElementSibling;
+                    if (nextEl && (nextEl.tagName === 'UL' || nextEl.classList.contains('megamenu'))) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                    // If no submenu, allow normal navigation
+                });
+            }
+        });
+    }
+});
+</script>

@@ -29,6 +29,9 @@
 <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
  <!-- nice dropdown css  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet">
+
+
 @stack('css')
 </head>
 
@@ -38,12 +41,12 @@
 
     <div class="boxed_wrapper">
         <!-- Preloader -->
-        <div class="loader-wrap">
+        <!-- <div class="loader-wrap">
             <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
             <div class="layer layer-one"><span class="overlay"></span></div>
             <div class="layer layer-two"><span class="overlay"></span></div>        
             <div class="layer layer-three"><span class="overlay"></span></div>        
-        </div>
+        </div> -->
 
 
         <!-- switcher menu -->
@@ -136,6 +139,9 @@
 
     <!-- nice dropdown js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/license.min.js"></script>
+
         @stack('js')
 </body>
 <!-- End of .page_wrapper -->
