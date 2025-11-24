@@ -60,16 +60,16 @@
                             @if(isset($searchName) && $searchName)
                             <div>
                                 <span class="badge badge-primary p-2">{{ $searchName }} 
-                                    <a href="{{ route('universities.index') }}" class="close text-white ml-1" type="button">
+                                    <a href="#" class="close text-white ml-1" type="button">
                                         <span>&times;</span>
                                     </a>
                                 </span>
-                                <a href="{{ route('universities.index') }}" class="btn btn-link btn-sm">Clear all filters</a>
+                                <a href="#" class="btn btn-link btn-sm">Clear all filters</a>
                             </div>
                             @endif
                         </div>
                     </div>
-                    
+
                     <div id="filters-accordion">
                         <!-- University Filter -->
                         <div class="card mb-3">
@@ -81,18 +81,62 @@
                                     </button>
                                 </h5>
                             </div>
-
                             <div id="collapseUniversity" class="collapse show" aria-labelledby="headingUniversity" data-parent="#filters-accordion">
                                 <div class="card-body">
                                     <input type="text" class="form-control mb-3" placeholder="Search University">
                                     <div style="max-height: 200px; overflow-y: auto;">
-                                        @foreach($paginator->take(10) as $university)
+                                        @foreach($universities ?? [] as $university)
                                         <div class="custom-control custom-checkbox mb-2">
-                                            <input type="checkbox" class="custom-control-input university-filter" id="{{ Str::slug($university['name']) }}" value="{{ $university['name'] }}">
+                                            <input type="checkbox" class="custom-control-input" id="{{ Str::slug($university['name']) }}">
                                             <label class="custom-control-label" for="{{ Str::slug($university['name']) }}">{{ $university['name'] }}</label>
                                         </div>
                                         @endforeach
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Faculty Filter -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingFaculty">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left d-flex justify-content-between collapsed" data-toggle="collapse" data-target="#collapseFaculty" aria-expanded="false" aria-controls="collapseFaculty">
+                                        Faculty
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFaculty" class="collapse" aria-labelledby="headingFaculty" data-parent="#filters-accordion">
+                                <div class="card-body">
+                                    <input type="text" class="form-control mb-3" placeholder="Search Faculty">
+                                    @foreach(['Business and Management', 'Computing', 'Engineering', 'Law', 'Nursing and Midwifery'] as $faculty)
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="{{ Str::slug($faculty) }}">
+                                        <label class="custom-control-label" for="{{ Str::slug($faculty) }}">{{ $faculty }}</label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Study Level Filter -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingStudyLevel">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left d-flex justify-content-between collapsed" data-toggle="collapse" data-target="#collapseStudyLevel" aria-expanded="false" aria-controls="collapseStudyLevel">
+                                        Study Level
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseStudyLevel" class="collapse" aria-labelledby="headingStudyLevel" data-parent="#filters-accordion">
+                                <div class="card-body">
+                                    @foreach(['Undergraduate', 'Masters', 'Foundation', 'Top-up Degree', 'PhD Doctorate'] as $level)
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="{{ Str::slug($level) }}">
+                                        <label class="custom-control-label" for="{{ Str::slug($level) }}">{{ $level }}</label>
+                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -109,12 +153,9 @@
                             </div>
                             <div id="collapseLocation" class="collapse" aria-labelledby="headingLocation" data-parent="#filters-accordion">
                                 <div class="card-body">
-                                    @php
-                                        $locations = ['Any Location', 'London', 'Bristol', 'Manchester', 'Birmingham', 'Scotland', 'Wales'];
-                                    @endphp
-                                    @foreach($locations as $location)
+                                    @foreach(['Any Location', 'London', 'East of England', 'East Midlands', 'West Midlands', 'Scotland', 'Wales'] as $location)
                                     <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input location-filter" id="{{ Str::slug($location) }}" value="{{ $location }}">
+                                        <input type="checkbox" class="custom-control-input" id="{{ Str::slug($location) }}">
                                         <label class="custom-control-label" for="{{ Str::slug($location) }}">{{ $location }}</label>
                                     </div>
                                     @endforeach
@@ -131,34 +172,26 @@
                     <div class="content-style-one mb-6">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h3 class="h5 mb-0">
-                                <span id="resultsCount">{{ $paginator->total() }}</span> Results Found
+                                {{ count($universities ?? []) }} Results Found
                                 @if(isset($searchName) && $searchName)
                                 for "{{ $searchName }}"
                                 @endif
-                                <small class="text-muted">(Showing {{ $paginator->count() }} of {{ $paginator->total() }})</small>
                             </h3>
                             <div class="form-inline">
                                 <label class="mr-2" for="sortBy">Sort by:</label>
                                 <select class="custom-select" id="sortBy">
-                                    <option value="name" selected>Name A-Z</option>
-                                    <option value="name_desc">Name Z-A</option>
-                                    <option value="country">Country</option>
+                                    <option selected>Relevance</option>
+                                    <option>Name A-Z</option>
+                                    <option>Ranking</option>
+                                    <option>Location</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Loading Spinner -->
-                        <div id="loadingSpinner" class="text-center d-none">
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <p class="mt-2">Searching universities...</p>
-                        </div>
-
                         <!-- University Cards Grid -->
-                        <div id="universitiesContainer" class="university-cards-grid">
-                            @if($paginator->count() > 0)
-                                @foreach(array_chunk($paginator->items(), 2) as $chunk)
+                        <div class="university-cards-grid">
+                            @if(isset($universities) && count($universities) > 0)
+                                @foreach(array_chunk($universities, 2) as $chunk)
                                 <div class="row">
                                     @foreach($chunk as $university)
                                     <div class="col-md-6 mb-4">
@@ -183,7 +216,9 @@
                                                     </div>
                                                     <p class="card-text text-muted small mb-3 description-clamp">
                                                         {{ $university['name'] }} is a prestigious university located in {{ $university['state-province'] ? $university['state-province'] . ', ' : '' }}{{ $university['country'] }}. 
-                                                        Visit their official website for more information about programs and admissions.
+                                                        @if(isset($university['domains'][0]))
+                                                        Visit their official website at {{ $university['domains'][0] }} for more information about programs and admissions.
+                                                        @endif
                                                     </p>
                                                     <ul class="list-unstyled bg-light p-3 rounded shadow-sm university-details-list">
                                                         <li class="d-flex align-items-center mb-2">
@@ -206,7 +241,9 @@
                                                         <li class="d-flex align-items-center">
                                                             <span class="detail-icon-wrapper bg-warning text-white mr-2"><i class="fas fa-link"></i></span>
                                                             <span class="text-dark font-weight-bold">Website:</span> 
-                                                            <span class="ml-auto text-truncate" style="max-width: 120px;">{{ $university['web_pages'][0] ?? 'N/A' }}</span>
+                                                            <span class="ml-auto text-truncate" style="max-width: 120px;">
+                                                                <small>{{ $university['web_pages'][0] ?? 'N/A' }}</small>
+                                                            </span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -220,54 +257,33 @@
                                 <div class="text-center py-5">
                                     <i class="fas fa-university fa-3x text-muted mb-3"></i>
                                     <h4 class="text-muted">No universities found</h4>
-                                    <p class="text-muted">Try searching for a different location or clear your filters.</p>
-                                    <button class="btn btn-primary" onclick="clearSearch()">Clear Search</button>
+                                    <p class="text-muted">
+                                        @if(isset($searchName) && $searchName)
+                                        No universities found for "{{ $searchName }}". Try searching for a different location.
+                                        @else
+                                        Start by searching for a location to find universities.
+                                        @endif
+                                    </p>
+                                    @if(isset($searchName) && $searchName)
+                                    <a href="#" class="btn btn-primary">Clear Search</a>
+                                    @endif
                                 </div>
                             @endif
                         </div>
-
-                        <!-- Pagination -->
-                        @if($paginator->hasPages())
-                        <nav aria-label="Page navigation" class="mt-5">
-                            <ul class="pagination justify-content-center">
-                                {{-- Previous Page Link --}}
-                                @if($paginator->onFirstPage())
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </a>
-                                    </li>
-                                @else
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </a>
-                                    </li>
-                                @endif
-
-                                {{-- Pagination Elements --}}
-                                @foreach($paginator->getUrlRange(1, $paginator->lastPage()) as $page => $url)
-                                    @if($page == $paginator->currentPage())
-                                        <li class="page-item active"><a class="page-link" href="#">{{ $page }}</a></li>
-                                    @else
-                                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                                    @endif
-                                @endforeach
-
-                                {{-- Next Page Link --}}
-                                @if($paginator->hasMorePages())
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                @else
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" aria-disabled="true">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                @endif
+                        
+                        <!-- Pagination - Only show if there are results -->
+                        @if(isset($universities) && count($universities) > 0)
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center mt-5">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                </li>
                             </ul>
                         </nav>
                         @endif
@@ -279,12 +295,12 @@
 </div>
 
 <style>
-/* Your existing CSS styles remain the same */
+/* Custom styles to match content.txt card design */
 .card-link-wrapper {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
+    text-decoration: none; /* Remove underline from the entire card link */
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the anchor tag a block element */
+    height: 100%; /* Ensure the link wrapper takes full height of the card */
 }
 
 .university-card {
@@ -292,23 +308,23 @@
 }
 
 .university-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+    transform: translateY(-5px) scale(1.02); /* Slightly scale and lift on hover */
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; /* Stronger shadow on hover */
 }
 
 .university-card-top-bar {
-    height: 4px;
-    background-image: linear-gradient(to right, #1D3564, #4B6EA8, #1D3564);
+    height: 4px; /* Initial height */
+    background-image: linear-gradient(to right, #1D3564, #4B6EA8, #1D3564); /* Example gradient */
     transition: height 0.3s ease-in-out;
 }
 
 .university-card:hover .university-card-top-bar {
-    height: 8px;
+    height: 8px; /* Grow on hover */
 }
 
 .university-logo-container {
-    width: 120px;
-    height: 60px;
+    width: 120px; /* Specific width */
+    height: 60px; /* Specific height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,60 +332,60 @@
 }
 
 .university-logo-container img {
-    object-fit: contain;
+    object-fit: contain; /* Ensure logo fits without cropping */
 }
 
 .card-title.h5 {
-    color: #1D3564;
+    color: #1D3564; /* Matching the primary color */
     font-weight: bold;
 }
 
 .card-title.h5:hover {
-    color: #4B6EA8;
+    color: #4B6EA8; /* Hover color for title */
 }
 
 .card-subtitle .fa-map-marker-alt {
-    color: #4B6EA8;
+    color: #4B6EA8; /* Location icon color */
 }
 
 .card-divider {
-    width: 60px;
+    width: 60px; /* Width of the divider line */
     height: 2px;
-    background-color: #e2e8f0;
+    background-color: #e2e8f0; /* Light gray color */
     transition: background-color 0.3s ease-in-out;
 }
 
 .university-card:hover .card-divider {
-    background-color: #1D3564;
+    background-color: #1D3564; /* Change color on hover */
 }
 
 .description-clamp {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.5;
-    max-height: 3em;
+    line-height: 1.5; /* Adjust line height for better appearance */
+    max-height: 3em; /* 2 lines * 1.5 line height */
 }
 
 .university-details-list li {
     padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Subtle separator */
 }
 .university-details-list li:last-child {
     border-bottom: none;
 }
 
 .university-details-list li:hover {
-    background-color: #f8f9fa;
-    color: #1D3564;
+    background-color: #f8f9fa; /* Light hover background */
+    color: #1D3564; /* Text color on hover */
 }
 
 .detail-icon-wrapper {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular icons */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -381,6 +397,7 @@
 .detail-icon-wrapper.bg-success { background-color: #28a745 !important; }
 .detail-icon-wrapper.bg-warning { background-color: #ffc107 !important; }
 
+/* General Bootstrap overrides/enhancements */
 .btn-primary {
     background-color: #1D3564 !important;
     border-color: #1D3564 !important;
@@ -389,44 +406,22 @@
     background-color: #152A4F !important;
     border-color: #152A4F !important;
 }
-
-/* Pagination Styles */
 .page-item.active .page-link {
     background-color: #1D3564 !important;
     border-color: #1D3564 !important;
 }
 .page-link {
     color: #1D3564 !important;
-    border: 1px solid #dee2e6;
 }
 .page-link:hover {
     color: #152A4F !important;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #1D3564 !important;
+    border-color: #1D3564 !important;
+}
+.bg-gradient-primary {
+    background-image: linear-gradient(to right, #1D3564, #4B6EA8, #1D3564) !important;
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Search form submission
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const searchValue = document.querySelector('input[name="location"]').value;
-        if (searchValue.trim()) {
-            // Add the search parameter to the form and submit normally
-            this.submit();
-        }
-    });
-
-    // Sort functionality
-    document.getElementById('sortBy').addEventListener('change', function(e) {
-        // This would need additional implementation for AJAX sorting
-        console.log('Sort by:', e.target.value);
-    });
-});
-
-function clearSearch() {
-    window.location.href = '{{ route("home") }}';
-}
-</script>
 @endsection
