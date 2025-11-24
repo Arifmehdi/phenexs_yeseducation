@@ -117,7 +117,6 @@ Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/service',[FrontendController::class,'service'])->name('service');
 Route::get('/contact',[FrontendController::class,'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::post('ewsedu/api',[FrontendApiController::class, 'index'])->name('yesedu.api');
 Route::get('/scholarship',[FrontendController::class,'scholarship'])->name('scholarship');
 Route::get('/service',[FrontendController::class,'service'])->name('service');
 Route::get('/service/details/{slug}',[FrontendController::class,'serviceDetails'])->name('serviceDetails');
@@ -147,6 +146,7 @@ Route::post('agent/update-profile',[FrontendController::class, 'updateProfile'])
 Route::get('/file/download/{id}',[FrontendController::class,'fileDownload'])->name('files.download');
 
 Route::get('/search',[FrontendController::class,'search'])->name('search');
+Route::get('/api/universities/search', [FrontendController::class, 'searchUniversities'])->name('universities.search');
 
 // Route::get('doctor/list',[FrontendController::class,'doctorList'])->name('doctorList');
 Route::get('qurbani/occation',[FrontendController::class,'qurbaniOccation'])->name('qurbani.occation');

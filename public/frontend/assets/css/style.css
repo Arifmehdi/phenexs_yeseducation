@@ -3512,11 +3512,16 @@ h3 a:hover{
   max-width: 100%;
   width: auto;
   margin: 0 auto;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
+  -ms-filter: grayscale(100%); */
+  filter: none;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -5748,11 +5753,11 @@ h3 a:hover{
 }
 
 .clients-section.service-page .logo-image:hover img{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
+  filter: none;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
 }
 
 .service-section.service-page-2 .service-block-one .inner-box{

@@ -40,6 +40,8 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderConfirmationEmail;
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class FrontendController extends Controller
 {
@@ -47,6 +49,46 @@ class FrontendController extends Controller
     public function __construct()
     {
         $this->middleware('locale');
+    }
+
+    public function search(Request $request)
+    {
+        if ($request->action == 'location-data') 
+        {
+            $searchName = $request->location ?? 'Bristol';
+
+            $response = Http::get('http://universities.hipolabs.com/search', [
+                'name' => $searchName,
+                'country' => 'United Kingdom'
+            ]);
+
+            $universities = $response->json();
+
+            $perPage = 16;
+            $currentPage = $request->get('page', 1);
+            $offset = ($currentPage - 1) * $perPage;
+
+            $paginatedUniversities = array_slice($universities, $offset, $perPage);
+
+            $paginator = new LengthAwarePaginator(
+                $paginatedUniversities,
+                count($universities),
+                $perPage,
+                $currentPage,
+                [
+                    'path' => $request->url(),
+                    'query' => $request->query()
+                ]
+            );
+
+            return view('website.search', compact('searchName', 'paginator', 'universities'));
+        }
+
+        return view('website.search', [
+            'searchName' => null,
+            'paginator' => new LengthAwarePaginator([], 0, 16, 1),
+            'universities' => []
+        ]);
     }
 
     public function index()
@@ -1294,5 +1336,26 @@ public function shasthoseba(Request $request)
         $area = $upazila->name;
         $shippingMethods = shippingMethod::where('name', $area)->get();
         return response()->json($shippingMethods);
+    }
+
+    public function searchUniversities(Request $request)
+    {
+        $searchTerm = $request->get('q');
+
+        if (empty($searchTerm)) {
+            return response()->json([]);
+        }
+
+        $response = Http::get('http://universities.hipolabs.com/search', [
+            'name' => $searchTerm,
+            'country' => 'United Kingdom'
+        ]);
+
+        $universities = $response->json();
+
+        // Limit to 5 results
+        $suggestions = array_slice($universities, 0, 5);
+
+        return response()->json($suggestions);
     }
 }

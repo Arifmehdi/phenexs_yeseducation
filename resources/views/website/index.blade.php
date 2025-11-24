@@ -16,15 +16,6 @@
 
 @push('css')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<style>
-    .nice-select {
-        position: relative;
-        z-index: 9999;
-    }
-    .nice-select .list {
-        z-index: 10000;
-    }
-</style>
 <!-- Styles -->
 <style>
 /* ===== Hero Video Section ===== */
@@ -2402,8 +2393,7 @@
         <div class="tab-content">
             <!-- Location Tab -->
             <div class="tab-pane active" id="location">
-                <form class="search-form" action="{{ route('yesedu.api') }}" method="post">
-                    @csrf
+                <form class="search-form" action="{{ route('search') }}" method="get">
                     <input type="hidden" name="action" value="location-data">
                     <div class="form-group">
                         <label for="location-select">Select UK City</label>
@@ -2435,11 +2425,13 @@
 
             <!-- University Tab -->
             <div class="tab-pane" id="university">
-                <form class="search-form">
-                    <div class="form-group">
+                <form class="search-form" action="{{ route('search') }}" method="get">
+                    <input type="hidden" name="action" value="location-data">
+                    <div class="form-group" style="position: relative;">
                         <label for="university-search">Search Universities</label>
-                        <input type="text" id="university-search" class="form-control"
+                        <input type="text" id="university-search" name="location" class="form-control"
                             placeholder="Enter university name...">
+                        <ul id="university-suggestions" class="list" style="position: absolute; width: 100%; z-index: 100; display: none;"></ul>
                     </div>
                     <button type="submit" class="search-btn">
                         <i class="fas fa-search"></i> Search
@@ -2449,7 +2441,7 @@
 
             <!-- Courses Tab -->
             <div class="tab-pane" id="courses">
-                <form class="search-form">
+                <form class="search-form" action="{{ route('search') }}" method="get">
                     <div class="form-group">
                         <label for="course-search">Search Courses</label>
                         <input type="text" id="course-search" class="form-control" placeholder="Enter course name...">
@@ -2462,7 +2454,7 @@
 
             <!-- Events Tab -->
             <div class="tab-pane" id="events">
-                <form class="search-form">
+                <form class="search-form" action="{{ route('search') }}" method="get">
                     <div class="events-form">
                         <div class="form-group">
                             <label for="event-type">Event Type</label>
@@ -2611,158 +2603,162 @@
 <!-- cta ads section end -->
 
 <!-- Faculty Cards Section -->
-<section class="faculty-cards-section" style="padding: 80px 0; position: relative;">
+<section class="faculty-cards-section py-5 position-relative">
     <!-- Background Image at Bottom -->
-    <div class="section-background-bottom">
+    <div class="section-background-bottom position-absolute w-100 bottom-0">
         <img src="{{ asset('frontend/assets/images/vector-graphic 2.png') }}" alt="Background Pattern"
-            class="background-image-bottom">
+            class="w-100">
     </div>
 
-    <div class="auto-container">
-        <div class="sec-title centred" style="margin-bottom: 50px; position: relative; z-index: 2;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Explore Popular Faculties</h2>
-            <p style="color: #555;">Discover diverse academic disciplines and find your perfect study path</p>
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold" style="font-size: 36px; color: #003054;">
+                Popular <span style="color:#DB1F2A;">Faculties</span>
+            </h2>
+            <p class="text-secondary">Discover diverse academic disciplines and find your perfect study path</p>
         </div>
 
-        <div class="row justify-content-center" style="position: relative; z-index: 2;">
-            <!-- Faculty Card 1 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Computer Science</h5>
-                        <p>Technology & IT</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/computer-science.jpg') }}"
-                            alt="Computer Science" style="width: 139px; height: 186px;">
-                    </div>
+        <div class="row justify-content-center g-2">
+            <!-- Example Faculty Card -->
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/business--management.original.png') }}"
+                         alt="Business & Management" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Business & Management</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 2 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-briefcase-medical"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Medicine</h5>
-                        <p>Health Sciences</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/medicine.jpg') }}" alt="Medicine"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/computer-science--it.original.png') }}"
+                         alt="Computing" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Computing</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 3 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Law</h5>
-                        <p>Legal Studies</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/law.jpg') }}" alt="Law"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/engineering--technology.original.png') }}"
+                         alt="Engineering" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Engineering</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 4 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Business</h5>
-                        <p>Management Studies</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/business.jpg') }}" alt="Business"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/law.original.png') }}"
+                         alt="Law" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Law</strong></h5>
+                </div>
+            </div>
+            <!-- Example Faculty Card -->
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/medicine--health.original.png') }}"
+                         alt="Nursing & Midwifery" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Nursing & Midwifery</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 5 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Engineering</h5>
-                        <p>Technical Sciences</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/engineering.jpg') }}" alt="Engineering"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/humanities.original.png') }}"
+                         alt="Allied Health" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Allied Health</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 6 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Arts & Design</h5>
-                        <p>Creative Arts</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/arts-design.jpg') }}" alt="Arts & Design"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/Medicine_and_dentistry.original.png') }}"
+                         alt="Medicine & Dentistry" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Medicine & Dentistry</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 7 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Education</h5>
-                        <p>Teaching & Learning</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/education.jpg') }}" alt="Education"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/Psychology.original.png') }}"
+                         alt="Psychology" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Psychology</strong></h5>
+                </div>
+            </div>
+            <!-- Example Faculty Card -->
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/applied-sciences--professions.original.png') }}"
+                         alt="Medical Science" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Medical Science</strong></h5>
                 </div>
             </div>
 
-            <!-- Faculty Card 8 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="faculty-card">
-                    <div class="card-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="card-content">
-                        <h5>Psychology</h5>
-                        <p>Human Behavior</p>
-                    </div>
-                    <div class="card-background">
-                        <img src="{{ asset('frontend/assets/images/faculty/psychology.jpg') }}" alt="Psychology"
-                            style="width: 139px; height: 186px;">
-                    </div>
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/Architecture.original.png') }}"
+                         alt="Architecture" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Architecture</strong></h5>
                 </div>
             </div>
+
+            <div class="col-lg-3 col-md-3 col-6 mb-3">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
+                     style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/explore-all.original.png') }}"
+                         alt="Explore ALl" 
+                         style="width: 70px; height: 70px; object-fit: contain;">
+                    <h5 class="card-content mt-1 mb-0"><strong>Explore All</strong></h5>
+                </div>
+            </div>
+
+            <!-- Repeat for other cards in the same pattern -->
         </div>
     </div>
 </section>
+
+<!-- Hover Effect CSS -->
+<style>
+    .faculty-card {
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .faculty-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        border-color: #DB1F2A;
+    }
+
+    /* Image zoom effect on card hover */
+    .faculty-card img {
+        transition: transform 0.3s ease;
+    }
+
+    .faculty-card:hover img {
+        transform: scale(1.3); /* zoom in 10% */
+    }
+
+</style>
+
+
+
 
 
 <!-- Three Stacked Carousels Section -->
@@ -2771,7 +2767,7 @@
 
         <!-- Main Title -->
         <div class="sec-title centred" style="margin-bottom: 40px;">
-            <h2 style="font-size: 36px; font-weight: 700;">Featured UK Universities</h2>
+            <h2 style="font-size: 36px; font-weight: 700;">Featured <span style="color:#DB1F2A;">UK Universities</span></h2>
             <p style="color: #555;">Worldwide education institutions we hold partnerships with</p>
         </div>
 
@@ -2858,11 +2854,11 @@
 <section class="students-videos-section" style="padding: 80px 0;">
     <div class="auto-container">
         <div class="sec-title centred" style="margin-bottom: 50px;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student's Experience with YES Education</h2>
-            <p style="color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student's Experience with <span style="color:#DB1F2A;">YES Education</span></h2>
+            {{--<p style="color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
                 YES Education provide independent guidance, advice, and full application support to international
                 students applying to study in the UK.
-            </p>
+            </p>--}}
         </div>
 
         <div class="student-videos-slider-container">
@@ -2953,10 +2949,7 @@
 <section class="student-reviews-section" style="padding: 80px 0; background: #f8f9fa;">
     <div class="auto-container">
         <div class="sec-title centred" style="margin-bottom: 50px;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student Reviews</h2>
-            <p style="color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-                Hear what our students have to say about their experience with YES Education
-            </p>
+            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student <span style="color:#DB1F2A;">Reviews</span></h2>
         </div>
 
         <div class="student-reviews-slider-container">
@@ -3103,7 +3096,7 @@
 <section class="journey-roadmap-section-single" style="padding: 40px 0; background: #fff;">
     <div class="journey-roadmap-slider-single-container">
         <div class="sec-title centred" style="margin-bottom: 30px;">
-            <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Journey Roadmap</h2>
+            <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Journey <span style="color:#DB1F2A;">Roadmap</span></h2>
             <p style="color: #555; font-size: 16px; max-width: 700px; margin: 0 auto; line-height: 1.5;">
                 Here’s a quick step-by-step guide to applying to study at a UK university and how we support you
                 throughout the journey.
@@ -3261,17 +3254,15 @@
 <!-- FAQ Section with Large Circle Image -->
 <section class="faq-with-image-section" style="padding: 80px 0; background: #f8f9fa;">
     <div class="auto-container">
+        <div class="text-center mb-5">
+            <h2 class="fw-semibold" style="font-size:2.5rem;">
+                Frequently Asked Questions <span style="color:#DB1F2A;">(FAQs)</span>
+            </h2>
+        </div>
         <div class="row align-items-center">
             <!-- FAQ Content Column -->
             <div class="col-lg-6 col-md-12">
                 <div class="faq-content">
-                    <div class="sec-title" style="margin-bottom: 40px;">
-                        <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Frequently Asked Questions</h2>
-                        <p style="color: #555; font-size: 16px; margin-top: 15px;">
-                            Find answers to common questions about studying in the UK and how we can help you achieve
-                            your academic goals.
-                        </p>
-                    </div>
 
                     <div class="faq-accordion">
                         <!-- FAQ Item 1 -->
@@ -3620,8 +3611,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="row">
             <!-- Upcoming Events & Latest News -->
             <div class="col-lg-6 col-md-12 mb-5 mb-lg-0">
-                <div class="section-header" style="margin-bottom: 30px;">
-                    <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Upcoming Events & Latest News</h2>
+                <div class="mb-4">
+                    <h2 class="fw-semibold" style="font-size: 32px; color: #1D3564;">
+                        Upcoming <span style="color:#DB1F2A;">Events</span> & Latest <span style="color:#DB1F2A;">News</span>
+                    </h2>
                 </div>
 
                 @foreach ($blogs as $event)
@@ -3653,8 +3646,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <!-- Latest Blogs -->
             <div class="col-lg-6 col-md-12">
-                <div class="section-header" style="margin-bottom: 30px;">
-                    <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Latest Blogs</h2>
+                <div class="mb-4">
+                    <h2 class="fw-semibold" style="font-size: 32px; color: #1D3564;">
+                        Latest <span style="color:#DB1F2A;">Blogs</span>
+                    </h2>
                 </div>
 
                 @foreach ($blogs as $blog)
@@ -3692,7 +3687,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section class="newsletter-section">
     <div class="container">
-        <h2>Stay Updated with AHZ</h2>
+        <h2>Stay Updated with YES EDUCATION</h2>
         <p>Join our newsletter for the latest updates, insights, and special offers. Don't miss out on any of our
             exciting news!</p>
 
@@ -3750,6 +3745,13 @@ document.addEventListener('DOMContentLoaded', function() {
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+@media (max-width: 768px) {
+    .newsletter-form input[type="email"] {
+        flex: 1 1 100%;
+    }
+}
+
 
 .newsletter-form input[type="email"]:focus {
     border-color: #D10D2B;
@@ -4025,6 +4027,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('.custom-prev-single').click(function() {
         journeySliderSingle.trigger('prev.owl.carousel');
+    });
+});
+</script>
+<style>
+#university-suggestions {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(68,68,68,.11);
+    box-sizing: border-box;
+    margin-top: 4px;
+    padding: 0;
+}
+#university-suggestions .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: 0;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    transition: all .2s;
+}
+#university-suggestions .option:hover {
+    background-color: #f6f6f6;
+}
+</style>
+<script>
+$(document).ready(function() {
+    $('#university-search').on('keyup', function() {
+        var query = $(this).val();
+        if (query.length > 2) {
+            $.ajax({
+                url: "{{ route('universities.search') }}",
+                type: "GET",
+                data: { q: query },
+                success: function(data) {
+                    var suggestions = $('#university-suggestions');
+                    suggestions.empty().show();
+                    if (data.length > 0) {
+                        $.each(data, function(index, university) {
+                            suggestions.append('<li class="option" data-name="' + university.name + '">' + university.name + '</li>');
+                        });
+                    } else {
+                        suggestions.append('<li class="option disabled">No results found</li>');
+                    }
+                }
+            });
+        } else {
+            $('#university-suggestions').empty().hide();
+        }
+    });
+
+    $(document).on('click', '#university-suggestions .option', function() {
+        var universityName = $(this).data('name');
+        if (universityName) {
+            $('#university-search').val(universityName);
+            $('#university-suggestions').empty().hide();
+            $(this).closest('form').submit();
+        }
+    });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.form-group').length) {
+            $('#university-suggestions').empty().hide();
+        }
     });
 });
 </script>
