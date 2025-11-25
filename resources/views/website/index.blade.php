@@ -225,6 +225,34 @@
         transform: translateX(-50%);
     }
 }
+
+/* volume option  */
+.sound-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.sound-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.sound-toggle i {
+    font-size: 20px;
+    color: #003054;
+}
+
 </style>
 
 
@@ -1900,204 +1928,7 @@
 </style>
 
 
-<style>
-/* Student Reviews Section Styles */
-.student-reviews-section {
-    background: #f8f9fa !important;
-}
 
-.student-reviews-slider-container {
-    position: relative;
-    padding: 0 20px;
-}
-
-.student-review-slide {
-    padding: 10px;
-}
-
-.student-review-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.student-review-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.review-content {
-    padding: 30px 25px 25px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.review-message {
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.review-message p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    font-style: italic;
-    margin: 0;
-}
-
-.student-image-container {
-    margin: 15px 0 25px;
-    position: relative;
-}
-
-.student-image-wrapper {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 50%;
-    padding: 5px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.student-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-}
-
-/* Half shadow effect on image */
-.student-image-wrapper::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 10px;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-    z-index: -1;
-}
-
-.student-info {
-    margin-top: 10px;
-}
-
-.student-name {
-    font-size: 18px;
-    font-weight: 700;
-    color: #003054;
-    margin: 0 0 5px;
-}
-
-.student-course {
-    font-size: 14px;
-    color: #777;
-    margin: 0;
-}
-
-/* Owl Carousel Customization for Reviews */
-.student-reviews-slider .owl-stage {
-    display: flex;
-    align-items: stretch;
-}
-
-.student-reviews-slider .owl-item {
-    display: flex;
-}
-
-.student-reviews-slider .owl-nav {
-    display: none !important;
-}
-
-.student-reviews-slider .owl-dots {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.student-reviews-slider .owl-dot span {
-    width: 8px;
-    height: 8px;
-    margin: 5px;
-    background: #ddd;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.student-reviews-slider .owl-dot.active span {
-    background: #003054;
-    transform: scale(1.2);
-}
-
-/* Responsive Design for Reviews */
-@media (max-width: 1400px) {
-    .review-content {
-        padding: 25px 20px 20px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .review-message p {
-        font-size: 15px;
-    }
-
-    .student-name {
-        font-size: 17px;
-    }
-}
-
-@media (max-width: 992px) {
-    .student-image-wrapper {
-        width: 90px;
-        height: 90px;
-    }
-
-    .review-message p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .student-reviews-slider-container {
-        padding: 0 10px;
-    }
-
-    .student-review-slide {
-        padding: 5px;
-    }
-
-    .review-content {
-        padding: 20px 15px 15px;
-    }
-
-    .student-image-wrapper {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media (max-width: 576px) {
-    .student-image-wrapper {
-        width: 70px;
-        height: 70px;
-    }
-
-    .student-reviews-slider .owl-dot span {
-        width: 6px;
-        height: 6px;
-    }
-}
-</style>
 
 <style>
 /* Prevent uneven image/text shrinking */
@@ -2332,6 +2163,12 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <!-- Sound Toggle Button -->
+    <div class="sound-toggle" id="soundToggle">
+        <i id="soundIcon" class="fas fa-volume-mute"></i>
+    </div>
+
 </section>
 
 
@@ -2399,20 +2236,23 @@
                         <label for="location-select">Select UK City</label>
                         <select id="location-select" name="location" class="form-control">
                             <option value="">-- Select a City --</option>
-                            <option value="London">London</option>
+                            <option value="Belfast">Belfast</option>
                             <option value="Birmingham">Birmingham</option>
-                            <option value="Manchester">Manchester</option>
-                            <option value="Glasgow">Glasgow</option>
-                            <option value="Liverpool">Liverpool</option>
-                            <option value="Leeds">Leeds</option>
-                            <option value="Sheffield">Sheffield</option>
+                            <option value="Bradford">Bradford</option>
                             <option value="Bristol">Bristol</option>
+                            <option value="Cardiff">Cardiff</option>
+                            <option value="Edinburgh">Edinburgh</option>
+                            <option value="Glasgow">Glasgow</option>
+                            <option value="Leeds">Leeds</option>
+                            <option value="Leicester">Leicester</option>
+                            <option value="Liverpool">Liverpool</option>
+                            <option value="London">London</option>
+                            <option value="Manchester">Manchester</option>
                             <option value="Newcastle">Newcastle</option>
                             <option value="Nottingham">Nottingham</option>
-                            <option value="Leicester">Leicester</option>
-                            <option value="Edinburgh">Edinburgh</option>
-                            <option value="Cardiff">Cardiff</option>
-                            <option value="Belfast">Belfast</option>
+                            <option value="Scotland">Scotland</option>
+                            <option value="Sheffield">Sheffield</option>
+
                         </select>
                     </div>
 
@@ -2431,7 +2271,8 @@
                         <label for="university-search">Search Universities</label>
                         <input type="text" id="university-search" name="location" class="form-control"
                             placeholder="Enter university name...">
-                        <ul id="university-suggestions" class="list" style="position: absolute; width: 100%; z-index: 100; display: none;"></ul>
+                        <ul id="university-suggestions" class="list"
+                            style="position: absolute; width: 100%; z-index: 100; display: none;"></ul>
                     </div>
                     <button type="submit" class="search-btn">
                         <i class="fas fa-search"></i> Search
@@ -2521,7 +2362,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <i class="fas fa-cogs"></i>
-                                    <h5>End to End Services</h5>
+                                    <h5>A to Z Services</h5>
                                 </div>
                             </div>
                         </div>
@@ -2529,7 +2370,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <i class="fas fa-university"></i>
-                                    <h5>140+ Partner Institutions</h5>
+                                    <h5>60+ Partner Institutions</h5>
                                 </div>
                             </div>
                         </div>
@@ -2537,7 +2378,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <i class="fas fa-user-tie"></i>
-                                    <h5>500+ British Council Trained Counsellors</h5>
+                                    <h5>100+ British Council Trained Counsellors</h5>
                                 </div>
                             </div>
                         </div>
@@ -2559,7 +2400,7 @@
                     <div class="content-box">
                         <div class="sec-title">
                             <p>who are YES Education</p>
-                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2000</h2>
+                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2017 </h2>
                             <div class="dotted-box">
                                 <span class="dotted"></span>
                                 <span class="dotted"></span>
@@ -2606,8 +2447,7 @@
 <section class="faculty-cards-section py-5 position-relative">
     <!-- Background Image at Bottom -->
     <div class="section-background-bottom position-absolute w-100 bottom-0">
-        <img src="{{ asset('frontend/assets/images/vector-graphic 2.png') }}" alt="Background Pattern"
-            class="w-100">
+        <img src="{{ asset('frontend/assets/images/vector-graphic 2.png') }}" alt="Background Pattern" class="w-100">
     </div>
 
     <div class="container position-relative" style="z-index: 2;">
@@ -2621,111 +2461,100 @@
         <div class="row justify-content-center g-2">
             <!-- Example Faculty Card -->
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/business--management.original.png') }}"
-                         alt="Business & Management" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Business & Management" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Business & Management</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/computer-science--it.original.png') }}"
-                         alt="Computing" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Computing" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Computing</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/engineering--technology.original.png') }}"
-                         alt="Engineering" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Engineering" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Engineering</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/law.original.png') }}"
-                         alt="Law" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/law.original.png') }}" alt="Law"
+                        style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Law</strong></h5>
                 </div>
             </div>
             <!-- Example Faculty Card -->
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/medicine--health.original.png') }}"
-                         alt="Nursing & Midwifery" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Nursing & Midwifery" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Nursing & Midwifery</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/humanities.original.png') }}"
-                         alt="Allied Health" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/humanities.original.png') }}" alt="Allied Health"
+                        style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Allied Health</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/Medicine_and_dentistry.original.png') }}"
-                         alt="Medicine & Dentistry" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Medicine & Dentistry" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Medicine & Dentistry</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/Psychology.original.png') }}"
-                         alt="Psychology" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/Psychology.original.png') }}" alt="Psychology"
+                        style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Psychology</strong></h5>
                 </div>
             </div>
             <!-- Example Faculty Card -->
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/applied-sciences--professions.original.png') }}"
-                         alt="Medical Science" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Medical Science" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Medical Science</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
                     <img src="{{ asset('frontend/assets/images/faculty/Architecture.original.png') }}"
-                         alt="Architecture" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                        alt="Architecture" style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Architecture</strong></h5>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition" 
-                     style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/explore-all.original.png') }}"
-                         alt="Explore ALl" 
-                         style="width: 70px; height: 70px; object-fit: contain;">
+                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
+                    style="cursor: pointer;">
+                    <img src="{{ asset('frontend/assets/images/faculty/explore-all.original.png') }}" alt="Explore ALl"
+                        style="width: 70px; height: 70px; object-fit: contain;">
                     <h5 class="card-content mt-1 mb-0"><strong>Explore All</strong></h5>
                 </div>
             </div>
@@ -2737,24 +2566,25 @@
 
 <!-- Hover Effect CSS -->
 <style>
-    .faculty-card {
-        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    }
-    .faculty-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        border-color: #DB1F2A;
-    }
+.faculty-card {
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
 
-    /* Image zoom effect on card hover */
-    .faculty-card img {
-        transition: transform 0.3s ease;
-    }
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: #DB1F2A;
+}
 
-    .faculty-card:hover img {
-        transform: scale(1.3); /* zoom in 10% */
-    }
+/* Image zoom effect on card hover */
+.faculty-card img {
+    transition: transform 0.3s ease;
+}
 
+.faculty-card:hover img {
+    transform: scale(1.3);
+    /* zoom in 10% */
+}
 </style>
 
 
@@ -2767,8 +2597,14 @@
 
         <!-- Main Title -->
         <div class="sec-title centred" style="margin-bottom: 40px;">
-            <h2 style="font-size: 36px; font-weight: 700;">Featured <span style="color:#DB1F2A;">UK Universities</span></h2>
+            <h2 style="font-size: 36px; font-weight: 700;">Featured <span style="color:#DB1F2A;">UK Universities </span>
+            </h2>
             <p style="color: #555;">Worldwide education institutions we hold partnerships with</p>
+            <a href="#" class="btn btn-primary"
+                style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                View All <i class="fas fa-external-link-alt"
+                    style="color: #ffffff !important;"></i>
+            </a>
         </div>
 
         <!-- First Slider - London Universities -->
@@ -2854,7 +2690,8 @@
 <section class="students-videos-section" style="padding: 80px 0;">
     <div class="auto-container">
         <div class="sec-title centred" style="margin-bottom: 50px;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student's Experience with <span style="color:#DB1F2A;">YES Education</span></h2>
+            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student's Experience with <span
+                    style="color:#DB1F2A;">YES Education</span></h2>
             {{--<p style="color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
                 YES Education provide independent guidance, advice, and full application support to international
                 students applying to study in the UK.
@@ -2946,157 +2783,15 @@
 </section>
 
 <!-- Student Reviews Section -->
-<section class="student-reviews-section" style="padding: 80px 0; background: #f8f9fa;">
-    <div class="auto-container">
-        <div class="sec-title centred" style="margin-bottom: 50px;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">Student <span style="color:#DB1F2A;">Reviews</span></h2>
-        </div>
-
-        <div class="student-reviews-slider-container">
-            <div class="student-reviews-slider owl-carousel owl-theme">
-                <!-- Review 1 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"YES Education helped me secure admission to my dream university in the UK. Their
-                                    guidance was invaluable throughout the entire process."</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/002.webp') }}"
-                                        alt="Student 1" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">Sarah Johnson</h4>
-                                <p class="student-course">Computer Science, University of Manchester</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"The team at YES Education provided exceptional support with my visa application and
-                                    accommodation. I couldn't have done it without them!"</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/004.webp') }}"
-                                        alt="Student 2" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">Michael Chen</h4>
-                                <p class="student-course">Business Administration, London School of Economics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"From course selection to scholarship applications, YES Education guided me at every
-                                    step. Highly recommended for international students!"</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/004.webp') }}"
-                                        alt="Student 3" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">Priya Sharma</h4>
-                                <p class="student-course">Medicine, University of Edinburgh</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"The personalized attention I received from YES Education made all the difference.
-                                    They truly care about their students' success."</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/003.webp') }}"
-                                        alt="Student 4" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">David Wilson</h4>
-                                <p class="student-course">Engineering, Imperial College London</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"YES Education made my transition to studying in the UK smooth and stress-free. Their
-                                    expertise in UK education is unmatched."</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/002.webp') }}"
-                                        alt="Student 5" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">Emma Rodriguez</h4>
-                                <p class="student-course">Law, University of Oxford</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 6 -->
-                <div class="student-review-slide">
-                    <div class="student-review-card">
-                        <div class="review-content">
-                            <div class="review-message">
-                                <p>"I was struggling with my personal statement until YES Education helped me craft a
-                                    compelling one that got me multiple offers."</p>
-                            </div>
-                            <div class="student-image-container">
-                                <div class="student-image-wrapper">
-                                    <img src="{{ asset('frontend/assets/images/testimonial/001.webp') }}"
-                                        alt="Student 6" class="student-image">
-                                </div>
-                            </div>
-                            <div class="student-info">
-                                <h4 class="student-name">Ahmed Hassan</h4>
-                                <p class="student-course">Architecture, University College London</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<x-student-reviews/>
 
 
 <!-- Journey Roadmap Section - Slim Full Width -->
 <section class="journey-roadmap-section-single" style="padding: 40px 0; background: #fff;">
     <div class="journey-roadmap-slider-single-container">
         <div class="sec-title centred" style="margin-bottom: 30px;">
-            <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Journey <span style="color:#DB1F2A;">Roadmap</span></h2>
+            <h2 style="font-size: 30px; font-weight: 700; color: #003054;">Journey <span
+                    style="color:#DB1F2A;">Roadmap</span></h2>
             <p style="color: #555; font-size: 16px; max-width: 700px; margin: 0 auto; line-height: 1.5;">
                 Here’s a quick step-by-step guide to applying to study at a UK university and how we support you
                 throughout the journey.
@@ -3613,7 +3308,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-lg-6 col-md-12 mb-5 mb-lg-0">
                 <div class="mb-4">
                     <h2 class="fw-semibold" style="font-size: 32px; color: #1D3564;">
-                        Upcoming <span style="color:#DB1F2A;">Events</span> & Latest <span style="color:#DB1F2A;">News</span>
+                        Upcoming <span style="color:#DB1F2A;">Events</span> & Latest <span
+                            style="color:#DB1F2A;">News</span>
                     </h2>
                 </div>
 
@@ -3685,110 +3381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 
-<section class="newsletter-section">
-    <div class="container">
-        <h2>Stay Updated with YES EDUCATION</h2>
-        <p>Join our newsletter for the latest updates, insights, and special offers. Don't miss out on any of our
-            exciting news!</p>
-
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your Email ID" required>
-            <button type="submit">Subscribe Now</button>
-        </form>
-    </div>
-</section>
-
-<style>
-/* Container */
-.newsletter-section {
-    width: 100%;
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.newsletter-section .container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Heading */
-.newsletter-section h2 {
-    font-size: 32px;
-    color: #1D3564;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.newsletter-section p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* Form */
-.newsletter-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Input */
-.newsletter-form input[type="email"] {
-    flex: 1 1 150px;
-    padding: 12px 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-@media (max-width: 768px) {
-    .newsletter-form input[type="email"] {
-        flex: 1 1 100%;
-    }
-}
-
-
-.newsletter-form input[type="email"]:focus {
-    border-color: #D10D2B;
-    box-shadow: 0 0 5px rgba(209, 13, 43, 0.5);
-}
-
-/* Button */
-.newsletter-form button {
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(90deg, #171F67, #D10D2B);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-.newsletter-form button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .newsletter-form {
-        flex-direction: column;
-    }
-
-    .newsletter-form input[type="email"],
-    .newsletter-form button {
-        width: 100%;
-    }
-}
-</style>
-
+<x-student-subscription />
 
 
 @endsection
@@ -3976,37 +3569,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize student reviews slider
-    $('.student-reviews-slider').owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: false,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                items: 3
-            }
-        }
-    });
-});
-</script>
 
 
 
@@ -4034,11 +3596,12 @@ document.addEventListener('DOMContentLoaded', function() {
 #university-suggestions {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px rgba(68,68,68,.11);
+    box-shadow: 0 0 0 1px rgba(68, 68, 68, .11);
     box-sizing: border-box;
     margin-top: 4px;
     padding: 0;
 }
+
 #university-suggestions .option {
     cursor: pointer;
     font-weight: 400;
@@ -4051,6 +3614,7 @@ document.addEventListener('DOMContentLoaded', function() {
     text-align: left;
     transition: all .2s;
 }
+
 #university-suggestions .option:hover {
     background-color: #f6f6f6;
 }
@@ -4063,16 +3627,21 @@ $(document).ready(function() {
             $.ajax({
                 url: "{{ route('universities.search') }}",
                 type: "GET",
-                data: { q: query },
+                data: {
+                    q: query
+                },
                 success: function(data) {
                     var suggestions = $('#university-suggestions');
                     suggestions.empty().show();
                     if (data.length > 0) {
                         $.each(data, function(index, university) {
-                            suggestions.append('<li class="option" data-name="' + university.name + '">' + university.name + '</li>');
+                            suggestions.append('<li class="option" data-name="' +
+                                university.name + '">' + university.name +
+                                '</li>');
                         });
                     } else {
-                        suggestions.append('<li class="option disabled">No results found</li>');
+                        suggestions.append(
+                            '<li class="option disabled">No results found</li>');
                     }
                 }
             });
@@ -4097,4 +3666,27 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".background-video");
+    const soundToggle = document.getElementById("soundToggle");
+    const soundIcon = document.getElementById("soundIcon");
+
+    soundToggle.addEventListener("click", function () {
+        // Toggle mute
+        if (video.muted) {
+            video.muted = false;
+            soundIcon.classList.remove("fa-volume-mute");
+            soundIcon.classList.add("fa-volume-up");
+        } else {
+            video.muted = true;
+            soundIcon.classList.remove("fa-volume-up");
+            soundIcon.classList.add("fa-volume-mute");
+        }
+
+        video.play();
+    });
+});
+</script>
+
 @endpush

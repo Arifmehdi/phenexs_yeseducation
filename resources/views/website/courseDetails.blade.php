@@ -1,13 +1,15 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'YES Education - UK Universities')
+@section('title', 'YES Education - Course Details')
 
 @section('meta')
-<meta name="description" content="Explore top UK universities with detailed information about programs, rankings, campus life, and accommodation options.">
-<meta name="keywords" content="UK universities, higher education UK, study in UK, university rankings, UK courses">
-<meta property="og:title" content="UK Universities Search - YES Education">
-<meta property="og:description" content="Find the perfect UK university for your higher education journey with comprehensive search and filtering options.">
-<meta property="og:image" content="{{ asset('frontend/assets/img/yes-education/uk-universities.jpg') }}">
+<meta name="description"
+    content="Learn more about North Bengal — our mission, our values, and how we deliver fresh, quality products with reliable home delivery service.">
+<meta name="keywords" content="North Bengal, about us, dairy products, home delivery, quality food, Bangladesh">
+<meta property="og:title" content="About North Bengal - Fresh Quality Delivered">
+<meta property="og:description"
+    content="North Bengal is dedicated to delivering fresh, high-quality products across Bangladesh. Discover who we are and what drives us.">
+<meta property="og:image" content="{{ asset('frontend/assets/img/northbengal/about_img_02.png') }}">
 <meta property="og:type" content="website">
 @endsection
 
@@ -17,7 +19,7 @@
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
-                <h1>UK Universities</h1>
+                <h1>{{$course->title}}</h1>
                 <div class="dotted-box">
                     <span class="dotted"></span>
                     <span class="dotted"></span>
@@ -26,407 +28,84 @@
             </div>
             <ul class="bread-crumb clearfix">
                 <li><i class="flaticon-home-1"></i><a href="{{ route('home') }}">Home</a></li>
-                <li>Universities</li>
-                <li>UK Universities</li>
+                <li>Courses</li>
+                <li>{{$course->title}}</li>
             </ul>
         </div>
     </div>
 </section>
 <!--End Page Title-->
 
-<!-- UK Universities Search Section -->
+
+<!-- sidebar-page-container -->
 <div class="sidebar-page-container">
     <div class="auto-container">
-        <div class="row">
-            <!-- Sidebar Filters -->
+        <div class="row clearfix">
             <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                <div class="service-sidebar">
-                    <!-- Search and Filter Controls -->
-                    <div class="card shadow-sm mb-4">
-                        <div class="card-body">
-                            <form id="searchForm" method="GET">
-                                <input type="hidden" name="action" value="location-data">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="location" placeholder="Search by location..." value="{{ $searchName ?? '' }}">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="btn-group mb-3 d-flex" role="group">
-                                <button type="button" class="btn btn-primary w-50"><i class="fas fa-filter"></i> Filters</button>
-                                <button type="button" class="btn btn-outline-secondary w-50"><i class="fas fa-sort"></i> Sort</button>
-                            </div>
-                            @if(isset($searchName) && $searchName)
-                            <div>
-                                <span class="badge badge-primary p-2">{{ $searchName }} 
-                                    <a href="{{ route('universities.index') }}" class="close text-white ml-1" type="button">
-                                        <span>&times;</span>
-                                    </a>
-                                </span>
-                                <a href="{{ route('universities.index') }}" class="btn btn-link btn-sm">Clear all filters</a>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                    
-                    <div id="filters-accordion">
-                        <!-- University Filter -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingUniversity">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left d-flex justify-content-between" data-toggle="collapse" data-target="#collapseUniversity" aria-expanded="true" aria-controls="collapseUniversity">
-                                        University
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseUniversity" class="collapse show" aria-labelledby="headingUniversity" data-parent="#filters-accordion">
-                                <div class="card-body">
-                                    <input type="text" class="form-control mb-3" placeholder="Search University">
-                                    <div style="max-height: 200px; overflow-y: auto;">
-                                        @foreach($paginator->take(10) as $university)
-                                        <div class="custom-control custom-checkbox mb-2">
-                                            <input type="checkbox" class="custom-control-input university-filter" id="{{ Str::slug($university['name']) }}" value="{{ $university['name'] }}">
-                                            <label class="custom-control-label" for="{{ Str::slug($university['name']) }}">{{ $university['name'] }}</label>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location Filter -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingLocation">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left d-flex justify-content-between collapsed" data-toggle="collapse" data-target="#collapseLocation" aria-expanded="false" aria-controls="collapseLocation">
-                                        Location
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseLocation" class="collapse" aria-labelledby="headingLocation" data-parent="#filters-accordion">
-                                <div class="card-body">
-                                    @php
-                                        $locations = ['Any Location', 'London', 'Bristol', 'Manchester', 'Birmingham', 'Scotland', 'Wales'];
-                                    @endphp
-                                    @foreach($locations as $location)
-                                    <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input location-filter" id="{{ Str::slug($location) }}" value="{{ $location }}">
-                                        <label class="custom-control-label" for="{{ Str::slug($location) }}">{{ $location }}</label>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <x-sidebar/>
             </div>
-
-            <!-- Main Content -->
             <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                 <div class="coaching-details-content">
-                    <div class="content-style-one mb-6">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h3 class="h5 mb-0">
-                                <span id="resultsCount">{{ $paginator->total() }}</span> Results Found
-                                @if(isset($searchName) && $searchName)
-                                for "{{ $searchName }}"
-                                @endif
-                                <small class="text-muted">(Showing {{ $paginator->count() }} of {{ $paginator->total() }})</small>
-                            </h3>
-                            <div class="form-inline">
-                                <label class="mr-2" for="sortBy">Sort by:</label>
-                                <select class="custom-select" id="sortBy">
-                                    <option value="name" selected>Name A-Z</option>
-                                    <option value="name_desc">Name Z-A</option>
-                                    <option value="country">Country</option>
-                                </select>
+                    <div class="content-style-one">
+                        <figure class="image-box"><img src="{{ asset('storage/courses_images/' . $course->feature_image) }}" alt="{{ $course->title }}"></figure>
+                        <div class="group-title">
+                            <!-- <h2>PTE Coaching</h2> -->
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
                             </div>
                         </div>
-
-                        <!-- Loading Spinner -->
-                        <div id="loadingSpinner" class="text-center d-none">
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <p class="mt-2">Searching universities...</p>
+                        <div class="text">
+                        {!! $course->description !!}
                         </div>
+                    </div>
 
-                        <!-- University Cards Grid -->
-                        <div id="universitiesContainer" class="university-cards-grid">
-                            @if($paginator->count() > 0)
-                                @foreach(array_chunk($paginator->items(), 2) as $chunk)
-                                <div class="row">
-                                    @foreach($chunk as $university)
-                                    <div class="col-md-6 mb-4">
-                                        <a href="{{ $university['web_pages'][0] ?? '#' }}" target="_blank" class="card-link-wrapper">
-                                            <div class="card university-card shadow-sm border-0 rounded-lg overflow-hidden h-100">
-                                                <div class="university-card-top-bar bg-gradient-primary"></div>
-                                                <div class="card-body p-4">
-                                                    <div class="d-flex justify-content-center mb-3">
-                                                        <div class="university-logo-container">
-                                                            <img alt="{{ $university['name'] }} logo" class="img-fluid rounded shadow-sm" 
-                                                                 src="https://via.placeholder.com/120x60/1D3564/FFFFFF?text={{ substr(str_replace([' ', ','], '', $university['name']), 0, 2) }}" 
-                                                                 style="max-width: 120px; max-height: 60px; object-fit: contain;">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-center mb-3">
-                                                        <h4 class="card-title h5 mb-1 text-dark">{{ $university['name'] }}</h4>
-                                                        <p class="card-subtitle text-muted small d-flex align-items-center justify-content-center">
-                                                            <i class="fas fa-map-marker-alt text-primary mr-1"></i>
-                                                            {{ $university['state-province'] ? $university['state-province'] . ', ' : '' }}{{ $university['country'] }}
-                                                        </p>
-                                                        <div class="card-divider mx-auto my-2"></div>
-                                                    </div>
-                                                    <p class="card-text text-muted small mb-3 description-clamp">
-                                                        {{ $university['name'] }} is a prestigious university located in {{ $university['state-province'] ? $university['state-province'] . ', ' : '' }}{{ $university['country'] }}. 
-                                                        Visit their official website for more information about programs and admissions.
-                                                    </p>
-                                                    <ul class="list-unstyled bg-light p-3 rounded shadow-sm university-details-list">
-                                                        <li class="d-flex align-items-center mb-2">
-                                                            <span class="detail-icon-wrapper bg-primary text-white mr-2"><i class="fas fa-globe"></i></span>
-                                                            <span class="text-dark font-weight-bold">Country:</span> 
-                                                            <span class="ml-auto">{{ $university['country'] }}</span>
-                                                        </li>
-                                                        @if($university['state-province'])
-                                                        <li class="d-flex align-items-center mb-2">
-                                                            <span class="detail-icon-wrapper bg-info text-white mr-2"><i class="fas fa-map"></i></span>
-                                                            <span class="text-dark font-weight-bold">Region:</span> 
-                                                            <span class="ml-auto">{{ $university['state-province'] }}</span>
-                                                        </li>
-                                                        @endif
-                                                        <li class="d-flex align-items-center mb-2">
-                                                            <span class="detail-icon-wrapper bg-success text-white mr-2"><i class="fas fa-code"></i></span>
-                                                            <span class="text-dark font-weight-bold">Domain:</span> 
-                                                            <span class="ml-auto">{{ $university['domains'][0] ?? 'N/A' }}</span>
-                                                        </li>
-                                                        <li class="d-flex align-items-center">
-                                                            <span class="detail-icon-wrapper bg-warning text-white mr-2"><i class="fas fa-link"></i></span>
-                                                            <span class="text-dark font-weight-bold">Website:</span> 
-                                                            <span class="ml-auto text-truncate" style="max-width: 120px;">{{ $university['web_pages'][0] ?? 'N/A' }}</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endforeach
+                    <div class="accordion-content">
+                        <h3>Frequently asked Questions</h3>
+                        <ul class="accordion-box">
+                            <li class="accordion block active-block">
+                                <div class="acc-btn active">
+                                    <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                    <h5>What can I bring into the test room?</h5>
                                 </div>
-                                @endforeach
-                            @else
-                                <div class="text-center py-5">
-                                    <i class="fas fa-university fa-3x text-muted mb-3"></i>
-                                    <h4 class="text-muted">No universities found</h4>
-                                    <p class="text-muted">Try searching for a different location or clear your filters.</p>
-                                    <button class="btn btn-primary" onclick="clearSearch()">Clear Search</button>
+                                <div class="acc-content current">
+                                    <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate.</p>
                                 </div>
-                            @endif
-                        </div>
-
-                        <!-- Pagination -->
-                        @if($paginator->hasPages())
-                        <nav aria-label="Page navigation" class="mt-5">
-                            <ul class="pagination justify-content-center">
-                                {{-- Previous Page Link --}}
-                                @if($paginator->onFirstPage())
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </a>
-                                    </li>
-                                @else
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </a>
-                                    </li>
-                                @endif
-
-                                {{-- Pagination Elements --}}
-                                @foreach($paginator->getUrlRange(1, $paginator->lastPage()) as $page => $url)
-                                    @if($page == $paginator->currentPage())
-                                        <li class="page-item active"><a class="page-link" href="#">{{ $page }}</a></li>
-                                    @else
-                                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                                    @endif
-                                @endforeach
-
-                                {{-- Next Page Link --}}
-                                @if($paginator->hasMorePages())
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                @else
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" aria-disabled="true">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                @endif
-                            </ul>
-                        </nav>
-                        @endif
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                    <h5>Is it computer based or paper based PTE Exams?</h5>
+                                </div>
+                                <div class="acc-content">
+                                    <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate.</p>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                    <h5>When will I get the result of my PTE?</h5>
+                                </div>
+                                <div class="acc-content">
+                                    <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-/* Your existing CSS styles remain the same */
-.card-link-wrapper {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-}
-
-.university-card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.university-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
-}
-
-.university-card-top-bar {
-    height: 4px;
-    background-image: linear-gradient(to right, #1D3564, #4B6EA8, #1D3564);
-    transition: height 0.3s ease-in-out;
-}
-
-.university-card:hover .university-card-top-bar {
-    height: 8px;
-}
-
-.university-logo-container {
-    width: 120px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.university-logo-container img {
-    object-fit: contain;
-}
-
-.card-title.h5 {
-    color: #1D3564;
-    font-weight: bold;
-}
-
-.card-title.h5:hover {
-    color: #4B6EA8;
-}
-
-.card-subtitle .fa-map-marker-alt {
-    color: #4B6EA8;
-}
-
-.card-divider {
-    width: 60px;
-    height: 2px;
-    background-color: #e2e8f0;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.university-card:hover .card-divider {
-    background-color: #1D3564;
-}
-
-.description-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.5;
-    max-height: 3em;
-}
-
-.university-details-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-}
-.university-details-list li:last-child {
-    border-bottom: none;
-}
-
-.university-details-list li:hover {
-    background-color: #f8f9fa;
-    color: #1D3564;
-}
-
-.detail-icon-wrapper {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
-}
-.detail-icon-wrapper.bg-primary { background-color: #1D3564 !important; }
-.detail-icon-wrapper.bg-info { background-color: #4B6EA8 !important; }
-.detail-icon-wrapper.bg-success { background-color: #28a745 !important; }
-.detail-icon-wrapper.bg-warning { background-color: #ffc107 !important; }
-
-.btn-primary {
-    background-color: #1D3564 !important;
-    border-color: #1D3564 !important;
-}
-.btn-primary:hover {
-    background-color: #152A4F !important;
-    border-color: #152A4F !important;
-}
-
-/* Pagination Styles */
-.page-item.active .page-link {
-    background-color: #1D3564 !important;
-    border-color: #1D3564 !important;
-}
-.page-link {
-    color: #1D3564 !important;
-    border: 1px solid #dee2e6;
-}
-.page-link:hover {
-    color: #152A4F !important;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Search form submission
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const searchValue = document.querySelector('input[name="location"]').value;
-        if (searchValue.trim()) {
-            // Add the search parameter to the form and submit normally
-            this.submit();
-        }
-    });
-
-    // Sort functionality
-    document.getElementById('sortBy').addEventListener('change', function(e) {
-        // This would need additional implementation for AJAX sorting
-        console.log('Sort by:', e.target.value);
-    });
-});
-
-function clearSearch() {
-    window.location.href = '{{ route("home") }}';
-}
-</script>
+<!-- sidebar-page-container end -->
 @endsection

@@ -27,10 +27,10 @@
             <div class="col-6 col-md-3 mb-4">
                 <h5 class="text-uppercase fw-bold mb-3">Useful Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/universities" class="footer-link">Find a University</a></li>
-                    <li><a href="/courses" class="footer-link">Find a Course</a></li>
-                    <li><a href="/popular-courses" class="footer-link">Popular Courses</a></li>
-                    <li><a href="/contact-us" class="footer-link">Contact Us</a></li>
+                    <li><a href="#" class="footer-link">Find a University</a></li>
+                    <li><a href="#" class="footer-link">Find a Course</a></li>
+                    <li><a href="#" class="footer-link">Popular Courses</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -38,10 +38,10 @@
             <div class="col-6 col-md-3 mb-4">
                 <h5 class="text-uppercase fw-bold mb-3">About YESEDU</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/about-us" class="footer-link">About Us</a></li>
-                    <li><a href="/what-we-do" class="footer-link">What We Do</a></li>
-                    <li><a href="/why-choose-us" class="footer-link">Why Choose Us</a></li>
-                    <li><a href="/success-stories" class="footer-link">Success Stories</a></li>
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">What We Do</a></li>
+                    <li><a href="#" class="footer-link">Why Choose Us</a></li>
+                    <li><a href="#" class="footer-link">Success Stories</a></li>
                 </ul>
             </div>
 
@@ -49,10 +49,10 @@
             <div class="col-6 col-md-3 mb-4">
                 <h5 class="text-uppercase fw-bold mb-3">Community</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/news" class="footer-link">YESEDU News</a></li>
-                    <li><a href="/blogs" class="footer-link">Latest Blogs</a></li>
-                    <li><a href="/events" class="footer-link">Upcoming Events</a></li>
-                    <li><a href="/refer-friend" class="footer-link">Refer a Friend</a></li>
+                    <li><a href="#" class="footer-link">YESEDU News</a></li>
+                    <li><a href="#" class="footer-link">Latest Blogs</a></li>
+                    <li><a href="#" class="footer-link">Upcoming Events</a></li>
+                    <li><a href="#" class="footer-link">Refer a Friend</a></li>
                 </ul>
             </div>
 
@@ -60,10 +60,10 @@
             <div class="col-6 col-md-3 mb-4">
                 <h5 class="text-uppercase fw-bold mb-3">Services</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/services/uk-application" class="footer-link">Free Application Support</a></li>
-                    <li><a href="/services/student-visa" class="footer-link">Student Visa Assistance</a></li>
-                    <li><a href="/services/accommodation" class="footer-link">Accommodation Support</a></li>
-                    <li><a href="/services/finance" class="footer-link">Financial Advice</a></li>
+                    <li><a href="#" class="footer-link">Free Application Support</a></li>
+                    <li><a href="#" class="footer-link">Student Visa Assistance</a></li>
+                    <li><a href="#" class="footer-link">Accommodation Support</a></li>
+                    <li><a href="#" class="footer-link">Financial Advice</a></li>
                 </ul>
             </div>
 
@@ -74,11 +74,10 @@
         <!-- Global Branches -->
         <div class="text-center small mb-3">
             <strong>Global Branches: </strong>
-            <a href="#" class="footer-link">UK</a> |
-            <a href="#" class="footer-link">Bangladesh</a> |
-            <a href="#" class="footer-link">India</a> |
-            <a href="#" class="footer-link">Pakistan</a> |
-            <a href="#" class="footer-link">Nepal</a>
+            <a href="{{ route('globalOffice') }}" class="footer-link">Bangladesh</a> |
+            <a href="{{ route('globalOffice') }}" class="footer-link">UAE</a> |
+            <a href="{{ route('globalOffice') }}" class="footer-link">UK</a> |
+            <a href="{{ route('globalOffice') }}" class="footer-link">Nigeria</a> |
         </div>
 
         <hr class="footer-divider">
@@ -88,8 +87,8 @@
             <div>© 2025-26 YESEDU. All rights reserved.</div>
 
             <div class="my-2 my-md-0">
-                <a href="/privacy-policy" class="footer-link">Privacy Policy</a> -
-                <a href="/terms-of-use" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Privacy Policy</a> -
+                <a href="#" class="footer-link">Terms of Use</a>
             </div>
 
             <!-- Social Icons -->

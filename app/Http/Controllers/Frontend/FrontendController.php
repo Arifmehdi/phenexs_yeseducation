@@ -183,6 +183,11 @@ class FrontendController extends Controller
         return view('website.blogDetails', compact('blog'));  
     }
 
+    public function globalOffice($id=null)
+    {
+        return view('website.global_office');
+    }
+
     
 
     public function event()

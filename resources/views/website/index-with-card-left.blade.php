@@ -4453,24 +4453,23 @@ $(document).ready(function() {
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 2
-                },
-                992: {
-                    items: 3
-                },
-                1200: {
-                    items: 3
-                }
-            }
-        });
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        576: {
+                            items: 2
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 4
+                        },
+                        1200: {
+                            items: 4
+                        }
+                    }        });
     });
 </script>
 
