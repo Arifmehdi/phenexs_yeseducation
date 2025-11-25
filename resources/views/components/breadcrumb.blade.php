@@ -7,13 +7,13 @@
                 <h1>{{$title}}</h1>
                 <div class="dotted-box">
                     <span class="dotted"></span>
-                    <span class="dotted"></span>
+                    <!-- <span class="dotted"></span> -->
                     <span class="dotted"></span>
                 </div>
             </div>
             <ul class="bread-crumb clearfix">
                 <li><i class="flaticon-home-1"></i><a href="{{ route('home') }}">Home</a></li>
-                <li>Courses</li>
+                <!-- <li>Courses</li> -->
                 <li>{{$title}}</li>
             </ul>
         </div>

@@ -2077,8 +2077,8 @@
 <!-- ===== Hero Section ===== -->
 <section class="video-hero-section">
     <!-- Background Video -->
-    <video class="background-video" autoplay loop muted preload="auto" playsinline>
-        <source src="https://mie-global-te43fd.s3.amazonaws.com/static/documents/video-2_online-video-cutter.com.mp4"
+    <video id="hero-video" class="background-video" autoplay loop playsinline preload="metadata">
+        <source src="{{ asset('frontend/assets/images/resource/video-2_online-video-cutter.com.webm') }}"
             type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -2101,7 +2101,7 @@
                             <div class="accent-line"></div>
                             <p class="subtitle-text">100% Free Counselling & Application Processing</p>
                         </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
+                        <a href="{{ route('application') }}" class="apply-now-btn">Apply Now</a>
                     </div>
                 </div>
 
@@ -2113,7 +2113,7 @@
                             <div class="accent-line"></div>
                             <p class="subtitle-text">From Education to Career - We Support You All The Way</p>
                         </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
+                        <a href="{{ route('application') }}" class="apply-now-btn">Apply Now</a>
                     </div>
                 </div>
 
@@ -2126,8 +2126,8 @@
                             <p class="subtitle-text">Partnering With Universities Worldwide For Your Success</p>
                         </div>
                         <div class="btn-group">
-                            <a href="/application" class="apply-now-btn">Apply Now</a>
-                            <a href="/universities" class="apply-now-btn secondary-btn">View all Universities</a>
+                            <a href="{{ route('application') }}" class="apply-now-btn">Apply Now</a>
+                            <a href="#" class="apply-now-btn secondary-btn">View all Universities</a>
                         </div>
                     </div>
                 </div>
@@ -2142,19 +2142,19 @@
                         <h2>One of the largest <span class="highlight-text">UK</span><br>University representatives</h2>
                         <div class="stats-row">
                             <div class="stat-item">
-                                <span class="stat-number">20,000+</span>
+                                <span class="stat-number">4,000+</span>
                                 <span class="stat-label">Student's Career</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">35+</span>
+                                <span class="stat-number">10+</span>
                                 <span class="stat-label">Recruitment Awards</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">140+</span>
+                                <span class="stat-number">60+</span>
                                 <span class="stat-label">University Partners</span>
                             </div>
                         </div>
-                        <a href="/application" class="apply-now-btn">Apply Now</a>
+                        <a href="{{ route('application') }}" class="apply-now-btn">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -3689,4 +3689,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('hero-video');
+        video.muted = false; // Ensure video is not muted
+
+        var promise = video.play();
+
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // Autoplay started with sound.
+            }).catch(error => {
+                // Autoplay with sound was prevented.
+                console.log("Autoplay with sound prevented: ", error);
+                // As a fallback, you could mute the video and play it,
+                // then provide a button for the user to unmute.
+                video.muted = true;
+                video.play();
+            });
+        }
+    });
+</script>
 @endpush

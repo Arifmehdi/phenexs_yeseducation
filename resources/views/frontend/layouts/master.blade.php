@@ -31,6 +31,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet">
 
+<!-- wizard form  -->
+<!-- Font-->
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/wizard/css/opensans-font.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/wizard/css/roboto-font.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/wizard/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css') }}">
+<!-- datepicker -->
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/wizard/css/jquery-ui.min.css') }}">
+<!-- Main Style Css -->
+<link rel="stylesheet" href="{{ asset('frontend/wizard/css/style.css') }}"/>
+
+
 
 @stack('css')
 </head>
@@ -139,7 +150,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/license.min.js"></script>
 
-        @stack('js')
+    @stack('js')
+    <!-- wizard form  -->
+	<script src="{{ asset('frontend/wizard/js/jquery.steps.js') }}"></script>
+	<script src="{{ asset('frontend/wizard/js/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('frontend/wizard/js/main.js') }}"></script>
 </body>
 <!-- End of .page_wrapper -->
 </html>

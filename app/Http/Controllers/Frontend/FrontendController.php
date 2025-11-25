@@ -188,7 +188,15 @@ class FrontendController extends Controller
         return view('website.global_office');
     }
 
-    
+    public function application()
+    {
+        return view('website.application');
+    }
+
+    public function consultation()
+    {
+        return view('website.consultation');
+    }
 
     public function event()
     {

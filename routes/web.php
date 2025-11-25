@@ -129,6 +129,8 @@ Route::get('/event/details',[FrontendController::class,'eventDetails'])->name('e
 Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('/blog/details/{slug}',[FrontendController::class,'blogDetails'])->name('blogDetails');
 Route::get('/global-offices/{id?}',[FrontendController::class,'globalOffice'])->name('globalOffice');
+Route::get('/application',[FrontendController::class,'application'])->name('application');
+Route::get('/consultation',[FrontendController::class,'consultation'])->name('consultation');
 // Route::get('/product',[HomeController::class,'product'])->name('product');
 
 Route::get('agent/dashboard',[FrontendController::class, 'memberDashboard'])->name('agent.dashboard');
