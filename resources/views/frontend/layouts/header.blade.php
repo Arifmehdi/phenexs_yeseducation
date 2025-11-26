@@ -36,14 +36,117 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="{{ request()->routeIs('home') ? 'active current' : '' }}">
-                                    <a href="{{ route('home') }}">Home</a>
+                                <li
+                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('service') }}">Study In UK</a>
+                                    <ul class="mobile-submenu">
+                                        @foreach($servica as $service)
+                                        <li>
+                                            <a
+                                                href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+
+                                    <div class="megamenu">
+                                        <div class="megamenu-inner-wrapper">
+
+                                            <div class="megamenu-header">
+                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
+                                                <a href="#" class="btn btn-primary"
+                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                                    View All <i class="fas fa-external-link-alt"
+                                                        style="color: #ffffff !important;"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="row clearfix">
+
+                                                @foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        @forelse($chunk as $service)
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="{{ route('serviceDetails', $service->slug) }}">
+                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                                                    alt="{{ $service->title }}">
+                                                                <span>{{ $service->title }}</span>
+                                                            </a>
+                                                        </li>
+                                                        @empty
+                                                        <li><a href="#">No Services Available</a></li>
+                                                        @endforelse
+                                                    </ul>
+                                                </div>
+                                                @endforeach
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </li>
-                                <li class="{{ request()->routeIs('about') ? 'active current' : '' }}">
-                                    <a href="{{ route('about') }}">About</a>
+                                <li
+                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('service') }}">Universities</a>
+                                    <ul class="mobile-submenu">
+                                        @foreach($servica as $service)
+                                        <li>
+                                            <a
+                                                href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+
+                                    <div class="megamenu">
+                                        <div class="megamenu-inner-wrapper">
+
+                                            <div class="megamenu-header">
+                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
+                                                <a href="#" class="btn btn-primary"
+                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                                    View All <i class="fas fa-external-link-alt"
+                                                        style="color: #ffffff !important;"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="row clearfix">
+
+                                                @foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        @forelse($chunk as $service)
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="{{ route('serviceDetails', $service->slug) }}">
+                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                                                    alt="{{ $service->title }}">
+                                                                <span>{{ $service->title }}</span>
+                                                            </a>
+                                                        </li>
+                                                        @empty
+                                                        <li><a href="#">No Services Available</a></li>
+                                                        @endforelse
+                                                    </ul>
+                                                </div>
+                                                @endforeach
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </li>
-                                <li class="dropdown {{ request()->routeIs('courses') ? 'active current' : '' }}">
+                                <li
+                                    class="dropdown {{ request()->routeIs('courses') ? 'active current' : '' }} has-submenu">
                                     <a href="{{ route('courses') }}">Courses</a>
+                                    <ul class="mobile-submenu">
+                                        @foreach($coursa as $course)
+                                        <li>
+                                            <a
+                                                href="{{ route('courseDetails', $course->slug) }}">{{ $course->title }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
 
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
@@ -81,50 +184,18 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }}">
-                                    <a href="{{ route('service') }}">Services</a>
 
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
 
-                                            <div class="megamenu-header">
-                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="row clearfix">
-
-                                                @foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        @forelse($chunk as $service)
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="{{ route('serviceDetails', $course->slug) }}">
-                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="{{ $service->title }}">
-                                                                <span>{{ $service->title }}</span>
-                                                            </a>
-                                                        </li>
-                                                        @empty
-                                                        <li><a href="#">No Services Available</a></li>
-                                                        @endforelse
-                                                    </ul>
-                                                </div>
-                                                @endforeach
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown {{ request()->routeIs('destination') ? 'active current' : '' }}">
-                                    <a href="{{ route('destination') }}">Destination</a>
+                                <li
+                                    class="dropdown {{ request()->routeIs('destination') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('destination') }}">Pathway</a>
+                                    <ul class="mobile-submenu">
+                                        @foreach($destinate as $des)
+                                        <li>
+                                            <a href="{{ route('courseDetails', $des->slug) }}">{{ $des->title }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
 
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
@@ -166,7 +237,7 @@
                                 </li>
                                 {{-- New Location Megamenu --}}
                                 <li class="dropdown">
-                                    <a href="#">Location</a>
+                                    <a href="#">Global Offices</a>
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
                                             <div class="row clearfix">
@@ -258,17 +329,11 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="{{ request()->routeIs('scholarship') ? 'active current' : '' }}">
-                                    <a href="{{ route('scholarship') }}">Scholarship</a>
-                                </li>
-                                <li class="{{ request()->routeIs('event') ? 'active current' : '' }}">
-                                    <a href="{{ route('event') }}">Event</a>
-                                </li>
                                 <li class="{{ request()->routeIs('blog') ? 'active current' : '' }}">
-                                    <a href="{{ route('blog') }}">Blog</a>
+                                    <a href="{{ route('blog') }}">Our Blogs</a>
                                 </li>
-                                <li class="{{ request()->routeIs('contact') ? 'active current' : '' }}">
-                                    <a href="{{ route('contact') }}">Contact</a>
+                                <li class="{{ request()->routeIs('application') ? 'active current' : '' }}">
+                                    <a href="{{ route('application') }}"><span  class="text-danger">Apply Now ></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -278,7 +343,7 @@
                 <!-- Right Side Elements (Globe Icon + Button) -->
                 <div class="header-right-elements">
                     <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
-                    <button class="btn btn-danger">Free Consultation</button>
+                    <a href="{{ route('consultation') }}"><button class="btn btn-danger">Free Consultation</button></a>
                 </div>
 
                 <!-- Sticky Header -->
@@ -397,6 +462,7 @@
 .header-upper {
     padding: 5px 100px;
     background: #ffffff;
+    position: relative;
 }
 
 .header-upper .container-fluid {
@@ -518,32 +584,9 @@ body.sticky-active .sticky-header {
     transition: all 0.3s ease;
 }
 
-/* Dropdown ULs for Services, Destination, etc. */
-.navigation>li.dropdown>ul {
-    position: absolute;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 100vw !important;
-    padding: 40px 0 !important;
-    background-color: #182436 !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    border-radius: 0 0 5px 5px;
-    z-index: 9999;
-    list-style: none;
-    text-align: center;
-    margin: 0 !important;
-    max-width: none !important;
-}
 
-.navigation>li.dropdown:hover>ul {
-    display: block;
-}
 
-.navigation>li.dropdown>ul>li {
-    padding: 0;
-    margin: 0;
-}
+
 
 .navigation>li.dropdown>ul>li>a {
     color: #ffffff;
@@ -571,25 +614,7 @@ body.sticky-active .sticky-header {
     padding-right: 0 !important;
 }
 
-.navigation>li.dropdown .megamenu {
-    position: absolute;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 100vw !important;
-    background-color: #182436;
-    padding: 40px 0 !important;
-    box-sizing: border-box;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    border-radius: 0 0 5px 5px;
-    z-index: 9999;
-    margin: 0 !important;
-    max-width: none !important;
-}
 
-.navigation>li.dropdown:hover .megamenu {
-    display: block;
-}
 
 .megamenu-header {
     display: flex;
@@ -1084,9 +1109,7 @@ a.location-item i {
     flex-wrap: wrap;
 }
 
-.header-upper .menu-area .navigation li:last-child {
-    display: none; /* Hide the duplicate globe icon and button in the menu */
-}
+
 
 /* Right side elements container */
 .header-right-elements {
@@ -1119,6 +1142,33 @@ a.location-item i {
 .header-right-elements .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 992px) {
+
+    .navigation>li.dropdown .megamenu,
+    .navigation>li.dropdown>ul {
+        /* Override existing styles for desktop */
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        top: 100% !important;
+        padding: 40px 0 !important;
+        background-color: #182436 !important;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+        display: none;
+        border-radius: 0 !important;
+        z-index: 9999 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .navigation>li.dropdown:hover .megamenu,
+    .navigation>li.dropdown:hover>ul {
+        display: block !important;
+    }
 }
 
 /* Responsive */
@@ -1231,6 +1281,43 @@ a.location-item i {
 
     .main-header .menu-area .navigation li a {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navigation li.has-submenu .megamenu {
+        display: none !important;
+    }
+
+    .mobile-navigation .navigation li.has-submenu .mobile-submenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
+        display: block;
+    }
+
+    .mobile-navigation .navigation li.has-submenu .mobile-submenu li a {
+        padding: 12px 15px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #333;
+        background-color: #FFFFFF;
+    }
+
+    .mobile-navigation .navigation li.has-submenu .mobile-submenu li a:hover {
+        background: #f8f9fa;
+        color: black;
+        padding: 12px 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navigation li.has-submenu .mobile-submenu {
+        display: none !important;
     }
 }
 </style>

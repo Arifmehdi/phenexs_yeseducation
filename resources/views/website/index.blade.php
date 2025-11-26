@@ -2328,9 +2328,11 @@
             <div class="tab-pane" id="advice">
                 <div class="advice-form">
                     <p>Get personalized advice from our education experts</p>
-                    <button class="advice-btn">
-                        <i class="fas fa-user-graduate"></i> Book Free Consultation
-                    </button>
+                    <a href="{{ route('consultation') }}">
+                        <button class="advice-btn">
+                            <i class="fas fa-user-graduate"></i> Book Free Consultation
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

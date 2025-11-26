@@ -13,6 +13,10 @@ $(function(){
             finish : 'Submit',
             current : ''
         },
+        onFinished: function (event, currentIndex) {
+            // Explicitly submit the form
+            $('.form-register').submit();
+        }
     });
     $("#date").datepicker({
         dateFormat: "MM - DD - yy",

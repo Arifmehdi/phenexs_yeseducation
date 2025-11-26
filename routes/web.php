@@ -30,6 +30,8 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\ApplicationController; // Import the new ApplicationController
 
 // Route::get('/',[AuthController::class,'index'])->name('login');
 
@@ -130,7 +132,9 @@ Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('/blog/details/{slug}',[FrontendController::class,'blogDetails'])->name('blogDetails');
 Route::get('/global-offices/{id?}',[FrontendController::class,'globalOffice'])->name('globalOffice');
 Route::get('/application',[FrontendController::class,'application'])->name('application');
+Route::post('/application', [ApplicationController::class, 'store'])->name('application.store');
 Route::get('/consultation',[FrontendController::class,'consultation'])->name('consultation');
+Route::post('/consultation', [ConsultationController::class, 'store'])->name('consultation.store');
 // Route::get('/product',[HomeController::class,'product'])->name('product');
 
 Route::get('agent/dashboard',[FrontendController::class, 'memberDashboard'])->name('agent.dashboard');
@@ -581,6 +585,12 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     Route::get('contacts', [\App\Http\Controllers\ContactController::class, 'index'])->name('admin.contacts.index');
     Route::get('contacts/{contact}', [\App\Http\Controllers\ContactController::class, 'show'])->name('admin.contacts.show');
     Route::delete('contacts/{contact}', [\App\Http\Controllers\ContactController::class, 'destroy'])->name('admin.contacts.destroy');
+
+    // Consultations
+    Route::resource('consultations', \App\Http\Controllers\Admin\ConsultationController::class)->except(['create', 'edit', 'update']);
+
+    // Applications
+    Route::resource('applications', \App\Http\Controllers\Admin\ApplicationController::class)->except(['create', 'edit', 'update']);
 
 
 });

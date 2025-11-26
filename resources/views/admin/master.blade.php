@@ -406,6 +406,18 @@
 
                         </ul>
                     </li>
+                    <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
+                        <a href="{{ route('consultations.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-headset"></i> {{-- Using a headset icon for consultations --}}
+                            <p>All Consultations</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'applications'? ' menu-open ' : ''}}">
+                        <a href="{{ route('applications.index') }}" class="nav-link {{ session('lsbsm') == 'allApplications' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-file-alt"></i> {{-- Using a file-alt icon for applications --}}
+                            <p>Application Forms</p>
+                        </a>
+                    </li>
                     <li class="nav-item {{ session('lsbm') == 'destination'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'destination'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
