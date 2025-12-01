@@ -200,8 +200,7 @@ class FrontendController extends Controller
 
     public function event()
     {
-        $wp = WebsiteParameter::first();
-        return view('website.event', compact('wp'));  
+        return view('website.event');  
     }
 
     public function eventDetails()

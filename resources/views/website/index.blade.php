@@ -2078,7 +2078,7 @@
 <section class="video-hero-section">
     <!-- Background Video -->
     <video id="hero-video" class="background-video" autoplay loop playsinline preload="metadata">
-        <source src="{{ asset('frontend/assets/images/resource/video-2_online-video-cutter.com.webm') }}"
+        <source src="{{ asset('frontend/assets/images/resource/Welcome_Week_2024.webm') }}"
             type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -2437,7 +2437,6 @@
 </section>
 <!-- about-style-two end -->
 
-
 <!-- cta ads section start -->
 <section class="cta-section centred" style="width: 100%; overflow: hidden; margin-top: 80px;">
     <img src="{{ asset('frontend/assets/images/ads/January_Intake_in_the_UK_-_Desktop_Image.original.webp') }}"
@@ -2703,82 +2702,54 @@
         <div class="student-videos-slider-container">
             <div class="student-videos-slider owl-carousel owl-theme">
                 <!-- Video 1 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="5lrZG5lpgfI">
-                            <img src="{{ asset('frontend/assets/images/videos/001.webp') }}"
-                                alt="Student Success Story 1" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="student-video-slide">
+    <div class="student-video-card">
+        <div class="student-video-thumbnail" 
+             data-video-src="{{ asset('frontend/assets/images/videos/001.mp4') }}">
+             
+            <img src="{{ asset('frontend/assets/images/videos/001.webp') }}"
+                 alt="Student Success Story" 
+                 class="student-thumbnail-image">
 
+            <div class="student-play-button">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </div>
+</div>
                 <!-- Video 2 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="Fe2__tlLr4c">
-                            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}"
-                                alt="Student Success Story 2" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="student-video-slide">
+    <div class="student-video-card">
+        <div class="student-video-thumbnail" 
+             data-video-src="{{ asset('frontend/assets/images/videos/002.mp4') }}">
+             
+            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}"
+                 alt="Student Success Story" 
+                 class="student-thumbnail-image">
 
+            <div class="student-play-button">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </div>
+</div>
                 <!-- Video 3 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="K6dIsIUXayY">
-                            <img src="{{ asset('frontend/assets/images/videos/003.webp') }}"
-                                alt="Student Success Story 3" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="student-video-slide">
+    <div class="student-video-card">
+        <div class="student-video-thumbnail" 
+             data-video-src="{{ asset('frontend/assets/images/videos/003.mp4') }}">
+             
+            <img src="{{ asset('frontend/assets/images/videos/003.webp') }}"
+                 alt="Student Success Story" 
+                 class="student-thumbnail-image">
 
-                <!-- Video 4 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="W-IhYxYN9C4">
-                            <img src="{{ asset('frontend/assets/images/videos/004.webp') }}"
-                                alt="Student Success Story 4" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="student-play-button">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
-                <!-- Video 5 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="Fe2__tlLr4c">
-                            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}"
-                                alt="Student Success Story 5" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video 6 -->
-                <div class="student-video-slide">
-                    <div class="student-video-card">
-                        <div class="student-video-thumbnail" data-video-id="W-IhYxYN9C4">
-                            <img src="{{ asset('frontend/assets/images/videos/004.webp') }}"
-                                alt="Student Success Story 6" class="student-thumbnail-image">
-                            <div class="student-play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -3083,7 +3054,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="circle-image-container text-center">
                     <div class="circle-image-wrapper">
-                        <img src="{{ asset('frontend/assets/images/resource/faq_2.original.webp')}}"
+                        <img src="{{ asset('frontend/assets/images/resource/faq_4.webp')}}"
                             alt="Students studying together" class="circle-image">
                         <div class="image-overlay-content">
                             <h3 style="color: white; font-weight: 700; margin-bottom: 10px;">Ready to Start Your
@@ -3381,7 +3352,49 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </section>
-
+<!-- about-style-two -->
+<section class="about-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_3">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>who are YES Education</p>
+                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2017 </h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur magnid.</p>
+                        </div>
+                        <div class="btn-box"><a href="index-2.html" class="theme-btn-two">Learn More<i
+                                    class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_2">
+                    <div class="image-box">
+                        <figure class="image-1"><img src="{{ asset('frontend/assets/images/resource/about-2.jpg') }}"
+                                alt=""></figure>
+                        <figure class="image-2"><img src="{{ asset('frontend/assets/images/resource/about-3.jpg') }}"
+                                alt=""></figure>
+                        <figure class="image-3"><img src="{{ asset('frontend/assets/images/resource/about-4.jpg') }}"
+                                alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-style-two end -->
 
 <x-student-subscription />
 
@@ -3488,88 +3501,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize student videos slider
+
     $('.student-videos-slider').owlCarousel({
         loop: true,
         margin: 20,
         nav: false,
         dots: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true,
+        autoplay: false,
         responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 3
-            },
-            992: {
-                items: 4
-            },
-            1200: {
-                items: 4
-            }
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 }
         }
     });
 
-    // Create scoped video modal
-    const studentVideoModal = document.createElement('div');
-    studentVideoModal.className = 'student-video-modal';
-    studentVideoModal.innerHTML = `
-            <div class="student-modal-content">
-                <button class="student-modal-close">&times;</button>
-                <div class="student-modal-video-container">
-                    <iframe id="student-modal-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        `;
-    document.body.appendChild(studentVideoModal);
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'student-video-modal';
+    modal.innerHTML = `
+        <div class="student-modal-content">
+            <button class="student-modal-close">&times;</button>
+            <video id="student-modal-player" controls autoplay></video>
+        </div>
+    `;
+    document.body.appendChild(modal);
 
-    // Get elements with scoped classes
-    const studentVideoThumbnails = document.querySelectorAll('.student-video-thumbnail');
-    const studentModalClose = document.querySelector('.student-modal-close');
-    const studentModalVideo = document.getElementById('student-modal-video');
+    const video = document.getElementById('student-modal-player');
+    const closeBtn = modal.querySelector('.student-modal-close');
 
-    // Open video modal
-    studentVideoThumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            const videoId = this.getAttribute('data-video-id');
-            studentModalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            studentVideoModal.classList.add('active');
+    // Open modal
+    document.querySelectorAll('.student-video-thumbnail').forEach(item => {
+        item.addEventListener('click', function() {
+            const src = this.dataset.videoSrc;
+            video.src = src;
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
 
-    // Close video modal
-    studentModalClose.addEventListener('click', function() {
-        studentVideoModal.classList.remove('active');
-        studentModalVideo.src = '';
+    // Close modal
+    function closeModal(){
+        modal.classList.remove('active');
+        video.pause();
+        video.src = "";
         document.body.style.overflow = 'auto';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e){
+        if(e.target === modal) closeModal();
     });
 
-    // Close modal when clicking outside
-    studentVideoModal.addEventListener('click', function(e) {
-        if (e.target === studentVideoModal) {
-            studentVideoModal.classList.remove('active');
-            studentModalVideo.src = '';
-            document.body.style.overflow = 'auto';
-        }
+    document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeModal();
     });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && studentVideoModal.classList.contains('active')) {
-            studentVideoModal.classList.remove('active');
-            studentModalVideo.src = '';
-            document.body.style.overflow = 'auto';
-        }
-    });
 });
 </script>
+
 
 
 

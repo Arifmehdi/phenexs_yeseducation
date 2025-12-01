@@ -39,20 +39,25 @@
                                 <li
                                     class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
                                     <a href="{{ route('service') }}">Study In UK</a>
-                                    <ul class="mobile-submenu">
-                                        @foreach($servica as $service)
-                                        <li>
-                                            <a
-                                                href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
-                                        </li>
-                                        @endforeach
+                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                        {{--@foreach($servica as $service)
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
+                                        @endforeach--}}
+                                        <li><a href="#">Why Choose UK</a></li> 
+                                        <li><a href="#">What Can I Study?</a></li> 
+                                        <li><a href="#">January Intake</a></li> 
+                                        <li><a href="#">May Intake</a></li> 
+                                        <li><a href="#">September Intake</a></li> 
+                                        <li><a href="#">Cost of Study</a></li> 
+                                        <li><a href="#">UCAS</a></li> 
+                                        <li><a href="#">Students Essential</a></li> 
                                     </ul>
 
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
 
                                             <div class="megamenu-header">
-                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
+                                                <p>Discover a world-class education in the UK.</p>
                                                 <a href="#" class="btn btn-primary"
                                                     style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
                                                     View All <i class="fas fa-external-link-alt"
@@ -61,8 +66,88 @@
                                             </div>
 
                                             <div class="row clearfix">
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Why Choose UK</span> 
+                                                                <p style="text-white">Discover why the UK is great for both education and culture.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/whanCanIStudy.png') }}"
+                                                                    alt="Title">
+                                                                <span>What Can I Study?</span> <br>
+                                                                <p style="text-white">Art, science, philosophy... Explore your options to find your passion.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/jan.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>January Intake</span> <br>
+                                                                <p style="text-white">Find out all you need to know about courses starting in January.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/may.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>May Intake</span> <br>
+                                                                <p style="text-white">Find out all you need to know about courses starting in May.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/sep.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>September Intake</span> 
+                                                                <p style="text-white">Discover why the UK is great for both education and culture.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/cost-of-study.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Cost of Study</span> <br>
+                                                                <p style="text-white">Art, science, philosophy... Explore your options to find your passion.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/ucas.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>UCAS</span> <br>
+                                                                <p style="text-white">Find out all you need to know about courses starting in January.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/study/student-essentials.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Students Essential</span> <br>
+                                                                <p style="text-white">Find out all you need to know about courses starting in May.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
 
-                                                @foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
                                                         @forelse($chunk as $service)
@@ -79,7 +164,7 @@
                                                         @endforelse
                                                     </ul>
                                                 </div>
-                                                @endforeach
+                                                @endforeach--}}
 
                                             </div>
 
@@ -89,30 +174,81 @@
                                 <li
                                     class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
                                     <a href="{{ route('service') }}">Universities</a>
-                                    <ul class="mobile-submenu">
-                                        @foreach($servica as $service)
-                                        <li>
-                                            <a
-                                                href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
-                                        </li>
-                                        @endforeach
+                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                        {{--@foreach($servica as $service)
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
+                                        @endforeach--}}
+                                        <li><a href="#">Find a University</a></li> 
+                                        <li><a href="#">Rankings</a></li> 
+                                        <li><a href="#">Russell Group Industries</a></li> 
+                                        <li><a href="#">Top Universities In the UK</a></li>       
+                                        <li><a href="#">University Of Scotland</a></li>       
                                     </ul>
 
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
 
                                             <div class="megamenu-header">
-                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
+                                                <p>Tools and more to help you pick your university.</p>
                                             </div>
 
                                             <div class="row clearfix">
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/university/find-uni.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Find a University</span> 
+                                                                <p style="text-white">Browse over 150 top universities to find the perfect place to study.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/university/universityRanking.png') }}"
+                                                                    alt="Title">
+                                                                <span>Rankings</span> <br>
+                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
+                                                                    alt="Title">
+                                                                <span>University Of Scotland</span> <br>
+                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
+                                                            </a>
+                                                        </li>
 
-                                                @foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
+                                                                    alt="Title">
+                                                                <span>Russell Group Industries</span> <br>
+                                                                <p style="text-white">Discover Russell Group universities known for their research excellence and prestige.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/university/student-essentials.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Top Universities In the UK</span> <br>
+                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
                                                         @forelse($chunk as $service)
@@ -129,30 +265,43 @@
                                                         @endforelse
                                                     </ul>
                                                 </div>
-                                                @endforeach
+                                                @endforeach--}}
 
                                             </div>
 
                                         </div>
                                     </div>
                                 </li>
-                                <li
-                                    class="dropdown {{ request()->routeIs('courses') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('courses') }}">Courses</a>
-                                    <ul class="mobile-submenu">
-                                        @foreach($coursa as $course)
-                                        <li>
-                                            <a
-                                                href="{{ route('courseDetails', $course->slug) }}">{{ $course->title }}</a>
-                                        </li>
-                                        @endforeach
+
+
+                                <li class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('service') }}">Courses
+                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                        {{--@foreach($servica as $service)
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
+                                        @endforeach--}}
+                                        <li><a href="#">Foundation</a></li> 
+                                        <li><a href="#">Undergraduate Degree</a></li> 
+                                        <li><a href="#">Top-Up Degrees</a></li> 
+                                        <li><a href="#">Pre-Masters</a></li> 
+                                        <li><a href="#">Masters Degree</a></li> 
+                                        <li><a href="#">PhD-Degreedy</a></li> 
                                     </ul>
+
+
+
+
+
+
+
+
+
 
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
 
                                             <div class="megamenu-header">
-                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
+                                                <p>All your options for your Higher Education journey</p>
                                                 <a href="#" class="btn btn-primary"
                                                     style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
                                                     View All <i class="fas fa-external-link-alt"
@@ -161,85 +310,167 @@
                                             </div>
 
                                             <div class="row clearfix">
-
-                                                @foreach($coursa->chunk(ceil($coursa->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
-                                                        @foreach($chunk as $course)
                                                         <li>
                                                             <a class="service-item"
-                                                                href="{{ route('courseDetails', $course->slug) }}">
-                                                                <img src="{{ asset('frontend/assets/images/study/jan.original.png') }}"
-                                                                    alt="{{ $course->title }}">
-                                                                <span>{{ $course->title }}</span>
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/found.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Foundation</span> 
+                                                                <p style="text-white">Foundation courses help international students get ready for university.</p>
                                                             </a>
                                                         </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                                @endforeach
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-
-                                <li
-                                    class="dropdown {{ request()->routeIs('destination') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('destination') }}">Pathway</a>
-                                    <ul class="mobile-submenu">
-                                        @foreach($destinate as $des)
-                                        <li>
-                                            <a href="{{ route('courseDetails', $des->slug) }}">{{ $des->title }}</a>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
-
-                                            <div class="megamenu-header">
-                                                <p>Explore a wide range of courses to enhance your knowledge.</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="row clearfix">
-
-                                                @foreach($destinate->chunk(ceil($destinate->count()/3)) as $desa)
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        @forelse($desa as $des)
                                                         <li>
                                                             <a class="service-item"
-                                                                href="{{ route('courseDetails', $des->slug) }}">
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/Icon.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Undergraduate Degree</span> <br>
+                                                                <p style="text-white">Explore undergraduate degrees in the UK for almost any career path.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/advanced-entry.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Top-Up Degrees</span> <br>
+                                                                <p style="text-white">Learn about Top-Up degrees to complete your degree.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/pre-master.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Pre-Masters</span> 
+                                                                <p style="text-white">Find Pre-Masters programs in the UK to prepare you for postgraduate study.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/master.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Masters Degree</span> <br>
+                                                                <p style="text-white">Explore Master's degrees in the UK for further academic and career growth.</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/course/phd.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>PhD-Degree</span> <br>
+                                                                <p style="text-white">Discover PhD opportunities in the UK for advanced research and expertise.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        @forelse($chunk as $service)
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="{{ route('serviceDetails', $service->slug) }}">
                                                                 <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="{{ $des->title }}">
-                                                                <span>{{ $des->title }}</span>
+                                                                    alt="{{ $service->title }}">
+                                                                <span>{{ $service->title }}</span>
                                                             </a>
                                                         </li>
                                                         @empty
-                                                        <li><a href="#">No Destiantion Available</a></li>
+                                                        <li><a href="#">No Services Available</a></li>
                                                         @endforelse
                                                     </ul>
                                                 </div>
-                                                @endforeach
+                                                @endforeach--}}
 
                                             </div>
 
                                         </div>
                                     </div>
                                 </li>
-                                {{-- New Location Megamenu --}}
-                                <li class="dropdown">
-                                    <a href="#">Global Offices</a>
+
+                                <li
+                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('service') }}">Pathway</a>
+                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                        <li><a href="#">Pathway Institutions</a></li> 
+                                        <li><a href="#">Pathway Courses</a></li>    
+                                    </ul>
+
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
+
+                                            <div class="megamenu-header">
+                                                <p>Explore pathways to help you achieve your academic goals.</p>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/pathway/phd.original.png') }}"
+                                                                    alt="Title">
+                                                                <span>Pathway Institutions</span> 
+                                                                <p style="text-white">Discover top institutes offering pathway programs to prepare for university.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6 column">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="service-item"
+                                                                href="#">
+                                                                <img src="{{ asset('frontend/assets/images/pathway/russelGroupUniversity.png') }}"
+                                                                    alt="Title">
+                                                                <span>Pathway Courses</span> <br>
+                                                                <p style="text-white">Explore pathway courses designed to brige your academic journey.</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li
+                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
+                                    <a href="{{ route('service') }}">Global Offices</a>
+                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                        <li><a href="#">Algeria</a></li> 
+                                        <li><a href="#">Kuwait</a></li>    
+                                        <li><a href="#">Pakistan</a></li>    
+                                        <li><a href="#">Bangladesh</a></li>    
+                                        <li><a href="#">Morocco</a></li> 
+                                        <li><a href="#">Qatar</a></li>      
+                                        <li><a href="#">Nepal</a></li>    
+                                        <li><a href="#">Uk</a></li>    
+                                    </ul>
+
+                                    <div class="megamenu">
+                                        <div class="megamenu-inner-wrapper">
+
+                                            <div class="megamenu-header">
+                                                <p>Discover our global footprint.</p>
+                                                <a href="#" class="btn btn-primary"
+                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                                    View All <i class="fas fa-external-link-alt"
+                                                        style="color: #ffffff !important;"></i>
+                                                </a>
+                                            </div>
+
                                             <div class="row clearfix">
                                                 {{-- Column 1 --}}
                                                 <div class="col-lg-3 column">
@@ -326,8 +557,12 @@
                                                     </ul>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
+                                </li>
+                                <li class="{{ request()->routeIs('event') ? 'active current' : '' }}">
+                                    <a href="{{ route('event') }}">Event</a>
                                 </li>
                                 <li class="{{ request()->routeIs('blog') ? 'active current' : '' }}">
                                     <a href="{{ route('blog') }}">Our Blogs</a>
@@ -343,6 +578,7 @@
                 <!-- Right Side Elements (Globe Icon + Button) -->
                 <div class="header-right-elements">
                     <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
+                    <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
                     <a href="{{ route('consultation') }}"><button class="btn btn-danger">Free Consultation</button></a>
                 </div>
 
@@ -365,7 +601,8 @@
                             </div>
                             <!-- Sticky Header Right Elements -->
                             <div class="header-right-elements">
-                                <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
+                                <a href="{{ route('consultation') }}" class="show-on-desktop"><i class="fas fa-globe"></i></a>
+                                <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
                                 <button class="btn btn-danger">Free Consultation</button>
                             </div>
                         </div>
@@ -602,7 +839,7 @@ body.sticky-active .sticky-header {
 
 /* Mega Menu Styling */
 .megamenu-inner-wrapper {
-    max-width: 1300px;
+    /* max-width: 1300px; */
     margin: 0 auto;
     padding: 0 50px;
     width: 100%;
@@ -726,6 +963,13 @@ a.service-item span {
     color: #ffffff !important;
     font-size: 16px !important;
     font-weight: 500 !important;
+}
+a.service-item p {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
 }
 
 a.location-item:hover {
@@ -1223,6 +1467,28 @@ a.location-item i {
     .hide-on-mobile {
         display: none !important;
     }
+
+/* Hide submenu by default */
+.mobile-navigation .navigation li.has-submenu .mobile-submenu {
+    display: none !important;
+    padding-left: 10px;
+    margin-left: 5px;
+    border-left: 2px solid #eee;   /* optional, remove if not needed */
+}
+
+/* Show only when clicked */
+.mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
+    display: block !important;
+}
+
+/* Submenu link style */
+.mobile-navigation .navigation li.has-submenu .mobile-submenu li a {
+    font-size: 13px;
+    color: #555;
+    padding: 8px 15px;
+    background: transparent;
+}
+
 }
 
 @media (max-width: 480px) {
@@ -1292,8 +1558,9 @@ a.location-item i {
     .mobile-navigation .navigation li.has-submenu .mobile-submenu {
         display: none;
         list-style: none;
-        padding: 0;
-        margin: 0;
+        padding-left: 12px;   
+        margin-left: 8px;    
+        border-left: 2px solid #eee; 
     }
 
     .mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
@@ -1320,6 +1587,38 @@ a.location-item i {
         display: none !important;
     }
 }
+</style>
+<style>
+/* ICON left, text stacked right */
+.navigation .megamenu a.service-item {
+    display: grid !important;
+    grid-template-columns: 48px auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 15px !important;
+    align-items: start !important;
+}
+
+/* Icon stays left spanning both lines */
+.navigation .megamenu a.service-item img {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+}
+
+/* Title */
+.navigation .megamenu a.service-item span {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+/* Description under title */
+.navigation .megamenu a.service-item p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    margin-top: 4px !important;
+}
+
+
+
 </style>
 
 <!-- JS -->
