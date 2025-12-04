@@ -32,12 +32,22 @@ use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\ApplicationController; // Import the new ApplicationController
+use App\Http\Controllers\ChatController; // Import the new ChatController
 
 // Route::get('/',[AuthController::class,'index'])->name('login');
 
-Route::get('image', function () {
-    Artisan::call('storage:link');
-    return back();
+Route::post('/chat/start', [ChatController::class, 'startConversation'])->name('chat.start');
+Route::get('/chat/{conversation}/messages', [ChatController::class, 'fetchMessages'])->name('chat.messages');
+Route::post('/chat/{conversation}/send', [ChatController::class, 'sendMessage'])->name('chat.send');
+
+Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
+
+    // Chat Routes
+    Route::get('chats', [ChatController::class, 'adminIndex'])->name('admin.chats.index');
+    Route::get('chat/conversations', [ChatController::class, 'getConversations'])->name('admin.chat.getConversations');
+    Route::get('chats/{conversation}', [ChatController::class, 'adminShow'])->name('admin.chats.show');
+    Route::post('chats/{conversation}/reply', [ChatController::class, 'adminReply'])->name('admin.chats.reply');
+    Route::post('chats/{conversation}/close', [ChatController::class, 'closeConversation'])->name('admin.chats.close');
 });
 
 Route::get('/clear', function () {
@@ -127,7 +137,8 @@ Route::get('/destination/details/{slug}',[FrontendController::class,'destination
 Route::get('/courses',[FrontendController::class,'courses'])->name('courses');
 Route::get('/course/details/{slug}',[FrontendController::class,'courseDetails'])->name('courseDetails');
 Route::get('/event',[FrontendController::class,'event'])->name('event');
-Route::get('/event/details',[FrontendController::class,'eventDetails'])->name('eventDetails');
+Route::get('/event/details/{slug}',[FrontendController::class,'eventDetails'])->name('eventDetails');
+Route::get('/study-in-the-uk/{slug}',[FrontendController::class,'studyInUk'])->name('studyInUk');
 Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('/blog/details/{slug}',[FrontendController::class,'blogDetails'])->name('blogDetails');
 Route::get('/global-offices/{id?}',[FrontendController::class,'globalOffice'])->name('globalOffice');

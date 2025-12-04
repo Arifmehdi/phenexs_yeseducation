@@ -109,5 +109,7 @@
 
 
 <!-- Student Reviews Section -->
-<x-student-reviews />
+ <x-student-reviews />
+
+<x-student-subscription />
 @endsection

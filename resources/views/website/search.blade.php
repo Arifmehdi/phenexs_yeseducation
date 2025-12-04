@@ -3,10 +3,12 @@
 @section('title', 'YES Education - UK Universities')
 
 @section('meta')
-<meta name="description" content="Explore top UK universities with details about programs, rankings, campus life, and accommodation.">
+<meta name="description"
+    content="Explore top UK universities with details about programs, rankings, campus life, and accommodation.">
 <meta name="keywords" content="UK universities, higher education UK, study in UK, university rankings, UK courses">
 <meta property="og:title" content="UK Universities Search - YES Education">
-<meta property="og:description" content="Find the perfect UK university with comprehensive search and filtering options.">
+<meta property="og:description"
+    content="Find the perfect UK university with comprehensive search and filtering options.">
 <meta property="og:image" content="{{ asset('frontend/assets/img/yes-education/uk-universities.jpg') }}">
 <meta property="og:type" content="website">
 @endsection
@@ -15,7 +17,8 @@
 @section('content')
 
 <!-- PAGE TITLE -->
-<section class="page-title" style="background-image: url('{{ asset('frontend/assets/images/background/page-title-3.jpg')}}');">
+<section class="page-title"
+    style="background-image: url('{{ asset('frontend/assets/images/background/page-title-3.jpg')}}');">
     <div class="auto-container">
         <div class="content-box">
             <div class="title-box">
@@ -50,8 +53,8 @@
                                 <input type="hidden" name="action" value="location-data">
 
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="location" placeholder="Search by location..."
-                                           value="{{ $searchName ?? '' }}">
+                                    <input type="text" class="form-control" name="location"
+                                        placeholder="Search by location..." value="{{ $searchName ?? '' }}">
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="submit">
                                             <i class="fas fa-search"></i>
@@ -61,18 +64,20 @@
                             </form>
 
                             <div class="btn-group mb-3 d-flex">
-                                <button type="button" class="btn btn-primary w-50"><i class="fas fa-filter"></i> Filters</button>
-                                <button type="button" class="btn btn-outline-secondary w-50"><i class="fas fa-sort"></i> Sort</button>
+                                <button type="button" class="btn btn-primary w-50"><i class="fas fa-filter"></i>
+                                    Filters</button>
+                                <button type="button" class="btn btn-outline-secondary w-50"><i class="fas fa-sort"></i>
+                                    Sort</button>
                             </div>
 
                             @if(!empty($searchName))
-                                <div>
-                                    <span class="badge badge-primary p-2">
-                                        {{ $searchName }}
-                                        <a href="{{ route('search') }}" class="text-white ml-1">&times;</a>
-                                    </span>
-                                    <a href="{{ route('search') }}" class="btn btn-link btn-sm">Clear all filters</a>
-                                </div>
+                            <div>
+                                <span class="badge badge-primary p-2">
+                                    {{ $searchName }}
+                                    <a href="{{ route('search') }}" class="text-white ml-1">&times;</a>
+                                </span>
+                                <a href="{{ route('search') }}" class="btn btn-link btn-sm">Clear all filters</a>
+                            </div>
                             @endif
                         </div>
                     </div>
@@ -81,9 +86,12 @@
                     <!-- Filters Accordion -->
                     <div id="filters-accordion">
                         <x-filter-card title="University" id="University" :list="$universities ?? []" type="dynamic" />
-                        <x-filter-card title="Faculty" id="Faculty" :list="['Business and Management','Computing','Engineering','Law','Nursing and Midwifery']" />
-                        <x-filter-card title="Study Level" id="StudyLevel" :list="['Undergraduate','Masters','Foundation','Top-up Degree','PhD Doctorate']" />
-                        <x-filter-card title="Location" id="Location" :list="['Any Location','London','East of England','East Midlands','West Midlands','Scotland','Wales']" />
+                        <x-filter-card title="Faculty" id="Faculty"
+                            :list="['Business and Management','Computing','Engineering','Law','Nursing and Midwifery']" />
+                        <x-filter-card title="Study Level" id="StudyLevel"
+                            :list="['Undergraduate','Masters','Foundation','Top-up Degree','PhD Doctorate']" />
+                        <x-filter-card title="Location" id="Location"
+                            :list="['Any Location','London','East of England','East Midlands','West Midlands','Scotland','Wales']" />
                     </div>
                 </div>
             </div>
@@ -118,95 +126,152 @@
 
                             @if($paginator->count() > 0)
 
-                                @foreach($paginator->chunk(2) as $chunk)
-                                    <div class="row">
-                                        @foreach($chunk as $university)
+                            @foreach($paginator->chunk(2) as $chunk)
+                            <div class="row">
+                                @foreach($chunk as $university)
 
-                                            <div class="col-md-6 mb-4">
-                                                <a href="{{ $university['web_pages'][0] ?? '#' }}" target="_blank" class="card-link-wrapper">
-                                                    <div class="card university-card shadow-sm border-0 rounded-lg overflow-hidden h-100">
+                                <div class="col-md-6 mb-4">
+                                    <a href="{{ $university['web_pages'][0] ?? '#' }}" target="_blank"
+                                        class="text-decoration-none">
 
-                                                        <div class="university-card-top-bar bg-gradient-primary"></div>
+                                        <div
+                                            class="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden cursor-pointer border border-gray-100 h-100 university-hover">
 
-                                                        <div class="card-body p-4">
-
-                                                            <div class="text-center mb-3">
-                                                                <img class="img-fluid rounded shadow-sm"
-                                                                     src="https://via.placeholder.com/120x60/1D3564/FFFFFF?text={{ substr(preg_replace('/[^A-Za-z0-9]/','',$university['name']),0,2) }}"
-                                                                     alt="{{ $university['name'] }} logo">
-                                                            </div>
-
-                                                            <h4 class="h5 text-center text-dark mb-2">{{ $university['name'] }}</h4>
-
-                                                            <p class="small text-muted text-center">
-                                                                <i class="fas fa-map-marker-alt text-primary mr-1"></i>
-                                                                {{ $university['state-province'] ? $university['state-province'].',' : '' }}
-                                                                {{ $university['country'] }}
-                                                            </p>
-
-                                                            <p class="small text-muted description-clamp">
-                                                                {{ $university['name'] }} is a prestigious university located in 
-                                                                {{ $university['state-province'] ? $university['state-province'].',' : '' }} 
-                                                                {{ $university['country'] }}.
-                                                            </p>
-
-                                                            <ul class="list-unstyled bg-light p-3 rounded shadow-sm university-details-list">
-                                                                <li class="d-flex align-items-center mb-2">
-                                                                    <span class="detail-icon-wrapper bg-primary text-white mr-2">
-                                                                        <i class="fas fa-globe"></i></span>
-                                                                    <strong>Country:</strong>
-                                                                    <span class="ml-auto">{{ $university['country'] }}</span>
-                                                                </li>
-
-                                                                @if($university['state-province'])
-                                                                <li class="d-flex align-items-center mb-2">
-                                                                    <span class="detail-icon-wrapper bg-info text-white mr-2">
-                                                                        <i class="fas fa-map"></i></span>
-                                                                    <strong>Region:</strong>
-                                                                    <span class="ml-auto">{{ $university['state-province'] }}</span>
-                                                                </li>
-                                                                @endif
-
-                                                                <li class="d-flex align-items-center mb-2">
-                                                                    <span class="detail-icon-wrapper bg-success text-white mr-2">
-                                                                        <i class="fas fa-code"></i></span>
-                                                                    <strong>Domain:</strong>
-                                                                    <span class="ml-auto">{{ $university['domains'][0] ?? 'N/A' }}</span>
-                                                                </li>
-
-                                                                <li class="d-flex align-items-center">
-                                                                    <span class="detail-icon-wrapper bg-warning text-white mr-2">
-                                                                        <i class="fas fa-link"></i></span>
-                                                                    <strong>Website:</strong>
-                                                                    <span class="ml-auto text-truncate" style="max-width:120px;">
-                                                                        {{ $university['web_pages'][0] ?? 'N/A' }}
-                                                                    </span>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-
-                                                    </div>
-                                                </a>
+                                            <!-- TOP BAR -->
+                                            <div
+                                                style="height:6px;background:linear-gradient(90deg,#1D3564,#4B6EA8,#1D3564);">
                                             </div>
 
-                                        @endforeach
-                                    </div>
+                                            <div class="p-4 d-flex flex-column gap-3">
+
+                                                <!-- LOGO -->
+                                                <div class="d-flex justify-content-center">
+                                                    <div style="width:120px;height:60px;">
+                                                        <img class="img-fluid rounded shadow-sm object-fit-contain"
+                                                            src="{{ asset('frontend/assets/images/resource/uni.png') }}"
+                                                            alt="{{ $university['name'] }} logo">
+                                                    </div>
+                                                </div>
+
+                                                <!-- NAME -->
+                                                <div class="text-center">
+                                                    <h5 class="fw-bold text-dark group-hover:text-primary transition">
+                                                        {{ $university['name'] }}
+                                                    </h5>
+
+                                                    <p class="small text-muted">
+                                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                                        {{ $university['state-province'] ? $university['state-province'].',' : '' }}
+                                                        {{ $university['country'] }}
+                                                    </p>
+
+                                                    <div class="mx-auto my-2"
+                                                        style="width:60px;height:1px;background:#ddd;"></div>
+                                                </div>
+
+                                                <!-- DESCRIPTION -->
+                                                <p class="small text-muted line-clamp-2">
+                                                    {{ \Illuminate\Support\Str::limit(
+                                                        $university['name'].' is a well-known university located in '.
+                                                        ($university['state-province'] ? $university['state-province'].', ' : '').
+                                                        $university['country'].' offering quality higher education.',
+                                                        100
+                                                    ) }}
+                                                </p>
+
+
+                                                <!-- DETAILS -->
+                                                <ul class="list-unstyled bg-light p-3 rounded shadow-sm small">
+
+                                                    {{-- Founded --}}
+                                                    <li class="d-flex align-items-center mb-2 p-2 rounded hover-bg">
+                                                        <span
+                                                            class="d-flex align-items-center justify-content-center rounded-circle text-white me-2"
+                                                            style="width:32px;height:32px;background:#1D3564;">
+                                                            <i class="fas fa-calendar-alt"></i>
+                                                        </span> &nbsp; &nbsp; &nbsp;
+                                                        <span class="fw-medium">Founded</span> &nbsp; &nbsp; &nbsp;
+                                                        <span
+                                                            class="ms-auto">{{ $university['founded'] ?? 'N/A' }}</span>
+                                                    </li>
+
+                                                    {{-- Guardian Ranking --}}
+                                                    <li class="d-flex align-items-center mb-2 p-2 rounded hover-bg">
+                                                        <span
+                                                            class="d-flex align-items-center justify-content-center rounded-circle text-white me-2"
+                                                            style="width:32px;height:32px;background:#4B6EA8;">
+                                                            <i class="fas fa-star"></i>
+                                                        </span> &nbsp; &nbsp; &nbsp;
+                                                        <span class="fw-medium">Guardian</span> &nbsp; &nbsp; &nbsp;
+                                                        <span
+                                                            class="ms-auto">{{ $university['guardian'] ?? 'Not Rated' }}</span>
+                                                    </li>
+
+                                                    {{-- THE Ranking --}}
+                                                    <li class="d-flex align-items-center mb-2 p-2 rounded hover-bg">
+                                                        <span
+                                                            class="d-flex align-items-center justify-content-center rounded-circle text-white me-2"
+                                                            style="width:32px;height:32px;background:#6C63FF;">
+                                                            <i class="fas fa-chart-line"></i>
+                                                        </span> &nbsp; &nbsp; &nbsp;
+                                                        <span class="fw-medium">THE</span> &nbsp; &nbsp; &nbsp;
+                                                        <span
+                                                            class="ms-auto">{{ $university['the'] ?? 'Not Rated' }}</span>
+                                                    </li>
+
+                                                    {{-- QS Ranking --}}
+                                                    <li class="d-flex align-items-center p-2 rounded hover-bg">
+                                                        <span
+                                                            class="d-flex align-items-center justify-content-center rounded-circle text-white me-2"
+                                                            style="width:32px;height:32px;background:#DB1F2A;">
+                                                            <i class="fas fa-graduation-cap"></i>
+                                                        </span> &nbsp; &nbsp; &nbsp;
+                                                        <span class="fw-medium">QS</span> &nbsp; &nbsp; &nbsp;
+                                                        <span
+                                                            class="ms-auto">{{ $university['qs'] ?? 'Not Rated' }}</span>
+                                                    </li>
+
+                                                </ul>
+
+
+                                                <!-- BUTTON -->
+                                                <div class="text-center">
+                                                    <button class="btn text-white mt-3 py-1 rounded"
+                                                        style="background:#1D3564;">
+                                                        View Details
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- CORNER DESIGN -->
+                                            <div style="position:absolute;bottom:0;right:0;width:80px;height:80px;
+                        background:linear-gradient(135deg,#c7d7ff,transparent);
+                        border-top-left-radius:24px;">
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+
+
                                 @endforeach
+                            </div>
+                            @endforeach
 
                             @else
 
-                                <div class="text-center py-5">
-                                    <i class="fas fa-university fa-3x text-muted mb-3"></i>
-                                    <h4>No universities found</h4>
-                                    <p class="text-muted">
-                                        @if(!empty($searchName))
-                                            No universities found for "{{ $searchName }}".
-                                        @else
-                                            Start by searching for a location.
-                                        @endif
-                                    </p>
-                                </div>
+                            <div class="text-center py-5">
+                                <i class="fas fa-university fa-3x text-muted mb-3"></i>
+                                <h4>No universities found</h4>
+                                <p class="text-muted">
+                                    @if(!empty($searchName))
+                                    No universities found for "{{ $searchName }}".
+                                    @else
+                                    Start by searching for a location.
+                                    @endif
+                                </p>
+                            </div>
 
                             @endif
 
@@ -224,23 +289,88 @@
         </div>
     </div>
 </div>
+ <x-student-reviews />
 
+<x-student-subscription />
 
 <!-- CLEAN CSS -->
 <style>
-.card-link-wrapper{display:block;text-decoration:none;color:inherit}
-.university-card{transition:.3s}
-.university-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important}
-.university-card-top-bar{height:4px;background-image:linear-gradient(to right,#1D3564,#4B6EA8,#1D3564);transition:.3s}
-.university-card:hover .university-card-top-bar{height:8px}
-.university-details-list li{padding:8px 0;border-bottom:1px solid #eee}
-.university-details-list li:hover{background:#f8f9fa}
-.university-details-list li:last-child{border-bottom:0}
-.detail-icon-wrapper{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.description-clamp{-webkit-line-clamp:2;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}
-.page-item.active .page-link,.btn-primary{background:#1D3564!important;border-color:#1D3564!important}
-.page-link{color:#1D3564!important}
-.page-link:hover{color:#152A4F!important}
-</style>
+.card-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit
+}
 
+.university-card {
+    transition: .3s
+}
+
+.university-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important
+}
+
+.university-card-top-bar {
+    height: 4px;
+    background-image: linear-gradient(to right, #1D3564, #4B6EA8, #1D3564);
+    transition: .3s
+}
+
+.university-card:hover .university-card-top-bar {
+    height: 8px
+}
+
+.university-details-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee
+}
+
+.university-details-list li:hover {
+    background: #f8f9fa
+}
+
+.university-details-list li:last-child {
+    border-bottom: 0
+}
+
+.detail-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.description-clamp {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden
+}
+
+.page-item.active .page-link,
+.btn-primary {
+    background: #1D3564 !important;
+    border-color: #1D3564 !important
+}
+
+.page-link {
+    color: #1D3564 !important
+}
+
+.page-link:hover {
+    color: #152A4F !important
+}
+</style>
+<style>
+.university-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.university-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+</style>
 @endsection

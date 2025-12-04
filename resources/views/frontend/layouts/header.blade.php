@@ -37,256 +37,274 @@
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
                                 <li
-                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('service') }}">Study In UK</a>
+                                    class="dropdown has-submenu">
+                                    <a href="#">Study In UK</a>
                                     <ul class="mobile-submenu d-block d-lg-none d-md-none ">
                                         {{--@foreach($servica as $service)
-                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
-                                        @endforeach--}}
-                                        <li><a href="#">Why Choose UK</a></li> 
-                                        <li><a href="#">What Can I Study?</a></li> 
-                                        <li><a href="#">January Intake</a></li> 
-                                        <li><a href="#">May Intake</a></li> 
-                                        <li><a href="#">September Intake</a></li> 
-                                        <li><a href="#">Cost of Study</a></li> 
-                                        <li><a href="#">UCAS</a></li> 
-                                        <li><a href="#">Students Essential</a></li> 
-                                    </ul>
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
+                                </li>
+                                @endforeach--}}
+                                <li><a href="{{ route('studyInUk', 'Why Choose UK') }}">Why Choose UK</a></li>
+                                <li><a href="{{ route('eventDetails', 'What Can I Study?') }}">What Can I Study?</a>
+                                </li>
+                                <li><a href="{{ route('studyInUk', 'January Intake') }}">January Intake</a></li>
+                                <li><a href="{{ route('studyInUk', 'May Intake') }}">May Intake</a></li>
+                                <li><a href="{{ route('studyInUk', 'September Intake') }}">September Intake</a></li>
+                                <li><a href="{{ route('eventDetails', 'Cost of Study') }}">Cost of Study</a></li>
+                                <li><a href="{{ route('eventDetails', 'UCAS') }}">UCAS</a></li>
+                                <li><a href="{{ route('eventDetails', 'Students Essential') }}">Students Essential</a>
+                                </li>
+                            </ul>
 
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
+                            <div class="megamenu">
+                                <div class="megamenu-inner-wrapper">
 
-                                            <div class="megamenu-header">
-                                                <p>Discover a world-class education in the UK.</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
-                                            </div>
+                                    <div class="megamenu-header">
+                                        <p>Discover a world-class education in the UK.</p>
+                                        <a href="#" class="btn btn-primary"
+                                            style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                            View All <i class="fas fa-external-link-alt"
+                                                style="color: #ffffff !important;"></i>
+                                        </a>
+                                    </div>
 
-                                            <div class="row clearfix">
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Why Choose UK</span> 
-                                                                <p style="text-white">Discover why the UK is great for both education and culture.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/whanCanIStudy.png') }}"
-                                                                    alt="Title">
-                                                                <span>What Can I Study?</span> <br>
-                                                                <p style="text-white">Art, science, philosophy... Explore your options to find your passion.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/jan.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>January Intake</span> <br>
-                                                                <p style="text-white">Find out all you need to know about courses starting in January.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/may.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>May Intake</span> <br>
-                                                                <p style="text-white">Find out all you need to know about courses starting in May.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/sep.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>September Intake</span> 
-                                                                <p style="text-white">Discover why the UK is great for both education and culture.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/cost-of-study.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Cost of Study</span> <br>
-                                                                <p style="text-white">Art, science, philosophy... Explore your options to find your passion.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/ucas.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>UCAS</span> <br>
-                                                                <p style="text-white">Find out all you need to know about courses starting in January.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/study/student-essentials.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Students Essential</span> <br>
-                                                                <p style="text-white">Find out all you need to know about courses starting in May.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 column">
+                                            <ul>
+                                                <li>
+                                                    <a class="service-item" href="{{ route('studyInUk', 'Why Choose UK') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                                            alt="Title">
+                                                        <span>Why Choose UK</span>
+                                                        <p style="text-white">Discover why the UK is great for both
+                                                            education and culture.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item"
+                                                        href="{{ route('eventDetails', 'What Can I Study?') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/whanCanIStudy.png') }}"
+                                                            alt="Title">
+                                                        <span>What Can I Study?</span> <br>
+                                                        <p style="text-white">Art, science, philosophy... Explore your
+                                                            options to find your passion.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item" href="{{ route('studyInUk', 'January Intake') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/jan.original.png') }}"
+                                                            alt="Title">
+                                                        <span>January Intake</span> <br>
+                                                        <p style="text-white">Find out all you need to know about
+                                                            courses starting in January.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item" href="{{ route('studyInUk', 'May Intake') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/may.original.png') }}"
+                                                            alt="Title">
+                                                        <span>May Intake</span> <br>
+                                                        <p style="text-white">Find out all you need to know about
+                                                            courses starting in May.</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 column">
+                                            <ul>
+                                                <li>
+                                                    <a class="service-item" href="{{ route('studyInUk', 'September Intake') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/sep.original.png') }}"
+                                                            alt="Title">
+                                                        <span>September Intake</span>
+                                                        <p style="text-white">Discover why the UK is great for both
+                                                            education and culture.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item"
+                                                        href="{{ route('eventDetails', 'Cost of Study') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/cost-of-study.original.png') }}"
+                                                            alt="Title">
+                                                        <span>Cost of Study</span> <br>
+                                                        <p style="text-white">Art, science, philosophy... Explore your
+                                                            options to find your passion.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item" href="{{ route('eventDetails', 'UCAS') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/ucas.original.png') }}"
+                                                            alt="Title">
+                                                        <span>UCAS</span> <br>
+                                                        <p style="text-white">Find out all you need to know about
+                                                            courses starting in January.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="service-item"
+                                                        href="{{ route('eventDetails', 'Students Essential') }}">
+                                                        <img src="{{ asset('frontend/assets/images/study/student-essentials.original.png') }}"
+                                                            alt="Title">
+                                                        <span>Students Essential</span> <br>
+                                                        <p style="text-white">Find out all you need to know about
+                                                            courses starting in May.</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                        {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
                                                         @forelse($chunk as $service)
                                                         <li>
                                                             <a class="service-item"
                                                                 href="{{ route('serviceDetails', $service->slug) }}">
-                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="{{ $service->title }}">
-                                                                <span>{{ $service->title }}</span>
-                                                            </a>
-                                                        </li>
-                                                        @empty
-                                                        <li><a href="#">No Services Available</a></li>
-                                                        @endforelse
-                                                    </ul>
-                                                </div>
-                                                @endforeach--}}
-
-                                            </div>
-
-                                        </div>
+                                        <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                            alt="{{ $service->title }}">
+                                        <span>{{ $service->title }}</span>
+                                        </a>
+                                        </li>
+                                        @empty
+                                        <li><a href="#">No Services Available</a></li>
+                                        @endforelse
+                                        </ul>
                                     </div>
-                                </li>
-                                <li
-                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('service') }}">Universities</a>
-                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
-                                        {{--@foreach($servica as $service)
-                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
-                                        @endforeach--}}
-                                        <li><a href="#">Find a University</a></li> 
-                                        <li><a href="#">Rankings</a></li> 
-                                        <li><a href="#">Russell Group Industries</a></li> 
-                                        <li><a href="#">Top Universities In the UK</a></li>       
-                                        <li><a href="#">University Of Scotland</a></li>       
-                                    </ul>
+                                    @endforeach--}}
 
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
+                                </div>
 
-                                            <div class="megamenu-header">
-                                                <p>Tools and more to help you pick your university.</p>
-                                            </div>
+                            </div>
+                        </div>
+                        </li>
+                        <li class="dropdown {{ request()->routeIs('search') ? 'active current' : '' }} has-submenu">
+                            <a
+                                href="{{ route('search', ['action' => 'location-data', 'location' => 'London']) }}">Universities</a>
 
-                                            <div class="row clearfix">
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/university/find-uni.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Find a University</span> 
-                                                                <p style="text-white">Browse over 150 top universities to find the perfect place to study.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/university/universityRanking.png') }}"
-                                                                    alt="Title">
-                                                                <span>Rankings</span> <br>
-                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
-                                                                    alt="Title">
-                                                                <span>University Of Scotland</span> <br>
-                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
-                                                            </a>
-                                                        </li>
+                            <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                                {{--@foreach($servica as $service)
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
+                        </li>
+                        @endforeach--}}
+                        <li><a href="{{ route('search', ['action' => 'location-data', 'location' => 'London']) }}">Find
+                                a University</a></li>
+                        <li><a href="{{ route('eventDetails', 'Rankings') }}">Rankings</a></li>
+                        <li><a href="{{ route('eventDetails', 'Russell Group Industries') }}">Russell Group
+                                Industries</a></li>
+                        <li><a href="{{ route('eventDetails', 'Top Universities In the UK') }}">Top Universities In the
+                                UK</a></li>
+                        <li><a href="{{ route('eventDetails', 'University Of Scotland') }}">University Of Scotland</a>
+                        </li>
+                        </ul>
 
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
-                                                                    alt="Title">
-                                                                <span>Russell Group Industries</span> <br>
-                                                                <p style="text-white">Discover Russell Group universities known for their research excellence and prestige.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/university/student-essentials.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Top Universities In the UK</span> <br>
-                                                                <p style="text-white">Choose from the best UK universities using our comprehensive rankings guide.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                        <div class="megamenu">
+                            <div class="megamenu-inner-wrapper">
 
-                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                                <div class="megamenu-header">
+                                    <p>Tools and more to help you pick your university.</p>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-6 column">
+                                        <ul>
+                                            <li>
+                                                <a class="service-item"
+                                                    href="{{ route('search', ['action' => 'location-data', 'location' => 'London']) }}">
+                                                    <img src="{{ asset('frontend/assets/images/university/find-uni.original.png') }}"
+                                                        alt="Title">
+                                                    <span>Find a University</span>
+                                                    <p style="text-white">Browse over 150 top universities to find the
+                                                        perfect place to study.</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="service-item" href="{{ route('eventDetails', 'Rankings') }}">
+                                                    <img src="{{ asset('frontend/assets/images/university/universityRanking.png') }}"
+                                                        alt="Title">
+                                                    <span>Rankings</span> <br>
+                                                    <p style="text-white">Choose from the best UK universities using our
+                                                        comprehensive rankings guide.</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="service-item"
+                                                    href="{{ route('eventDetails', 'University Of Scotland') }}">
+                                                    <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
+                                                        alt="Title">
+                                                    <span>University Of Scotland</span> <br>
+                                                    <p style="text-white">Choose from the best UK universities using our
+                                                        comprehensive rankings guide.</p>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 column">
+                                        <ul>
+                                            <li>
+                                                <a class="service-item"
+                                                    href="{{ route('eventDetails', 'Discover Russell Group universities known for their research excellence and prestige.') }}">
+                                                    <img src="{{ asset('frontend/assets/images/university/russelGroupUniversity.png') }}"
+                                                        alt="Title">
+                                                    <span>Russell Group Industries</span> <br>
+                                                    <p style="text-white">Discover Russell Group universities known for
+                                                        their research excellence and prestige.</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="service-item"
+                                                    href="{{ route('eventDetails', 'Top Universities In the UK') }}">
+                                                    <img src="{{ asset('frontend/assets/images/university/student-essentials.original.png') }}"
+                                                        alt="Title">
+                                                    <span>Top Universities In the UK</span> <br>
+                                                    <p style="text-white">Choose from the best UK universities using our
+                                                        comprehensive rankings guide.</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
                                                         @forelse($chunk as $service)
                                                         <li>
                                                             <a class="service-item"
                                                                 href="{{ route('serviceDetails', $service->slug) }}">
-                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="{{ $service->title }}">
-                                                                <span>{{ $service->title }}</span>
-                                                            </a>
-                                                        </li>
-                                                        @empty
-                                                        <li><a href="#">No Services Available</a></li>
-                                                        @endforelse
-                                                    </ul>
-                                                </div>
-                                                @endforeach--}}
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-
-                                <li class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('service') }}">Courses
-                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
-                                        {{--@foreach($servica as $service)
-                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a></li>
-                                        @endforeach--}}
-                                        <li><a href="#">Foundation</a></li> 
-                                        <li><a href="#">Undergraduate Degree</a></li> 
-                                        <li><a href="#">Top-Up Degrees</a></li> 
-                                        <li><a href="#">Pre-Masters</a></li> 
-                                        <li><a href="#">Masters Degree</a></li> 
-                                        <li><a href="#">PhD-Degreedy</a></li> 
+                                    <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                        alt="{{ $service->title }}">
+                                    <span>{{ $service->title }}</span>
+                                    </a>
+                                    </li>
+                                    @empty
+                                    <li><a href="#">No Services Available</a></li>
+                                    @endforelse
                                     </ul>
+                                </div>
+                                @endforeach--}}
+
+                            </div>
+
+                        </div>
+                </div>
+                </li>
+
+
+                <li class="dropdown  has-submenu">
+                    <a href="#">Courses
+                        <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                            {{--@foreach($servica as $service)
+                                        <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}
+                    </a>
+                </li>
+                @endforeach--}}
+                <li><a href="{{ route('eventDetails', 'Foundation') }}">Foundation</a></li>
+                <li><a href="{{ route('eventDetails', 'Undergraduate Degree') }}">Undergraduate Degree</a></li>
+                <li><a href="{{ route('eventDetails', 'Top-Up Degrees') }}">Top-Up Degrees</a></li>
+                <li><a href="{{ route('eventDetails', 'Pre-Masters') }}">Pre-Masters</a></li>
+                <li><a href="{{ route('eventDetails', 'Masters Degree') }}">Masters Degree</a></li>
+                <li><a href="{{ route('eventDetails', 'PhD-Degreedy') }}">PhD-Degreedy</a></li>
+                </ul>
 
 
 
@@ -297,319 +315,386 @@
 
 
 
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
+                <div class="megamenu">
+                    <div class="megamenu-inner-wrapper">
 
-                                            <div class="megamenu-header">
-                                                <p>All your options for your Higher Education journey</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
-                                            </div>
+                        <div class="megamenu-header">
+                            <p>All your options for your Higher Education journey</p>
+                            <a href="#" class="btn btn-primary"
+                                style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                View All <i class="fas fa-external-link-alt" style="color: #ffffff !important;"></i>
+                            </a>
+                        </div>
 
-                                            <div class="row clearfix">
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/found.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Foundation</span> 
-                                                                <p style="text-white">Foundation courses help international students get ready for university.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/Icon.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Undergraduate Degree</span> <br>
-                                                                <p style="text-white">Explore undergraduate degrees in the UK for almost any career path.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/advanced-entry.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Top-Up Degrees</span> <br>
-                                                                <p style="text-white">Learn about Top-Up degrees to complete your degree.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/pre-master.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Pre-Masters</span> 
-                                                                <p style="text-white">Find Pre-Masters programs in the UK to prepare you for postgraduate study.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/master.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Masters Degree</span> <br>
-                                                                <p style="text-white">Explore Master's degrees in the UK for further academic and career growth.</p>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/course/phd.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>PhD-Degree</span> <br>
-                                                                <p style="text-white">Discover PhD opportunities in the UK for advanced research and expertise.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-6 column">
+                                <ul>
+                                    <li>
+                                        <a class="service-item" href="{{ route('eventDetails', 'Foundation') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/found.original.png') }}"
+                                                alt="Title">
+                                            <span>Foundation</span>
+                                            <p style="text-white">Foundation courses help international students get
+                                                ready for university.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="service-item"
+                                            href="{{ route('eventDetails', 'Undergraduate Degree') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/Icon.original.png') }}"
+                                                alt="Title">
+                                            <span>Undergraduate Degree</span> <br>
+                                            <p style="text-white">Explore undergraduate degrees in the UK for almost any
+                                                career path.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="service-item" href="{{ route('eventDetails', 'Top-Up Degrees') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/advanced-entry.original.png') }}"
+                                                alt="Title">
+                                            <span>Top-Up Degrees</span> <br>
+                                            <p style="text-white">Learn about Top-Up degrees to complete your degree.
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 column">
+                                <ul>
+                                    <li>
+                                        <a class="service-item" href="{{ route('eventDetails', 'Pre-Masters') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/pre-master.original.png') }}"
+                                                alt="Title">
+                                            <span>Pre-Masters</span>
+                                            <p style="text-white">Find Pre-Masters programs in the UK to prepare you for
+                                                postgraduate study.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="service-item" href="{{ route('eventDetails', 'Masters Degree') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/master.original.png') }}"
+                                                alt="Title">
+                                            <span>Masters Degree</span> <br>
+                                            <p style="text-white">Explore Master's degrees in the UK for further
+                                                academic and career growth.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="service-item" href="{{ route('eventDetails', 'PhD-Degree') }}">
+                                            <img src="{{ asset('frontend/assets/images/course/phd.original.png') }}"
+                                                alt="Title">
+                                            <span>PhD-Degree</span> <br>
+                                            <p style="text-white">Discover PhD opportunities in the UK for advanced
+                                                research and expertise.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                                {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
+                            {{--@foreach($servica->chunk(ceil($servica->count()/3)) as $chunk)
                                                 <div class="col-lg-6 column">
                                                     <ul>
                                                         @forelse($chunk as $service)
                                                         <li>
                                                             <a class="service-item"
                                                                 href="{{ route('serviceDetails', $service->slug) }}">
-                                                                <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
-                                                                    alt="{{ $service->title }}">
-                                                                <span>{{ $service->title }}</span>
-                                                            </a>
-                                                        </li>
-                                                        @empty
-                                                        <li><a href="#">No Services Available</a></li>
-                                                        @endforelse
-                                                    </ul>
-                                                </div>
-                                                @endforeach--}}
+                            <img src="{{ asset('frontend/assets/images/study/why.original.png') }}"
+                                alt="{{ $service->title }}">
+                            <span>{{ $service->title }}</span>
+                            </a>
+                            </li>
+                            @empty
+                            <li><a href="#">No Services Available</a></li>
+                            @endforelse
+                            </ul>
+                        </div>
+                        @endforeach--}}
 
-                                            </div>
+                    </div>
 
-                                        </div>
-                                    </div>
-                                </li>
+                </div>
+            </div>
+            </li>
 
-                                <li
-                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('service') }}">Pathway</a>
-                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
-                                        <li><a href="#">Pathway Institutions</a></li> 
-                                        <li><a href="#">Pathway Courses</a></li>    
-                                    </ul>
+            {{--<li
+                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }}
+            has-submenu">
+            <a href="{{ route('service') }}">Pathway</a>
+            <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                <li><a href="#">Pathway Institutions</a></li>
+                <li><a href="#">Pathway Courses</a></li>
+            </ul>
 
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
+            <div class="megamenu">
+                <div class="megamenu-inner-wrapper">
 
-                                            <div class="megamenu-header">
-                                                <p>Explore pathways to help you achieve your academic goals.</p>
-                                            </div>
+                    <div class="megamenu-header">
+                        <p>Explore pathways to help you achieve your academic goals.</p>
+                    </div>
 
-                                            <div class="row clearfix">
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/pathway/phd.original.png') }}"
-                                                                    alt="Title">
-                                                                <span>Pathway Institutions</span> 
-                                                                <p style="text-white">Discover top institutes offering pathway programs to prepare for university.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 column">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="service-item"
-                                                                href="#">
-                                                                <img src="{{ asset('frontend/assets/images/pathway/russelGroupUniversity.png') }}"
-                                                                    alt="Title">
-                                                                <span>Pathway Courses</span> <br>
-                                                                <p style="text-white">Explore pathway courses designed to brige your academic journey.</p>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="dropdown {{ request()->routeIs('service') ? 'active current' : '' }} has-submenu">
-                                    <a href="{{ route('service') }}">Global Offices</a>
-                                    <ul class="mobile-submenu d-block d-lg-none d-md-none ">
-                                        <li><a href="#">Algeria</a></li> 
-                                        <li><a href="#">Kuwait</a></li>    
-                                        <li><a href="#">Pakistan</a></li>    
-                                        <li><a href="#">Bangladesh</a></li>    
-                                        <li><a href="#">Morocco</a></li> 
-                                        <li><a href="#">Qatar</a></li>      
-                                        <li><a href="#">Nepal</a></li>    
-                                        <li><a href="#">Uk</a></li>    
-                                    </ul>
-
-                                    <div class="megamenu">
-                                        <div class="megamenu-inner-wrapper">
-
-                                            <div class="megamenu-header">
-                                                <p>Discover our global footprint.</p>
-                                                <a href="#" class="btn btn-primary"
-                                                    style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                                                    View All <i class="fas fa-external-link-alt"
-                                                        style="color: #ffffff !important;"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="row clearfix">
-                                                {{-- Column 1 --}}
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/algeria.original.png') }}"
-                                                                    alt="Algeria Flag"> <span>Algeria</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
-                                                                    alt="Bangladesh Flag"> <span>Bangladesh</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/egypt.original.png') }}"
-                                                                    alt="Egypt Flag"> <span>Egypt</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
-                                                                    alt="India Flag"> <span>India</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                {{-- Column 2 --}}
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/kuwait.original.png') }}"
-                                                                    alt="KuwaitFlag"> <span>Kuwait</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
-                                                                    alt="Morocco Flag"> <span>Morocco</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
-                                                                    alt="Nepal Flag"> <span>Nepal</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/ng-flag.original.png') }}"
-                                                                    alt="Nigeria Flag"> <span>Nigeria</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                {{-- Column 3 --}}
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/pak-flag.original.png') }}"
-                                                                    alt="Pakistan Flag"> <span>Pakistan</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/qatar-flag.original.png') }}"
-                                                                    alt="Qatar Flag"> <span>Qatar</span><i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/singapore.original.png') }}"
-                                                                    alt="Singapore Flag"> <span>Singapore</span><i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/uk-flag.original.png') }}"
-                                                                    alt="UK Flag"> <span>UK</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                {{-- Column 4 --}}
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
-                                                                    alt="Bangladesh Flag"> <span>Bangladesh</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
-                                                                    alt="Morocco Flag"> <span>Morocco</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
-                                                                    alt="Nepal Flag"> <span>Nepal</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                        <li><a class="location-item" href="#"><img
-                                                                    src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
-                                                                    alt="India Flag"> <span>India</span> <i
-                                                                    class="fi fi-br-phone-call"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="{{ request()->routeIs('event') ? 'active current' : '' }}">
-                                    <a href="{{ route('event') }}">Event</a>
-                                </li>
-                                <li class="{{ request()->routeIs('blog') ? 'active current' : '' }}">
-                                    <a href="{{ route('blog') }}">Our Blogs</a>
-                                </li>
-                                <li class="{{ request()->routeIs('application') ? 'active current' : '' }}">
-                                    <a href="{{ route('application') }}"><span  class="text-danger">Apply Now ></span></a>
+                    <div class="row clearfix">
+                        <div class="col-lg-6 column">
+                            <ul>
+                                <li>
+                                    <a class="service-item" href="#">
+                                        <img src="{{ asset('frontend/assets/images/pathway/phd.original.png') }}"
+                                            alt="Title">
+                                        <span>Pathway Institutions</span>
+                                        <p style="text-white">Discover top institutes offering pathway programs to
+                                            prepare for university.</p>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
-                    </nav>
-                </div>
-
-                <!-- Right Side Elements (Globe Icon + Button) -->
-                <div class="header-right-elements">
-                    <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
-                    <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
-                    <a href="{{ route('consultation') }}"><button class="btn btn-danger">Free Consultation</button></a>
-                </div>
-
-                <!-- Sticky Header -->
-                <div class="sticky-header">
-                    <div class="container-fluid">
-                        <div class="outer-box clearfix">
-                            <div class="logo-box pull-left">
-                                <figure class="logo">
-                                    <a href="{{ route('home') }}">
-                                        <img src="{{ route('imagecache', ['template'=>'original','filename'=>$ws->logo()]) }}"
-                                            alt="{{ $ws->website_title ?? '' }}" width="210" height="auto">
+                        <div class="col-lg-6 column">
+                            <ul>
+                                <li>
+                                    <a class="service-item" href="#">
+                                        <img src="{{ asset('frontend/assets/images/pathway/russelGroupUniversity.png') }}"
+                                            alt="Title">
+                                        <span>Pathway Courses</span> <br>
+                                        <p style="text-white">Explore pathway courses designed to brige your academic
+                                            journey.</p>
                                     </a>
-                                </figure>
-                            </div>
-                            <div class="menu-area pull-right">
-                                <nav class="main-menu clearfix">
-                                    <!-- menu cloned via JS -->
-                                </nav>
-                            </div>
-                            <!-- Sticky Header Right Elements -->
-                            <div class="header-right-elements">
-                                <a href="{{ route('consultation') }}" class="show-on-desktop"><i class="fas fa-globe"></i></a>
-                                <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
-                                <button class="btn btn-danger">Free Consultation</button>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
+                </div>
+            </div>
+            </li>--}}
+            <li class="dropdown  has-submenu">
+                <a href="#">Global</a>
+                <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                    <li><a href="#">Algeria</a></li>
+                    <li><a href="#">Kuwait</a></li>
+                    <li><a href="#">Pakistan</a></li>
+                    <li><a href="#">Bangladesh</a></li>
+                    <li><a href="#">Morocco</a></li>
+                    <li><a href="#">Qatar</a></li>
+                    <li><a href="#">Nepal</a></li>
+                    <li><a href="#">Uk</a></li>
+                </ul>
+
+                <div class="megamenu">
+                    <div class="megamenu-inner-wrapper">
+
+                        <div class="megamenu-header">
+                            <p>Discover our global footprint.</p>
+                            <a href="#" class="btn btn-primary"
+                                style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
+                                View All <i class="fas fa-external-link-alt" style="color: #ffffff !important;"></i>
+                            </a>
+                        </div>
+
+                        <div class="row clearfix">
+                            {{-- Column 1 --}}
+                            <div class="col-lg-3 column">
+                                <ul>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/algeria.original.png') }}"
+                                                alt="Algeria Flag"> <span>Algeria</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
+                                                alt="Bangladesh Flag"> <span>Bangladesh</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/egypt.original.png') }}"
+                                                alt="Egypt Flag"> <span>Egypt</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
+                                                alt="India Flag"> <span>India</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                </ul>
+                            </div>
+                            {{-- Column 2 --}}
+                            <div class="col-lg-3 column">
+                                <ul>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/kuwait.original.png') }}"
+                                                alt="KuwaitFlag"> <span>Kuwait</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
+                                                alt="Morocco Flag"> <span>Morocco</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
+                                                alt="Nepal Flag"> <span>Nepal</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/ng-flag.original.png') }}"
+                                                alt="Nigeria Flag"> <span>Nigeria</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                </ul>
+                            </div>
+                            {{-- Column 3 --}}
+                            <div class="col-lg-3 column">
+                                <ul>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/pak-flag.original.png') }}"
+                                                alt="Pakistan Flag"> <span>Pakistan</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/qatar-flag.original.png') }}"
+                                                alt="Qatar Flag"> <span>Qatar</span><i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/singapore.original.png') }}"
+                                                alt="Singapore Flag"> <span>Singapore</span><i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/uk-flag.original.png') }}"
+                                                alt="UK Flag"> <span>UK</span> <i class="fi fi-br-phone-call"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{-- Column 4 --}}
+                            <div class="col-lg-3 column">
+                                <ul>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
+                                                alt="Bangladesh Flag"> <span>Bangladesh</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
+                                                alt="Morocco Flag"> <span>Morocco</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
+                                                alt="Nepal Flag"> <span>Nepal</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                    <li><a class="location-item" href="#"><img
+                                                src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
+                                                alt="India Flag"> <span>India</span> <i
+                                                class="fi fi-br-phone-call"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown  {{ request()->routeIs('event') || request()->routeIs('blog') ? 'active current' : '' }} has-submenu">
+                <a href="#">Miscellaneous</a>
+                <ul class="mobile-submenu d-block d-lg-none d-md-none ">
+                    <li><a href="{{ route('event') }}">Event</a></li>
+                    <li><a href="{{ route('blog') }}">Our Blogs</a></li>
+                </ul>
+
+                <div class="megamenu">
+                    <div class="megamenu-inner-wrapper">
+
+                        <div class="megamenu-header">
+                            <p>Explore pathways to help you achieve your academic goals.</p>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-6 column">
+                                <ul>
+                                    <li>
+                                        <a class="service-item" href="{{ route('event') }}">
+                                            <img src="{{ asset('frontend/assets/images/pathway/phd.original.png') }}"
+                                                alt="Title">
+                                            <span>Event</span>
+                                            <p style="text-white">Discover top institutes offering pathway programs to
+                                                prepare for university.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 column">
+                                <ul>
+                                    <li>
+                                        <a class="service-item" href="{{ route('blog') }}">
+                                            <img src="{{ asset('frontend/assets/images/pathway/russelGroupUniversity.png') }}"
+                                                alt="Title">
+                                            <span>Our Blogs</span> <br>
+                                            <p style="text-white">Explore pathway courses designed to brige your
+                                                academic journey.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            {{--<li class="{{ request()->routeIs('event') ? 'active current' : '' }}">
+            <a href="{{ route('event') }}">Event</a>
+            </li>
+            <li class="{{ request()->routeIs('blog') ? 'active current' : '' }}">
+                <a href="{{ route('blog') }}">Blogs</a>
+            </li>--}}
+            <li class="{{ request()->routeIs('application') ? 'active current' : '' }}">
+                <a href="{{ route('application') }}"><span style="color: #3B308B">Apply Now ></span></a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
+    <!-- Right Side Elements (Globe Icon + Button) -->
+    <div class="header-right-elements">
+        <!-- <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a> -->
+        <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
+        <a href="tel:+8801898828980">
+            <button class="btn" style="background:#3B308B;color:#fff;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" class="phone-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z">
+                    </path>
+                </svg>
+                +8801898-828980
+            </button>
+        </a>
+
+    </div>
+
+    <!-- Sticky Header -->
+    <div class="sticky-header">
+        <div class="container-fluid">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo">
+                        <a href="{{ route('home') }}">
+                            <img src="{{ route('imagecache', ['template'=>'original','filename'=>$ws->logo()]) }}"
+                                alt="{{ $ws->website_title ?? '' }}" width="210" height="auto">
+                        </a>
+                    </figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <nav class="main-menu clearfix">
+                        <!-- menu cloned via JS -->
+                    </nav>
+                </div>
+                <!-- Right Side Elements (Globe Icon + Button) -->
+                <div class="header-right-elements">
+                    <!-- <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a> -->
+                    <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
+                    <a href="tel:+8801898828980">
+                        <button class="btn" style="background:#3B308B;color:#fff;">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="white" class="phone-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z">
+                                </path>
+                            </svg>
+                            +8801898-828980
+                        </button>
+                    </a>
+
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 </header>
 <!-- MAIN HEADER END -->
@@ -964,6 +1049,7 @@ a.service-item span {
     font-size: 16px !important;
     font-weight: 500 !important;
 }
+
 a.service-item p {
     flex-grow: 0 !important;
     flex-shrink: 0 !important;
@@ -1468,26 +1554,27 @@ a.location-item i {
         display: none !important;
     }
 
-/* Hide submenu by default */
-.mobile-navigation .navigation li.has-submenu .mobile-submenu {
-    display: none !important;
-    padding-left: 10px;
-    margin-left: 5px;
-    border-left: 2px solid #eee;   /* optional, remove if not needed */
-}
+    /* Hide submenu by default */
+    .mobile-navigation .navigation li.has-submenu .mobile-submenu {
+        display: none !important;
+        padding-left: 10px;
+        margin-left: 5px;
+        border-left: 2px solid #eee;
+        /* optional, remove if not needed */
+    }
 
-/* Show only when clicked */
-.mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
-    display: block !important;
-}
+    /* Show only when clicked */
+    .mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
+        display: block !important;
+    }
 
-/* Submenu link style */
-.mobile-navigation .navigation li.has-submenu .mobile-submenu li a {
-    font-size: 13px;
-    color: #555;
-    padding: 8px 15px;
-    background: transparent;
-}
+    /* Submenu link style */
+    .mobile-navigation .navigation li.has-submenu .mobile-submenu li a {
+        font-size: 13px;
+        color: #555;
+        padding: 8px 15px;
+        background: transparent;
+    }
 
 }
 
@@ -1558,9 +1645,9 @@ a.location-item i {
     .mobile-navigation .navigation li.has-submenu .mobile-submenu {
         display: none;
         list-style: none;
-        padding-left: 12px;   
-        margin-left: 8px;    
-        border-left: 2px solid #eee; 
+        padding-left: 12px;
+        margin-left: 8px;
+        border-left: 2px solid #eee;
     }
 
     .mobile-navigation .navigation li.has-submenu.open .mobile-submenu {
@@ -1616,9 +1703,6 @@ a.location-item i {
     grid-row: 2 !important;
     margin-top: 4px !important;
 }
-
-
-
 </style>
 
 <!-- JS -->

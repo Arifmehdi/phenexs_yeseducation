@@ -1,6 +1,6 @@
 <section class="newsletter-section">
     <div class="container">
-        <h2>Stay Updated with YES EDUCATION</h2>
+        <h2>Stay Updated with <span style="color:#DB1F2A;">YES EDUCATION</span></h2>
         <p>Join our newsletter for the latest updates, insights, and special offers. Don't miss out on any of our
             exciting news!</p>
 
@@ -67,7 +67,7 @@
 
 
 .newsletter-form input[type="email"]:focus {
-    border-color: #D10D2B;
+    border-color: #3B308B;
     box-shadow: 0 0 5px rgba(209, 13, 43, 0.5);
 }
 
@@ -77,7 +77,7 @@
     font-size: 16px;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(90deg, #171F67, #D10D2B);
+    background: linear-gradient(90deg, #171F67, #3B308B);
     border: none;
     border-radius: 10px;
     cursor: pointer;

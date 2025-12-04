@@ -185,4 +185,8 @@
     </div>
 </section>
 <!-- contact-page-section end -->
+
+<x-student-reviews />
+
+<x-student-subscription />
 @endsection

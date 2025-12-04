@@ -86,7 +86,7 @@
                     $user=\Illuminate\Support\Facades\Auth::user();
                 @endphp
                 <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" role="button">
-                    <i class="fas fa-user-alt mr-1"></i>{{$name[0]}}
+                    <i class="fas fa-user-alt mr-1"></i>{{ $name[0] }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
@@ -172,31 +172,6 @@
                         </ul>
                     </li>
 
-                    {{--<li class="nav-item {{ session('lsbm') == 'roles'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'roles'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-diagnoses"></i>
-                            <p>
-                               Role Management
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('admin.manage-role')}}" class="nav-link {{ session('lsbsm') == 'allRoles'? ' active ' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Manage User Role</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('admin.assign-role')}}" class="nav-link {{ session('lsbsm') == 'assignRole'? ' active ' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Assign User Role</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>--}}
-
-
                     <li class="nav-item {{ session('lsbm') == 'slider'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'slider'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-search-location"></i>
@@ -246,127 +221,6 @@
                         </ul>
                     </li>
 
-                    {{--<li class="nav-item {{ session('lsbm') == 'categories'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'categories'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Category
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('categories.index')}}" class="nav-link {{ session('lsbsm') == 'allDoctors' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Category</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('categories.create')}}" class="nav-link {{ session('lsbsm') == 'createDoctors' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Category</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'services'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'services'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-passport"></i>
-                            <p>
-                                Service
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('services.index')}}" class="nav-link {{ session('lsbsm') == 'allHospitals' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Service</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('services.create')}}" class="nav-link {{ session('lsbsm') == 'createHospitals' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Service</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'departments'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'departments'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-passport"></i>
-                            <p>
-                                Departments
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('departments.index')}}" class="nav-link {{ session('lsbsm') == 'alldepartments' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Departments</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('departments.create')}}" class="nav-link {{ session('lsbsm') == 'createdepartments' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Departments</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'chambers'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'chambers'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Chambers
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('chambers.index')}}" class="nav-link {{ session('lsbsm') == 'allchambers' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Chambers</p>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('chambers.create')}}" class="nav-link {{ session('lsbsm') == 'createchambers' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Chamber</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'mediaM'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'mediaM'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-pager"></i>
-                            <p>
-                                Media
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('medias.index') }}" class="nav-link {{ session('lsbsm') == 'mediaSM'? ' active ' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Media</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>--}}
                     <li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
@@ -406,15 +260,9 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
-                        <a href="{{ route('consultations.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
-                            <i class="nav-icon fas fa-headset"></i> {{-- Using a headset icon for consultations --}}
-                            <p>All Consultations</p>
-                        </a>
-                    </li>
                     <li class="nav-item {{ session('lsbm') == 'applications'? ' menu-open ' : ''}}">
                         <a href="{{ route('applications.index') }}" class="nav-link {{ session('lsbsm') == 'allApplications' ? ' active ' : '' }}">
-                            <i class="nav-icon fas fa-file-alt"></i> {{-- Using a file-alt icon for applications --}}
+                            <i class="nav-icon fas fa-file-alt"></i> 
                             <p>Application Forms</p>
                         </a>
                     </li>
@@ -506,74 +354,6 @@
                         </ul>
                     </li>
 
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
-                            <i class="nav-icon far fa-share-square"></i>
-                            <p>
-                                News
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-
-                            <li class="nav-item">
-                                <a href="{{route('categories.index')}}" class="nav-link {{ session('lsbsm') == 'allCategories' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All  Category</p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{route('categories.create')}}" class="nav-link {{ session('lsbsm') == 'createCategory' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create  Category</p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{route('news.index')}}" class="nav-link {{ session('lsbsm') == 'allPosts' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All News</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('news.create')}}" class="nav-link {{ session('lsbsm') == 'storePost' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create News</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-
-                   {{-- <li class="nav-item {{ session('lsbm') == 'ambulances'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'ambulances'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Ambulance Services
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('ambulances.index')}}" class="nav-link {{ session('lsbsm') == 'allAmbulances' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Ambulance Services</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('ambulances.create')}}" class="nav-link {{ session('lsbsm') == 'createAmbulance' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Ambulance Service</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-
                     <li class="nav-item {{ session('lsbm') == 'galleries' ? ' menu-open ' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'galleries' ? ' active ' : '' }}">
                             <i class="nav-icon fas fas fa-bell"></i>
@@ -601,23 +381,6 @@
                         </ul>
                     </li>
 
-                    {{--<li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-quote-right"></i>
-                            <p>
-                                About Us
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('testimonials.index') }}" class="nav-link {{ session('lsbsm') == 'testimonialsAll' ? ' active ' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>About Section</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>--}}
                     <li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">
                             <i class="nav-icon fas fa-quote-right"></i>
@@ -641,93 +404,18 @@
                             </li>
                         </ul>
                     </li>
-
-                    {{--<li class="nav-item {{ session('lsbm') == 'appointments'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'appointments'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-pager"></i>
-                            <p>
-                               Appointment List
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
+                                       <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
+                        <a href="{{ route('consultations.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-headset"></i> 
+                            <p>All Consultations</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('allAppointments') }}" class="nav-link {{ session('lsbsm') == 'allAppointments'? ' active ' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Appointments</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-
-                    {{-- Products --}}
-                    {{--<li class="nav-item {{ session('lsbm') == 'product'? ' menu-open ' : ''}}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'product'? ' active ' : ''}}">
-                            <i class="nav-icon fas fa-shopping-cart"></i>
-                            <p>
-                                Products
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
+                        <a href="{{ route('admin.chats.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-comment"></i> 
+                            <p>All Chats</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('admin.productCategoriesAll') }}" class="nav-link {{ session('lsbsm') == 'productCategoriesAll' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Categories All</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.productsAll') }}" class="nav-link {{ session('lsbsm') == 'productsAll' ? ' active ' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Products All</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>--}}
-
-                                            
-                        {{-- Orders --}}
-                    {{--<li class="nav-item {{ session('lsbm') == 'order' ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'order' ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-shopping-bag"></i>
-                            <p>
-                            Orders
-                            <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                            <a href="{{ route('admin.orderList') }}" class="nav-link {{ session('lsbsm') == 'orderList' ? 'active' : '' }}">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Order List</p>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>--}
-
-                   {{--<li class="nav-item {{ session('lsbm') == 'shipping' ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ session('lsbm') == 'shipping' ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-shipping-fast"></i>
-                            <p>
-                            Shipping Method
-                            <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                            <a href="{{ route('shipping.index') }}" class="nav-link {{ session('lsbsm') == 'shippingMethod' ? 'active' : '' }}">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Method List</p>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>--}}
-                   
-                   
-
+                    </li>
                     <li class="nav-item {{ session('lsbm') == 'websiteparam'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'websiteparam'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-desktop"></i>
@@ -943,7 +631,264 @@
 </script>
 
 @stack('js')
+
+<!-- ADMIN CHAT WIDGET -->
+<div id="adminChatWidget" class="admin-chat-widget">
+    <div id="adminChatToggle" class="admin-chat-toggle">
+        <i class="fas fa-comments"></i>
+        <span id="adminChatNotification" class="admin-chat-notification-badge" style="display: none;"></span>
+    </div>
+    <div id="adminChatContainer" class="admin-chat-container" style="display: none;">
+        <div class="admin-chat-header">
+            <h3>Conversations</h3>
+        </div>
+        <div id="adminConversationList" class="admin-chat-conversation-list">
+            <!-- Conversation list will be populated here -->
+        </div>
+        <div id="adminActiveChat" class="admin-chat-active-chat" style="display: none;">
+            <div class="admin-chat-active-header">
+                <button id="backToConversations">&larr; Back</button>
+                <h4 id="activeChatUserName"></h4>
+            </div>
+            <div id="adminActiveChatBody" class="admin-chat-body">
+                <!-- Messages will be populated here -->
+            </div>
+            <div class="admin-chat-footer">
+                <input type="text" id="adminMessageInput" placeholder="Type your message...">
+                <button id="adminSendMessageBtn">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Admin Chat Widget Styles */
+.admin-chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1050; }
+.admin-chat-toggle { width: 60px; height: 60px; background-color: #007bff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative; }
+.admin-chat-notification-badge { position: absolute; top: 0; right: 0; width: 20px; height: 20px; background-color: red; color: white; border-radius: 50%; font-size: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.admin-chat-container { width: 350px; height: 500px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; flex-direction: column; overflow: hidden; }
+.admin-chat-header { padding: 15px; background-color: #f7f7f7; border-bottom: 1px solid #ddd; }
+.admin-chat-header h3 { margin: 0; font-size: 18px; color: #333; }
+.admin-chat-conversation-list { flex: 1; overflow-y: auto; }
+.admin-chat-conversation-list .conversation-item { padding: 15px; border-bottom: 1px solid #eee; cursor: pointer; position: relative; }
+.admin-chat-conversation-list .conversation-item:hover { background-color: #f5f5f5; }
+.admin-chat-conversation-list .conversation-item strong { display: block; color: #333; }
+.admin-chat-conversation-list .conversation-item small { color: #888; }
+.admin-chat-conversation-list .conversation-item .unread-badge { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background-color: #007bff; color: white; font-size: 10px; padding: 3px 6px; border-radius: 10px; }
+
+.admin-chat-active-chat { display: flex; flex-direction: column; width: 100%; height: 100%; }
+.admin-chat-active-header { display: flex; align-items: center; padding: 10px; background-color: #f7f7f7; border-bottom: 1px solid #ddd; }
+.admin-chat-active-header button { background: none; border: none; font-size: 16px; margin-right: 10px; cursor: pointer; color: #007bff; }
+.admin-chat-active-header h4 { margin: 0; font-size: 16px; color: #333; }
+.admin-chat-body { flex: 1; padding: 10px; overflow-y: auto; background-color: #fdfdfd; display: flex; flex-direction: column;}
+.admin-chat-body .message { margin-bottom: 10px; padding: 8px 12px; border-radius: 18px; max-width: 80%; line-height: 1.4; }
+.admin-chat-body .message strong { display: block; font-size: 0.8em; margin-bottom: 4px; color: #555; }
+.admin-chat-body .sent { background-color: #007bff; color: white; align-self: flex-end; margin-left: auto; }
+.admin-chat-body .sent p { color: white !important; }
+.admin-chat-body .sent strong { color: #f0f0f0; }
+.admin-chat-body .received { background-color: #e9e9eb; color: black; align-self: flex-start; }
+.admin-chat-body .received p, .admin-chat-body .received strong { color: #333 !important; }
+
+.admin-chat-footer { padding: 10px; border-top: 1px solid #ddd; display: flex; }
+.admin-chat-footer input { flex: 1; border: 1px solid #ccc; border-radius: 20px; padding: 8px 12px; }
+.admin-chat-footer button { background: #007bff; color: white; border: none; border-radius: 20px; padding: 8px 15px; margin-left: 10px; cursor: pointer; }
+</style>
+
+<!-- Dependencies for Chat -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/laravel-echo@1.11.2/dist/echo.iife.js"></script>
+
+<script>
+    console.log("Admin Chat Script block is being processed.");
+
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log("DOM fully loaded and parsed.");
+
+        @if(auth()->check() && auth()->user()->hasRole('admin'))
+            console.log("User is admin. Initializing chat widget script.");
+
+            if (typeof axios === 'undefined' || typeof Pusher === 'undefined' || typeof Echo === 'undefined') {
+                console.error("Admin Chat Error: A required library is not loaded.");
+                return;
+            }
+            
+            const toggleButton = document.getElementById('adminChatToggle');
+            console.log("Admin chat toggle button element:", toggleButton); 
+
+            if (!toggleButton) {
+                console.error("Admin Chat Error: Toggle button not found in the DOM.");
+                return;
+            }
+
+            // --- SETUP ---
+            const csrfToken = document.querySelector('meta[name="csrf-token"]');
+            if (csrfToken) {
+                axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.getAttribute('content');
+            }
+            axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+            const echo = new Echo({
+                broadcaster: 'pusher',
+                key: '{{ env('PUSHER_APP_KEY') }}',
+                cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
+                forceTLS: true,
+                authEndpoint: '/broadcasting/auth'
+            });
+
+            // --- DOM ELEMENTS ---
+            const widget = {
+                toggle: toggleButton,
+                container: document.getElementById('adminChatContainer'),
+                notificationBadge: document.getElementById('adminChatNotification'),
+                conversationList: document.getElementById('adminConversationList'),
+                activeChat: document.getElementById('adminActiveChat'),
+                backButton: document.getElementById('backToConversations'),
+                activeChatTitle: document.getElementById('activeChatUserName'),
+                activeChatBody: document.getElementById('adminActiveChatBody'),
+                messageInput: document.getElementById('adminMessageInput'),
+                sendMessageBtn: document.getElementById('adminSendMessageBtn')
+            };
+
+            // --- STATE ---
+            let conversations = [];
+            let activeConversationId = null;
+
+            // --- FUNCTIONS ---
+            const showView = (view) => {
+                widget.conversationList.style.display = view === 'list' ? 'block' : 'none';
+                widget.activeChat.style.display = view === 'chat' ? 'flex' : 'none';
+            };
+
+            const getConversationName = (conv) => {
+                return conv.user ? conv.user.name : `Guest #${conv.guest_id.substring(0, 8)}`;
+            };
+
+            const renderConversationList = () => {
+                widget.conversationList.innerHTML = '';
+                conversations.sort((a, b) => new Date(b.messages[0]?.created_at || 0) - new Date(a.messages[0]?.created_at || 0));
+                conversations.forEach(conv => {
+                    const item = document.createElement('div');
+                    item.className = 'conversation-item';
+                    item.dataset.id = conv.id;
+                    const lastMessage = conv.messages[0] ? `<small>${conv.messages[0].body.substring(0, 30)}...</small>` : '<small>No messages yet</small>';
+                    item.innerHTML = `<strong>${getConversationName(conv)}</strong>${lastMessage}`;
+                    item.addEventListener('click', () => openChat(conv.id));
+                    widget.conversationList.appendChild(item);
+                });
+            };
+
+            const openChat = async (conversationId) => {
+                activeConversationId = conversationId;
+                const convItem = widget.conversationList.querySelector(`[data-id='${conversationId}'] .unread-badge`);
+                if(convItem) convItem.remove();
+
+                showView('chat');
+                
+                const conv = conversations.find(c => c.id === conversationId);
+                widget.activeChatTitle.innerText = getConversationName(conv);
+                widget.activeChatBody.innerHTML = '<p>Loading messages...</p>';
+
+                try {
+                    const response = await axios.get(`/chat/${conversationId}/messages`);
+                    widget.activeChatBody.innerHTML = '';
+                    response.data.forEach(msg => appendMessage(msg, widget.activeChatBody));
+                    widget.activeChatBody.scrollTop = widget.activeChatBody.scrollHeight;
+                } catch (error) {
+                    console.error('Failed to fetch messages:', error);
+                    widget.activeChatBody.innerHTML = '<p>Failed to load messages.</p>';
+                }
+            };
+
+            const appendMessage = (message, container) => {
+                if (!container) return;
+                const msgElement = document.createElement('div');
+                const isAdmin = message.user_id === {{ auth()->id() }};
+                msgElement.className = `message ${isAdmin ? 'sent' : 'received'}`;
+                const senderName = isAdmin ? 'You' : (message.user ? message.user.name : 'Guest');
+                msgElement.innerHTML = `<strong>${senderName}</strong><p>${message.body}</p>`;
+                container.appendChild(msgElement);
+                container.scrollTop = container.scrollHeight;
+            };
+            
+            const sendAdminMessage = async () => {
+                const messageBody = widget.messageInput.value.trim();
+                if (messageBody === '' || !activeConversationId) return;
+
+                const tempMessage = { body: messageBody, user_id: {{ auth()->id() }} };
+                appendMessage(tempMessage, widget.activeChatBody);
+                widget.messageInput.value = '';
+
+                try {
+                    await axios.post(`/admin/chats/${activeConversationId}/reply`, { body: messageBody });
+                } catch (error) {
+                    console.error("Error sending admin message:", error);
+                    widget.activeChatBody.lastChild.querySelector('p').innerText += ' (failed)';
+                }
+            };
+
+            // --- INITIALIZATION & EVENT LISTENERS ---
+            const initialize = async () => {
+                try {
+                    const response = await axios.get('/admin/chat/conversations');
+                    conversations = response.data;
+                    renderConversationList();
+                } catch (error) {
+                    console.error("Failed to initialize admin chat:", error);
+                }
+            };
+            
+            widget.toggle.addEventListener('click', () => {
+                console.log("Toggle button clicked!");
+                const isHidden = widget.container.style.display === 'none';
+                widget.container.style.display = isHidden ? 'flex' : 'none';
+                if (isHidden) {
+                    initialize(); 
+                }
+            });
+
+            widget.backButton.addEventListener('click', () => {
+                activeConversationId = null;
+                showView('list');
+            });
+
+            widget.sendMessageBtn.addEventListener('click', sendAdminMessage);
+            widget.messageInput.addEventListener('keypress', e => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendAdminMessage();
+                }
+            });
+
+            // Listen for new messages from ANY conversation
+            echo.private('admin-channel')
+                .listen('.new.message', (e) => {
+                    let conv = conversations.find(c => c.id === e.conversation.id);
+                    if (conv) {
+                        conv.messages.unshift(e.message);
+                    } else {
+                        conv = { ...e.conversation, messages: [e.message] };
+                        conversations.push(conv);
+                    }
+                    renderConversationList();
+
+                    if (activeConversationId === e.conversation.id) {
+                        appendMessage(e.message, widget.activeChatBody);
+                    } else {
+                        const convItem = widget.conversationList.querySelector(`[data-id='${e.conversation.id}']`);
+                        if(convItem && !convItem.querySelector('.unread-badge')){
+                            const badge = document.createElement('span');
+                            badge.className = 'unread-badge';
+                            convItem.appendChild(badge);
+                        }
+                    }
+                });
+            
+        @else
+            console.log("User is not an admin. Chat widget script not initialized.");
+        @endif
+    });
+</script>
 </body>
 
 </html>
-

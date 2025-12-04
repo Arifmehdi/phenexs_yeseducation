@@ -15,7 +15,6 @@
 @endsection
 
 @push('css')
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- Styles -->
 <style>
 /* ===== Hero Video Section ===== */
@@ -143,7 +142,7 @@
 }
 
 .video-hero-section .apply-now-btn {
-    background-color: #D24147;
+    background-color: #3B308B;
     color: #fff;
     padding: 12px 28px;
     border-radius: 8px;
@@ -252,7 +251,6 @@
     font-size: 20px;
     color: #003054;
 }
-
 </style>
 
 
@@ -401,7 +399,7 @@
 .download-btn {
     display: inline-flex;
     align-items: center;
-    background: #D24147;
+    background: #3B308B;
     color: white;
     padding: 14px 28px;
     border-radius: 8px;
@@ -709,7 +707,7 @@
 }
 
 .search-btn {
-    background: #D24147;
+    background: #3B308B;
     color: white;
     border: none;
     padding: 30px 24px;
@@ -728,7 +726,7 @@
 }
 
 .search-btn:hover {
-    background: #b53035;
+    background: #3B308B;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(210, 65, 71, 0.3);
 }
@@ -1057,7 +1055,7 @@
 }
 
 .search-btn {
-    background: #D24147;
+    background: #3B308B;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -1404,293 +1402,10 @@
 }
 </style>
 
-<style>
-/* Faculty Cards Section Styles with Bottom Background */
-.faculty-cards-section {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-/* Bottom Background Image */
-.section-background-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 220px;
-    /* slightly taller for better visibility */
-    z-index: 1;
-    /* opacity: 0.85;  */
-    /* clearer and more visible */
-    /* filter: contrast(120%) brightness(105%) saturate(110%); */
-}
-
-.background-image-bottom {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom center;
-    /* image-rendering: -webkit-optimize-contrast; */
-    image-rendering: crisp-edges;
-}
-
-.faculty-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    height: 100%;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #f0f0f0;
-}
-
-.faculty-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.card-icon {
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-}
-
-.card-icon i {
-    font-size: 2.5rem;
-    color: #D24147;
-    background: rgba(210, 65, 71, 0.1);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.faculty-card:hover .card-icon i {
-    background: #D24147;
-    color: white;
-    transform: scale(1.1);
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-}
-
-.card-content h5 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #003054;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.faculty-card:hover .card-content h5 {
-    color: #D24147;
-}
-
-.card-content p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-    font-weight: 500;
-}
-
-.card-background {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0.1;
-    transition: all 0.3s ease;
-    z-index: 1;
-}
-
-.card-background img {
-    width: 139px;
-    height: 186px;
-    object-fit: cover;
-    border-radius: 10px 0 15px 0;
-}
-
-.faculty-card:hover .card-background {
-    opacity: 0.15;
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .faculty-card {
-        padding: 25px 15px;
-        min-height: 180px;
-    }
-
-    .card-icon i {
-        font-size: 2.2rem;
-        width: 60px;
-        height: 60px;
-    }
-
-    .card-content h5 {
-        font-size: 1.1rem;
-    }
-
-    .section-background-bottom {
-        height: 120px;
-    }
-}
-
-@media (max-width: 768px) {
-    .faculty-cards-section {
-        padding: 60px 0;
-    }
-
-    .faculty-card {
-        padding: 20px 15px;
-        min-height: 160px;
-    }
-
-    .card-icon i {
-        font-size: 2rem;
-        width: 55px;
-        height: 55px;
-    }
-
-    .card-content h5 {
-        font-size: 1rem;
-    }
-
-    .card-content p {
-        font-size: 0.85rem;
-    }
-
-    .card-background img {
-        width: 100px;
-        height: 140px;
-    }
-
-    .section-background-bottom {
-        height: 100px;
-        opacity: 0.1;
-    }
-}
-
-@media (max-width: 576px) {
-    .faculty-cards-section {
-        padding: 50px 0;
-    }
-
-    .faculty-card {
-        padding: 15px 10px;
-        min-height: 140px;
-    }
-
-    .card-icon {
-        margin-bottom: 10px;
-    }
-
-    .card-icon i {
-        font-size: 1.8rem;
-        width: 50px;
-        height: 50px;
-    }
-
-    .card-content h5 {
-        font-size: 0.95rem;
-    }
-
-    .card-content p {
-        font-size: 0.8rem;
-    }
-
-    .card-background img {
-        width: 80px;
-        height: 120px;
-    }
-
-    .section-background-bottom {
-        height: 80px;
-        opacity: 0.08;
-    }
-}
-</style>
 
 
-<style>
-/* slider brand content  */
-.slider-container {
-    position: relative;
-}
 
-.five-item-carousel {
-    position: relative;
-}
 
-.logo-image {
-    text-align: center;
-    padding: 10px;
-}
-
-.logo-image img {
-    width: 120px;
-    height: 80px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-    /* Removed: filter: grayscale(100%); */
-    /* Removed: opacity: 0.7; */
-}
-
-.logo-image:hover img {
-    /* Removed: filter: grayscale(0%); */
-    /* Removed: opacity: 1; */
-    transform: scale(1.05);
-}
-
-/* Owl Carousel Customization */
-.owl-carousel .owl-stage {
-    display: flex;
-    align-items: center;
-}
-
-.owl-carousel .owl-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .slider-container {
-        margin-bottom: 15px !important;
-    }
-
-    .logo-image img {
-        width: 100px;
-        height: 70px;
-    }
-}
-
-@media (max-width: 576px) {
-    .slider-container {
-        margin-bottom: 10px !important;
-    }
-
-    .logo-image img {
-        width: 80px;
-        height: 60px;
-    }
-}
-</style>
 
 
 <style>
@@ -2070,16 +1785,11 @@
 @endpush
 
 @section('content')
-<!-- Swiper CSS -->
-
-
-@section('content')
 <!-- ===== Hero Section ===== -->
 <section class="video-hero-section">
     <!-- Background Video -->
     <video id="hero-video" class="background-video" autoplay loop playsinline preload="metadata">
-        <source src="{{ asset('frontend/assets/images/resource/Welcome_Week_2024.webm') }}"
-            type="video/mp4">
+        <source src="{{ asset('frontend/assets/images/resource/Welcome_Week_2024.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -2393,49 +2103,107 @@
 
 
 
-<!-- about-style-two -->
-<section class="about-style-two">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                <div id="content_block_3">
-                    <div class="content-box">
-                        <div class="sec-title">
-                            <p>who are YES Education</p>
-                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2017 </h2>
-                            <div class="dotted-box">
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                                <span class="dotted"></span>
-                            </div>
+<!-- UWS Campus-->
+<section class="campus-section py-5">
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="sec-title centred" style="margin-bottom: 50px;">
+            <h2 style="font-size: 36px; font-weight: 700; color: #003054;">
+                Our Official Representative of <span style="color:#DB1F2A;">UWS university</span>
+            </h2>
+            <p>( not applicable for London campus )</p>
+        </div>
+        <!-- Campus Grid -->
+        <div class="row g-4">
+            <!-- Campus Item -->
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="#" class="campus-card">
+                    <div class="card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/paisley_campus.webp') }}" alt="Paisley Campus">
+                        <div class="card-caption">
+                            <div class="line"></div>
+                            <div class="campus-name">Paisley Campus</div>
                         </div>
-                        <div class="text">
-                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi
-                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                sit aspernatur magnid.</p>
+                        <div class="overlay">
+                            <p class="text-white">Located in the centre of Paisley, Scotland's largest town, the campus is just 10 minutes by train from Glasgow.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
                         </div>
-                        <div class="btn-box"><a href="index-2.html" class="theme-btn-two">Learn More<i
-                                    class="flaticon-send"></i></a></div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                <div id="image_block_2">
-                    <div class="image-box">
-                        <figure class="image-1"><img src="{{ asset('frontend/assets/images/resource/about-2.jpg') }}"
-                                alt=""></figure>
-                        <figure class="image-2"><img src="{{ asset('frontend/assets/images/resource/about-3.jpg') }}"
-                                alt=""></figure>
-                        <figure class="image-3"><img src="{{ asset('frontend/assets/images/resource/about-4.jpg') }}"
-                                alt=""></figure>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="#" class="campus-card">
+                    <div class="card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/ayr_campus.jpg') }}" alt="Ayr Campus">
+                        <div class="card-caption">
+                            <div class="line"></div>
+                            <div class="campus-name">Ayr Campus</div>
+                        </div>
+                        <div class="overlay">
+                            <p class="text-white">Located just a 10-minute walk from Ayr town centre on the Craigie Estate next to the River Ayr, UWS's £81 million Ayr Campus creates a truly innovative learning environment for students.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="#" class="campus-card">
+                    <div class="card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/lanarkshire_campus.webp') }}" alt="Lanarkshire Campus">
+                        <div class="card-caption">
+                            <div class="line"></div>
+                            <div class="campus-name">Lanarkshire Campus</div>
+                        </div>
+                        <div class="overlay">
+                            <p class="text-white">UWS's award-winning £110m campus in Lanarkshire opened in September 2018 and is located on the outskirts of Hamilton, in Hamilton International Technology Park.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="#" class="campus-card">
+                    <div class="card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/damfries.webp') }}" alt="Ayr Campus">
+                        <div class="card-caption">
+                            <div class="line"></div>
+                            <div class="campus-name">Damfries Campus</div>
+                        </div>
+                        <div class="overlay">
+                            <p class="text-white">Located just a 10-minute walk from Ayr town centre on the Craigie Estate next to the River Ayr, UWS's £81 million Ayr Campus creates a truly innovative learning environment for students.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <a href="#" class="campus-card">
+                    <div class="card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/london.webp') }}" alt="Lanarkshire Campus">
+                        <div class="card-caption">
+                            <div class="line"></div>
+                            <div class="campus-name">London Campus</div>
+                        </div>
+                        <div class="overlay">
+                            <p class="text-white">UWS's award-winning £110m campus in Lanarkshire opened in September 2018 and is located on the outskirts of Hamilton, in Hamilton International Technology Park.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Add more campuses similarly -->
         </div>
     </div>
 </section>
-<!-- about-style-two end -->
+
+
+
 
 <!-- cta ads section start -->
 <section class="cta-section centred" style="width: 100%; overflow: hidden; margin-top: 80px;">
@@ -2445,246 +2213,10 @@
 <!-- cta ads section end -->
 
 <!-- Faculty Cards Section -->
-<section class="faculty-cards-section py-5 position-relative">
-    <!-- Background Image at Bottom -->
-    <div class="section-background-bottom position-absolute w-100 bottom-0">
-        <img src="{{ asset('frontend/assets/images/vector-graphic 2.png') }}" alt="Background Pattern" class="w-100">
-    </div>
-
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold" style="font-size: 36px; color: #003054;">
-                Popular <span style="color:#DB1F2A;">Faculties</span>
-            </h2>
-            <p class="text-secondary">Discover diverse academic disciplines and find your perfect study path</p>
-        </div>
-
-        <div class="row justify-content-center g-2">
-            <!-- Example Faculty Card -->
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/business--management.original.png') }}"
-                        alt="Business & Management" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Business & Management</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/computer-science--it.original.png') }}"
-                        alt="Computing" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Computing</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/engineering--technology.original.png') }}"
-                        alt="Engineering" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Engineering</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/law.original.png') }}" alt="Law"
-                        style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Law</strong></h5>
-                </div>
-            </div>
-            <!-- Example Faculty Card -->
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/medicine--health.original.png') }}"
-                        alt="Nursing & Midwifery" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Nursing & Midwifery</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/humanities.original.png') }}" alt="Allied Health"
-                        style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Allied Health</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/Medicine_and_dentistry.original.png') }}"
-                        alt="Medicine & Dentistry" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Medicine & Dentistry</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/Psychology.original.png') }}" alt="Psychology"
-                        style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Psychology</strong></h5>
-                </div>
-            </div>
-            <!-- Example Faculty Card -->
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/applied-sciences--professions.original.png') }}"
-                        alt="Medical Science" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Medical Science</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/Architecture.original.png') }}"
-                        alt="Architecture" style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Architecture</strong></h5>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-6 mb-3">
-                <div class="faculty-card text-center px-2 py-1 border rounded shadow-sm transition"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('frontend/assets/images/faculty/explore-all.original.png') }}" alt="Explore ALl"
-                        style="width: 70px; height: 70px; object-fit: contain;">
-                    <h5 class="card-content mt-1 mb-0"><strong>Explore All</strong></h5>
-                </div>
-            </div>
-
-            <!-- Repeat for other cards in the same pattern -->
-        </div>
-    </div>
-</section>
-
-<!-- Hover Effect CSS -->
-<style>
-.faculty-card {
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-
-.faculty-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-color: #DB1F2A;
-}
-
-/* Image zoom effect on card hover */
-.faculty-card img {
-    transition: transform 0.3s ease;
-}
-
-.faculty-card:hover img {
-    transform: scale(1.3);
-    /* zoom in 10% */
-}
-</style>
-
-
-
-
+<x-faculties />
 
 <!-- Three Stacked Carousels Section -->
-<section class="clients-section" style="padding: 60px 0; background-color: #f9f9f9;">
-    <div class="auto-container">
-
-        <!-- Main Title -->
-        <div class="sec-title centred" style="margin-bottom: 40px;">
-            <h2 style="font-size: 36px; font-weight: 700;">Featured <span style="color:#DB1F2A;">UK Universities </span>
-            </h2>
-            <p style="color: #555;">Worldwide education institutions we hold partnerships with</p>
-            <a href="#" class="btn btn-primary"
-                style="color: #ffffff !important; background: linear-gradient(90deg, #171F67, #D10D2B); border: none; padding: 12px 30px; border-radius: 10px; text-decoration: none;">
-                View All <i class="fas fa-external-link-alt"
-                    style="color: #ffffff !important;"></i>
-            </a>
-        </div>
-
-        <!-- First Slider - London Universities -->
-        <div class="slider-container" style="margin-bottom: 20px;">
-            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-1.png') }}" alt="London Uni 1"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-2.png') }}" alt="London Uni 2"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-4.png') }}" alt="London Uni 3"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-5.png') }}" alt="London Uni 4"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-6.png') }}" alt="London Uni 5"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-7.png') }}" alt="London Uni 6"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-8.png') }}" alt="London Uni 7"></a>
-                </figure>
-            </div>
-        </div>
-
-        <!-- Second Slider - Manchester Universities -->
-        <div class="slider-container" style="margin-bottom: 20px;">
-            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-9.png') }}" alt="Manchester Uni 1"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-10.png') }}" alt="Manchester Uni 2"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-12.png') }}" alt="Manchester Uni 3"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-13.png') }}" alt="Manchester Uni 4"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-14.png') }}" alt="Manchester Uni 5"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-15.png') }}" alt="Manchester Uni 6"></a>
-                </figure>
-            </div>
-        </div>
-
-        <!-- Third Slider - Birmingham Universities -->
-        <div class="slider-container">
-            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-16.png') }}" alt="Birmingham Uni 1"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-18.png') }}" alt="Birmingham Uni 2"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-19.png') }}" alt="Birmingham Uni 3"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-1.png') }}" alt="Birmingham Uni 4"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-2.png') }}" alt="Birmingham Uni 5"></a>
-                </figure>
-                <figure class="logo-image"><a href="#"><img
-                            src="{{ asset('frontend/assets/images/clients/Frame-4.png') }}" alt="Birmingham Uni 6"></a>
-                </figure>
-            </div>
-        </div>
-
-    </div>
-</section>
+<x-partner />
 
 
 <!-- Students Experience Section - Slider -->
@@ -2702,53 +2234,50 @@
         <div class="student-videos-slider-container">
             <div class="student-videos-slider owl-carousel owl-theme">
                 <!-- Video 1 -->
-<div class="student-video-slide">
-    <div class="student-video-card">
-        <div class="student-video-thumbnail" 
-             data-video-src="{{ asset('frontend/assets/images/videos/001.mp4') }}">
-             
-            <img src="{{ asset('frontend/assets/images/videos/001.webp') }}"
-                 alt="Student Success Story" 
-                 class="student-thumbnail-image">
+                <div class="student-video-slide">
+                    <div class="student-video-card">
+                        <div class="student-video-thumbnail"
+                            data-video-src="{{ asset('frontend/assets/images/videos/001.mp4') }}">
 
-            <div class="student-play-button">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-    </div>
-</div>
+                            <img src="{{ asset('frontend/assets/images/videos/001.webp') }}" alt="Student Success Story"
+                                class="student-thumbnail-image">
+
+                            <div class="student-play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Video 2 -->
-<div class="student-video-slide">
-    <div class="student-video-card">
-        <div class="student-video-thumbnail" 
-             data-video-src="{{ asset('frontend/assets/images/videos/002.mp4') }}">
-             
-            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}"
-                 alt="Student Success Story" 
-                 class="student-thumbnail-image">
+                <div class="student-video-slide">
+                    <div class="student-video-card">
+                        <div class="student-video-thumbnail"
+                            data-video-src="{{ asset('frontend/assets/images/videos/002.mp4') }}">
 
-            <div class="student-play-button">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-    </div>
-</div>
+                            <img src="{{ asset('frontend/assets/images/videos/002.webp') }}" alt="Student Success Story"
+                                class="student-thumbnail-image">
+
+                            <div class="student-play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Video 3 -->
-<div class="student-video-slide">
-    <div class="student-video-card">
-        <div class="student-video-thumbnail" 
-             data-video-src="{{ asset('frontend/assets/images/videos/003.mp4') }}">
-             
-            <img src="{{ asset('frontend/assets/images/videos/003.webp') }}"
-                 alt="Student Success Story" 
-                 class="student-thumbnail-image">
+                <div class="student-video-slide">
+                    <div class="student-video-card">
+                        <div class="student-video-thumbnail"
+                            data-video-src="{{ asset('frontend/assets/images/videos/003.mp4') }}">
 
-            <div class="student-play-button">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-    </div>
-</div>
+                            <img src="{{ asset('frontend/assets/images/videos/003.webp') }}" alt="Student Success Story"
+                                class="student-thumbnail-image">
+
+                            <div class="student-play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -2756,7 +2285,7 @@
 </section>
 
 <!-- Student Reviews Section -->
-<x-student-reviews/>
+<x-student-reviews />
 
 
 <!-- Journey Roadmap Section - Slim Full Width -->
@@ -2919,354 +2448,9 @@
 
 
 
-<!-- FAQ Section with Large Circle Image -->
-<section class="faq-with-image-section" style="padding: 80px 0; background: #f8f9fa;">
-    <div class="auto-container">
-        <div class="text-center mb-5">
-            <h2 class="fw-semibold" style="font-size:2.5rem;">
-                Frequently Asked Questions <span style="color:#DB1F2A;">(FAQs)</span>
-            </h2>
-        </div>
-        <div class="row align-items-center">
-            <!-- FAQ Content Column -->
-            <div class="col-lg-6 col-md-12">
-                <div class="faq-content">
-
-                    <div class="faq-accordion">
-                        <!-- FAQ Item 1 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    How early should I start my UK university application?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    We recommend starting at least 12-18 months before your intended start date. This
-                                    gives you ample time for research, test preparation, document gathering, and meeting
-                                    application deadlines.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 2 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    What are the English language requirements for UK universities?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    Most UK universities require IELTS scores of 6.0-7.0 or equivalent. Requirements
-                                    vary by institution and course. We'll help you understand specific requirements for
-                                    your chosen universities.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 3 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    How much does it cost to study in the UK?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    Undergraduate tuition fees typically range from £10,000 to £26,000 per year, while
-                                    postgraduate fees range from £11,000 to £32,000. Living costs vary by location but
-                                    average £12,000-£15,000 annually.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 4 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    Can I work while studying in the UK?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    Yes, international students can typically work up to 20 hours per week during term
-                                    time and full-time during holidays. We'll guide you through the regulations and help
-                                    you understand your work rights.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 5 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    What scholarships are available for international students?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    There are numerous scholarships including Chevening Scholarships, Commonwealth
-                                    Scholarships, university-specific awards, and country-specific funding. We'll help
-                                    identify suitable scholarship opportunities for you.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 6 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4 style="font-size: 18px; font-weight: 600; color: #003054; margin: 0;">
-                                    How long does the visa process take?
-                                </h4>
-                                <span class="faq-toggle">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                            </div>
-                            <div class="faq-answer">
-                                <p style="color: #555; margin: 15px 0 0 0; line-height: 1.6;">
-                                    The student visa process typically takes 3-8 weeks. We recommend applying at least 3
-                                    months before your course starts to account for any potential delays and ensure a
-                                    smooth transition.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Large Circle Image Column -->
-            <div class="col-lg-6 col-md-12">
-                <div class="circle-image-container text-center">
-                    <div class="circle-image-wrapper">
-                        <img src="{{ asset('frontend/assets/images/resource/faq_4.webp')}}"
-                            alt="Students studying together" class="circle-image">
-                        <div class="image-overlay-content">
-                            <h3 style="color: white; font-weight: 700; margin-bottom: 10px;">Ready to Start Your
-                                Journey?</h3>
-                            <p style="color: white; margin-bottom: 20px;">Join thousands of successful students</p>
-                            <a href="#" class="btn btn-primary"
-                                style="background: #003054; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 600;">
-                                Get Free Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-/* FAQ Section Styles */
-.faq-with-image-section {
-    background: #f8f9fa !important;
-}
-
-.faq-accordion {
-    margin-top: 20px;
-}
-
-.faq-item {
-    background: white;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.faq-question {
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    background: rgba(0, 48, 84, 0.03);
-}
-
-.faq-question h4 {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.faq-toggle {
-    width: 30px;
-    height: 30px;
-    background: #003054;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-    padding: 0 20px 20px;
-    max-height: 500px;
-}
-
-.faq-item.active .faq-toggle {
-    transform: rotate(45deg);
-    background: #002340;
-}
-
-/* Circle Image Styles */
-.circle-image-container {
-    padding: 0 20px;
-}
-
-.circle-image-wrapper {
-    position: relative;
-    width: 450px;
-    height: 450px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.circle-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.circle-image-wrapper:hover .circle-image {
-    transform: scale(1.05);
-}
-
-.image-overlay-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 48, 84, 0.9));
-    padding: 40px 30px 30px;
-    text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .circle-image-wrapper {
-        width: 400px;
-        height: 400px;
-    }
-}
-
-@media (max-width: 992px) {
-    .faq-with-image-section {
-        padding: 60px 0;
-    }
-
-    .circle-image-container {
-        margin-top: 50px;
-    }
-
-    .circle-image-wrapper {
-        width: 350px;
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .faq-with-image-section {
-        padding: 50px 0;
-    }
-
-    .sec-title h2 {
-        font-size: 28px !important;
-    }
-
-    .faq-question {
-        padding: 15px;
-    }
-
-    .faq-question h4 {
-        font-size: 16px !important;
-    }
-
-    .circle-image-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-
-    .image-overlay-content h3 {
-        font-size: 18px;
-    }
-
-    .image-overlay-content p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 576px) {
-    .circle-image-wrapper {
-        width: 280px;
-        height: 280px;
-    }
-
-    .faq-question h4 {
-        font-size: 15px !important;
-    }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // FAQ Accordion Functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-
-        question.addEventListener('click', () => {
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-
-            // Toggle current item
-            item.classList.toggle('active');
-        });
-    });
-});
-</script>
+<!-- faq content start here  -->
+<x-faq-content />
+<!-- faq content end here  -->
 
 
 
@@ -3353,7 +2537,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 <!-- about-style-two -->
-<section class="about-style-two">
+<section class="about-style-two" style="padding: 80px 0; background: #f8f9fa;">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -3396,45 +2580,252 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <!-- about-style-two end -->
 
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-5 bg-white">
+    <div class="container">
+
+        <!-- HEADING -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold" style="color:#1D3564;">Get In <span style="color:#DB1F2A;">Touch</span></h2>
+            <p class="text-muted fs-5 mx-auto" style="max-width:700px;">
+                Ready to begin your UK education journey? Contact us today for a free consultation
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- FORM CARD -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h4 class="fw-semibold mb-4">Send us a message</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Phone <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Country <span class="text-danger">*</span></label>
+                                <select class="form-control" required>
+                                    <option selected disabled>Select your country</option>
+                                    <option>Bangladesh</option>
+                                    <option>India</option>
+                                    <option>Pakistan</option>
+                                    <option>Nigeria</option>
+                                    <option>Sri Lanka</option>
+                                    <option>Nepal</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Tell us about your study goals..."></textarea>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input type="checkbox" class="form-check-input" id="policy">
+                                <label class="form-check-label text-muted" for="policy">
+                                    I agree to the privacy policy and terms of service
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn w-100 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white"
+                                style="background:#3B308B; font-size:14px;">
+                                <i class="fas fa-paper-plane text-white" style="font-size:16px; margin-bottom:0;"></i> &nbsp; &nbsp; 
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- INFO COLUMN -->
+            <div class="col-lg-6">
+
+                <div class="row g-4">
+
+                    <!-- CONTACT INFO -->
+                    <div class="col-md-6">
+                        <h4 class="fw-semibold mb-4">Contact Information</h4>
+
+                        <!-- PHONE -->
+                        <div class="d-flex mb-3 align-items-start">
+                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
+                                <i class="fas fa-phone"></i>
+                            </div> &nbsp; &nbsp;
+                            <div>
+                                <strong>Phone</strong>
+                                <p class="mb-0 text-muted">+880 9611 656889,</p>
+                                <p class="mb-0 text-muted">+880 1898-828980</p>
+                                
+
+
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="d-flex mb-3 align-items-start">
+                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
+                                <i class="fas fa-envelope"></i>
+                            </div> &nbsp; &nbsp;
+                            <div>
+                                <strong>Email</strong>
+                                <p class="mb-0 text-muted">support@yesedu.com</p>
+                            </div>
+                        </div>
+
+                        <!-- ADDRESS -->
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div> &nbsp; &nbsp;
+                            <div>
+                                <strong>Address</strong>
+                                <p class="mb-0 text-muted">Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="col-md-6">
+                        <h4 class="fw-semibold mb-4">Follow Us</h4>
+
+                        <a href="{{ $ws->fb_url }}"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
+                            <i class="fab fa-facebook-f fb"></i>
+                            <div>
+                                <strong>Facebook</strong>
+                                <small class="d-block text-muted">Follow us on Facebook</small>
+                            </div>
+                        </a>
+
+                        <a href="#"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
+                            <i class="fab fa-instagram ig"></i>
+                            <div>
+                                <strong>Instagram</strong>
+                                <small class="d-block text-muted">Follow us on Instagram</small>
+                            </div>
+                        </a>
+
+                        <a href="#"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
+                            <i class="fab fa-linkedin-in ln"></i>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <small class="d-block text-muted">Connect on LinkedIn</small>
+                            </div>
+                        </a>
+
+                        <a href="#"
+                            class="social-card d-flex align-items-center" target="_blank"> 
+                            <img src="{{ asset('frontend/assets/images/icons/tiktok-icon.png') }}" class="me-3" width="40" height="40" alt="TikTok"> &nbsp; &nbsp;
+                            <div>
+                                <strong>TikTok</strong>
+                                <small class="d-block text-muted">Follow us on TikTok</small>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- MAP -->
+                <div class="mt-4">
+                    <div class="text-center mb-2">
+                        <i class="fas fa-map-marker-alt fs-4 text-primary"></i>
+                        <p class="fw-semibold mb-0">Our Main Office</p>
+                        <small class="text-muted">Road 1, Block-A, Gulshan 1, Dhaka</small>
+                    </div>
+
+                    <div class="rounded overflow-hidden" style="height:250px;">
+                        <iframe
+                            src="https://www.google.com/maps?q=Gulshan+1+Dhaka&output=embed"
+                            width="100%" height="100%" style="border:0;"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.icon-box {
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.form-label {
+    font-weight: 600;
+    text-align: left; /* ensures label is left-aligned */
+    display: block;   /* ensures it behaves like block above input */
+}
+
+
+.social-card {
+    background:#f8f9fa;
+    border-radius:8px;
+    padding:10px;
+    text-decoration:none;
+    color:inherit;
+    transition:.2s;
+}
+.social-card:hover {
+    background:#e9ecef;
+}
+
+.social-card i {
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    margin-right:12px;
+}
+
+/* Social Colors */
+.fb { background:#1877f2; }
+.ig { background:linear-gradient(45deg,#fd5949,#d6249f,#285AEB); }
+.ln { background:#0A66C2; }
+.tt { background:black; }
+
+/* Responsive adjustments */
+@media(max-width:767px) {
+    .d-flex.align-items-start { flex-direction: row; }
+    .social-card div { font-size: 13px; }
+    .social-card i { width:36px; height:36px; margin-right:8px; font-size:14px; }
+    button.btn i { font-size:14px; }
+    button.btn span { font-size:14px; }
+}
+</style>
+
+
 <x-student-subscription />
 
 
 @endsection
 @push('js')
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-<!-- Initialize Carousel -->
-<script>
-$(document).ready(function() {
-    $('.five-item-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        responsive: {
-            0: {
-                items: 2
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 5
-            }
-        }
-    });
-});
-</script>
-
-
-
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize only the hero section swiper
@@ -3509,10 +2900,18 @@ document.addEventListener('DOMContentLoaded', function() {
         dots: true,
         autoplay: false,
         responsive: {
-            0: { items: 1 },
-            576: { items: 2 },
-            768: { items: 3 },
-            992: { items: 4 }
+            0: {
+                items: 1
+            },
+            576: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            }
         }
     });
 
@@ -3541,7 +2940,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close modal
-    function closeModal(){
+    function closeModal() {
         modal.classList.remove('active');
         video.pause();
         video.src = "";
@@ -3550,12 +2949,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeBtn.addEventListener('click', closeModal);
 
-    modal.addEventListener('click', function(e){
-        if(e.target === modal) closeModal();
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
     });
 
-    document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape') closeModal();
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
     });
 
 });
@@ -3660,12 +3059,12 @@ $(document).ready(function() {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const video = document.querySelector(".background-video");
     const soundToggle = document.getElementById("soundToggle");
     const soundIcon = document.getElementById("soundIcon");
 
-    soundToggle.addEventListener("click", function () {
+    soundToggle.addEventListener("click", function() {
         // Toggle mute
         if (video.muted) {
             video.muted = false;
@@ -3683,24 +3082,175 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById('hero-video');
-        video.muted = false; // Ensure video is not muted
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('hero-video');
+    video.muted = false; // Ensure video is not muted
 
-        var promise = video.play();
+    var promise = video.play();
 
-        if (promise !== undefined) {
-            promise.then(_ => {
-                // Autoplay started with sound.
-            }).catch(error => {
-                // Autoplay with sound was prevented.
-                console.log("Autoplay with sound prevented: ", error);
-                // As a fallback, you could mute the video and play it,
-                // then provide a button for the user to unmute.
-                video.muted = true;
-                video.play();
-            });
-        }
-    });
+    if (promise !== undefined) {
+        promise.then(_ => {
+            // Autoplay started with sound.
+        }).catch(error => {
+            // Autoplay with sound was prevented.
+            console.log("Autoplay with sound prevented: ", error);
+            // As a fallback, you could mute the video and play it,
+            // then provide a button for the user to unmute.
+            video.muted = true;
+            video.play();
+        });
+    }
+});
 </script>
+<script>
+$(document).ready(function() {
+    var aboutSlider = $(".about-slider");
+
+    aboutSlider.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 30,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn'
+    });
+
+    $(".about-next").click(function() {
+        aboutSlider.trigger("next.owl.carousel");
+    });
+
+    $(".about-prev").click(function() {
+        aboutSlider.trigger("prev.owl.carousel");
+    });
+});
+</script>
+<!-- aUWS Campus- -->
+<style>
+/* Campus Card */
+.campus-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    text-decoration: none;
+    width: 100%;
+
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Caption at bottom */
+.card-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0 10px;
+    background: rgba(0,0,0,0); /* transparent */
+}
+
+.card-caption .line {
+    height: 3px;
+    width: 60px;
+    background: #3B308B;
+    margin: 0 auto 8px;
+}
+
+.card-caption .campus-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* Overlay on hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3B308B;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* start from top */
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Overlay text */
+.overlay-text {
+    margin-bottom: 15px;
+}
+
+.overlay-text p {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin: 0;
+}
+
+/* CTA Button */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: #fff;
+    color: #3B308B;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s, color 0.3s;
+}
+
+.campus-card:hover img {
+    transform: scale(1.05);
+}
+
+.campus-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.campus-card:hover .btn-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover effect */
+.btn-cta:hover {
+    background: #3B308B;
+    color: #fff;
+}
+
+.btn-cta i {
+    font-size: 0.9rem;
+}
+
+
+</style>
+
+
 @endpush

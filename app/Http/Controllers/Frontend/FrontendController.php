@@ -151,24 +151,28 @@ class FrontendController extends Controller
     
     public function blog()
     {
-        $blogs = BlogPost::with([
-            'category:id,name', 
-            'addedBy:id,name'
-        ])
-        ->where('status', 'published')
-        ->select('id', 'slug','category_id', 'addedby_id', 'title', 'excerpt', 'feature_image', 'created_at')
-        ->paginate(20);
-
-        $categories = BlogCategory::select('id', 'name')->orderBy('name')->get();
+        // Latest 6 posts for TOP grid
         $recentPosts = BlogPost::where('status', 'published')
-            ->select('id', 'slug','title', 'feature_image', 'created_at')
+            ->select('id', 'slug','category_id', 'addedby_id', 'title', 'excerpt', 'feature_image', 'created_at')
             ->latest()
-            ->take(3)
+            ->take(6)
             ->get();
 
-        return view('website.blog', compact('blogs', 'categories', 'recentPosts'));
+        // Get IDs of recent posts
+        $excludeIds = $recentPosts->pluck('id')->toArray();
 
+        // All other posts for vertical list (pagination)
+        $blogs = BlogPost::with(['category:id,name', 'addedBy:id,name'])
+            ->where('status', 'published')
+            // ✅ remove duplicates
+            ->whereNotIn('id', $excludeIds)   
+            ->latest()
+            ->paginate(10);  
+
+        return view('website.blog', compact('blogs', 'recentPosts'));
     }
+
+
 
     public function blogDetails($slug)
     {
@@ -203,10 +207,14 @@ class FrontendController extends Controller
         return view('website.event');  
     }
 
-    public function eventDetails()
+    public function eventDetails($slug)
     {
-        $wp = WebsiteParameter::first();
-        return view('website.eventDetails', compact('wp'));  
+        return view('website.eventDetails', compact('slug'));  
+    }
+
+    public function studyInUk($slug)
+    {
+        return view('website.studyInUk', compact('slug'));  
     }
     
 

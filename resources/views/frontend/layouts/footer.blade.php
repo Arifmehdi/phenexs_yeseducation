@@ -65,21 +65,43 @@
         <p class="mb-1"><i class="fas fa-envelope"></i> support@yesedu.com</p>
         <p class="mb-2"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
 
-        <div class="mt-2">
-            <a href="{{ $ws->fb_url }}" target="_blank" class="footer-social fb"><i class="fab fa-facebook-f"></i></a>
-            <a href="{{ $ws->instagram_url }}" target="_blank" class="footer-social ig"><i class="fab fa-instagram"></i></a>
-            <a href="{{ $ws->linkedin_url }}" target="_blank" class="footer-social in"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="footer-social tt" target="_blank" aria-label="TikTok">
-<svg width="20" height="20" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg">
-<path d="M448 209.9v125.1c-13.5 1.2-27.2 1.8-41.6 1.8-42.2 0-81.7-11.7-115.4-32.2v142.5c0 67.7-54.9 122.6-122.6 122.6S46 513 46 445.3c0-67.7 54.9-122.6 122.6-122.6 4.2 0 8.4.2 12.5.7V386c-4.4-1-8.9-1.6-13.5-1.6-22.9 0-41.5 18.6-41.5 41.5 0 22.9 18.6 41.5 41.5 41.5s41.5-18.6 41.5-41.5V15.1h124.1c1.8 14.7 5.1 29 9.9 42.5 11.5 32.7 33.2 60.2 61.5 78.4 14.1 9.3 29.9 16.4 46.8 21.1z"/>
-</svg>
-</a>
-
+        <div class="mt-2 d-flex align-items-center">
+            <a href="{{ $ws->fb_url }}" target="_blank" class="footer-social fb d-flex align-items-center justify-content-center me-2">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="{{ $ws->instagram_url }}" target="_blank" class="footer-social ig d-flex align-items-center justify-content-center me-2">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="{{ $ws->linkedin_url }}" target="_blank" class="footer-social in d-flex align-items-center justify-content-center me-2">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="footer-social tt d-flex align-items-center justify-content-center" target="_blank">
+                <img src="{{ asset('frontend/assets/images/icons/tiktok-icon.png') }}" width="40" height="40" alt="TikTok">
+            </a>
         </div>
+
     </div>
 
 </div>
+<style>
+    .footer-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.footer-social.fb { background:#1877f2; }
+.footer-social.ig { background: linear-gradient(45deg,#fd5949,#d6249f,#285AEB); }
+.footer-social.in { background:#0A66C2; }
+.footer-social.tt { background: black; } /* TikTok background */
+.footer-social:hover { opacity: 0.8; }
 
+</style>
 
 <!-- MAP -->
 <!-- <div class="row mt-3">
@@ -157,14 +179,13 @@
     <div class="chat-header">Live Chat</div>
 
     <div class="chat-body" id="chatBody">
-        <p><strong>Support:</strong> Hello! 👋</p>
+        <p><strong>Support:</strong> Hello! 👋 How can I help you?</p>
     </div>
 
     <div class="chat-footer">
-        <label for="fileInput">📎</label>
-        <input type="file" id="fileInput" hidden>
-        <input type="text" id="chatInput" placeholder="Type message...">
-        <button onclick="sendMessage()">➤</button>
+        <input type="hidden" id="conversationIdStore">
+        <input type="text" id="chatInput" placeholder="Type your message..." class="form-control" style="color: black !important;">
+        <button id="sendButton" class="btn btn-primary">➤</button>
     </div>
 </div>
 
@@ -187,7 +208,7 @@
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border: none;
-    background: linear-gradient(90deg, #171F67, #D10D2B);
+    background: linear-gradient(90deg, #171F67, #3B308B);
     animation: blink 1s infinite;
     /* blinking animation */
 }
@@ -430,33 +451,171 @@
 }
 
 </style>
+<style>
+/* More refined styling for messages */
+.chat-body .message { margin-bottom: 10px; padding: 8px 12px; border-radius: 18px; max-width: 80%; line-height: 1.4; }
+.chat-body .message strong { display: block; font-size: 0.8em; margin-bottom: 4px; color: #555; }
+.chat-body .sent { background-color: black; color: white; align-self: flex-end; margin-left: auto; }
+.chat-body .sent strong { color: white; }
+.chat-body .received { background-color: #e9e9eb; color: black; align-self: flex-start; }
+.chat-body { display: flex; flex-direction: column; }
+.chat-footer .form-control { color: black !important; }
+</style>
+
+<!-- Dependencies for Chat -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/laravel-echo@1.11.2/dist/echo.iife.js"></script>
+
 <script>
-function toggleChat() {
-    let chatBox = document.getElementById("chatBox");
-    let msgIcon = document.getElementById("msgIcon");
-    let closeIcon = document.getElementById("closeIcon");
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        if (typeof axios === 'undefined' || typeof Pusher === 'undefined' || typeof Echo === 'undefined') {
+            console.error("Chat Error: A required library (axios, Pusher, or Echo) is not loaded.");
+            const chatBody = document.getElementById('chatBody');
+            if(chatBody) chatBody.innerHTML = "<p>Error: Chat libraries not loaded.</p>";
+            return;
+        }
 
-    if (chatBox.style.display === "flex") {
-        chatBox.style.display = "none";
-        msgIcon.style.display = "block";
-        closeIcon.style.display = "none";
-    } else {
-        chatBox.style.display = "flex";
-        msgIcon.style.display = "none";
-        closeIcon.style.display = "block";
-    }
-}
+        // Axios configuration
+        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        const csrfToken = document.querySelector('meta[name="csrf-token"]');
+        if (csrfToken) {
+            axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.getAttribute('content');
+        } else {
+            console.error('CSRF token not found!');
+        }
 
-function sendMessage() {
-    let input = document.getElementById("chatInput");
-    let chatBody = document.getElementById("chatBody");
 
-    if (input.value === "") return;
+        // Echo configuration
+        const echo = new Echo({
+            broadcaster: 'pusher',
+            key: '{{ env('PUSHER_APP_KEY') }}',
+            cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
+            forceTLS: true,
+            authEndpoint: '/broadcasting/auth'
+        });
 
-    let msg = document.createElement("p");
-    msg.innerHTML = "<strong>You:</strong> " + input.value;
-    chatBody.appendChild(msg);
-    chatBody.scrollTop = chatBody.scrollHeight;
-    input.value = "";
-}
+        let chatInitialized = false;
+        const chatInput = document.getElementById('chatInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatBody = document.getElementById('chatBody');
+        const conversationIdStore = document.getElementById('conversationIdStore');
+
+        const startChatSession = async () => {
+            if(chatInitialized) return;
+            try {
+                chatBody.innerHTML = "<p>Connecting to chat...</p>";
+                const response = await axios.post('/chat/start');
+                conversationIdStore.value = response.data.conversation_id;
+                await fetchMessages();
+                listenForMessages();
+                chatInitialized = true;
+            } catch (error) {
+                console.error("Error starting chat session:", error);
+                chatBody.innerHTML = "<p>Could not connect to chat. Please try again later.</p>";
+            }
+        };
+
+        const fetchMessages = async () => {
+            const conversationId = conversationIdStore.value;
+            if (!conversationId) return;
+            try {
+                const response = await axios.get(`/chat/${conversationId}/messages`);
+                chatBody.innerHTML = '';
+                response.data.forEach(appendMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            } catch (error) {
+                console.error("Error fetching messages:", error);
+            }
+        };
+
+        const listenForMessages = () => {
+            const conversationId = conversationIdStore.value;
+            if (!conversationId) return;
+
+            echo.private(`chat.${conversationId}`)
+                .listen('.message.sent', (e) => {
+                     @if(auth()->check())
+                        if (e.message.user_id != {{ auth()->id() }}) {
+                            appendMessage(e.message);
+                        }
+                     @else
+                        if(e.message.user_id != null) { // Only show messages from support
+                             appendMessage(e.message);
+                        }
+                     @endif
+                });
+        };
+
+        const sendMessage = async () => {
+            const messageBody = chatInput.value.trim();
+            const conversationId = conversationIdStore.value;
+            if (messageBody === "" || !conversationId) return;
+
+            const tempMessage = { body: messageBody, user: { name: 'You' }, temp: true };
+            appendMessage(tempMessage);
+            chatInput.value = '';
+
+            try {
+                await axios.post(`/chat/${conversationId}/send`, { body: messageBody });
+            } catch (error) {
+                console.error("Error sending message:", error);
+                const sentMessages = chatBody.getElementsByClassName('sent');
+                const lastSentMessage = sentMessages[sentMessages.length - 1];
+                if(lastSentMessage) {
+                    const p = lastSentMessage.querySelector('p');
+                    if (p) p.innerText += " (failed)";
+                }
+            }
+        };
+
+        const appendMessage = (message) => {
+            const msgElement = document.createElement('div');
+            let senderName = 'Support';
+            let msgClass = 'message received';
+            
+            const currentUserId = '{{ auth()->check() ? auth()->id() : '' }}';
+
+            if (message.user_id == currentUserId || (message.user && message.user.name === 'You')) {
+                senderName = 'You';
+                msgClass = 'message sent';
+            } else if (message.user) {
+                senderName = message.user.name;
+            }
+
+            msgElement.className = msgClass;
+            msgElement.innerHTML = `<strong>${senderName}</strong><p>${message.body}</p>`;
+            chatBody.appendChild(msgElement);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+
+        window.toggleChat = () => {
+            const chatBox = document.getElementById("chatBox");
+            const msgIcon = document.getElementById("msgIcon");
+            const closeIcon = document.getElementById("closeIcon");
+            const isOpening = chatBox.style.display !== "flex";
+
+            if (isOpening) {
+                chatBox.style.display = "flex";
+                msgIcon.style.display = "none";
+                closeIcon.style.display = "block";
+                if (!chatInitialized) {
+                    startChatSession();
+                }
+            } else {
+                chatBox.style.display = "none";
+                msgIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            }
+        };
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    });
 </script>
