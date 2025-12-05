@@ -38,7 +38,7 @@
                             <ul class="navigation clearfix">
                                 <li
                                     class="dropdown has-submenu">
-                                    <a href="#">Study In UK</a>
+                                    <a href="{{ route('studyIn')  }}">Study In UK</a>
                                     <ul class="mobile-submenu d-block d-lg-none d-md-none ">
                                         {{--@foreach($servica as $service)
                                         <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}</a>
