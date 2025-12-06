@@ -212,6 +212,16 @@ class FrontendController extends Controller
         return view('website.eventDetails', compact('slug'));  
     }
 
+    public function studyIn()
+    {
+        return view('website.studyIn');  
+    }
+
+    public function courseIn()
+    {
+        return view('website.courseIn');  
+    }
+    
     public function studyInUk($slug)
     {
         return view('website.studyInUk', compact('slug'));  

@@ -138,6 +138,7 @@ Route::get('/courses',[FrontendController::class,'courses'])->name('courses');
 Route::get('/course/details/{slug}',[FrontendController::class,'courseDetails'])->name('courseDetails');
 Route::get('/event',[FrontendController::class,'event'])->name('event');
 Route::get('/event/details/{slug}',[FrontendController::class,'eventDetails'])->name('eventDetails');
+Route::get('/courses',[FrontendController::class,'courseIn'])->name('courseIn');
 Route::get('/study-in-the-uk',[FrontendController::class,'studyIn'])->name('studyIn');
 Route::get('/study-in-the-uk/{slug}',[FrontendController::class,'studyInUk'])->name('studyInUk');
 Route::get('/blog',[FrontendController::class,'blog'])->name('blog');

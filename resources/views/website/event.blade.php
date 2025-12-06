@@ -32,6 +32,42 @@
 }
 
 </style>
+<!-- volume btn  -->
+<style>
+.video-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* This one controls the icon position */
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.volume-btn {
+    position: absolute;
+    /* top: 10px; */
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 20px;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <!--Page Title-->
 <section class="page-title"
     style="background-image: url('{{ asset('frontend/assets/images/background/page-title.jpg')}}');">
@@ -94,15 +130,28 @@
 
 <!-- choose-section -->
 <section class="choose-section bg-color-3">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/pattern-3.png);"></div>
-
+    <div class="pattern-layer" style="background-image: url( {{ asset('frontend/assets/images/shape/pattern-3.png') }} );"></div>
+    <div class="sec-title centred" style="margin-bottom: 50px;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #003054;">
+            Yes Education <span style="color:#DB1F2A;">Event</span>
+        </h2>
+        <!-- <p>( not applicable for London campus )</p> -->
+    </div>
     <div class="auto-container text-center">
-        <div class="video-wrapper">
-            <video id="hero-video" class="background-video" autoplay loop muted playsinline preload="metadata">
-                <source src="{{ asset('frontend/assets/images/resource/yesedu.webm') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="video-flex">
+            <div class="video-wrapper">
+                <button class="volume-btn" id="volumeToggle">
+                    <i class="bi bi-volume-mute-fill" id="volumeIcon"></i>
+                </button>
+
+                <video id="hero-video" class="background-video" autoplay loop muted playsinline preload="metadata">
+                    <source src="{{ asset('frontend/assets/images/resource/yesedu.webm') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
+
+
     </div>
 </section>
 <!-- choose-section end -->
@@ -112,4 +161,25 @@
  <x-student-reviews />
 
 <x-student-subscription />
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("hero-video");
+    const btn = document.getElementById("volumeToggle");
+    const icon = document.getElementById("volumeIcon");
+
+    btn.addEventListener("click", () => {
+        video.muted = !video.muted;
+        
+        if(video.muted){
+            icon.classList.remove("bi-volume-up-fill");
+            icon.classList.add("bi-volume-mute-fill");
+        } else {
+            icon.classList.remove("bi-volume-mute-fill");
+            icon.classList.add("bi-volume-up-fill");
+        }
+    });
+});
+</script>
+
 @endsection

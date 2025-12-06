@@ -291,7 +291,7 @@
 
 
                 <li class="dropdown  has-submenu">
-                    <a href="#">Courses
+                    <a href="{{ route('courseIn') }}">Courses
                         <ul class="mobile-submenu d-block d-lg-none d-md-none ">
                             {{--@foreach($servica as $service)
                                         <li><a href="{{ route('serviceDetails', $service->slug) }}">{{ $service->title }}
@@ -467,14 +467,14 @@
             <li class="dropdown  has-submenu">
                 <a href="#">Global</a>
                 <ul class="mobile-submenu d-block d-lg-none d-md-none ">
-                    <li><a href="#">Algeria</a></li>
-                    <li><a href="#">Kuwait</a></li>
-                    <li><a href="#">Pakistan</a></li>
-                    <li><a href="#">Bangladesh</a></li>
-                    <li><a href="#">Morocco</a></li>
-                    <li><a href="#">Qatar</a></li>
-                    <li><a href="#">Nepal</a></li>
-                    <li><a href="#">Uk</a></li>
+                    <li><a href="globalOffice">Algeria</a></li>
+                    <li><a href="globalOffice">Kuwait</a></li>
+                    <li><a href="globalOffice">Pakistan</a></li>
+                    <li><a href="globalOffice">Bangladesh</a></li>
+                    <li><a href="globalOffice">Morocco</a></li>
+                    <li><a href="globalOffice">Qatar</a></li>
+                    <li><a href="globalOffice">Nepal</a></li>
+                    <li><a href="globalOffice">Uk</a></li>
                 </ul>
 
                 <div class="megamenu">
@@ -492,19 +492,19 @@
                             {{-- Column 1 --}}
                             <div class="col-lg-3 column">
                                 <ul>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/algeria.original.png') }}"
                                                 alt="Algeria Flag"> <span>Algeria</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
                                                 alt="Bangladesh Flag"> <span>Bangladesh</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/egypt.original.png') }}"
                                                 alt="Egypt Flag"> <span>Egypt</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
                                                 alt="India Flag"> <span>India</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
@@ -513,19 +513,19 @@
                             {{-- Column 2 --}}
                             <div class="col-lg-3 column">
                                 <ul>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/kuwait.original.png') }}"
                                                 alt="KuwaitFlag"> <span>Kuwait</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
                                                 alt="Morocco Flag"> <span>Morocco</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
                                                 alt="Nepal Flag"> <span>Nepal</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/ng-flag.original.png') }}"
                                                 alt="Nigeria Flag"> <span>Nigeria</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
@@ -534,19 +534,19 @@
                             {{-- Column 3 --}}
                             <div class="col-lg-3 column">
                                 <ul>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/pak-flag.original.png') }}"
                                                 alt="Pakistan Flag"> <span>Pakistan</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/qatar-flag.original.png') }}"
                                                 alt="Qatar Flag"> <span>Qatar</span><i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/singapore.original.png') }}"
                                                 alt="Singapore Flag"> <span>Singapore</span><i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/uk-flag.original.png') }}"
                                                 alt="UK Flag"> <span>UK</span> <i class="fi fi-br-phone-call"></i></a>
                                     </li>
@@ -555,19 +555,19 @@
                             {{-- Column 4 --}}
                             <div class="col-lg-3 column">
                                 <ul>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/bng-flag.original.png') }}"
                                                 alt="Bangladesh Flag"> <span>Bangladesh</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/morocco.original.png') }}"
                                                 alt="Morocco Flag"> <span>Morocco</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/nepal.original.png') }}"
                                                 alt="Nepal Flag"> <span>Nepal</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
-                                    <li><a class="location-item" href="#"><img
+                                    <li><a class="location-item" href="{{ route('globalOffice') }}"><img
                                                 src="{{ asset('frontend/assets/images/flag/india-flag.original.png') }}"
                                                 alt="India Flag"> <span>India</span> <i
                                                 class="fi fi-br-phone-call"></i></a></li>
@@ -640,7 +640,7 @@
 
     <!-- Right Side Elements (Globe Icon + Button) -->
     <div class="header-right-elements">
-        <!-- <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a> -->
+        <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
         <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
         <a href="tel:+8801898828980">
             <button class="btn" style="background:#3B308B;color:#fff;">
@@ -675,7 +675,7 @@
                 </div>
                 <!-- Right Side Elements (Globe Icon + Button) -->
                 <div class="header-right-elements">
-                    <!-- <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a> -->
+                    <a href="#" class="show-on-desktop"><i class="fas fa-globe"></i></a>
                     <a href="{{ route('login') }}" class="show-on-desktop"><i class="fas fa-user"></i></a>
                     <a href="tel:+8801898828980">
                         <button class="btn" style="background:#3B308B;color:#fff;">
