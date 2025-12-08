@@ -2101,22 +2101,23 @@
     </section>
 </div>
 
-<!-- UWS Campus -->
+
+
+<!-- UWS Campus-->
 <section class="campus-section py-5">
-    <div class="container-fluid">
+    <div class="container">
 
         <!-- Heading -->
-        <div class="sec-title centred mb-5 text-center">
+        <div class="sec-title centred" style="margin-bottom: 50px;">
             <h2 style="font-size: 36px; font-weight: 700; color: #003054;">
                 Our Official Representative of <span style="color:#DB1F2A;">UWS university</span>
             </h2>
-            <p>(not applicable for London campus)</p>
+            <p>( not applicable for London campus )</p>
         </div>
-
         <!-- Campus Grid -->
-        <div class="row g-4 justify-content-center">
-            <!-- Campus Items -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <div class="row g-4">
+            <!-- Campus Item -->
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <a href="#" class="campus-card">
                     <div class="card-img">
                         <img src="{{ asset('frontend/assets/images/uws/paisley_campus.webp') }}" alt="Paisley Campus">
@@ -2124,11 +2125,15 @@
                             <div class="line"></div>
                             <div class="campus-name">Paisley Campus</div>
                         </div>
+                        <div class="overlay">
+                            <p class="text-white">Located in the centre of Paisley, Scotland's largest town, the campus is just 10 minutes by train from Glasgow.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <a href="#" class="campus-card">
                     <div class="card-img">
                         <img src="{{ asset('frontend/assets/images/uws/ayr_campus.jpg') }}" alt="Ayr Campus">
@@ -2136,11 +2141,15 @@
                             <div class="line"></div>
                             <div class="campus-name">Ayr Campus</div>
                         </div>
+                        <div class="overlay">
+                            <p class="text-white">Located just a 10-minute walk from Ayr town centre on the Craigie Estate next to the River Ayr, UWS's £81 million Ayr Campus creates a truly innovative learning environment for students.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <a href="#" class="campus-card">
                     <div class="card-img">
                         <img src="{{ asset('frontend/assets/images/uws/lanarkshire_campus.webp') }}" alt="Lanarkshire Campus">
@@ -2148,240 +2157,82 @@
                             <div class="line"></div>
                             <div class="campus-name">Lanarkshire Campus</div>
                         </div>
+                        <div class="overlay">
+                            <p class="text-white">UWS's award-winning £110m campus in Lanarkshire opened in September 2018 and is located on the outskirts of Hamilton, in Hamilton International Technology Park.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <a href="#" class="campus-card">
                     <div class="card-img">
-                        <img src="{{ asset('frontend/assets/images/uws/damfries.webp') }}" alt="Damfries Campus">
+                        <img src="{{ asset('frontend/assets/images/uws/damfries.webp') }}" alt="Ayr Campus">
                         <div class="card-caption">
                             <div class="line"></div>
                             <div class="campus-name">Damfries Campus</div>
                         </div>
+                        <div class="overlay">
+                            <p class="text-white">Located just a 10-minute walk from Ayr town centre on the Craigie Estate next to the River Ayr, UWS's £81 million Ayr Campus creates a truly innovative learning environment for students.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <a href="#" class="campus-card">
                     <div class="card-img">
-                        <img src="{{ asset('frontend/assets/images/uws/london.webp') }}" alt="London Campus">
+                        <img src="{{ asset('frontend/assets/images/uws/london.webp') }}" alt="Lanarkshire Campus">
                         <div class="card-caption">
                             <div class="line"></div>
                             <div class="campus-name">London Campus</div>
                         </div>
+                        <div class="overlay">
+                            <p class="text-white">UWS's award-winning £110m campus in Lanarkshire opened in September 2018 and is located on the outskirts of Hamilton, in Hamilton International Technology Park.</p>
+                            <p class="cta text-white">Find out more <i class="fas fa-arrow-right ms-2"></i></p>
+                        </div>
                     </div>
                 </a>
             </div>
 
-            <!-- Intake Slider + Dropdowns -->
-            <div class="col-12">
-                <div class="row g-4 justify-content-center">
+<div class="campus-card dropdown-card">
+    <div class="card-caption">
+        <div class="line"></div>
+        <div class="campus-name">Check Universities Intake</div>
+    </div>
+    <div class="overlay">
+        <form>
+            <label for="select-university">Select Course</label>
+            <select id="select-university">
+                <option selected disabled>Choose Intake</option>
+                <option>January Intake</option>
+                <option>May Intake</option>
+                <option>June Intake</option>
+                <option>September Intake</option>
+            </select>
 
-                                        <!-- Slider = same width as 3 cards (3/5 row) -->
+            <label for="select-course">Select Intake/Course</label>
+            <select id="select-course">
+                <option selected disabled>Choose Course/Intake</option>
+                <option>Bachelor of Science</option>
+                <option>Master of Arts</option>
+                <option>Business Administration</option>
+                <option>Computer Science</option>
+            </select>
 
-                                        <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+            <button type="submit">Check Intake</button>
+        </form>
+    </div>
+</div>
 
-                                            <!-- Swiper -->
 
-                                            <div class="swiper mySwiper">
 
-                                                <div class="swiper-wrapper">
-
-                                                    <div class="swiper-slide">
-
-                                                        <div class="card p-3 shadow">
-
-                                                            <h5 class="fw-bold">Paisley Campus</h5>
-
-                                                            <p>UWS Paisley Campus is located in the heart of Paisley, Scotland's largest town, just 10 minutes by train from Glasgow city centre. Spanning over 20 acres, the campus blends modern facilities with the heritage of the town, creating an inspiring learning environment.</p>
-
-                                                            <p>The campus offers a wide variety of courses across business, computing, social sciences, engineering, health, nursing, and midwifery. Students benefit from state-of-the-art teaching spaces, labs, studios, and the extensive library with 200,000+ volumes, digital resources, and 950 study spaces, all with free internet access.</p>
-
-                                                            <p>Campus life is active and welcoming, with the Students' Union providing cafés, social areas, events, and a 450-capacity hall. On-site accommodation is available, offering comfortable living close to teaching facilities and social spaces.</p>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-
-                                                        <div class="card p-3 shadow">
-
-                                                            <h5 class="fw-bold">Ayr Campus</h5>
-
-                                                            <p>UWS Ayr Campus, opened in 2011, is located on the picturesque Craigie Estate by the River Ayr, just a 10‑minute walk from Ayr town centre. The campus combines modern architecture with natural surroundings, creating a sustainable and student-friendly environment.</p>
-
-                                                            <p>The campus offers a wide range of courses across health, social sciences, creative arts, education, and more. Students benefit from state-of-the-art teaching facilities including labs, studios, simulation suites, and a well-equipped library with free internet and study spaces for both individual and group work.</p>
-
-                                                            <p>Campus life is vibrant, with a Students' Union providing cafés, social spaces, events, and a fitness suite. On-site accommodation includes en-suite flats and studio rooms, offering secure, comfortable living just minutes from lecture halls.</p>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-
-                                                        <div class="card p-3 shadow">
-
-                                                            <h5 class="fw-bold">Lanarkshire Campus</h5>
-
-                                                            <p>UWS Lanarkshire Campus, opened in September 2018, is located on the outskirts of Hamilton in the Hamilton International Technology Park. The campus was designed as a modern, sustainable, and award-winning £110 million facility, offering a cutting-edge learning environment.</p>
-
-                                                            <p>The campus provides a wide range of courses across business, computing, engineering, health, social sciences, and more. Students have access to modern teaching facilities including laboratories, workshops, studios, and collaborative learning spaces, as well as a fully equipped library with digital and print resources and free internet access.</p>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="swiper-button-next"></div>
-
-                                                <div class="swiper-button-prev"></div>
-
-                                            </div>
-
-                                        </div>
-
-                    @push('js')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var swiper = new Swiper(".mySwiper", {
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          autoplay: {
-            delay: 2500, // 2.5 seconds
-            disableOnInteraction: false, // Continue autoplay even when user interacts
-          },
-        });
-    });
-</script>
-@endpush
-
-                    <!-- Form = same width as 2 cards (2/5 row) -->
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card p-3 shadow">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="select-intake" class="form-label fw-semibold">Select Intake</label>
-                                    <select id="select-intake" class="form-select">
-                                        <option selected disabled>Choose Intake</option>
-                                        <option>January Intake</option>
-                                        <option>May Intake</option>
-                                        <option>June Intake</option>
-                                        <option>September Intake</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="select-course" class="form-label fw-semibold">Select Course</label>
-                                    <select id="select-course" class="form-select">
-                                        <option selected disabled>Choose Course</option>
-                                        <option>Bachelor of Science</option>
-                                        <option>Master of Arts</option>
-                                        <option>Business Administration</option>
-                                        <option>Computer Science</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary w-100">Check Intake</button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+            <!-- Add more campuses similarly -->
         </div>
     </div>
 </section>
-
-<style>
-/* Campus Card */
-.campus-card {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    text-decoration: none;
-    width: 100%;
-    transition: transform 0.3s ease;
-}
-
-.card-img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.card-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    padding: 15px 0 10px;
-    background: rgba(0, 0, 0, 0);
-}
-
-.card-caption .line {
-    height: 3px;
-    width: 60px;
-    background: #3B308B;
-    margin: 0 auto 8px;
-}
-
-.card-caption .campus-name {
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-.campus-card:hover img {
-    transform: scale(1.05);
-}
-
-
-/* Responsive tweaks */
-@media (max-width: 1199px) {
-    .col-lg-2 {
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-}
-@media (max-width: 991px) {
-    .col-lg-2 {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
-    }
-}
-@media (max-width: 767px) {
-    .col-lg-2 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-@media (max-width: 575px) {
-    .col-lg-2 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-</style>
-
 
 
 
@@ -2783,8 +2634,7 @@
                         <h4 class="fw-semibold mb-4">Send us a message</h4>
                         <form>
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Full Name <span
-                                        class="text-danger">*</span></label>
+                                <label class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" required>
                             </div>
 
@@ -2813,8 +2663,7 @@
 
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">Message</label>
-                                <textarea class="form-control" rows="4"
-                                    placeholder="Tell us about your study goals..."></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Tell us about your study goals..."></textarea>
                             </div>
 
                             <div class="form-check mb-4">
@@ -2824,11 +2673,9 @@
                                 </label>
                             </div>
 
-                            <button type="submit"
-                                class="btn w-100 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white"
+                            <button type="submit" class="btn w-100 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white"
                                 style="background:#3B308B; font-size:14px;">
-                                <i class="fas fa-paper-plane text-white" style="font-size:16px; margin-bottom:0;"></i>
-                                &nbsp; &nbsp;
+                                <i class="fas fa-paper-plane text-white" style="font-size:16px; margin-bottom:0;"></i> &nbsp; &nbsp; 
                                 <span>Send Message</span>
                             </button>
                         </form>
@@ -2855,7 +2702,7 @@
                                 <strong>Phone</strong>
                                 <p class="mb-0 text-muted">+880 9611 656889,</p>
                                 <p class="mb-0 text-muted">+880 1898-828980</p>
-
+                                
 
 
                             </div>
@@ -2888,7 +2735,8 @@
                     <div class="col-md-6">
                         <h4 class="fw-semibold mb-4">Follow Us</h4>
 
-                        <a href="{{ $ws->fb_url }}" class="social-card d-flex align-items-center mb-3" target="_blank">
+                        <a href="{{ $ws->fb_url }}"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
                             <i class="fab fa-facebook-f fb"></i>
                             <div>
                                 <strong>Facebook</strong>
@@ -2896,7 +2744,8 @@
                             </div>
                         </a>
 
-                        <a href="#" class="social-card d-flex align-items-center mb-3" target="_blank">
+                        <a href="#"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
                             <i class="fab fa-instagram ig"></i>
                             <div>
                                 <strong>Instagram</strong>
@@ -2904,7 +2753,8 @@
                             </div>
                         </a>
 
-                        <a href="#" class="social-card d-flex align-items-center mb-3" target="_blank">
+                        <a href="#"
+                            class="social-card d-flex align-items-center mb-3" target="_blank">
                             <i class="fab fa-linkedin-in ln"></i>
                             <div>
                                 <strong>LinkedIn</strong>
@@ -2912,9 +2762,9 @@
                             </div>
                         </a>
 
-                        <a href="#" class="social-card d-flex align-items-center" target="_blank">
-                            <img src="{{ asset('frontend/assets/images/icons/tiktok-icon.png') }}" class="me-3"
-                                width="40" height="40" alt="TikTok"> &nbsp; &nbsp;
+                        <a href="#"
+                            class="social-card d-flex align-items-center" target="_blank"> 
+                            <img src="{{ asset('frontend/assets/images/icons/tiktok-icon.png') }}" class="me-3" width="40" height="40" alt="TikTok"> &nbsp; &nbsp;
                             <div>
                                 <strong>TikTok</strong>
                                 <small class="d-block text-muted">Follow us on TikTok</small>
@@ -2933,8 +2783,10 @@
                     </div>
 
                     <div class="rounded overflow-hidden" style="height:250px;">
-                        <iframe src="https://www.google.com/maps?q=Gulshan+1+Dhaka&output=embed" width="100%"
-                            height="100%" style="border:0;" loading="lazy"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps?q=Gulshan+1+Dhaka&output=embed"
+                            width="100%" height="100%" style="border:0;"
+                            loading="lazy"></iframe>
                     </div>
                 </div>
 
@@ -2946,87 +2798,56 @@
 
 <style>
 .icon-box {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .form-label {
     font-weight: 600;
-    text-align: left;
-    /* ensures label is left-aligned */
-    display: block;
-    /* ensures it behaves like block above input */
+    text-align: left; /* ensures label is left-aligned */
+    display: block;   /* ensures it behaves like block above input */
 }
 
 
 .social-card {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: .2s;
+    background:#f8f9fa;
+    border-radius:8px;
+    padding:10px;
+    text-decoration:none;
+    color:inherit;
+    transition:.2s;
 }
-
 .social-card:hover {
-    background: #e9ecef;
+    background:#e9ecef;
 }
 
 .social-card i {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-right: 12px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    margin-right:12px;
 }
 
 /* Social Colors */
-.fb {
-    background: #1877f2;
-}
-
-.ig {
-    background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
-}
-
-.ln {
-    background: #0A66C2;
-}
-
-.tt {
-    background: black;
-}
+.fb { background:#1877f2; }
+.ig { background:linear-gradient(45deg,#fd5949,#d6249f,#285AEB); }
+.ln { background:#0A66C2; }
+.tt { background:black; }
 
 /* Responsive adjustments */
 @media(max-width:767px) {
-    .d-flex.align-items-start {
-        flex-direction: row;
-    }
-
-    .social-card div {
-        font-size: 13px;
-    }
-
-    .social-card i {
-        width: 36px;
-        height: 36px;
-        margin-right: 8px;
-        font-size: 14px;
-    }
-
-    button.btn i {
-        font-size: 14px;
-    }
-
-    button.btn span {
-        font-size: 14px;
-    }
+    .d-flex.align-items-start { flex-direction: row; }
+    .social-card div { font-size: 13px; }
+    .social-card i { width:36px; height:36px; margin-right:8px; font-size:14px; }
+    button.btn i { font-size:14px; }
+    button.btn span { font-size:14px; }
 }
 </style>
 
@@ -3339,5 +3160,234 @@ $(document).ready(function() {
 });
 </script>
 <!-- aUWS Campus- -->
+<style>
+/* Campus Card */
+.campus-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Caption at bottom */
+.card-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0 10px;
+    background: rgba(0,0,0,0);
+}
+
+.card-caption .line {
+    height: 3px;
+    width: 60px;
+    background: #3B308B;
+    margin: 0 auto 8px;
+}
+
+.card-caption .campus-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* Overlay on hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(59,48,139,0.9);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Overlay text */
+.overlay-text {
+    margin-bottom: 15px;
+}
+
+.overlay-text p {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin: 0;
+}
+
+/* CTA Button */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: #fff;
+    color: #3B308B;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s, color 0.3s;
+}
+
+.campus-card:hover img {
+    transform: scale(1.05);
+}
+
+.campus-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.campus-card:hover .btn-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover effect */
+.btn-cta:hover {
+    background: #3B308B;
+    color: #fff;
+}
+
+.btn-cta i {
+    font-size: 0.9rem;
+}
+
+/* Modern dropdown inside overlay */
+.overlay form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.overlay select, .overlay button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.overlay button {
+    background-color: #fff;
+    color: #3B308B;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.overlay button:hover {
+    background-color: #3B308B;
+    color: #fff;
+}
+
+
+/* Always visible overlay for dropdown card */
+.campus-card.dropdown-card .overlay {
+    position: relative;
+    background-color: #f8f9fa; /* light background instead of dark overlay */
+    color: #003054;
+    padding: 20px;
+    opacity: 1;
+    transform: none;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Modern select dropdown */
+.campus-card.dropdown-card select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background-color: #fff;
+    appearance: none; /* removes default arrow for modern look */
+}
+
+/* Modern button */
+.campus-card.dropdown-card button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background-color: #3B308B;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.campus-card.dropdown-card button:hover {
+    background-color: #1f1a72;
+}
+
+/* Adjust form spacing */
+.campus-card.dropdown-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Only remove overflow for dropdown card */
+.campus-card.dropdown-card {
+    overflow: visible; /* allow overlay to exceed card */
+}
+
+
+.campus-card.dropdown-card .card-caption {
+    position: relative;   /* make it relative instead of absolute */
+    bottom: auto;         /* remove absolute bottom positioning */
+    background: none;     /* remove transparent overlay issue */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.campus-card.dropdown-card .campus-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #DB1F2A;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.2); /* visible highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    z-index: 2;  /* make sure it’s above any overlay/background */
+}
+
+
+
+</style>
+
 
 @endpush

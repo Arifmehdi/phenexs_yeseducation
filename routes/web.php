@@ -143,6 +143,8 @@ Route::get('/study-in-the-uk',[FrontendController::class,'studyIn'])->name('stud
 Route::get('/study-in-the-uk/{slug}',[FrontendController::class,'studyInUk'])->name('studyInUk');
 Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('/blog/details/{slug}',[FrontendController::class,'blogDetails'])->name('blogDetails');
+Route::get('/global-office',[FrontendController::class,'globalOfficeOnly'])->name('globalOfficeOnly');
+Route::get('/study-guide',[FrontendController::class,'studyGuide'])->name('studyGuide');
 Route::get('/global-offices/{id?}',[FrontendController::class,'globalOffice'])->name('globalOffice');
 Route::get('/application',[FrontendController::class,'application'])->name('application');
 Route::post('/application', [ApplicationController::class, 'store'])->name('application.store');

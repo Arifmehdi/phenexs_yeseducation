@@ -192,6 +192,16 @@ class FrontendController extends Controller
         return view('website.global_office');
     }
 
+    public function globalOfficeOnly()
+    {
+        return view('website.global_office_single');
+    }
+
+    public function studyGuide()
+    {
+        return view('website.study_guide');
+    }
+
     public function application()
     {
         return view('website.application');

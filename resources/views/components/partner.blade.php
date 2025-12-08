@@ -90,7 +90,7 @@
     </div>
 </section>
 
-
+@push('css')
 <style>
 /* slider brand content  */
 .slider-container {
@@ -157,6 +157,10 @@
 }
 </style>
 
+@endpush
+
+
+@push('js')
 <!-- Initialize Carousel -->
 <script>
 $(document).ready(function() {
@@ -179,5 +183,5 @@ $(document).ready(function() {
     });
 });
 </script>
-
+@endpush
 
