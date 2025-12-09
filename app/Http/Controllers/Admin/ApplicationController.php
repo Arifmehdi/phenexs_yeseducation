@@ -17,6 +17,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+        menuSubmenu('applications', 'allApplications');
         $applications = Application::latest()->paginate(20);
         return view('admin.applications.index', compact('applications'));
     }

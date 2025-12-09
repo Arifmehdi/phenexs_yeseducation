@@ -119,7 +119,7 @@ class FrontendController extends Controller
                         ->get();
         $data['testimonials'] = Testimonial::whereActive(true)->select('name', 'company', 'address', 'text_en','rating', 'image')->get();
         $data['sliders'] = FrontSlider::whereActive(true)
-            ->select('featured_image','title','link','btn_txt')
+            ->select('featured_image','title','link','btn_txt','description')
             ->get();
 
         return view('website.index', $data);  

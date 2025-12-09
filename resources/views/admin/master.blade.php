@@ -176,7 +176,7 @@
                         <a href="#" class="nav-link {{ session('lsbm') == 'slider'? ' active ' : ''}}">
                             <i class="nav-icon fas fa-search-location"></i>
                             <p>
-                                Sliders
+                                UWS Slider
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -184,7 +184,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('sliders.index') }}" class="nav-link {{ session('lsbsm') == 'allFrontSlider' ? ' active ' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>All Sliders</p>
+                                    <p>All UWS Slider</p>
                                 </a>
                             </li>
 
@@ -193,7 +193,7 @@
 
                    
 
-                    <li class="nav-item {{ session('lsbm') == 'menupage' ? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'menupage' ? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'menupage' ? ' active ' : ''}}">
                             <i class="nav-icon fas fa-bezier-curve"></i>
                             <p>
@@ -219,7 +219,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>--}}
 
                     <li class="nav-item {{ session('lsbm') == 'posts'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'posts'? ' active ' : ''}}">
@@ -260,13 +260,13 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item {{ session('lsbm') == 'applications'? ' menu-open ' : ''}}">
+                    <li class="nav-item">
                         <a href="{{ route('applications.index') }}" class="nav-link {{ session('lsbsm') == 'allApplications' ? ' active ' : '' }}">
                             <i class="nav-icon fas fa-file-alt"></i> 
                             <p>Application Forms</p>
                         </a>
                     </li>
-                    <li class="nav-item {{ session('lsbm') == 'destination'? ' menu-open ' : ''}}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'destination'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'destination'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
                             <p>
@@ -304,7 +304,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>--}}
                     <li class="nav-item {{ session('lsbm') == 'service'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'service'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
@@ -354,7 +354,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item {{ session('lsbm') == 'galleries' ? ' menu-open ' : '' }}">
+                    {{--<li class="nav-item {{ session('lsbm') == 'galleries' ? ' menu-open ' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'galleries' ? ' active ' : '' }}">
                             <i class="nav-icon fas fas fa-bell"></i>
                             <p>
@@ -379,7 +379,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>--}}
 
                     <li class="nav-item {{ session('lsbm') == 'testimonials' ? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'testimonials' ? ' active ' : ''}}">

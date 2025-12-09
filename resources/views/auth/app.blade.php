@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Material Design Login Form</title>
+    <title>Yesedu - Login</title>
     <link rel="stylesheet" href="{{ asset('frontend/auth/style.css') }}">
 </head>
 
