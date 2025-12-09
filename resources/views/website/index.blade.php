@@ -2101,12 +2101,15 @@
     </section>
 </div>
 
+
+
+<!-- uws section start  -->
 <!-- UWS Campus -->
-<section class="campus-section py-5">
+<section class="uws-campus-section">
     <div class="container-fluid">
 
         <!-- Heading -->
-        <div class="sec-title centred mb-5 text-center">
+        <div class="uws-sec-title centred mb-5 text-center">
             <h2 style="font-size: 36px; font-weight: 700; color: #003054;">
                 Our Official Representative of <span style="color:#DB1F2A;">UWS university</span>
             </h2>
@@ -2115,161 +2118,174 @@
 
         <!-- Campus Grid -->
         <div class="row g-4 justify-content-center">
-            <!-- Campus Items -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="campus-card">
-                    <div class="card-img">
+
+            <!-- Campus Item -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
+                <a href="#" class="uws-campus-card">
+                    <div class="uws-card-img">
                         <img src="{{ asset('frontend/assets/images/uws/paisley_campus.webp') }}" alt="Paisley Campus">
-                        <div class="card-caption">
-                            <div class="line"></div>
-                            <div class="campus-name">Paisley Campus</div>
+                        <div class="uws-card-caption">
+                            <div class="uws-line"></div>
+                            <div class="uws-campus-name">Paisley Campus</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="campus-card">
-                    <div class="card-img">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
+                <a href="#" class="uws-campus-card">
+                    <div class="uws-card-img">
                         <img src="{{ asset('frontend/assets/images/uws/ayr_campus.jpg') }}" alt="Ayr Campus">
-                        <div class="card-caption">
-                            <div class="line"></div>
-                            <div class="campus-name">Ayr Campus</div>
+                        <div class="uws-card-caption">
+                            <div class="uws-line"></div>
+                            <div class="uws-campus-name">Ayr Campus</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="campus-card">
-                    <div class="card-img">
-                        <img src="{{ asset('frontend/assets/images/uws/lanarkshire_campus.webp') }}" alt="Lanarkshire Campus">
-                        <div class="card-caption">
-                            <div class="line"></div>
-                            <div class="campus-name">Lanarkshire Campus</div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
+                <a href="#" class="uws-campus-card">
+                    <div class="uws-card-img">
+                        <img src="{{ asset('frontend/assets/images/uws/lanarkshire_campus.webp') }}"
+                            alt="Lanarkshire Campus">
+                        <div class="uws-card-caption">
+                            <div class="uws-line"></div>
+                            <div class="uws-campus-name">Lanarkshire Campus</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="campus-card">
-                    <div class="card-img">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
+                <a href="#" class="uws-campus-card">
+                    <div class="uws-card-img">
                         <img src="{{ asset('frontend/assets/images/uws/damfries.webp') }}" alt="Damfries Campus">
-                        <div class="card-caption">
-                            <div class="line"></div>
-                            <div class="campus-name">Damfries Campus</div>
+                        <div class="uws-card-caption">
+                            <div class="uws-line"></div>
+                            <div class="uws-campus-name">Damfries Campus</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="campus-card">
-                    <div class="card-img">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
+                <a href="#" class="uws-campus-card">
+                    <div class="uws-card-img">
                         <img src="{{ asset('frontend/assets/images/uws/london.webp') }}" alt="London Campus">
-                        <div class="card-caption">
-                            <div class="line"></div>
-                            <div class="campus-name">London Campus</div>
+                        <div class="uws-card-caption">
+                            <div class="uws-line"></div>
+                            <div class="uws-campus-name">London Campus</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <!-- Intake Slider + Dropdowns -->
+            <!-- Slider + Form -->
             <div class="col-12">
-                <div class="row g-4 justify-content-center">
+                <div class="row justify-content-center">
 
-                                        <!-- Slider = same width as 3 cards (3/5 row) -->
+                    <!-- Slider -->
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                        <div class="swiper uws-swiper">
+                            <div class="swiper-wrapper">
 
-                                        <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                                <div class="swiper-slide">
+                                    <div class="card p-3 shadow">
+                                        <h5 class="fw-bold">Paisley Campus</h5>
 
-                                            <!-- Swiper -->
+                                        <p>UWS Paisley Campus is located in the heart of Paisley, Scotland's largest
+                                            town, just 10 minutes by train from Glasgow city centre. Spanning over 20
+                                            acres, the campus blends modern facilities with the heritage of the town,
+                                            creating an inspiring learning environment.</p>
 
-                                            <div class="swiper mySwiper">
+                                        <p>The campus offers a wide variety of courses across business, computing,
+                                            social sciences, engineering, health, nursing, and midwifery. Students
+                                            benefit from state-of-the-art teaching spaces, labs, studios, and the
+                                            extensive library with 200,000+ volumes, digital resources, and 950 study
+                                            spaces, all with free internet access.</p>
 
-                                                <div class="swiper-wrapper">
+                                        <p>Campus life is active and welcoming, with the Students' Union providing
+                                            cafés, social areas, events, and a 450-capacity hall. On-site accommodation
+                                            is available, offering comfortable living close to teaching facilities and
+                                            social spaces.</p>
+                                    </div>
+                                </div>
 
-                                                    <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <div class="card p-3 shadow">
+                                        <h5 class="fw-bold">Ayr Campus</h5>
+                                        <p>UWS Ayr Campus, opened in 2011, is located on the picturesque Craigie Estate
+                                            by the River Ayr, just a 10‑minute walk from Ayr town centre. The campus
+                                            combines modern architecture with natural surroundings, creating a
+                                            sustainable and student-friendly environment.</p>
 
-                                                        <div class="card p-3 shadow">
+                                        <p>The campus offers a wide range of courses across health, social sciences,
+                                            creative arts, education, and more. Students benefit from state-of-the-art
+                                            teaching facilities including labs, studios, simulation suites, and a
+                                            well-equipped library with free internet and study spaces for both
+                                            individual and group work.</p>
 
-                                                            <h5 class="fw-bold">Paisley Campus</h5>
+                                        <p>Campus life is vibrant, with a Students' Union providing cafés, social
+                                            spaces, events, and a fitness suite. On-site accommodation includes en-suite
+                                            flats and studio rooms, offering secure, comfortable living just minutes
+                                            from lecture halls.</p>
 
-                                                            <p>UWS Paisley Campus is located in the heart of Paisley, Scotland's largest town, just 10 minutes by train from Glasgow city centre. Spanning over 20 acres, the campus blends modern facilities with the heritage of the town, creating an inspiring learning environment.</p>
+                                    </div>
+                                </div>
 
-                                                            <p>The campus offers a wide variety of courses across business, computing, social sciences, engineering, health, nursing, and midwifery. Students benefit from state-of-the-art teaching spaces, labs, studios, and the extensive library with 200,000+ volumes, digital resources, and 950 study spaces, all with free internet access.</p>
+                                <div class="swiper-slide">
+                                    <div class="card p-3 shadow">
+                                        <h5 class="fw-bold">Lanarkshire Campus</h5>
+                                        <p>UWS Ayr Campus, opened in 2011, is located on the picturesque Craigie Estate
+                                            by the River Ayr, just a 10‑minute walk from Ayr town centre. The campus
+                                            combines modern architecture with natural surroundings, creating a
+                                            sustainable and student-friendly environment.</p>
 
-                                                            <p>Campus life is active and welcoming, with the Students' Union providing cafés, social areas, events, and a 450-capacity hall. On-site accommodation is available, offering comfortable living close to teaching facilities and social spaces.</p>
+                                        <p>The campus offers a wide range of courses across health, social sciences,
+                                            creative arts, education, and more. Students benefit from state-of-the-art
+                                            teaching facilities including labs, studios, simulation suites, and a
+                                            well-equipped library with free internet and study spaces for both
+                                            individual and group work.</p>
 
-                                                        </div>
+                                        <p>Campus life is vibrant, with a Students' Union providing cafés, social
+                                            spaces, events, and a fitness suite. On-site accommodation includes en-suite
+                                            flats and studio rooms, offering secure, comfortable living just minutes
+                                            from lecture halls.</p>
+                                    </div>
+                                </div>
 
-                                                    </div>
+                            </div>
 
-                                                    <div class="swiper-slide">
-
-                                                        <div class="card p-3 shadow">
-
-                                                            <h5 class="fw-bold">Ayr Campus</h5>
-
-                                                            <p>UWS Ayr Campus, opened in 2011, is located on the picturesque Craigie Estate by the River Ayr, just a 10‑minute walk from Ayr town centre. The campus combines modern architecture with natural surroundings, creating a sustainable and student-friendly environment.</p>
-
-                                                            <p>The campus offers a wide range of courses across health, social sciences, creative arts, education, and more. Students benefit from state-of-the-art teaching facilities including labs, studios, simulation suites, and a well-equipped library with free internet and study spaces for both individual and group work.</p>
-
-                                                            <p>Campus life is vibrant, with a Students' Union providing cafés, social spaces, events, and a fitness suite. On-site accommodation includes en-suite flats and studio rooms, offering secure, comfortable living just minutes from lecture halls.</p>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-
-                                                        <div class="card p-3 shadow">
-
-                                                            <h5 class="fw-bold">Lanarkshire Campus</h5>
-
-                                                            <p>UWS Lanarkshire Campus, opened in September 2018, is located on the outskirts of Hamilton in the Hamilton International Technology Park. The campus was designed as a modern, sustainable, and award-winning £110 million facility, offering a cutting-edge learning environment.</p>
-
-                                                            <p>The campus provides a wide range of courses across business, computing, engineering, health, social sciences, and more. Students have access to modern teaching facilities including laboratories, workshops, studios, and collaborative learning spaces, as well as a fully equipped library with digital and print resources and free internet access.</p>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="swiper-button-next"></div>
-
-                                                <div class="swiper-button-prev"></div>
-
-                                            </div>
-
-                                        </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
 
                     @push('js')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var swiper = new Swiper(".mySwiper", {
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          autoplay: {
-            delay: 2500, // 2.5 seconds
-            disableOnInteraction: false, // Continue autoplay even when user interacts
-          },
-        });
-    });
-</script>
-@endpush
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var swiper = new Swiper(".uws-swiper", {
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                        });
+                    });
+                    </script>
+                    @endpush
 
-                    <!-- Form = same width as 2 cards (2/5 row) -->
+                    <!-- Form -->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card p-3 shadow">
+                        <div class="card p-3 shadow uws-form-card">
                             <form>
                                 <div class="mb-3">
-                                    <label for="select-intake" class="form-label fw-semibold">Select Intake</label>
-                                    <select id="select-intake" class="form-select">
+                                    <label class="form-label fw-semibold">Select Intake</label>
+                                    <select class="form-select">
                                         <option selected disabled>Choose Intake</option>
                                         <option>January Intake</option>
                                         <option>May Intake</option>
@@ -2279,8 +2295,8 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="select-course" class="form-label fw-semibold">Select Course</label>
-                                    <select id="select-course" class="form-select">
+                                    <label class="form-label fw-semibold">Select Course</label>
+                                    <select class="form-select">
                                         <option selected disabled>Choose Course</option>
                                         <option>Bachelor of Science</option>
                                         <option>Master of Arts</option>
@@ -2289,7 +2305,7 @@
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary w-100">Check Intake</button>
+                                <button type="submit" class="mt-3 btn btn-primary w-100">Check Intake</button>
                             </form>
                         </div>
                     </div>
@@ -2302,8 +2318,8 @@
 </section>
 
 <style>
-/* Campus Card */
-.campus-card {
+/* Wrap everything under .uws-campus-section to avoid conflicts */
+.uws-campus-section .uws-campus-card {
     display: block;
     position: relative;
     overflow: hidden;
@@ -2313,76 +2329,102 @@
     transition: transform 0.3s ease;
 }
 
-.card-img {
+.uws-campus-section .uws-card-img {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 250px;
 }
 
-.card-img img {
+.uws-campus-section .uws-card-img img {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.card-caption {
+.uws-campus-section .uws-card-caption {
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
     text-align: center;
     color: #fff;
     padding: 15px 0 10px;
-    background: rgba(0, 0, 0, 0);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
-.card-caption .line {
+.uws-campus-section .uws-line {
     height: 3px;
     width: 60px;
     background: #3B308B;
     margin: 0 auto 8px;
 }
 
-.card-caption .campus-name {
+.uws-campus-section .uws-campus-name {
     font-weight: 700;
     font-size: 1.3rem;
 }
 
-.campus-card:hover img {
+.uws-campus-section .uws-campus-card:hover img {
     transform: scale(1.05);
 }
 
+/* Desktop and Large Screens - 5 cards in a row (lg breakpoint and up) */
+@media (min-width: 992px) {
+    .uws-campus-section .uws-card-img {
+        height: 280px;
+    }
+}
 
-/* Responsive tweaks */
-@media (max-width: 1199px) {
-    .col-lg-2 {
-        flex: 0 0 20%;
-        max-width: 20%;
+/* Tablets - 3 cards in a row (md breakpoint: 768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .uws-campus-section .uws-card-img {
+        height: 240px;
     }
 }
-@media (max-width: 991px) {
-    .col-lg-2 {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
+
+/* Small Tablets and Large Phones - 2 cards in a row (sm breakpoint: 576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .uws-campus-section .uws-card-img {
+        height: 220px;
+    }
+    
+    .uws-campus-section .uws-campus-name {
+        font-size: 1.1rem;
     }
 }
-@media (max-width: 767px) {
-    .col-lg-2 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
+
+/* Mobile Devices - 2 cards in a row (below 576px) */
 @media (max-width: 575px) {
-    .col-lg-2 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .uws-campus-section .uws-card-img {
+        height: 180px;
+    }
+    
+    .uws-campus-section .uws-campus-name {
+        font-size: 1rem;
+    }
+    
+    .uws-campus-section .uws-line {
+        width: 40px;
+    }
+    
+    /* Adjust heading for mobile */
+    .uws-campus-section .uws-sec-title h2 {
+        font-size: 24px !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .uws-campus-section .uws-card-img {
+        height: 160px;
+    }
+    
+    .uws-campus-section .uws-campus-name {
+        font-size: 0.9rem;
     }
 }
 </style>
-
-
+<!-- uws section end -->
 
 
 
