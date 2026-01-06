@@ -1323,23 +1323,27 @@ a.location-item i {
         background: transparent;
     }
 
-        /* Hide any font-awesome angle icons in the mobile menu */
-    .mobile-navigation .navigation li.dropdown > a i.fas.fa-angle-down,
-    .mobile-navigation .navigation li.dropdown > a i[class*="angle"],
-    .mobile-navigation .navigation li.dropdown > a .fas,
-    .mobile-navigation .navigation li.dropdown > a span.fas.fa-angle-down,
-    .mobile-floating-menu .navigation li.dropdown > a i.fas.fa-angle-down,
-    .mobile-floating-menu .navigation li.dropdown > a i[class*="angle"],
-    .mobile-floating-menu .navigation li.dropdown > a .fas,
-    .mobile-floating-menu .navigation li.dropdown > a span.fas.fa-angle-down {
+    /* Hide the entire dropdown-btn div in all menus */
+    .navigation li.dropdown .dropdown-btn,
+    .mobile-navigation li.dropdown .dropdown-btn,
+    .mobile-floating-menu .navigation li.dropdown .dropdown-btn,
+    .sticky-header .navigation li.dropdown .dropdown-btn {
         display: none !important;
         visibility: hidden !important;
-        opacity: 0 !important;
         width: 0 !important;
         height: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
         font-size: 0 !important;
+        opacity: 0 !important;
+    }
+    
+    /* Also hide the span inside */
+    .navigation li.dropdown .dropdown-btn span,
+    .mobile-navigation li.dropdown .dropdown-btn span,
+    .mobile-floating-menu .navigation li.dropdown .dropdown-btn span,
+    .sticky-header .navigation li.dropdown .dropdown-btn span {
+        display: none !important;
     }
 
 }
