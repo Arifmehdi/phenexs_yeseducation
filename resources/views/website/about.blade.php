@@ -38,6 +38,7 @@
 
 
 <!-- about-section -->
+<!-- about-section -->
 <section class="about-section">
     <div class="pattern-layer" style="background-image: url('{{ asset('frontend/assets/images/shape/pattern-1.png') }}');"></div>
     <div class="auto-container">
@@ -45,43 +46,61 @@
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div id="image_block_1">
                     <div class="image-box">
-                        <figure class="image"><img src="{{ asset('frontend/assets/images/resource/about-5.jpg') }}" alt=""></figure>
+                        <figure class="image">
+                            <img src="{{ asset('frontend/assets/images/resource/about-5.jpg') }}" alt="YES Education">
+                        </figure>
                         <div class="box">
                             <div class="inner">
                                 <div class="icon-box">
                                     <div class="icon icon-1"></div>
                                     <div class="icon icon-2"></div>
                                 </div>
-                                <span>America’s Leading Visa & Immigration lawyers with</span>
-                                <h1>24</h1>
-                                <p>Years Of Experience</p>
+                                <span>Trusted Education Consultancy in Bangladesh</span>
+                                <h1>UK</h1>
+                                <p>Higher Education Specialists</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                 <div id="content_block_1">
                     <div class="content-box">
                         <div class="sec-title">
-                            <p>who are visarzo</p>
-                            <h2>Not Just Traditional Visa & Immigration Firm</h2>
+                            <p>About YES Education</p>
+                            <h2>Your Pathway to UK Higher Education</h2>
                             <div class="dotted-box">
                                 <span class="dotted"></span>
                                 <span class="dotted"></span>
                                 <span class="dotted"></span>
                             </div>
                         </div>
+
                         <div class="bold-text">
-                            <p>Sponsoring and managing work visas parts now becoming results in the experience.</p>
+                            <p>
+                                Empowering ambitious students to access world-class education in the United Kingdom.
+                            </p>
                         </div>
+
                         <div class="text">
-                            <p>Nunc quam arcu, pretium quis quam sed, laoreet efficitur leo. Aliquam era volutpat.
-                                lobortis sem consequat consequat imperdiet. In nulla sed viverraut loremut dapib es
-                                tetur diam nunc bibendum imperdiets.</p>
+                            <p>
+                                YES Education is a leading educational consultancy firm in Bangladesh, established under
+                                the visionary leadership of Nazim Uddin, Managing Director. We specialize in UK higher
+                                education and are committed to delivering personalized, ethical, and result-driven
+                                guidance for students aspiring to study abroad.
+                            </p>
+                            <p>
+                                Our mission is to transform student aspirations into reality by providing end-to-end
+                                support—from course selection and applications to visa processing and pre-departure
+                                guidance—ensuring a smooth and confident journey to the UK.
+                            </p>
                         </div>
+
                         <div class="btn-box">
-                            <a href="index.html" class="theme-btn-two">Learn More<i class="flaticon-send"></i></a>
+                            <a href="{{ url('/about') }}" class="theme-btn-two">
+                                Learn More<i class="flaticon-send"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -91,51 +110,67 @@
 </section>
 <!-- about-section end -->
 
+<!-- about-section end -->
+
 
 <!-- feature-section -->
 <section class="feature-section">
     <div class="auto-container">
         <div class="row clearfix">
+
             <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
-                    data-wow-duration="1500ms">
+                <div class="feature-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt=""></figure>
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/resource/feature-1.jpg') }}" alt="Student Counseling">
+                        </figure>
                         <div class="text">
-                            <h3><a href="index.html">Apply Visa Online</a></h3>
+                            <h3>
+                                <a href="#">Personalized Student Counseling</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms"
-                    data-wow-duration="1500ms">
+                <div class="feature-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt=""></figure>
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/resource/feature-2.jpg') }}" alt="Visa & Application">
+                        </figure>
                         <div class="text">
-                            <h3><a href="index.html">Important Information</a></h3>
+                            <h3>
+                                <a href="#">UK Application & Visa Guidance</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
+                <div class="feature-block-one wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt=""></figure>
+                        <figure class="image-box">
+                            <img src="{{ asset('frontend/assets/images/resource/feature-3.jpg') }}" alt="Student Support">
+                        </figure>
                         <div class="text">
-                            <h3><a href="index.html">Immigration Resources</a></h3>
+                            <h3>
+                                <a href="#">End-to-End Student Support</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 <!-- feature-section end -->
 
 
-<!-- cta-section -->
+
+{{--<!-- cta-section -->
 <section class="cta-section bg-color-1 centred">
     <div class="auto-container">
         <div class="inner-box">
@@ -402,5 +437,9 @@
         </div>
     </div>
 </section>
-<!-- apply-section end -->
+<!-- apply-section end -->--}}
+
+<x-student-reviews />
+
+<x-student-subscription />
 @endsection

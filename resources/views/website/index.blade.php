@@ -4,15 +4,17 @@
 
 @section('meta')
 <meta name="description"
-    content="North Bengal offers premium dairy products, latest news, and world-class services. Explore our departments and services with ease.">
-<meta name="keywords" content="North Bengal, dairy products, latest news, services, departments, quality dairy">
-<meta property="og:title" content="Home - North Bengal">
+    content="Yes Education is a trusted UK-based student counseling and education consultancy, guiding students with university admissions, visas, and career-focused study abroad solutions.">
+<meta name="keywords"
+    content="Yes Education, UK student counselor, study in UK, education consultancy, student visa UK, university admission guidance, study abroad">
+<meta property="og:title" content="Yes Education - UK Student Counseling & Study Abroad Guidance">
 <meta property="og:description"
-    content="Discover North Bengal’s quality dairy products, latest news, and world-class services.">
-<meta property="og:image" content="{{ asset('frontend/assets/img/northbengal/home-banner.png') }}">
+    content="Get expert guidance from Yes Education, a UK-based student counseling firm helping students with admissions, visas, and study abroad success.">
+<meta property="og:image" content="https://yesehec.com/frontend/assets/images/ads/January_Intake_in_the_UK_-_Desktop_Image.original.webp">
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 @endsection
+
 
 @push('css')
 <!-- Styles -->
@@ -2118,22 +2120,27 @@
 
         <!-- Campus Grid -->
         <div class="row g-4 justify-content-center">
+
             @forelse ($sliders as $slider)
-            <!-- Campus Item -->
             <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-3">
-                <a href="#" class="uws-campus-card">
+                <a href="#"
+                   class="uws-campus-card"
+                   data-title="{{ $slider->title }}"
+                   data-desc="{{ $slider->description }}">
+
                     <div class="uws-card-img">
                         <img src="{{ route('imagecache', ['template'=>'original','filename' => $slider->fi()]) }}"
-                            alt="{{$slider->title}}">
+                             alt="{{ $slider->title }}">
                         <div class="uws-card-caption">
                             <div class="uws-line"></div>
-                            <div class="uws-campus-name">{{$slider->title}}</div>
+                            <div class="uws-campus-name">{{ $slider->title }}</div>
                         </div>
                     </div>
+
                 </a>
             </div>
             @empty
-            <p>There have no UWS campus yet </p>
+            <p>There have no UWS campus yet</p>
             @endforelse
 
 
@@ -2141,96 +2148,85 @@
             <div class="col-12">
                 <div class="row justify-content-center">
 
-                    <!-- Slider -->
+                    <!-- SLIDER AREA (AUTO REPLACED ON CLICK) -->
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
-                        <div class="swiper uws-swiper">
-                            <div class="swiper-wrapper">
 
-                            @forelse ($sliders as $slider)
-                            <div class="swiper-slide">
-                                <div class="card p-3 shadow">
+                        <!-- DETAILS BOX (HIDDEN INITIALLY) -->
+                        <div id="campusDetailsBox" class="card p-3 shadow mb-4 d-none">
+                            <h5 id="campusTitle" class="fw-bold mb-3"></h5>
+                            <div id="campusDescription"></div>
 
-                                    <!-- Show Original Title -->
-                                    <h5 class="fw-bold">{{ $slider->title }}</h5>
+                            {{--<button id="backToSliderBtn" class="btn btn-secondary mt-3">
+                                Back to All Campus Info
+                            </button>--}}
+                        </div>
 
-                                    <!-- Split by @ and show as paragraphs -->
-                                    @php
-                                        $parts = preg_split('/@+/', $slider->description, -1, PREG_SPLIT_NO_EMPTY);
-                                    @endphp
+                        <!-- ORIGINAL SLIDER -->
+                        <div id="sliderBox">
+                            <div class="swiper uws-swiper">
+                                <div class="swiper-wrapper">
 
-                                    @foreach($parts as $part)
-                                        <p>{{ trim($part) }}</p>
-                                    @endforeach
+                                    @forelse ($sliders as $slider)
+                                    <div class="swiper-slide">
+                                        <div class="card p-3 shadow">
+
+                                            <h5 class="fw-bold">{{ $slider->title }}</h5>
+
+                                            @php
+                                                $parts = preg_split('/@+/', $slider->description, -1, PREG_SPLIT_NO_EMPTY);
+                                            @endphp
+
+                                            @foreach($parts as $part)
+                                                <p>{{ trim($part) }}</p>
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                    @empty
+                                    <p>There is no university details here</p>
+                                    @endforelse
 
                                 </div>
-                            </div>
-                            @empty
-                            <p>There is no university details here</p>
-                            @endforelse
 
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
                             </div>
-
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                         </div>
+
                     </div>
 
-                    @push('js')
-                    <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        var swiper = new Swiper(".uws-swiper", {
-                            navigation: {
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev",
-                            },
-                            autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            },
-                        });
-                    });
-                    </script>
-                    @endpush
-
-                    <!-- Form -->
                     <!-- Form -->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="card p-4 shadow uws-form-modern">
-
                             <h4 class="fw-semibold text-center mb-3" style="color:#003054;">Check Your Intake</h4>
 
                             <form>
-
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Select Intake</label>
-                                    <select class="form-control modern-input">
+                                    <select class="form-control modern-input" name="intake_id">
                                         <option selected disabled>Choose Intake</option>
-                                        <option>January Intake</option>
-                                        <option>May Intake</option>
-                                        <option>June Intake</option>
-                                        <option>September Intake</option>
+                                        @foreach($intakes as $intake)
+                                            <option value="{{ $intake->id }}">{{ $intake->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Select Course</label>
-                                    <select class="form-control modern-input">
+                                    <select class="form-control modern-input" name="intake_course_id">
                                         <option selected disabled>Choose Course</option>
-                                        <option>Bachelor of Science</option>
-                                        <option>Master of Arts</option>
-                                        <option>Business Administration</option>
-                                        <option>Computer Science</option>
+                                        @foreach($intakeCourses as $intakeCourse)
+                                            <option value="{{ $intakeCourse->id }}">{{ $intakeCourse->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn modern-btn w-100 mt-2">
+                                {{--<button type="submit" class="btn modern-btn w-100 mt-2">
                                     Check Intake
-                                </button>
-
+                                </button>--}}
                             </form>
                         </div>
                     </div>
-
 
                 </div>
             </div>
@@ -2239,8 +2235,63 @@
     </div>
 </section>
 
+
+@push('js')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // When clicking a campus card
+    document.querySelectorAll('.uws-campus-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let title = this.getAttribute('data-title');
+            let desc  = this.getAttribute('data-desc');
+
+            // Split description by @
+            let parts = desc.split('@').filter(Boolean);
+
+            // Insert title
+            document.getElementById('campusTitle').innerText = title;
+
+            // Insert details as <p>
+            let box = document.getElementById('campusDescription');
+            box.innerHTML = '';
+            parts.forEach(function(p) {
+                box.innerHTML += `<p>${p.trim()}</p>`;
+            });
+
+            // Hide slider, show details
+            document.getElementById('sliderBox').classList.add('d-none');
+            document.getElementById('campusDetailsBox').classList.remove('d-none');
+        });
+    });
+
+    // Back to slider
+    document.getElementById('backToSliderBtn').addEventListener('click', function() {
+        document.getElementById('campusDetailsBox').classList.add('d-none');
+        document.getElementById('sliderBox').classList.remove('d-none');
+    });
+
+    // Swiper init
+    var swiper = new Swiper(".uws-swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+
+});
+</script>
+@endpush
+
+@push('css')
 <style>
-/* Wrap everything under .uws-campus-section to avoid conflicts */
+/* Your original CSS, unchanged */
 .uws-campus-section .uws-campus-card {
     display: block;
     position: relative;
@@ -2250,20 +2301,17 @@
     width: 100%;
     transition: transform 0.3s ease;
 }
-
 .uws-campus-section .uws-card-img {
     position: relative;
     width: 100%;
     height: 250px;
 }
-
 .uws-campus-section .uws-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .uws-campus-section .uws-card-caption {
     position: absolute;
     bottom: 0;
@@ -2271,129 +2319,43 @@
     text-align: center;
     color: #fff;
     padding: 15px 0 10px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
-
 .uws-campus-section .uws-line {
     height: 3px;
     width: 60px;
     background: #3B308B;
     margin: 0 auto 8px;
 }
-
 .uws-campus-section .uws-campus-name {
     font-weight: 700;
     font-size: 1.3rem;
 }
-
 .uws-campus-section .uws-campus-card:hover img {
     transform: scale(1.05);
 }
-
-/* Desktop and Large Screens - 5 cards in a row (lg breakpoint and up) */
 @media (min-width: 992px) {
-    .uws-campus-section .uws-card-img {
-        height: 280px;
-    }
+    .uws-campus-section .uws-card-img { height: 280px; }
 }
-
-/* Tablets - 3 cards in a row (md breakpoint: 768px to 991px) */
 @media (max-width: 991px) and (min-width: 768px) {
-    .uws-campus-section .uws-card-img {
-        height: 240px;
-    }
+    .uws-campus-section .uws-card-img { height: 240px; }
 }
-
-/* Small Tablets and Large Phones - 2 cards in a row (sm breakpoint: 576px to 767px) */
 @media (max-width: 767px) and (min-width: 576px) {
-    .uws-campus-section .uws-card-img {
-        height: 220px;
-    }
-
-    .uws-campus-section .uws-campus-name {
-        font-size: 1.1rem;
-    }
+    .uws-campus-section .uws-card-img { height: 220px; }
+    .uws-campus-section .uws-campus-name { font-size: 1.1rem; }
 }
-
-/* Mobile Devices - 2 cards in a row (below 576px) */
 @media (max-width: 575px) {
-    .uws-campus-section .uws-card-img {
-        height: 180px;
-    }
-
-    .uws-campus-section .uws-campus-name {
-        font-size: 1rem;
-    }
-
-    .uws-campus-section .uws-line {
-        width: 40px;
-    }
-
-    /* Adjust heading for mobile */
-    .uws-campus-section .uws-sec-title h2 {
-        font-size: 24px !important;
-    }
+    .uws-campus-section .uws-card-img { height: 180px; }
+    .uws-campus-section .uws-campus-name { font-size: 1rem; }
+    .uws-campus-section .uws-line { width: 40px; }
+    .uws-campus-section .uws-sec-title h2 { font-size: 24px !important; }
 }
-
-/* Extra small devices */
 @media (max-width: 400px) {
-    .uws-campus-section .uws-card-img {
-        height: 160px;
-    }
-
-    .uws-campus-section .uws-campus-name {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Form Styling */
-.uws-form-modern {
-    border-radius: 14px;
-    border: none;
-    background: #ffffff;
-    transition: 0.3s ease;
-}
-
-.uws-form-modern:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.10);
-}
-
-/* Full-width, premium looking inputs */
-.modern-input {
-    width: 100%;
-    height: 48px;
-    border-radius: 10px;
-    border: 1px solid #cfd6e4;
-    padding: 10px 14px;
-    font-size: 15px;
-    background: #f8fafc;
-    transition: 0.2s ease-in-out;
-}
-
-.modern-input:focus {
-    background: #fff;
-    border-color: #3B308B;
-    box-shadow: 0 0 0 0.2rem rgba(59, 48, 139, 0.25);
-}
-
-/* Better button */
-.modern-btn {
-    border-radius: 10px;
-    padding: 12px 0;
-    background: #3B308B;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.modern-btn:hover {
-    background: #2a2563;
-    transform: translateY(-2px);
+    .uws-campus-section .uws-card-img { height: 160px; }
+    .uws-campus-section .uws-campus-name { font-size: 0.9rem; }
 }
 </style>
+@endpush
 <!-- uws section end -->
 
 
@@ -2775,272 +2737,7 @@
 
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="py-5 bg-white">
-    <div class="container">
-
-        <!-- HEADING -->
-        <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#1D3564;">Get In <span style="color:#DB1F2A;">Touch</span></h2>
-            <p class="text-muted fs-5 mx-auto" style="max-width:700px;">
-                Ready to begin your UK education journey? Contact us today for a free consultation
-            </p>
-        </div>
-
-        <div class="row g-4">
-
-            <!-- FORM CARD -->
-            <div class="col-lg-6">
-                <div class="card shadow-sm border-0 bg-light">
-                    <div class="card-body p-4">
-                        <h4 class="fw-semibold mb-4">Send us a message</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Full Name <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Phone <span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Country <span class="text-danger">*</span></label>
-                                <select class="form-control" required>
-                                    <option selected disabled>Select your country</option>
-                                    <option>Bangladesh</option>
-                                    <option>India</option>
-                                    <option>Pakistan</option>
-                                    <option>Nigeria</option>
-                                    <option>Sri Lanka</option>
-                                    <option>Nepal</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label fw-semibold">Message</label>
-                                <textarea class="form-control" rows="4"
-                                    placeholder="Tell us about your study goals..."></textarea>
-                            </div>
-
-                            <div class="form-check mb-4">
-                                <input type="checkbox" class="form-check-input" id="policy">
-                                <label class="form-check-label text-muted" for="policy">
-                                    I agree to the privacy policy and terms of service
-                                </label>
-                            </div>
-
-                            <button type="submit"
-                                class="btn w-100 d-flex align-items-center justify-content-center gap-2 fw-semibold text-white"
-                                style="background:#3B308B; font-size:14px;">
-                                <i class="fas fa-paper-plane text-white" style="font-size:16px; margin-bottom:0;"></i>
-                                &nbsp; &nbsp;
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- INFO COLUMN -->
-            <div class="col-lg-6">
-
-                <div class="row g-4">
-
-                    <!-- CONTACT INFO -->
-                    <div class="col-md-6">
-                        <h4 class="fw-semibold mb-4">Contact Information</h4>
-
-                        <!-- PHONE -->
-                        <div class="d-flex mb-3 align-items-start">
-                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
-                                <i class="fas fa-phone"></i>
-                            </div> &nbsp; &nbsp;
-                            <div>
-                                <strong>Phone</strong>
-                                <p class="mb-0 text-muted">+880 9611 656889,</p>
-                                <p class="mb-0 text-muted">+880 1898-828980</p>
-
-
-
-                            </div>
-                        </div>
-
-                        <!-- EMAIL -->
-                        <div class="d-flex mb-3 align-items-start">
-                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
-                                <i class="fas fa-envelope"></i>
-                            </div> &nbsp; &nbsp;
-                            <div>
-                                <strong>Email</strong>
-                                <p class="mb-0 text-muted">support@yesedu.com</p>
-                            </div>
-                        </div>
-
-                        <!-- ADDRESS -->
-                        <div class="d-flex align-items-start">
-                            <div class="icon-box  text-white rounded-circle me-3" style="background: #3B308B">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div> &nbsp; &nbsp;
-                            <div>
-                                <strong>Address</strong>
-                                <p class="mb-0 text-muted">Dhaka, Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SOCIAL -->
-                    <div class="col-md-6">
-                        <h4 class="fw-semibold mb-4">Follow Us</h4>
-
-                        <a href="{{ $ws->fb_url }}" class="social-card d-flex align-items-center mb-3" target="_blank">
-                            <i class="fab fa-facebook-f fb"></i>
-                            <div>
-                                <strong>Facebook</strong>
-                                <small class="d-block text-muted">Follow us on Facebook</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="social-card d-flex align-items-center mb-3" target="_blank">
-                            <i class="fab fa-instagram ig"></i>
-                            <div>
-                                <strong>Instagram</strong>
-                                <small class="d-block text-muted">Follow us on Instagram</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="social-card d-flex align-items-center mb-3" target="_blank">
-                            <i class="fab fa-linkedin-in ln"></i>
-                            <div>
-                                <strong>LinkedIn</strong>
-                                <small class="d-block text-muted">Connect on LinkedIn</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="social-card d-flex align-items-center" target="_blank">
-                            <img src="{{ asset('frontend/assets/images/icons/tiktok-icon.png') }}" class="me-3"
-                                width="40" height="40" alt="TikTok"> &nbsp; &nbsp;
-                            <div>
-                                <strong>TikTok</strong>
-                                <small class="d-block text-muted">Follow us on TikTok</small>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- MAP -->
-                <div class="mt-4">
-                    <div class="text-center mb-2">
-                        <i class="fas fa-map-marker-alt fs-4 text-primary"></i>
-                        <p class="fw-semibold mb-0">Our Main Office</p>
-                        <small class="text-muted">Road 1, Block-A, Gulshan 1, Dhaka</small>
-                    </div>
-
-                    <div class="rounded overflow-hidden" style="height:250px;">
-                        <iframe src="https://www.google.com/maps?q=Gulshan+1+Dhaka&output=embed" width="100%"
-                            height="100%" style="border:0;" loading="lazy"></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<style>
-.icon-box {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.form-label {
-    font-weight: 600;
-    text-align: left;
-    /* ensures label is left-aligned */
-    display: block;
-    /* ensures it behaves like block above input */
-}
-
-
-.social-card {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: .2s;
-}
-
-.social-card:hover {
-    background: #e9ecef;
-}
-
-.social-card i {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-right: 12px;
-}
-
-/* Social Colors */
-.fb {
-    background: #1877f2;
-}
-
-.ig {
-    background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
-}
-
-.ln {
-    background: #0A66C2;
-}
-
-.tt {
-    background: black;
-}
-
-/* Responsive adjustments */
-@media(max-width:767px) {
-    .d-flex.align-items-start {
-        flex-direction: row;
-    }
-
-    .social-card div {
-        font-size: 13px;
-    }
-
-    .social-card i {
-        width: 36px;
-        height: 36px;
-        margin-right: 8px;
-        font-size: 14px;
-    }
-
-    button.btn i {
-        font-size: 14px;
-    }
-
-    button.btn span {
-        font-size: 14px;
-    }
-}
-</style>
+<x-get-in-touch />
 
 
 <x-student-subscription />

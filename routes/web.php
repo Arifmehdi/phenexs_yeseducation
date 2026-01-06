@@ -22,8 +22,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\WebsiteParameterController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
+use App\Http\Controllers\Admin\ContactMessageController;
+use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\FrontendApiController;
 use Illuminate\Support\Facades\Artisan;
@@ -150,6 +153,9 @@ Route::get('/application',[FrontendController::class,'application'])->name('appl
 Route::post('/application', [ApplicationController::class, 'store'])->name('application.store');
 Route::get('/consultation',[FrontendController::class,'consultation'])->name('consultation');
 Route::post('/consultation', [ConsultationController::class, 'store'])->name('consultation.store');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.store');
+
+
 // Route::get('/product',[HomeController::class,'product'])->name('product');
 
 Route::get('agent/dashboard',[FrontendController::class, 'memberDashboard'])->name('agent.dashboard');
@@ -212,7 +218,7 @@ Route::get('galleries/video',[FrontendController::class,'videoGalleries'])->name
 
 //Authentication
 Route::get('/login',[AuthController::class,'index'])->name('login');
-Route::post('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'login'])->name('login.submit');
 Route::get('/registration',[AuthController::class,'registration'])->name('registration');
 Route::get('/health-card',[AuthController::class,'healthCard'])->name('health.registration');
 Route::post('/register',[AuthController::class,'register'])->name('register');
@@ -333,7 +339,7 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     //role assign
     Route::get('all/users',[UserRoleController::class,'allUser'])->name('admin.all_user');
     Route::get('assign/role',[UserRoleController::class,'userRole'])->name('admin.assign-role');
-    Route::post('assign/role',[UserRoleController::class,'assignRole'])->name('admin.assign-role');
+    Route::post('assign/role',[UserRoleController::class,'assignRole'])->name('admin.assign-roles');  // problem 2
     Route::get('manage/role',[UserRoleController::class,'manageRole'])->name('admin.manage-role');
     Route::get('edit/role/{id}',[UserRoleController::class,'editRole'])->name('admin.edit-role');
     Route::post('update/role/{id}',[UserRoleController::class,'updateRole'])->name('admin.update-role');
@@ -342,7 +348,7 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     //user
     Route::get('users',[UserController::class,'index'])->name('admin.user');
     Route::get('user/create',[UserController::class,'create'])->name('admin.create-user');
-    Route::post('user/create',[UserController::class,'store'])->name('admin.create-user');
+    Route::post('user/create',[UserController::class,'store'])->name('admin.create-users'); // problem 3
     Route::get('user/show/{id}',[UserController::class,'show'])->name('admin.show-user');
     Route::get('user/edit/{id}',[UserController::class,'edit'])->name('admin.edit-user');
     Route::post('user/update/{id}',[UserController::class,'update'])->name('admin.update-user');
@@ -607,5 +613,15 @@ Route::middleware(['userRole:admin','auth'])->prefix('admin')->group(function(){
     // Applications
     Route::resource('applications', \App\Http\Controllers\Admin\ApplicationController::class)->except(['create', 'edit', 'update']);
 
+    // Newsletter Subscriptions
+    Route::resource('newsletters', AdminNewsletterController::class)->only(['index', 'destroy']);
 
+    // Contact Messages
+    Route::resource('contact-messages', ContactMessageController::class)->only(['index', 'show', 'destroy']);
+
+    // Intakes
+    Route::resource('intakes', App\Http\Controllers\Admin\IntakeController::class);
+
+    // Intake Courses
+    Route::resource('intake-courses', App\Http\Controllers\Admin\IntakeCourseController::class);
 });

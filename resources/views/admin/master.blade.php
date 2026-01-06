@@ -260,12 +260,6 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('applications.index') }}" class="nav-link {{ session('lsbsm') == 'allApplications' ? ' active ' : '' }}">
-                            <i class="nav-icon fas fa-file-alt"></i> 
-                            <p>Application Forms</p>
-                        </a>
-                    </li>
                     {{--<li class="nav-item {{ session('lsbm') == 'destination'? ' menu-open ' : ''}}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'destination'? ' active ' : ''}}">
                             <i class="nav-icon far fa-share-square"></i>
@@ -354,6 +348,30 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item {{ session('lsbm') == 'intakes' ? ' menu-open ' : ''}}">
+                        <a href="#" class="nav-link {{ session('lsbm') == 'intakes' ? ' active ' : ''}}">
+                            <i class="nav-icon far fa-share-square"></i>
+                            <p>
+                                Intake Settings
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('intakes.index')}}" class="nav-link {{ session('lsbsm') == 'allIntakes' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Intakes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('intake-courses.index')}}" class="nav-link {{ session('lsbsm') == 'allIntakeCourses' ? ' active ' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Intake Courses</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     {{--<li class="nav-item {{ session('lsbm') == 'galleries' ? ' menu-open ' : '' }}">
                         <a href="#" class="nav-link {{ session('lsbm') == 'galleries' ? ' active ' : '' }}">
                             <i class="nav-icon fas fas fa-bell"></i>
@@ -404,16 +422,34 @@
                             </li>
                         </ul>
                     </li>
-                                       <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
+                    <li class="nav-item">
+                        <a href="{{ route('applications.index') }}" class="nav-link {{ session('lsbsm') == 'allApplications' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-file-alt"></i> 
+                            <p>Application Forms</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'contact_messages'? ' menu-open ' : ''}}">
+                        <a href="{{ route('contact-messages.index') }}" class="nav-link {{ session('lsbsm') == 'allContactMessages' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-envelope-open-text"></i>
+                            <p>Contact Messages</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
                         <a href="{{ route('consultations.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
                             <i class="nav-icon fas fa-headset"></i> 
                             <p>All Consultations</p>
                         </a>
                     </li>
-                    <li class="nav-item {{ session('lsbm') == 'consultations'? ' menu-open ' : ''}}">
-                        <a href="{{ route('admin.chats.index') }}" class="nav-link {{ session('lsbsm') == 'allConsultations' ? ' active ' : '' }}">
+                    <li class="nav-item {{ session('lsbm') == 'chats'? ' menu-open ' : ''}}">
+                        <a href="{{ route('admin.chats.index') }}" class="nav-link {{ session('lsbsm') == 'allChats' ? ' active ' : '' }}">
                             <i class="nav-icon fas fa-comment"></i> 
                             <p>All Chats</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ session('lsbm') == 'newsletters'? ' menu-open ' : ''}}">
+                        <a href="{{ route('newsletters.index') }}" class="nav-link {{ session('lsbsm') == 'allNewsletters' ? ' active ' : '' }}">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            <p>Newsletter</p>
                         </a>
                     </li>
                     <li class="nav-item {{ session('lsbm') == 'websiteparam'? ' menu-open ' : ''}}">

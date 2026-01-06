@@ -55,13 +55,20 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('admin.chats.show', $conversation->id) }}" class="btn btn-info">View Chat</a>
-                                                        @if($conversation->status == 'open')
-                                                            <form action="{{ route('admin.chats.close', $conversation->id) }}" method="POST" style="display:inline-block;">
-                                                                @csrf
-                                                                <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure you want to close this conversation?')">Close</button>
-                                                            </form>
-                                                        @endif
+                                                        <div class="dropdown show">
+                                                            <a class="btn btn-primary btn-xs dropdown-toggle" href="#" role="button" id="dropdownMenuLink{{ $conversation->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Action
+                                                            </a>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink{{ $conversation->id }}">
+                                                                <a class="dropdown-item" href="{{ route('admin.chats.show', $conversation->id) }}"><i class="fa fa-eye"></i> View Chat</a>
+                                                                @if($conversation->status == 'open')
+                                                                    <form action="{{ route('admin.chats.close', $conversation->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to close this conversation?');">
+                                                                        @csrf
+                                                                        <button type="submit" class="dropdown-item text-warning"><i class="fa fa-times-circle"></i> Close Conversation</button>
+                                                                    </form>
+                                                                @endif
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach

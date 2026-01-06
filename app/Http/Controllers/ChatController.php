@@ -82,6 +82,7 @@ class ChatController extends Controller
     
     public function adminIndex()
     {
+        menuSubmenu('chats', 'allChats');
         $conversations = Conversation::with(['user', 'admin'])->latest()->get();
         return view('admin.chat.index', compact('conversations'));
     }

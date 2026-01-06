@@ -320,6 +320,7 @@
                                     <ul class="mobile-submenu d-block d-lg-none d-md-none">
                                         <li><a href="{{ route('event') }}">Event</a></li>
                                         <li><a href="{{ route('blog') }}">Our Blogs</a></li>
+                                        <li><a href="{{ route('about') }}">About Us</a></li>
                                     </ul>
                                     <div class="megamenu">
                                         <div class="megamenu-inner-wrapper">
@@ -336,6 +337,13 @@
                                                                 <p style="text-white">Discover top institutes offering pathway programs to prepare for university.</p>
                                                             </a>
                                                         </li>
+                                                        <li>
+                                                            <a class="service-item" href="{{ route('about') }}">
+                                                                <img src="{{ asset('frontend/assets/images/course/found.original.png') }}" alt="About us menu icon">
+                                                                <span>About Us</span>
+                                                                <p style="text-white">Foundation courses help international students get ready for university.</p>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-6 column">
@@ -344,7 +352,7 @@
                                                             <a class="service-item" href="{{ route('blog') }}">
                                                                 <img src="{{ asset('frontend/assets/images/pathway/russelGroupUniversity.png') }}" alt="Title">
                                                                 <span>Our Blogs</span> <br>
-                                                                <p style="text-white">Explore pathway courses designed to bridge your academic journey.</p>
+                                                                <p style="text-white">Explore about us and explore your academic journey.</p>
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -1315,6 +1323,25 @@ a.location-item i {
         background: transparent;
     }
 
+        /* Hide any font-awesome angle icons in the mobile menu */
+    .mobile-navigation .navigation li.dropdown > a i.fas.fa-angle-down,
+    .mobile-navigation .navigation li.dropdown > a i[class*="angle"],
+    .mobile-navigation .navigation li.dropdown > a .fas,
+    .mobile-navigation .navigation li.dropdown > a span.fas.fa-angle-down,
+    .mobile-floating-menu .navigation li.dropdown > a i.fas.fa-angle-down,
+    .mobile-floating-menu .navigation li.dropdown > a i[class*="angle"],
+    .mobile-floating-menu .navigation li.dropdown > a .fas,
+    .mobile-floating-menu .navigation li.dropdown > a span.fas.fa-angle-down {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+    }
+
 }
 
 /* Desktop Styles (992px and above) */
@@ -1687,28 +1714,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (mobileMenuContainer) {
             mobileMenuContainer.innerHTML = mainMenu.outerHTML;
-
-            // --- Device-based Icon Hiding Logic ---
-            const hideMobileAngleIcon = () => {
-                const mobileDropdownLinks = mobileMenuContainer.querySelectorAll('li.dropdown > a');
-                mobileDropdownLinks.forEach(link => {
-                    const faIconElement = link.querySelector(
-                        'i[class*="fa-angle"], span[class*="fa-angle"]');
-                    if (faIconElement) {
-                        if (window.innerWidth <= 991) {
-                            faIconElement.style.display = 'none';
-                        } else {
-                            faIconElement.style.display = '';
-                        }
-                    }
+            
+            // Remove HTML angle icons from mobile menu
+            const mobileDropdownLinks = mobileMenuContainer.querySelectorAll('li.dropdown > a');
+            mobileDropdownLinks.forEach(link => {
+                // Find and remove any <i> or <span> elements with angle classes
+                const angleIcons = link.querySelectorAll('i.fas.fa-angle-down, i[class*="angle"], span.fas.fa-angle-down');
+                angleIcons.forEach(icon => {
+                    icon.remove();
                 });
-            };
-
-            // Run on initial load
-            hideMobileAngleIcon();
-
-            // Run on window resize
-            window.addEventListener('resize', hideMobileAngleIcon);
+            });
         }
     }
 

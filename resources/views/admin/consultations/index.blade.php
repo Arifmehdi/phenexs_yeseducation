@@ -37,12 +37,19 @@
                                                 <td>{{ $consultation->whatsapp ? 'Yes' : 'No' }}</td>
                                                 <td>{{ $consultation->created_at->format('d M, Y h:i A') }}</td>
                                                 <td>
-                                                    <a href="{{ route('consultations.show', $consultation->id) }}" class="btn btn-info btn-sm">View</a>
-                                                    <form action="{{ route('consultations.destroy', $consultation->id) }}" method="POST" style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this consultation request?')">Delete</button>
-                                                    </form>
+                                                    <div class="dropdown show">
+                                                        <a class="btn btn-primary btn-xs dropdown-toggle" href="#" role="button" id="dropdownMenuLink{{ $consultation->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Action
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink{{ $consultation->id }}">
+                                                            <a class="dropdown-item" href="{{ route('consultations.show', $consultation->id) }}"><i class="fa fa-eye"></i> View</a>
+                                                            <form action="{{ route('consultations.destroy', $consultation->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this consultation request?');">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="dropdown-item text-danger"><i class="fa fa-trash"></i> Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

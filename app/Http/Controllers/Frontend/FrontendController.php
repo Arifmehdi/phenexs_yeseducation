@@ -10,6 +10,8 @@ use App\Models\DeliveryLocation;
 use App\Models\Gallery;
 use App\Models\Order;
 use App\Models\Course;
+use App\Models\Intake; // Added
+use App\Models\IntakeCourse; // Added
 use App\Models\OrderItem;
 use App\Models\Page;
 use App\Models\Product;
@@ -121,6 +123,9 @@ class FrontendController extends Controller
         $data['sliders'] = FrontSlider::whereActive(true)
             ->select('featured_image','title','link','btn_txt','description')
             ->get();
+        
+        $data['intakes'] = Intake::all(); // Added
+        $data['intakeCourses'] = IntakeCourse::all(); // Added
 
         return view('website.index', $data);  
     }

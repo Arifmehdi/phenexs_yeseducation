@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactConfirmation;
+use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
@@ -16,20 +17,28 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required',
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required|string|max:255',
             'email' => 'required|email',
-            'subject' => 'nullable|string|max:255',
-            'message' => 'required|string',
+            'phone' => 'required',
+            'country' => 'required',
+            'message' => 'nullable',
+            'agree_policy' => 'required|boolean'
         ]);
 
-        // Save the contact first
-        $contact = Contact::create($validatedData);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
 
-        // Send email using the saved model
-        $this->sendAppointmentEmails($contact);
+        ContactMessage::create($request->all());
 
-        return back()->with('success', 'Your message has been sent successfully!');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Your message has been sent successfully.'
+        ], 200);
     }
 
     public function index()

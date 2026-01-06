@@ -16,6 +16,7 @@ class ConsultationController extends Controller
      */
     public function index()
     {
+        menuSubmenu('consultations', 'allConsultations');
         $consultations = Consultation::latest()->paginate(20);
         return view('admin.consultations.index', compact('consultations'));
     }

@@ -6,6 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+{{-- SEO Meta --}}
+<meta name="description"
+    content="Yes Education is a UK-based student counseling and education consultancy providing expert guidance on university admissions, student visas, and study abroad opportunities.">
+<meta name="keywords"
+    content="Yes Education, UK student counselor, study in UK, education consultancy, student visa UK, university admission guidance">
+<meta name="author" content="Yes Education">
+<meta name="robots" content="index, follow">
+
+{{-- Open Graph / Social Sharing --}}
+<meta property="og:title" content="Yes Education - UK Student Counseling & Study Abroad Guidance">
+<meta property="og:description"
+    content="Expert UK student counseling services for admissions, visas, and study abroad success.">
+<meta property="og:image" content="https://yesehec.com/frontend/assets/images/ads/January_Intake_in_the_UK_-_Desktop_Image.original.webp">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yes Education">
+
+{{-- Optional Twitter Card --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yes Education - Study in UK with Expert Guidance">
+<meta name="twitter:description"
+    content="Professional UK student counseling for university admission and visa guidance.">
+<meta name="twitter:image" content="https://yesehec.com/frontend/assets/images/ads/January_Intake_in_the_UK_-_Desktop_Image.original.webp">
+
 
 <title>@yield('title')</title>
 
@@ -154,6 +177,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     @stack('js')
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- wizard form  -->
 	<script src="{{ asset('frontend/wizard/js/jquery.steps.js') }}"></script>

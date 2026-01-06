@@ -135,7 +135,8 @@
                 </div>
             </div>
         </div>
-        <div class="contact-form-inner">
+        <x-get-in-touch />
+        {{--<div class="contact-form-inner">
             <div class="sec-title centred">
                 <h2>Let’s Start a Conversation Today!</h2>
                 <div class="dotted-box">
@@ -181,7 +182,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div>--}}
     </div>
 </section>
 <!-- contact-page-section end -->

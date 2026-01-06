@@ -28,9 +28,9 @@
     <div class="col-6 col-md-3 mb-4">
         <h5 class="text-uppercase fw-bold mb-3">Useful Links</h5>
         <ul class="list-unstyled">
-            <li><a href="#" class="footer-link">Find a University</a></li>
-            <li><a href="#" class="footer-link">Find a Course</a></li>
-            <li><a href="#" class="footer-link">Popular Courses</a></li>
+            <li><a href="{{ route('search', ['action' => 'location-data', 'location' => 'London']) }}" class="footer-link">Find a University</a></li>
+            <li><a href="{{ route('courseIn') }}" class="footer-link">Find a Course</a></li>
+            <li><a href="{{ route('courseIn') }}" class="footer-link">Popular Courses</a></li>
             <li><a href="{{ route('contact') }}" class="footer-link">Contact Us</a></li>
         </ul>
     </div>
@@ -39,9 +39,9 @@
     <div class="col-6 col-md-3 mb-4">
         <h5 class="text-uppercase fw-bold mb-3">About YESEDU</h5>
         <ul class="list-unstyled">
-            <li><a href="#" class="footer-link">About Us</a></li>
-            <li><a href="#" class="footer-link">What We Do</a></li>
-            <li><a href="#" class="footer-link">Why Choose Us</a></li>
+            <li><a href="{{ route('about') }}" class="footer-link">About Us</a></li>
+            <li><a href="{{ route('eventDetails', 'What Can I Study?') }}" class="footer-link">What We Do</a></li>
+            <li><a href="{{ route('studyInUk', 'Why Choose UK') }}" class="footer-link">Why Choose Us</a></li>
             <li><a href="#" class="footer-link">Success Stories</a></li>
         </ul>
     </div>
@@ -51,8 +51,8 @@
         <h5 class="text-uppercase fw-bold mb-3">Community</h5>
         <ul class="list-unstyled">
             <li><a href="#" class="footer-link">YESEDU News</a></li>
-            <li><a href="#" class="footer-link">Latest Blogs</a></li>
-            <li><a href="#" class="footer-link">Upcoming Events</a></li>
+            <li><a href="{{ route('blog') }}" class="footer-link">Latest Blogs</a></li>
+            <li><a href="{{ route('event') }}" class="footer-link">Upcoming Events</a></li>
             <li><a href="#" class="footer-link">Refer a Friend</a></li>
         </ul>
     </div>

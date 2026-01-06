@@ -14,34 +14,42 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>SL</th>
+                                            <th>Actions</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Nationality</th>
                                             <th>Study Level</th>
                                             <th>Submitted At</th>
-                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($applications as $application)
+                                        @foreach($applications as $key => $application)
                                             <tr>
-                                                <td>{{ $application->id }}</td>
+                                                <td>{{ ++$key }}</td>
+                                                <td>
+                                                    <div class="dropdown show">
+                                                        <a class="btn btn-primary btn-xs dropdown-toggle" href="#" role="button" id="dropdownMenuLink{{ $application->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Action
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink{{ $application->id }}">
+                                                            <a class="dropdown-item" href="{{ route('applications.show', $application->id) }}"><i class="fa fa-eye"></i> View</a>
+                                                            <form action="{{ route('applications.destroy', $application->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this application?');">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="dropdown-item text-danger"><i class="fa fa-trash"></i> Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $application->first_name }} {{ $application->last_name }}</td>
                                                 <td>{{ $application->email }}</td>
                                                 <td>{{ $application->phone_number }}</td>
                                                 <td>{{ $application->nationality }}</td>
                                                 <td>{{ $application->preferred_study_level }}</td>
                                                 <td>{{ $application->created_at->format('d M, Y h:i A') }}</td>
-                                                <td>
-                                                    <a href="{{ route('applications.show', $application->id) }}" class="btn btn-info btn-sm">View</a>
-                                                    <form action="{{ route('applications.destroy', $application->id) }}" method="POST" style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this application?')">Delete</button>
-                                                    </form>
-                                                </td>
+
                                             </tr>
                                         @endforeach
                                     </tbody>
